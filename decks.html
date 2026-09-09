@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#F7F4F4">
+<title>CPX Study — 덱</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="bar"><div class="in">
+  <a class="bk" href="index.html">&#8249;</a>
+  <div><div class="ti" id="ti"></div><div class="sb" id="sb"></div></div>
+  <span class="rt" id="rt"></span>
+</div></div>
+
+<div class="scroll"><div class="w">
+  <div id="list"></div>
+  <div class="foot">
+    <a href="guide.html" id="gl" style="color:var(--burg);font-weight:700">가이드 전문 읽기 &rsaquo;</a>
+  </div>
+</div></div>
+
+<script type="module">
+import { $, $$, loadIndex, loadCC, deckStat, ccStat, qs, registerSW } from './assets/store.js';
+registerSW();
+const id = qs('cc');
+(async () => {
+  const idx = await loadIndex();
+  let meta = null;
+  idx.parts.forEach(p => p.ccs.forEach(c => { if (c.id === id) meta = c; }));
+  if (!meta) { location.href = 'index.html'; return; }
+  const data = await loadCC(id);
+  document.title = `CPX ${meta.num} ${meta.title}`;
+  $('#ti').textContent = meta.title;
+  $('#sb').textContent = `CPX ${meta.num} · ${meta.en}`;
+  $('#gl').href = 'guide.html?cc=' + id;
+  const counts = data.decks.map(d => d.cards.length);
+  const s = ccStat(id, counts);
+  $('#rt').textContent = `${s.ok} / ${s.total}`;
+  $('#list').innerHTML = data.decks.map((d, di) => {
+    const st = deckStat(id, di, d.cards.length);
+    return `<a class="tile" href="cards.html?cc=${id}&d=${di}">
+      <div class="n">${d.n}</div><h3>${d.t}</h3><p>${d.d}</p>
+      <div class="pb"><i style="width:${st.pct}%"></i></div>
+      <div class="mt"><span>${d.cards.length}장</span><span>${st.ok} 외움 · ${st.pct}%</span></div></a>`;
+  }).join('');
+})();
+</script>
+</body>
+</html>

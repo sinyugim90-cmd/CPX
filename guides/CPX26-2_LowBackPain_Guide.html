@@ -1,0 +1,1183 @@
+<!doctype html><html lang='ko'><meta charset='utf-8'><title>CPX 26-2 허리 통증</title><style>
+@page {
+  size: A4; margin: 23mm 22mm 17mm 22mm;
+  @top-left  { content: "CPX 26-2"; font-family: Pretendard; font-size: 6.6pt;
+    font-weight: 700; letter-spacing: .26em; color: #74263A; }
+  @top-right { content: "허리 통증"; font-family: Pretendard; font-size: 6.6pt;
+    color: #9C96A0; letter-spacing: .14em; }
+  @bottom-right { content: counter(page); font-family: "Noto Serif CJK KR";
+    font-size: 9pt; color: #6A656F; }
+}
+@page :first { @top-left { content: "" } @top-right { content: "" }
+  @bottom-right { content: "" } }
+
+* { box-sizing: border-box; }
+body { font-family: Pretendard, sans-serif; font-size: 10.4pt; line-height: 1.6;
+  color: #1A1B20; margin: 0; word-break: keep-all; }
+p { margin: 0 0 .6em; }
+b { font-weight: 700; }
+em { font-style: normal; color: #74263A; font-weight: 600; }
+code { font-family: Pretendard; font-size: .95em; font-weight: 700; color: #74263A; }
+section { page-break-before: always; }
+section.cover, section.first { page-break-before: auto; }
+
+/* == 표지 == */
+.cover { padding-top: 6mm; }
+.cover .top { border-top: 3pt solid #74263A; padding-top: 9px; }
+.cover .kicker { font-size: 6.8pt; font-weight: 700; letter-spacing: .3em; color: #74263A; }
+.cover .cat { font-size: 8.4pt; color: #6A656F; letter-spacing: .1em; margin-top: 5px; }
+.cover .num { font-family: "Noto Serif CJK KR", serif; font-size: 68pt;
+  color: #4E1A28; line-height: 1; margin: 30mm 0 2mm; letter-spacing: -.02em; }
+.cover h1 { font-family: "Noto Serif CJK KR", serif; font-size: 30pt;
+  margin: 0 0 6px; line-height: 1.2; letter-spacing: -.01em; }
+.cover .en { font-size: 12pt; color: #6A656F; margin: 0 0 22px; }
+.cover .arc { font-size: 8.6pt; color: #74263A; font-weight: 700; letter-spacing: .14em;
+  padding-top: 11px; border-top: .5pt solid #E2DDE0; margin-bottom: 26px; }
+.cover dl { margin: 0 0 26px; }
+.cover dt { font-size: 7pt; font-weight: 700; letter-spacing: .18em;
+  color: #74263A; margin-top: 11px; }
+.cover dd { margin: 2px 0 0; font-size: 10.2pt; line-height: 1.5; }
+.cover .note { font-size: 8.6pt; color: #6A656F; line-height: 1.6;
+  padding-top: 12px; border-top: .5pt solid #E2DDE0; }
+
+/* == 파트 오프너 == */
+.opener { margin: 0 0 26px; }
+.opener .tag { display: inline-block; background: #4E1A28; color: #fff;
+  font-size: 6.4pt; font-weight: 700; letter-spacing: .26em;
+  padding: 4px 10px 4px 11px; margin: 0 0 13px; }
+.opener h1 { font-family: "Noto Serif CJK KR", serif; font-size: 20pt;
+  margin: 0 0 9px; line-height: 1.26; }
+.opener .dek { font-size: 9.4pt; color: #6A656F; line-height: 1.62; margin: 0; max-width: 124mm; }
+
+h2 { font-family: "Noto Serif CJK KR", serif; font-size: 13pt;
+  margin: 28px 0 3px; line-height: 1.38; page-break-after: avoid; }
+h2::before { content: ""; display: block; width: 24px; height: 2.4pt;
+  background: #74263A; margin-bottom: 8px; }
+h2.plain::before { display: none; }
+.sub { font-size: 8.9pt; color: #6A656F; margin: 0 0 12px; }
+h3 { font-size: 9.5pt; font-weight: 700; color: #4E1A28; margin: 18px 0 4px;
+  page-break-after: avoid; }
+
+/* == 인용 == */
+blockquote { margin: 12px 0 16px; padding: 1px 0 1px 15px; border-left: 2pt solid #74263A; }
+blockquote p { margin: 0 0 .16em; font-size: 10.2pt; line-height: 1.56; }
+blockquote .who { font-size: 6.8pt; font-weight: 700; letter-spacing: .2em;
+  color: #74263A; margin-bottom: 5px; }
+
+/* == 괘선 목록 == */
+ul.plain { list-style: none; margin: 7px 0 16px; padding: 0; }
+ul.plain li { padding: 6px 0; border-bottom: .5pt solid #F0ECEE; }
+ul.plain li:first-child { border-top: 1.4pt solid #74263A; }
+ul.plain li:last-child { border-bottom: 1pt solid #E2DDE0; }
+ul.plain .g { font-size: 6.6pt; font-weight: 700; letter-spacing: .16em;
+  color: #74263A; margin-left: 6px; }
+
+/* == 표 == */
+table { border-collapse: collapse; width: 100%; margin: 11px 0 18px; }
+thead th { font-size: 7.1pt; font-weight: 700; letter-spacing: .16em;
+  color: #74263A; text-align: left; padding: 0 12px 6px 0;
+  border-bottom: 1.4pt solid #74263A; }
+thead th:last-child { padding-right: 0; }
+tbody td { font-size: 9.6pt; padding: 7px 12px 7px 0; vertical-align: top;
+  border-bottom: .5pt solid #F0ECEE; line-height: 1.5; }
+tbody td:last-child { padding-right: 0; }
+tbody tr:last-child td { border-bottom: 1pt solid #E2DDE0; }
+td.k { font-weight: 700; white-space: nowrap; }
+td.s { color: #6A656F; }
+
+/* == 대본 항목 == */
+.si { margin: 22px 0; padding-top: 13px; border-top: 1.4pt solid #1A1B20;
+  page-break-inside: avoid; }
+.si .code { font-family: "Noto Serif CJK KR", serif; font-size: 12pt;
+  font-weight: 700; color: #4E1A28; }
+.si .g { font-size: 6.6pt; font-weight: 700; letter-spacing: .2em;
+  color: #74263A; margin-left: 9px; }
+.si .say { font-size: 11.1pt; line-height: 1.5; margin: 9px 0;
+  padding-left: 14px; border-left: 2pt solid #74263A; font-weight: 500; }
+.si .why { font-size: 9.3pt; color: #6A656F; margin: 0 0 2px; }
+.si td.dx { font-weight: 700; }
+.si td.rz { color: #6A656F; font-size: 9pt; }
+
+/* == 신체진찰 : 동선 == */
+ol.flow { list-style: none; counter-reset: fl; margin: 12px 0 18px; padding: 0; }
+ol.flow li { counter-increment: fl; position: relative; padding: 7px 0 7px 30px;
+  border-bottom: .5pt solid #F0ECEE; font-size: 9.9pt; line-height: 1.5; }
+ol.flow li:first-child { border-top: 1.4pt solid #74263A; }
+ol.flow li::before { content: counter(fl); position: absolute; left: 0; top: 7px;
+  font-family: "Noto Serif CJK KR", serif; font-size: 9.5pt; font-weight: 700;
+  color: #74263A; }
+ol.flow .pos { font-size: 6.6pt; font-weight: 700; letter-spacing: .16em;
+  color: #74263A; display: block; margin-bottom: 2px; }
+
+/* == 신체진찰 : 특이검사 카드 == */
+.card { margin: 18px 0; padding-top: 11px; border-top: 1.4pt solid #74263A;
+  page-break-inside: avoid; }
+.card .nm { font-family: "Noto Serif CJK KR", serif; font-size: 11.5pt;
+  font-weight: 700; color: #4E1A28; }
+.card .nm .en { font-family: Pretendard; font-size: 8.6pt; font-weight: 400;
+  color: #6A656F; margin-left: 7px; }
+.card dl { margin: 8px 0 0; }
+.card dt { font-size: 6.6pt; font-weight: 700; letter-spacing: .16em;
+  color: #74263A; margin-top: 8px; }
+.card dd { margin: 2px 0 0; font-size: 9.6pt; line-height: 1.55; }
+.card dd.hit { font-weight: 600; }
+.card ol { margin: 2px 0 0; padding-left: 1.15em; }
+.card ol li { font-size: 9.6pt; line-height: 1.55; margin-bottom: 1px; }
+
+/* == 감점 포인트 == */
+ul.deduct { list-style: none; margin: 12px 0 16px; padding: 8px 0;
+  border-top: 1.4pt solid #74263A; border-bottom: 1pt solid #E2DDE0; }
+ul.deduct li { padding: 5px 0 5px 16px; text-indent: -16px;
+  font-size: 9.7pt; line-height: 1.5; }
+ul.deduct li::before { content: "\2013\00a0\00a0"; color: #74263A; font-weight: 700; }
+
+/* == 다이어그램 == */
+figure { margin: 16px 0 20px; text-align: center; page-break-inside: avoid; }
+figure svg { width: 100%; height: auto; }
+figcaption { font-size: 8.3pt; color: #6A656F; margin-top: 7px; }
+
+/* == 인출 질문 == */
+.recall { margin: 18px 0; padding: 11px 0; border-top: .5pt solid #E2DDE0;
+  border-bottom: .5pt solid #E2DDE0; page-break-inside: avoid; }
+.recall .lb { font-size: 6.6pt; font-weight: 700; letter-spacing: .2em;
+  color: #74263A; margin-bottom: 6px; }
+.recall p { font-size: 9.5pt; margin: 0 0 .3em; padding-left: 15px; text-indent: -15px; }
+.recall p::before { content: "Q\00a0\00a0"; font-weight: 700; color: #74263A; }
+</style>
+<section class="cover">
+  <div class="top"><div class="kicker">CPX STUDY GUIDE</div>
+    <div class="cat">관절 · 근골격 · 피부</div></div>
+  <div class="num">26-2</div>
+  <h1>허리 통증</h1>
+  <p class="en">Low back pain</p>
+  <div class="arc">질환 이해 &rarr; 채점 역산 &rarr; 실전 실행 &rarr; 인출</div>
+  <dl>
+    <dt>감별 대축</dt><dd>신경학적 침범이 있는가. 허리에서 끝나는가, 다리로 내려가는가</dd>
+    <dt>관문 1 · 응급</dt><dd>요실금 · 변실금 · 항문 주위 감각 마비 &rarr; 마미증후군. 응급 수술로 감압해요</dd>
+    <dt>관문 2 · 기타</dt><dd>암 병력 · 체중감소 · 야간통 &rarr; 종양 / 발열 &rarr; 감염 / 복부 · 옆구리 증상 &rarr; 연관통</dd>
+    <dt>가장 흔한 정답</dt><dd>요추염좌. 무거운 걸 들거나 삐끗한 병력이 있으면 여기부터 봐요</dd>
+    <dt>시간 예산</dt><dd>Hx 5분 / PEx 4~5분 / Edu 2~3분. 서서 · 앉아서 · 누워서 세 자세를 다 써요</dd>
+    <dt>이 CC의 함정</dt><dd>SLR과 Patrick을 <b>반드시 양측 모두</b> 시행해야 각각 추간판탈출과 강직척추염이 갈려요</dd>
+  </dl>
+  <p class="note">허리 통증은 목 통증과 문진 뼈대를 공유해요. 대축도 같고요. 그런데
+  질환 목록과 red flag가 전혀 달라요. 목에서는 수막염이 응급이었다면, 허리에서는
+  <b>마미증후군</b>이에요. 그리고 허리에는 목에 없는 층이 하나 더 있어요.
+  <b>연관통</b> &mdash; 복부 · 신장 · 소화기 · 비뇨생식 질환이 허리 통증으로 옵니다.</p>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 0</div>
+    <h1>이 CC에서 만나는 질환 지도</h1>
+    <p class="dek">허리 통증도 세 덩어리예요. 신경학적 이상, 신경 외 근골격,
+    그리고 기타. 다만 기타 안이 목보다 훨씬 넓어요.</p></div>
+
+  <p>목에서 기타는 감염 &middot; 종양 &middot; 류마티스 셋이었어요. 허리에서는 여기에
+  <b>연관통</b>이 통째로 하나 더 붙어요. 배가 아파서 허리가 아플 수 있다는 뜻이에요.
+  복부대동맥류, 신우신염, 결석, 췌장염, 담낭염, 자궁내막증, 전립선염이 전부 허리 통증으로
+  올 수 있어요.</p>
+
+  <p>그래서 관문이 두 층이에요. <b>첫째 층은 마미증후군</b>이에요. 요실금과 변실금이 나오면
+  다른 걸 다 제쳐두고 응급 수술로 갑니다. <b>둘째 층은 종양 &middot; 감염 &middot; 연관통</b>이고요.</p>
+
+  <figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 316"><rect width="440" height="316" fill="#FFFFFF"/><rect x="130" y="6" width="180" height="30" rx="2.5" fill="#FAF3F5"/><text x="220" y="20" font-family="Pretendard" font-size="10.5" fill="#74263A" font-weight="700" text-anchor="middle">허리가 아파요</text><text x="220" y="31" font-family="Pretendard" font-size="7.5" fill="#6A656F" font-weight="400" text-anchor="middle">연관통을 먼저 지운다</text><path d="M220 36 V50" stroke="#74263A" stroke-width="0.8" fill="none"/><rect x="14" y="50" width="412" height="26" rx="2.5" fill="#F7EAEE"/><text x="24" y="67" font-family="Pretendard" font-size="9.5" fill="#4E1A28" font-weight="700" text-anchor="start">관문 · 응급과 기타를 먼저 배제</text><text x="30" y="88" font-family="Pretendard" font-size="8.2" fill="#6A656F" font-weight="400" text-anchor="start">요실금 · 변실금 · 항문 주위 마비</text><text x="232" y="88" font-family="Pretendard" font-size="8.2" fill="#74263A" font-weight="700" text-anchor="start">›</text><text x="246" y="88" font-family="Pretendard" font-size="8.4" fill="#1A1B20" font-weight="700" text-anchor="start">마미증후군 (응급)</text><text x="30" y="101" font-family="Pretendard" font-size="8.2" fill="#6A656F" font-weight="400" text-anchor="start">암 병력 · 체중감소 · 야간통</text><text x="232" y="101" font-family="Pretendard" font-size="8.2" fill="#74263A" font-weight="700" text-anchor="start">›</text><text x="246" y="101" font-family="Pretendard" font-size="8.4" fill="#1A1B20" font-weight="700" text-anchor="start">척추 종양</text><text x="30" y="114" font-family="Pretendard" font-size="8.2" fill="#6A656F" font-weight="400" text-anchor="start">발열 · 면역저하</text><text x="232" y="114" font-family="Pretendard" font-size="8.2" fill="#74263A" font-weight="700" text-anchor="start">›</text><text x="246" y="114" font-family="Pretendard" font-size="8.4" fill="#1A1B20" font-weight="700" text-anchor="start">척추 감염 · 농양</text><text x="30" y="127" font-family="Pretendard" font-size="8.2" fill="#6A656F" font-weight="400" text-anchor="start">복부 · 옆구리 · 골반 증상</text><text x="232" y="127" font-family="Pretendard" font-size="8.2" fill="#74263A" font-weight="700" text-anchor="start">›</text><text x="246" y="127" font-family="Pretendard" font-size="8.4" fill="#1A1B20" font-weight="700" text-anchor="start">연관통</text><path d="M14 144 H426" stroke="#DED7DA" stroke-width="0.8" fill="none"/><rect x="14" y="152" width="412" height="28" rx="2.5" fill="#FAF3F5"/><text x="24" y="170" font-family="Pretendard" font-size="9.8" fill="#4E1A28" font-weight="700" text-anchor="start">대축 · 신경학적 침범이 있는가</text><text x="416" y="170" font-family="Pretendard" font-size="7.8" fill="#6A656F" font-weight="400" text-anchor="end">하지 방사통 · 파행 · 배뇨</text><path d="M220 180 V192" stroke="#74263A" stroke-width="0.8" fill="none"/><path d="M220 192 V199.0 H112 V206" stroke="#74263A" stroke-width="0.8" fill="none"/><path d="M220 192 V199.0 H328 V206" stroke="#74263A" stroke-width="0.8" fill="none"/><rect x="14" y="206" width="196" height="24" rx="2.5" fill="#FFFFFF" stroke="#74263A" stroke-width="0.8"/><text x="112" y="222" font-family="Pretendard" font-size="9.5" fill="#4E1A28" font-weight="700" text-anchor="middle">신경학적 이상</text><rect x="230" y="206" width="196" height="24" rx="2.5" fill="#FFFFFF" stroke="#DED7DA" stroke-width="0.8"/><text x="328" y="222" font-family="Pretendard" font-size="9.5" fill="#4E1A28" font-weight="700" text-anchor="middle">신경 외 · 근골격</text><text x="14" y="246" font-family="Pretendard" font-size="7.4" fill="#6A656F" font-weight="400" text-anchor="start">편측 하지 방사통 · SLR(+)</text><text x="14" y="255" font-family="Pretendard" font-size="8.4" fill="#4E1A28" font-weight="700" text-anchor="start">요추간판탈출증</text><text x="230" y="246" font-family="Pretendard" font-size="7.4" fill="#6A656F" font-weight="400" text-anchor="start">무거운 것 · 삐끗 · 신경검사 정상</text><text x="230" y="255" font-family="Pretendard" font-size="8.4" fill="#4E1A28" font-weight="700" text-anchor="start">요추염좌</text><text x="14" y="268" font-family="Pretendard" font-size="7.4" fill="#6A656F" font-weight="400" text-anchor="start">걷다 쉬어야 함 · 젖히면 악화</text><text x="14" y="277" font-family="Pretendard" font-size="8.4" fill="#4E1A28" font-weight="700" text-anchor="start">척추관협착증</text><text x="230" y="268" font-family="Pretendard" font-size="7.4" fill="#6A656F" font-weight="400" text-anchor="start">젊은 남성 · 운동하면 호전</text><text x="230" y="277" font-family="Pretendard" font-size="8.4" fill="#4E1A28" font-weight="700" text-anchor="start">강직척추염</text><text x="14" y="290" font-family="Pretendard" font-size="7.4" fill="#6A656F" font-weight="400" text-anchor="start">양하지 마비 · 요실금</text><text x="14" y="299" font-family="Pretendard" font-size="8.4" fill="#4E1A28" font-weight="700" text-anchor="start">마미증후군</text><text x="230" y="290" font-family="Pretendard" font-size="7.4" fill="#6A656F" font-weight="400" text-anchor="start">골다공증 · 넘어짐</text><text x="230" y="299" font-family="Pretendard" font-size="8.4" fill="#4E1A28" font-weight="700" text-anchor="start">요추압박골절</text></svg>
+    <figcaption>응급을 먼저 지우고, 기타를 지우고, 그 다음 신경 침범 여부로 좌우가 갈린다</figcaption>
+  </figure>
+
+  <h2>0-1. 질환들의 첫인상</h2>
+  <table>
+    <thead><tr><th>덩어리</th><th>질환</th><th>환자가 보이는 모습</th></tr></thead>
+    <tbody>
+      <tr><td class="s">신경학적</td><td class="k">요추간판탈출증</td>
+          <td>허리가 아픈데 한쪽 다리로 내려가고 저려요. 기침하면 확 심해지고요</td></tr>
+      <tr><td class="s">신경학적</td><td class="k">척추관협착증</td>
+          <td>조금 걸으면 다리가 아파서 쉬어야 해요. 허리를 젖히면 심하고 앉으면 편해요</td></tr>
+      <tr><td class="s">신경학적 · 응급</td><td class="k">마미증후군</td>
+          <td>소변과 대변이 새요. 양쪽 다리에 힘이 없고 엉덩이 쪽 감각이 둔해요</td></tr>
+      <tr><td class="s">신경학적 · 종양</td><td class="k">척추 종양</td>
+          <td>예전에 암 진단을 받았어요. 체중이 빠지고 밤에 더 아파요</td></tr>
+      <tr><td class="s">근골격</td><td class="k">요추염좌</td>
+          <td>무거운 걸 들다가 삐끗했어요. 허리 근육이 아프고 다리로는 안 내려가요</td></tr>
+      <tr><td class="s">근골격</td><td class="k">요추압박골절</td>
+          <td>골다공증이 있는데 살짝 넘어진 뒤부터 허리가 아파요. 굽히기가 어렵고요</td></tr>
+      <tr><td class="s">류마티스</td><td class="k">강직척추염</td>
+          <td>20대 남자인데 아침에 허리가 뻣뻣해요. 움직이면 오히려 나아지고 쉬면 더 아파요</td></tr>
+      <tr><td class="s">류마티스</td><td class="k">골관절염</td>
+          <td>50세 이상이고 조조강직이 30분 미만이에요. 움직일 때 서걱거려요</td></tr>
+      <tr><td class="s">기타 · 연관통</td><td class="k">복부대동맥류</td>
+          <td>고령에 박동성 덩어리가 만져지고 허리가 아파요</td></tr>
+      <tr><td class="s">기타 · 연관통</td><td class="k">신우신염 · 결석</td>
+          <td>옆구리를 두드리면 아프고 열이 나거나 소변에 피가 섞여요</td></tr>
+      <tr><td class="s">기타 · 연관통</td><td class="k">췌장염 · 담낭염</td>
+          <td>배가 아픈데 등으로 뻗쳐요. 식사와 관계가 있고요</td></tr>
+      <tr><td class="s">기타 · 연관통</td><td class="k">자궁내막증 · PID · 전립선염</td>
+          <td>월경과 관계있게 아프거나, 골반 · 배뇨 증상이 같이 와요</td></tr>
+    </tbody>
+  </table>
+
+  <div class="recall"><div class="lb">스스로 답해보기</div>
+    <p>허리 통증에만 있고 목 통증에는 없는 감별 층 하나는 무엇인가?</p>
+    <p>다른 걸 다 제쳐두고 먼저 확인해야 하는 응급은 무엇이고, 그 질문 두 개는?</p>
+  </div>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 1</div>
+    <h1>대축은 목과 같고, 관문은 다릅니다</h1>
+    <p class="dek">허리에서 끝나는가, 다리로 내려가는가. 대축은 목과 똑같아요.
+    다른 건 그 앞에 놓인 관문이에요.</p></div>
+
+  <h2>1-1. 대축 &mdash; 신경학적 침범</h2>
+  <p>판정 도구는 네 가지예요. <b>다리로 내려가는 방사통(sciatica)</b>,
+  <b>파행(claudication)</b>, <b>다리 힘 빠짐(weakness)</b>, <b>배뇨 · 배변 이상</b>.
+  이 중 하나라도 있으면 신경학적 이상 칸이에요.</p>
+  <p>왜 이게 대축일까요? 목과 같은 이유예요. 질문 두세 개로 판정되고, 진찰로 확인되고,
+  <b>치료 방향이 통째로 갈려요.</b> 신경 침범이 없으면 보존적 치료로 끝나고,
+  있으면 영상과 수술 논의로 넘어갑니다.</p>
+
+  <h2>1-2. 관문 1 &mdash; 마미증후군을 먼저 지워요</h2>
+  <p>척수는 요추 위쪽에서 끝나고, 그 아래로는 신경뿌리들이 말 꼬리처럼 다발로 내려가요.
+  이걸 <b>cauda equina, 마미</b>라고 해요. 이 다발이 한꺼번에 눌리면 방광 &middot; 직장 &middot;
+  회음부를 담당하는 뿌리들이 동시에 나빠집니다.</p>
+  <p>그래서 증상 조합이 특이해요. <b>요실금 · 변실금 + 양쪽 다리 근력 저하 + 항문 주위와
+  회음부 감각 마비.</b> 한쪽이 아니라 양쪽이고, 감각이 없어지는 자리가 안장에 닿는 부위예요.</p>
+  <p><b>이건 응급 수술로 완전히 감압해야 하는 상황</b>이에요. 늦으면 배뇨 기능이 돌아오지
+  않습니다. 쉽게 말하면 <b>전선 다발이 통째로 눌린</b> 셈이라 시간이 곧 기능이에요.</p>
+
+  <h2>1-3. 관문 2 &mdash; 종양 · 감염 · 연관통</h2>
+  <ul class="plain">
+    <li><b>암 병력 · 체중 감소 · 야간 통증</b> 척추 종양. 밤에 더 아프다는 말이 결정적이에요.<span class="g">관문</span></li>
+    <li><b>발열 · 면역저하 · 최근 시술</b> 척추 감염 · 경막외 농양.<span class="g">관문</span></li>
+    <li><b>박동성 복부 덩어리 · 고령 · 흡연</b> 복부대동맥류.<span class="g">관문</span></li>
+    <li><b>옆구리 통증 · 혈뇨 · 발열</b> 신우신염 · 요로결석.<span class="g">관문</span></li>
+    <li><b>식사와 관련된 복통 · 등으로 방사</b> 췌장염 · 담낭염 · 담석증.<span class="g">관문</span></li>
+    <li><b>월경 관련 · 골반 · 배뇨 증상</b> 자궁내막증 · PID · 전립선염.<span class="g">관문</span></li>
+  </ul>
+  <p>연관통을 놓치면 위험한 이유는 단순해요. <b>허리를 아무리 진찰해도 답이 안 나오고,
+  그 사이에 진짜 병이 진행</b>하기 때문이에요. 그래서 문진에서 복부 &middot; 옆구리 &middot;
+  배뇨 증상을 한 번은 훑어야 해요.</p>
+
+  <h2>1-4. 실제로 헷갈리는 두 쌍</h2>
+  <h3>신경성 파행 vs 혈관성 파행</h3>
+  <p>둘 다 <b>걷다가 다리가 아파서 쉰다</b>고 말해요. 그런데 원인이 완전히 달라요.</p>
+  <table>
+    <thead><tr><th></th><th>신경성 (척추관협착증)</th><th>혈관성 (말초동맥질환)</th></tr></thead>
+    <tbody>
+      <tr><td class="k">자세</td><td>허리를 젖히면 악화, 굽히면 완화</td><td>자세와 무관</td></tr>
+      <tr><td class="k">쉬는 방법</td><td>앉거나 허리를 굽혀야 편해요</td><td>서서 쉬어도 좋아져요</td></tr>
+      <tr><td class="k">자전거</td><td>허리를 굽히니까 잘 타요</td><td>다리를 쓰니까 똑같이 아파요</td></tr>
+      <tr><td class="k">맥박</td><td>정상</td><td>말초동맥 맥박이 약하거나 없음</td></tr>
+    </tbody>
+  </table>
+  <p>그래서 척추관협착증이 의심되면 <b>말초동맥 맥박을 만져 혈관성 파행을 배제</b>해요.
+  진찰 항목에 이게 들어 있는 이유예요.</p>
+
+  <h3>염증성 요통 vs 기계적 요통</h3>
+  <p><b>염증성</b>은 아침에 뻣뻣하고 <b>쉬면 더 아프고 움직이면 나아져요.</b> 강직척추염이죠.
+  <b>기계적</b>은 움직이면 아프고 쉬면 나아져요. 요추염좌고요.
+  이 방향 하나가 두 질환군을 통째로 가릅니다.</p>
+  <p>여기에 나이와 성별을 얹으면 더 선명해져요. <b>20~30대 젊은 남자</b>가 아침에 허리가
+  뻣뻣하고 운동하면 나아진다고 하면 강직척추염을 먼저 떠올려요.</p>
+
+  <div class="recall"><div class="lb">스스로 답해보기</div>
+    <p>마미증후군의 세 가지 소견은? 왜 양쪽에 오는가?</p>
+    <p>신경성 파행과 혈관성 파행을 가르는 질문 두 개는?</p>
+  </div>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 2</div>
+    <h1>최소 기초 세 덩어리</h1></div>
+
+  <h2>2-1. 척수는 요추 위에서 끝나고, 아래는 신경 다발이에요</h2>
+  <p>척수는 대개 첫째 또는 둘째 요추 높이에서 끝나요. 그 아래 척추관 안에는 척수가 없고
+  <b>신경뿌리들이 말 꼬리처럼 다발로</b> 내려가죠. 이 구조 차이가 목과 허리의 증상을
+  가릅니다.</p>
+  <p>목에서는 척수가 눌리면 그 아래 전부가 나빠졌어요. 허리에서는 척수가 없으니 그런 일이
+  안 생겨요. 대신 <b>다발이 한꺼번에 눌리는</b> 상황이 생기는데, 그게 마미증후군이에요.
+  한 뿌리만 눌리면 한쪽 다리, 다발이 눌리면 양쪽 다리와 방광 &middot; 직장이에요.</p>
+  <p><em>&rarr; 이 개념은 1-2 마미증후군, 3-4 마미증후군 루프,
+  PART 6의 A 마미증후군 질문에서 회수돼요.</em></p>
+
+  <h2>2-2. 하지 피부분절과 근절 &mdash; 어느 뿌리인지는 발이 알려줘요</h2>
+  <p>허리에서 문제가 되는 뿌리는 주로 셋이에요. <b>L4 · L5 · S1.</b> 각각 담당하는 감각
+  구역과 근육, 반사가 정해져 있어서 환자가 어디가 저린지만 말해도 높이가 잡혀요.</p>
+  <figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 176"><rect width="440" height="176" fill="#FFFFFF"/><path d="M14 22 H426" stroke="#74263A" stroke-width="1.2" fill="none"/><text x="14" y="17" font-family="Pretendard" font-size="7.4" fill="#74263A" font-weight="700" text-anchor="start">뿌리</text><text x="78" y="17" font-family="Pretendard" font-size="7.4" fill="#74263A" font-weight="700" text-anchor="start">감각 · 저린 곳</text><text x="218" y="17" font-family="Pretendard" font-size="7.4" fill="#74263A" font-weight="700" text-anchor="start">근력</text><text x="330" y="17" font-family="Pretendard" font-size="7.4" fill="#74263A" font-weight="700" text-anchor="start">반사</text><text x="14" y="40" font-family="Pretendard" font-size="9.5" fill="#4E1A28" font-weight="700" text-anchor="start">L4</text><text x="78" y="40" font-family="Pretendard" font-size="8.6" fill="#1A1B20" font-weight="400" text-anchor="start">정강이 안쪽</text><text x="218" y="40" font-family="Pretendard" font-size="8.6" fill="#1A1B20" font-weight="400" text-anchor="start">발목 젖히기</text><text x="330" y="40" font-family="Pretendard" font-size="8.6" fill="#1A1B20" font-weight="400" text-anchor="start">무릎 반사</text><path d="M14 48 H426" stroke="#DED7DA" stroke-width="0.6" fill="none"/><text x="14" y="64" font-family="Pretendard" font-size="9.5" fill="#4E1A28" font-weight="700" text-anchor="start">L5</text><text x="78" y="64" font-family="Pretendard" font-size="8.6" fill="#1A1B20" font-weight="400" text-anchor="start">엄지발가락 · 발등</text><text x="218" y="64" font-family="Pretendard" font-size="8.6" fill="#1A1B20" font-weight="400" text-anchor="start">엄지 젖히기</text><text x="330" y="64" font-family="Pretendard" font-size="8.6" fill="#1A1B20" font-weight="400" text-anchor="start">—</text><path d="M14 72 H426" stroke="#DED7DA" stroke-width="0.6" fill="none"/><text x="14" y="88" font-family="Pretendard" font-size="9.5" fill="#4E1A28" font-weight="700" text-anchor="start">S1</text><text x="78" y="88" font-family="Pretendard" font-size="8.6" fill="#1A1B20" font-weight="400" text-anchor="start">새끼발가락 · 발바닥</text><text x="218" y="88" font-family="Pretendard" font-size="8.6" fill="#1A1B20" font-weight="400" text-anchor="start">발끝으로 서기</text><text x="330" y="88" font-family="Pretendard" font-size="8.6" fill="#1A1B20" font-weight="400" text-anchor="start">발목 반사</text><path d="M14 96 H426" stroke="#DED7DA" stroke-width="0.6" fill="none"/><text x="14" y="122" font-family="Pretendard" font-size="8.2" fill="#6A656F" font-weight="400" text-anchor="start">환자가 저리다고 말한 손가락 하나가 병소의 높이를 지목한다.</text></svg>
+    <figcaption>하지 피부분절 · 근절 · 반사. 저린 발가락 하나가 높이를 알려준다</figcaption>
+  </figure>
+  <p>실전에서 특히 유용한 게 <b>발끝으로 서기</b>와 <b>발뒤꿈치로 걷기</b>예요.
+  발끝으로 못 서면 S1, 발목을 못 젖히면 L4~L5 쪽이에요. 근력을 숫자로 재는 것보다
+  이 동작 두 개가 빠르고 정확해요.</p>
+  <p><em>&rarr; 이 개념은 3-2 요추간판탈출증, PART 6의 A 추간판탈출증 질문,
+  PART 7의 하지 감각 · 근력 · DTR에서 회수돼요.</em></p>
+
+  <h2>2-3. 허리를 젖히면 통로가 좁아지고, 굽히면 넓어져요</h2>
+  <p>척추관과 추간공은 <b>허리를 젖히면 좁아지고 굽히면 넓어져요.</b> 젖히면 뒤쪽 구조물이
+  겹치면서 공간을 먹고, 굽히면 그 겹침이 풀리거든요.</p>
+  <p>이 사실 하나가 척추관협착증의 증상 전부를 설명해요. 서서 걸으면 자연히 허리가
+  약간 젖혀지니까 통로가 좁아져 다리가 아프고, 앉거나 허리를 굽히면 넓어져서 편해져요.
+  쉽게 말하면 <b>좁은 문이 자세에 따라 열렸다 닫혔다 하는</b> 셈이에요.</p>
+  <p>그래서 환자가 <b>쇼핑 카트를 밀면 오래 걷는다</b>거나 <b>자전거는 잘 탄다</b>고 말해요.
+  둘 다 허리를 굽힌 자세거든요. 이 진술이 나오면 협착증이 거의 확정돼요.</p>
+  <p><em>&rarr; 이 개념은 3-3 척추관협착증, 1-4의 파행 감별,
+  PART 6의 F 자세 항목, PART 7의 허리 extension 제한에서 회수돼요.</em></p>
+
+  <div class="recall"><div class="lb">스스로 답해보기</div>
+    <p>목과 허리에서 척수 구조가 어떻게 다른가? 그게 증상을 어떻게 바꾸는가?</p>
+    <p>발끝으로 못 서면 어느 뿌리인가?</p>
+    <p>척추관협착증 환자가 자전거를 잘 타는 이유는?</p>
+  </div>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 3</div>
+    <h1>핵심 질환 한 바퀴</h1>
+    <p class="dek">다섯만 정상에서 고장까지 돌려요. 가장 흔한 것 하나, 신경 침범 둘,
+    응급 하나, 염증성 하나.</p></div>
+
+  <h2>3-1. 요추염좌</h2>
+  <p class="sub">가장 흔한 원인. 왜 2주면 괜찮아질까요?</p>
+  <blockquote><div class="who">환자</div>
+    <p>어제 무거운 짐을 들다가 허리를 삐끗했어요.</p>
+    <p>허리 근육이 뻐근하게 아픈데 다리로 내려가진 않아요.</p>
+    <p>구부리기가 힘들고 움직이면 더 아파요.</p></blockquote>
+  <p>결정적인 건 <b>사건 + 다리로 안 내려감 + 움직이면 악화</b>예요.
+  허리 통증에서 가장 흔한 원인이고, 이 셋이 모이면 신경학적 이상 칸이 통째로 지워져요.</p>
+
+  <h3>왜 근육과 인대가 다칠까요?</h3>
+  <p>무거운 것을 들 때 허리는 지렛대의 받침점이 돼요. 물건이 몸에서 멀수록 허리에 걸리는
+  힘이 몇 배로 커지죠. 준비 없이 갑자기 힘이 걸리면 근섬유와 인대에 미세 손상이 생기고,
+  염증 매개물질이 나와 통증과 근경직을 만들어요.</p>
+
+  <h3>왜 신경학적 검사가 정상일까요?</h3>
+  <p>병소가 근육과 인대이지 신경뿌리가 아니거든요. 그래서 <b>SLR도 음성이고 근력 &middot;
+  감각 &middot; 반사가 다 정상</b>이에요. 대신 압통점이 있고 허리 운동이 제한돼요.
+  이 조합이 요추염좌의 진찰 소견이에요.</p>
+
+  <h3>왜 2주면 괜찮아진다고 말할까요?</h3>
+  <p>근육과 인대의 미세 손상은 스스로 아무는 조직이에요. 급성 염증이 가라앉고 조직이
+  재생되는 데 보통 그 정도가 걸려요. 그래서 <b>안심시키는 것 자체가 치료의 일부</b>예요.
+  다만 무리한 활동은 제한하고 진통제와 온찜질로 통증을 줄여 줘요.</p>
+
+  <p><b>쌍둥이 감별 &mdash; 요추간판탈출증.</b> 둘 다 무거운 걸 들다가 시작될 수 있어요.
+  갈라주는 건 <em>다리로 내려가나요, 저리나요</em> 한 문장이에요. 염좌는 방사통이 없어요.</p>
+
+  <p><b>CPX 연결.</b> O에서 무거운 짐 · 삐끗 사건을 잡고 &rarr; L에서 다리로 안 내려감을
+  확인하고 &rarr; F에서 움직이면 악화를 받아내고 &rarr; A 척추 염좌에서 굽히기 어려운지 묻고
+  &rarr; PEx에서 압통점 · 허리 ROM · 정상 신경학적 검사 &rarr; Edu에서 2주면 좋아진다고
+  안심시키고 자세 교정과 온찜질을 설명해요.</p>
+
+  <p class="sub"><b>SP 언어 사인</b> &nbsp; 무거운 걸 들다가 삐끗했어요 &middot; 허리가 뻐근해요
+  &middot; 다리로는 안 내려가요 &middot; 구부리기가 힘들어요</p>
+
+  <h2>3-2. 요추간판탈출증</h2>
+  <p class="sub">왜 한쪽 다리로 내려가고, 왜 기침하면 심해질까요?</p>
+  <blockquote><div class="who">환자</div>
+    <p>허리가 아픈데 오른쪽 엉덩이에서 종아리까지 내려가요.</p>
+    <p>발가락 쪽이 저릿저릿합니다.</p>
+    <p>기침하거나 힘을 주면 확 심해져요.</p></blockquote>
+  <p>결정적인 건 <b>편측 하지 방사통 + 저림 + 복압 상승에서 악화</b>예요.
+  한쪽이라는 게 중요해요. 양쪽이면 마미증후군이나 협착증 쪽으로 가야 하거든요.</p>
+
+  <h3>왜 한쪽일까요?</h3>
+  <p>추간판이 뒤쪽 옆으로 튀어나오는 일이 많아요. 뒤 정중앙은 두꺼운 인대가 막고 있어서
+  상대적으로 옆이 약하거든요. 옆으로 나가면 그쪽 신경뿌리 하나만 눌리니까
+  <b>한쪽 다리</b>에만 증상이 생겨요.</p>
+
+  <h3>왜 기침하면 심해질까요?</h3>
+  <p>기침이나 배변 시 힘을 주면 배 안의 압력이 올라가고, 그 압력이 척추관 안의 정맥총으로
+  전달되어 <b>신경뿌리 주변이 순간적으로 부풀어요.</b> 이미 눌려 있는 신경이 더 눌리니
+  통증이 확 커지죠. 쉽게 말하면 <b>꽉 찬 방에 사람이 더 들어오는</b> 셈이에요.</p>
+
+  <h3>왜 SLR이 양성일까요?</h3>
+  <p>무릎을 편 채 다리를 들면 좌골신경이 위로 당겨져요. 정상이면 여유가 있어 안 아픈데,
+  신경뿌리가 눌려 있으면 조금만 당겨도 이미 눌린 부위가 자극되어 <b>원래의 방사통이
+  재현</b>돼요. 허벅지 뒤가 뻐근하게 당기는 건 근육이 늘어난 것이라 양성이 아니에요.</p>
+
+  <h3>왜 대부분 수술을 먼저 안 할까요?</h3>
+  <p>튀어나온 수핵은 시간이 지나면 수분이 빠지고 흡수되어 줄어들 수 있어요.
+  그래서 침상 안정 &middot; 물리 치료 &middot; NSAID로 시간을 벌어요. 다만 예외가 있어요.
+  <b>다리 힘이 급격히 약해지거나 대소변 장애가 생기면 응급</b>으로 넘어갑니다.</p>
+
+  <p><b>쌍둥이 감별 &mdash; 척추관협착증.</b> 둘 다 다리로 내려가요. 갈라주는 건
+  <em>한쪽인가 양쪽인가</em>와 <em>걷다가 쉬어야 하나요</em>예요. 협착증은 양쪽이고 파행이 있어요.</p>
+
+  <p><b>CPX 연결.</b> L에서 편측 방사 경로를 그리게 하고 &rarr; A 추간판탈출증에서 다리 근력과
+  감각 저하를 묻고 &rarr; F에서 기침 · 힘줄 때 악화를 확인하고 &rarr; PEx에서 하지 감각 ·
+  근력 · DTR과 <b>SLR</b> &rarr; 검사는 L-spine X-ray와 CT/MRI &rarr; Edu에서 보존적 치료
+  우선과 응급 상황을 설명해요.</p>
+
+  <p class="sub"><b>SP 언어 사인</b> &nbsp; 엉덩이에서 종아리로 내려가요 &middot; 발가락이 저려요
+  &middot; 기침하면 확 심해져요 &middot; 한쪽만 아파요</p>
+
+  <h2>3-3. 척추관협착증</h2>
+  <p class="sub">왜 걷다가 쉬어야 하고, 왜 앉으면 편해질까요?</p>
+  <blockquote><div class="who">환자</div>
+    <p>백 미터쯤 걸으면 다리가 저리고 아파서 쉬어야 해요.</p>
+    <p>앉아서 쉬면 금방 괜찮아지고 다시 걸을 수 있어요.</p>
+    <p>허리를 젖히면 더 아프고, 카트 밀고 장 볼 때는 오래 걸을 수 있어요.</p></blockquote>
+  <p>결정적인 건 <b>파행 + 자세 의존성</b>이에요. 걷다가 쉬어야 한다는 것과
+  <b>앉거나 굽히면 편하다</b>는 것. 이 둘이 같이 나오면 협착증이 거의 확정돼요.</p>
+
+  <h3>왜 척추관이 좁아질까요?</h3>
+  <p>나이가 들면서 추간판이 납작해지고, 후관절이 두꺼워지고, 황색인대가 접혀 들어와요.
+  세 방향에서 조금씩 공간을 먹으니 통로가 좁아집니다. 그래서 <b>50세 이상에서 서서히</b>
+  나빠지는 경과를 보여요.</p>
+
+  <h3>왜 걸으면 아플까요?</h3>
+  <p>서서 걸으면 허리가 자연히 약간 젖혀지고, 젖히면 통로가 더 좁아져요. 게다가 운동하는
+  신경은 혈류가 더 필요한데 눌린 상태에서는 공급이 안 따라가요. 그래서 <b>걷는 동안에만
+  증상이 나오고 멈추면 회복</b>돼요.</p>
+
+  <h3>왜 앉으면 좋아질까요?</h3>
+  <p>앉거나 허리를 굽히면 통로가 넓어지거든요. 그래서 앉아서 쉬면 금방 편해지고,
+  카트를 밀거나 자전거를 탈 때처럼 굽힌 자세에서는 오래 버텨요.
+  <b>이 자세 의존성이 혈관성 파행과 갈라주는 결정적 단서</b>예요.</p>
+
+  <h3>왜 신경학적 검사가 대개 정상일까요?</h3>
+  <p>가만히 있을 때는 압박이 심하지 않기 때문이에요. 진료실에서 누워서 검사하면
+  감각과 근력이 정상으로 나오는 경우가 많아요. 그래서 <b>증상은 심한데 진찰은 정상</b>이라는
+  불일치 자체가 이 진단을 시사해요. 다만 허리 extension은 제한돼요.</p>
+
+  <p><b>쌍둥이 감별 &mdash; 말초동맥질환.</b> 둘 다 걷다가 쉬어요. 갈라주는 건
+  <em>앉아야 좋아지나요, 서서 쉬어도 좋아지나요</em>와 말초동맥 맥박이에요.</p>
+
+  <p><b>CPX 연결.</b> A 척추관협착증에서 파행을 묻고 &rarr; F 자세에서 젖히면 악화 · 앉으면
+  완화를 확인하고 &rarr; PEx에서 허리 extension 제한과 <b>말초동맥 맥박 촉진</b> &rarr;
+  검사는 L-spine X-ray와 CT/MRI &rarr; Edu에서 보존적 치료와 자세 교육을 설명해요.</p>
+
+  <p class="sub"><b>SP 언어 사인</b> &nbsp; 조금 걸으면 다리가 아파서 쉬어요 &middot;
+  앉으면 금방 나아요 &middot; 젖히면 더 아파요 &middot; 카트 밀면 오래 걸어요</p>
+
+  <h2>3-4. 마미증후군</h2>
+  <p class="sub">왜 이게 이 CC의 유일한 응급일까요?</p>
+  <blockquote><div class="who">환자</div>
+    <p>사흘 전부터 허리가 심하게 아프더니 어제부터 소변이 새요.</p>
+    <p>양쪽 다리에 힘이 없고 걷기가 힘듭니다.</p>
+    <p>엉덩이 쪽하고 사타구니 감각이 둔해요.</p></blockquote>
+  <p>결정적인 건 <b>배뇨 · 배변 이상 + 양쪽 다리 + 안장 부위 감각 마비</b> 삼중 조합이에요.
+  <b>한쪽이 아니라 양쪽</b>이라는 게 핵심이에요.</p>
+
+  <h3>왜 양쪽에 올까요?</h3>
+  <p>요추 아래 척추관에는 신경뿌리들이 다발로 내려가고 있어요. 큰 추간판 탈출이나 종양이
+  가운데를 누르면 <b>그 다발 전체가 한꺼번에 눌려요.</b> 좌우 뿌리가 함께 있으니 양쪽에
+  증상이 생기죠. 쉽게 말하면 전선 하나가 아니라 <b>전선 다발이 통째로 눌린</b> 셈이에요.</p>
+
+  <h3>왜 소변과 대변이 먼저 티가 날까요?</h3>
+  <p>방광과 직장을 조절하는 뿌리가 이 다발의 아래쪽에 모여 있어서예요. 그리고 배뇨 기능은
+  한번 손상되면 회복이 잘 안 돼요. 그래서 <b>이 증상이 나오면 시간이 곧 기능</b>이에요.</p>
+
+  <h3>왜 안장 부위 감각이 마비될까요?</h3>
+  <p>회음부와 항문 주변, 그러니까 <b>안장에 닿는 부위</b>를 담당하는 뿌리가 함께 눌리기
+  때문이에요. 그래서 이 부위 감각을 확인하는 게 진찰의 핵심이에요.
+  묻지 않으면 환자가 먼저 말하지 않는 경우도 많고요.</p>
+
+  <h3>왜 응급 수술일까요?</h3>
+  <p>압박이 계속되면 신경이 비가역적으로 손상되기 때문이에요. 보존적 치료로 기다릴 수 있는
+  상황이 아니라 <b>응급 수술로 완전히 감압</b>해야 해요. 허리 통증 CC에서 이 진단만
+  다른 모든 것보다 우선합니다.</p>
+
+  <p><b>쌍둥이 감별 &mdash; 요추간판탈출증.</b> 같은 추간판이 원인일 수 있어요.
+  갈라주는 건 <em>한쪽인가 양쪽인가</em>와 <em>소변 · 대변에 문제가 있나요</em>예요.</p>
+
+  <p><b>CPX 연결.</b> A 마미증후군에서 요실금 · 변실금 · 항문 주위 감각을 묻고 &rarr;
+  L에서 양쪽임을 확인하고 &rarr; PEx에서 양하지 근력 · 심부건 반사 저하와 회음부 감각 &rarr;
+  검사는 L-spine MRI &rarr; Edu에서 응급 수술이 필요한 이유를 설명해요.</p>
+
+  <p class="sub"><b>SP 언어 사인</b> &nbsp; 소변이 새요 &middot; 양쪽 다리에 힘이 없어요
+  &middot; 엉덩이 쪽 감각이 둔해요 &middot; 걷기가 힘들어요</p>
+
+  <h2>3-5. 강직척추염</h2>
+  <p class="sub">왜 쉬면 더 아프고 움직이면 나아질까요?</p>
+  <blockquote><div class="who">환자</div>
+    <p>스물여덟 살 남자입니다. 반년 전부터 허리와 엉치가 아파요.</p>
+    <p>아침에 한 시간 넘게 뻣뻣하고, 움직이면 오히려 나아져요.</p>
+    <p>누워 있으면 더 아파서 새벽에 일어나 걸어 다닙니다.</p>
+    <p>얼마 전에 눈이 빨개지고 아파서 안과에 갔어요.</p></blockquote>
+  <p>결정적인 건 <b>젊은 남자 + 조조강직 + 휴식에서 악화 · 운동에서 호전</b>이에요.
+  기계적 요통과 정확히 반대 방향이라, 이 한 가지로 요추염좌 계열이 통째로 내려가요.</p>
+
+  <h3>왜 부착부에 염증이 생길까요?</h3>
+  <p>강직척추염은 힘줄과 인대가 뼈에 붙는 자리, 그러니까 <b>부착부(enthesis)</b>에 염증이
+  생기는 병이에요. 척추와 천장관절은 인대 부착부가 밀집한 곳이라 여기가 먼저 걸려요.
+  그래서 허리와 엉치가 아프죠.</p>
+
+  <h3>왜 쉬면 더 아플까요?</h3>
+  <p>염증성 삼출액이 가만히 있는 동안 관절 주위에 고이기 때문이에요. 움직이면 그게 흩어져
+  통증이 줄고요. 그래서 <b>새벽에 아파서 일어나 걸어 다닌다</b>는 진술이 나와요.
+  기계적 요통 환자는 절대 이런 말을 하지 않아요.</p>
+
+  <h3>왜 척추가 굳을까요?</h3>
+  <p>염증이 반복되면 그 자리에 새 뼈가 자라 척추뼈끼리 다리를 놓아요. 시간이 지나면
+  마디가 붙어 <b>허리가 안 굽는 상태</b>가 됩니다. Schober test가 재는 게 정확히 이거예요.
+  굽혔을 때 피부가 늘어나는 거리가 줄어들거든요.</p>
+
+  <h3>왜 눈과 장을 같이 물을까요?</h3>
+  <p>같은 면역 축을 공유하는 질환군이라 관절 밖 침범이 흔해요. <b>포도막염</b>이 대표적이고,
+  궤양성 대장염 같은 <b>염증성 장질환</b>이 동반되기도 해요. 그래서 눈 충혈과 통증, 설사와
+  복통을 함께 묻고, 포도막염이 의심되면 <b>안과 검진을 추가</b>해요.</p>
+
+  <p><b>쌍둥이 감별 &mdash; 요추염좌.</b> 둘 다 젊은 사람에게 와요. 갈라주는 건
+  <em>쉬면 나아지나요, 움직이면 나아지나요</em>와 조조강직 지속시간이에요.</p>
+
+  <p><b>CPX 연결.</b> A 강직척추염에서 조조강직 · 포도막염 · 설사 · 복통을 묻고 &rarr;
+  F 운동에서 휴식 시 악화를 확인하고 &rarr; PEx에서 <b>Schober test</b>와 Patrick test에서
+  반대측 통증, 필요하면 chest expansion &rarr; 검사는 Lumbar X-ray · HLA-B27 · ESR · CRP
+  &rarr; Edu에서 재활과 운동 치료, 안과 검진 예약을 설명해요.</p>
+
+  <p class="sub"><b>SP 언어 사인</b> &nbsp; 아침에 허리가 뻣뻣해요 &middot; 움직이면 나아요
+  &middot; 누워 있으면 더 아파요 &middot; 눈이 빨개지고 아팠어요</p>
+
+  <h2>3-6. 나머지는 결정 단서만</h2>
+  <table>
+    <thead><tr><th>질환</th><th>덩어리</th><th>결정 단서</th><th>검사 · 치료</th></tr></thead>
+    <tbody>
+      <tr><td class="k">척추 종양</td><td class="s">신경학적 · 종양</td>
+          <td>이전 암 병력, 체중 감소, <b>야간 통증</b>. 하지 감각 이상과 근력 감소</td>
+          <td class="s">L-spine X-ray · CT/MRI / 방사선 · 항암 · 수술</td></tr>
+      <tr><td class="k">요추압박골절</td><td class="s">근골격 · 뼈</td>
+          <td>골다공증, 가볍게 넘어짐, 요통과 요추부 운동 제한</td>
+          <td class="s">L-spine X-ray · CT/MRI / 요추보조기 · NSAID · Opioid · 골다공증 치료 · 수술</td></tr>
+      <tr><td class="k">골관절염</td><td class="s">류마티스 · 기타</td>
+          <td>50세 이상, 조조강직 30분 미만, 비빔소리, ROM 감소</td>
+          <td class="s">&mdash; / NSAID · 재활 및 운동 치료 · 생활 습관 개선</td></tr>
+      <tr><td class="k">척추 감염 · 농양</td><td class="s">기타 · 감염</td>
+          <td>발열, 면역저하, 최근 시술. 야간통이 동반되기도 해요</td>
+          <td class="s">MRI · 염증수치 / 항생제 · 필요 시 배농</td></tr>
+      <tr><td class="k">복부대동맥류</td><td class="s">기타 · 연관통</td>
+          <td>고령, 박동성 복부 덩어리, 갑작스러운 허리 · 복부 통증</td>
+          <td class="s">복부 초음파 · CT / 응급 수술 고려</td></tr>
+      <tr><td class="k">신우신염 · 요로결석</td><td class="s">기타 · 연관통</td>
+          <td>옆구리 통증, 늑골척추각 압통, 혈뇨나 발열</td>
+          <td class="s">소변검사 · 영상 / 항생제 · 진통 · 배석 치료</td></tr>
+      <tr><td class="k">췌장염 · 담낭염 · 담석증</td><td class="s">기타 · 연관통</td>
+          <td>식사와 관련된 복통이 등으로 뻗쳐요</td>
+          <td class="s">혈액 · 복부 영상 / 원인 질환 치료</td></tr>
+      <tr><td class="k">자궁내막증 · PID · 전립선염</td><td class="s">기타 · 연관통</td>
+          <td>월경 관련 통증, 골반 · 배뇨 증상 동반</td>
+          <td class="s">부인과 · 비뇨의학과 평가 / 원인 질환 치료</td></tr>
+    </tbody>
+  </table>
+
+  <h2>3-7. 다섯 질환을 네 축으로</h2>
+  <table>
+    <thead><tr><th></th><th>방사</th><th>악화</th><th>완화</th><th>신경학적 검사</th></tr></thead>
+    <tbody>
+      <tr><td class="k">요추염좌</td><td class="s">없음</td><td>움직이면</td><td>쉬면</td><td class="s">정상</td></tr>
+      <tr><td class="k">추간판탈출증</td><td>편측 하지</td><td>기침 · 힘줄 때</td><td>눕거나 안정</td><td>SLR(+), 근력 · 감각 · 반사 이상</td></tr>
+      <tr><td class="k">척추관협착증</td><td>양측 하지</td><td>걷기 · 젖힘</td><td>앉기 · 굽힘</td><td class="s">대개 정상, extension 제한</td></tr>
+      <tr><td class="k">마미증후군</td><td>양측 하지</td><td class="s">&mdash;</td><td class="s">&mdash;</td><td>양하지 근력 · 반사 저하, 안장 감각 마비</td></tr>
+      <tr><td class="k">강직척추염</td><td class="s">엉치</td><td>휴식 · 아침</td><td>운동</td><td>Schober(+), Patrick 반대측 통증</td></tr>
+    </tbody>
+  </table>
+
+  <div class="recall"><div class="lb">스스로 답해보기</div>
+    <p>요추간판탈출증이 왜 한쪽에만 오는가?</p>
+    <p>기침할 때 심해지는 기전은?</p>
+    <p>척추관협착증에서 증상은 심한데 진찰이 정상인 이유는?</p>
+    <p>강직척추염이 쉬면 더 아픈 기전은?</p>
+  </div>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 4</div>
+    <h1>채점 역산표</h1>
+    <p class="dek">허리는 진찰이 세 자세로 나뉘어 시간이 빠듯해요. 문진을 빨리 닫아야 해요.</p></div>
+
+  <h2>4-1. MUST</h2>
+  <ul class="plain">
+    <li><b>A 마미증후군</b> 요실금 · 변실금 · 항문 주위 감각 이상. 응급을 거르는 줄이에요.<span class="g">MUST</span></li>
+    <li><b>L 방사통</b> 대축을 가르는 질문. 그리고 한쪽인지 양쪽인지.<span class="g">MUST</span></li>
+    <li><b>A 전신</b> 발열 · 체중 변화. 감염과 암 전이를 지목해요.<span class="g">MUST</span></li>
+    <li><b>A 추간판탈출증</b> 다리 근력 저하 · 감각 저하.<span class="g">MUST</span></li>
+    <li><b>A 척추관협착증</b> 걷다가 다리가 아파서 쉬어야 하는지(파행).<span class="g">MUST</span></li>
+    <li><b>A 강직척추염</b> 조조강직 · 포도막염 · 설사 · 복통.<span class="g">MUST</span></li>
+    <li><b>F 자세 · 운동</b> 젖힘인지 굽힘인지, 휴식인지 활동인지.<span class="g">MUST</span></li>
+    <li><b>외 외상 · 골절력</b> 압박골절과 골다공증의 배경.<span class="g">MUST</span></li>
+    <li><b>과 · 골다공증 검사 여부</b> 골절과 종양을 세워요.<span class="g">MUST</span></li>
+  </ul>
+
+  <h2>4-2. SHOULD와 DROP</h2>
+  <table>
+    <thead><tr><th>등급</th><th>항목</th><th>왜 그 등급인가</th></tr></thead>
+    <tbody>
+      <tr><td class="k">SHOULD</td><td>A 정신 · 우울</td><td class="s">만성 요통과 기분 증상은 서로를 악화시켜요</td></tr>
+      <tr><td class="k">SHOULD</td><td>A 척추 염좌 · 굽히기 어려운지</td><td class="s">근육 · 인대 손상을 시사해요</td></tr>
+      <tr><td class="k">SHOULD</td><td>Ex 이전 치료와 반응</td><td class="s">치료 반응이 진단 정보가 돼요</td></tr>
+      <tr><td class="k">SHOULD</td><td>사 직업 · 근무 자세 · 운동</td><td class="s">요추 부하의 배경이자 교육에서 교정할 대상</td></tr>
+      <tr><td class="k">SHOULD</td><td>가 류마티스 · 척추 · 신경계 가족력</td><td class="s">강직척추염은 가족 집적성이 뚜렷해요</td></tr>
+      <tr><td class="k">DROP</td><td>E 건강검진</td><td class="s">골밀도 언급이 나오면 유용하지만 대개 정보가 없어요</td></tr>
+      <tr><td class="k">DROP</td><td>Co 점점 심해지나요</td><td class="s">O · D와 겹쳐요. 다만 계속 나빠지면 종양을 올려요</td></tr>
+      <tr><td class="k">DROP</td><td>C 압통 · 발적 · 종창 · 열감</td><td class="s">관절 CC의 항목이라 허리에서는 기여가 얕아요</td></tr>
+      <tr><td class="k">DROP</td><td>여 폐경</td><td class="s">골다공증 배경으로만 의미가 있어요</td></tr>
+    </tbody>
+  </table>
+  <p><b>버리는 순서</b>는 C 염증 소견 &rarr; E &rarr; 여 &rarr; Co예요.
+  <b>MUST 아홉 개, 특히 마미증후군 줄은 어떤 경우에도 지켜요.</b></p>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 5</div>
+    <h1>문진 개관</h1>
+    <p class="dek">목과 뼈대는 같아요. 다른 건 A의 구성과, 그 안에 응급이 들어 있다는 점이에요.</p></div>
+
+  <p>앞쪽 절반(O &middot; L &middot; D &middot; Co &middot; Ex &middot; C)이 통증을 해부하고,
+  <b>L의 방사통 하나가 대축을 결정</b>해요. 여기까지는 목과 똑같아요.</p>
+
+  <p>A가 달라요. 일곱 줄 중 <b>마미증후군 줄이 응급</b>이고, 나머지가 각각 추간판탈출증
+  &middot; 척추관협착증 &middot; 강직척추염 &middot; 척추염좌를 겨냥해요. 그리고
+  <b>전신 줄이 감염과 암 전이 둘을 동시에</b> 훑고요.</p>
+
+  <p>F는 허리에서 특히 무거워요. <b>자세</b>가 협착증(젖힘 악화 · 굽힘 완화)과
+  추간판탈출증(기침 · 힘줄 때 악화)을 갈라주고, <b>운동</b>이 강직척추염(휴식 악화)과
+  요추염좌(활동 악화)를 갈라주거든요. 질문 두 개가 네 질환을 정리해요.</p>
+
+  <p><em>문진의 뼈대 한 줄 &mdash; 마미증후군을 먼저 지우고, 방사통으로 대축을 정하고,
+  자세와 운동 방향으로 네 질환을 가른다.</em></p>
+
+  <h2>5-1. 암기법</h2>
+  <table>
+    <thead><tr><th>항목</th><th>암기법</th><th>풀이</th></tr></thead>
+    <tbody>
+      <tr><td class="k">A 동반</td><td><b>허리 아파 탈출하는<br>협객은 맘이 강직하다</b></td>
+          <td>탈출 &mdash; 추간판탈출증(다리 근력 · 감각) &middot; 협 &mdash; 척추관협착증(파행)
+              &middot; 맘 &mdash; 마미증후군(요실금 · 변실금 · 항문 주위 감각)
+              &middot; 강직 &mdash; 강직척추염(조조강직 · 포도막염 · 설사 · 복통)</td></tr>
+    </tbody>
+  </table>
+  <p>여기에 맨 앞의 <b>전신</b>(발열 · 오한 · 피로 · 체중 변화)과 뒤의
+  <b>정신</b>(우울), <b>척추 염좌</b>(굽히기 어려운지)를 더하면 일곱 줄이 완성돼요.</p>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 6</div>
+    <h1>History taking</h1></div>
+
+  <h2>6-1. O &mdash; 사건을 특정해요</h2>
+  <p>허리 통증의 O에도 사건 질문이 있어요. <b>기침 · 넘어짐 · 허리 삐끗 · 걷다가</b>가
+  대표적이고, 각각 다른 질환을 지목해요.</p>
+  <div class="si"><div><span class="code">O  발생</span><span class="g">MUST</span></div>
+  <div class="say">언제부터 허리가 아팠나요? 갑자기인가요, 서서히인가요? 특별히 어떤 상황에서 시작되었나요?</div><p class="why">사건이 잡히면 질환군이 통째로 올라와요. 기침 · 넘어짐 · 삐끗 · 걷다가 넷을 제시하면 환자가 잘 답해요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>무거운 것을 들다 삐끗</td><td class="dx">요추염좌 · 추간판탈출증</td><td class="rz">준비 없이 큰 힘이 걸리면 근육 · 인대와 추간판이 함께 손상된다</td></tr><tr><td>기침하다가</td><td class="dx">요추간판탈출증 · 압박골절</td><td class="rz">복압 상승이 추간판과 약해진 척추체에 순간적 부하를 준다</td></tr><tr><td>가볍게 넘어진 뒤</td><td class="dx">요추압박골절</td><td class="rz">낮은 에너지 손상에서 골절되면 골강도가 낮다는 뜻이다</td></tr><tr><td>걷다가</td><td class="dx">척추관협착증</td><td class="rz">보행 자세에서 통로가 좁아져 증상이 나온다</td></tr><tr><td>서서히 몇 달</td><td class="dx">협착증 · 강직척추염 · 종양</td><td class="rz">구조 변화나 염증이 누적되어야 증상이 나온다</td></tr></tbody></table></div>
+
+  <h2>6-2. L &mdash; 대축을 가르고, 한쪽인지 양쪽인지까지</h2>
+  <p>목과 같은 항목인데 하나가 더 붙어요. <b>한쪽인가 양쪽인가.</b>
+  편측이면 추간판탈출증, 양측이면 협착증이나 마미증후군으로 갈려요.</p>
+  <div class="si"><div><span class="code">L  부위 · 방사</span><span class="g">MUST</span></div>
+  <div class="say">통증이 있는 부위가 어디인가요? 짚어보시겠어요? 통증이 어디로 뻗치나요? 한쪽인가요, 양쪽인가요? 허리 외에 아픈 곳은 없나요?</div><p class="why">대축을 가르고 편측 · 양측까지 확정해요. 허리 외 부위를 묻는 건 연관통을 지우기 위해서예요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>한쪽 엉덩이에서 다리로</td><td class="dx">요추간판탈출증</td><td class="rz">추간판이 뒤쪽 옆으로 나가 그쪽 뿌리 하나만 누른다</td></tr><tr><td>양쪽 다리로</td><td class="dx">척추관협착증 · 마미증후군</td><td class="rz">가운데 통로가 좁아지면 좌우 뿌리가 함께 눌린다</td></tr><tr><td>허리에만 국한</td><td class="dx">요추염좌 · 압박골절</td><td class="rz">병소가 근육 · 인대 · 뼈라 신경 경로를 따라갈 이유가 없다</td></tr><tr><td>허리와 엉치</td><td class="dx">강직척추염</td><td class="rz">천장관절과 척추 부착부가 표적이다</td></tr><tr><td>옆구리로</td><td class="dx">신우신염 · 요로결석</td><td class="rz">신장에서 오는 연관통이다</td></tr><tr><td>배가 아픈데 등으로</td><td class="dx">췌장염 · 담낭염 · 대동맥류</td><td class="rz">복부 장기의 통증이 등으로 전달된다</td></tr></tbody></table></div>
+
+  <h2>6-3. D · Co · Ex</h2>
+  <div class="si"><div><span class="code">D  지속 · 빈도</span><span class="g">SHOULD</span></div>
+  <div class="say">통증이 얼마나 지속되나요? 하루에 몇 번이나 통증을 느끼시나요?</div><p class="why">지속과 빈도가 급성 사건인지 만성 진행인지를 갈라요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>걸을 때만 잠깐</td><td class="dx">척추관협착증</td><td class="rz">보행 자세에서만 통로가 좁아진다</td></tr><tr><td>하루 종일</td><td class="dx">염증성 · 종양</td><td class="rz">자극과 무관하게 아프면 조직 자체의 병변이다</td></tr><tr><td>밤에 심해진다</td><td class="dx">척추 종양 · 감염</td><td class="rz">야간통은 red flag로 다뤄야 한다</td></tr><tr><td>며칠째 점점</td><td class="dx">급성 사건 후 경과</td><td class="rz">손상 후 염증 반응이 자리를 잡는 시간이다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">Co  진행</span><span class="g">DROP</span></div>
+  <div class="say">통증이 점점 더 심해지나요?</div><p class="why">O · D와 겹쳐요. 다만 계속 나빠진다는 답은 종양과 감염을 위로 올려요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>계속 나빠진다</td><td class="dx">종양 · 감염</td><td class="rz">병변이 커지거나 진행하고 있다</td></tr><tr><td>좋아졌다 나빠졌다</td><td class="dx">염좌 · 협착증</td><td class="rz">자세와 활동량에 따라 오르내린다</td></tr><tr><td>2주쯤 지나 좋아지고 있다</td><td class="dx">요추염좌</td><td class="rz">근육과 인대의 미세 손상은 스스로 아문다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">Ex  과거 삽화 · 치료 반응</span><span class="g">SHOULD</span></div>
+  <div class="say">이전에도 통증이 있었나요? 그때 병원에서 진단을 받으셨나요? 진통제나 파스를 쓰셨나요? 효과가 있던가요?</div><p class="why">치료 반응이 진단 정보가 돼요. 반복 여부는 만성 구조 문제를 시사하고요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>전에도 같은 통증</td><td class="dx">만성 · 재발성</td><td class="rz">구조적 원인이나 자세 습관이 남아 있다</td></tr><tr><td>진통제에 반응</td><td class="dx">염증성 · 근골격</td><td class="rz">약물 반응성이 간접 근거가 된다</td></tr><tr><td>약을 먹어도 그대로</td><td class="dx">신경병증 · 종양 · 감염</td><td class="rz">일반 진통제로 조절되지 않으면 기전이 다르다</td></tr><tr><td>처음이다</td><td class="dx">급성 사건</td><td class="rz">새로 생긴 원인을 찾는다</td></tr></tbody></table></div>
+
+  <h2>6-4. C &mdash; 양상과 강도</h2>
+  <div class="si"><div><span class="code">C  양상 · 강도</span><span class="g">MUST</span></div>
+  <div class="say">통증이 어떤 양상인가요? 칼로 찌르듯인가요, 전기가 통하듯인가요, 둔하고 뻐근한가요? 안 아픈 것을 0점, 가장 아픈 것을 10점으로 하면 몇 점인가요?</div><p class="why">양상 하나로 신경성과 근골격성이 갈려요. NRS는 중증도와 응급성을 재고요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>전기가 통하듯 다리로</td><td class="dx">요추간판탈출증</td><td class="rz">눌린 신경 섬유의 이상 방전이다</td></tr><tr><td>둔하고 뻐근</td><td class="dx">요추염좌 · 근육통</td><td class="rz">근육과 인대의 손상은 둔통으로 나타난다</td></tr><tr><td>깊고 쑤신다 · 밤에 심함</td><td class="dx">종양 · 감염</td><td class="rz">조직 자체의 병변은 자극과 무관하게 아프다</td></tr><tr><td>쥐어짜듯 옆구리</td><td class="dx">요로결석</td><td class="rz">요관 경련이 만드는 산통이다</td></tr><tr><td>8점 이상 · 갑자기</td><td class="dx">골절 · 대동맥류</td><td class="rz">급성 구조 파괴는 극심한 통증을 만든다</td></tr></tbody></table></div>
+
+  <h2>6-5. A &mdash; 일곱 줄, 그중 하나는 응급</h2>
+  <div class="si"><div><span class="code">A  전신</span><span class="g">MUST</span></div>
+  <div class="say">발열이나 오한이 있나요? 피로하거나 체중이 변하지는 않았나요?</div><p class="why">발열은 척추 감염을, 체중 감소는 암 전이를 지목해요. 두 red flag를 한 줄로 훑어요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>열이 난다</td><td class="dx">척추 감염 · 농양 · 신우신염</td><td class="rz">감염이 전신 반응을 만든다</td></tr><tr><td>체중이 빠진다</td><td class="dx">척추 종양 · 전이</td><td class="rz">악성 질환의 소모 증상이다</td></tr><tr><td>전신 증상 없음</td><td class="dx">근골격 · 신경학적</td><td class="rz">국소 원인이면 전신 반응이 생길 이유가 없다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">A  마미증후군</span><span class="g">MUST</span></div>
+  <div class="say">소변이나 대변이 새지는 않나요? 항문 주위나 사타구니 감각이 둔하지는 않나요?</div><p class="why">이 CC의 유일한 응급을 거르는 줄이에요. 묻지 않으면 환자가 먼저 말하지 않는 경우가 많아요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>소변 · 대변이 샌다</td><td class="dx">마미증후군</td><td class="rz">방광과 직장을 담당하는 뿌리가 다발 아래쪽에 모여 있다</td></tr><tr><td>항문 주위 · 회음부 감각이 둔하다</td><td class="dx">마미증후군</td><td class="rz">안장에 닿는 부위를 담당하는 뿌리가 함께 눌린다</td></tr><tr><td>양쪽 다리에 힘이 없다</td><td class="dx">마미증후군</td><td class="rz">다발이 통째로 눌리면 좌우가 함께 나빠진다</td></tr><tr><td>없다</td><td class="dx">응급 배제</td><td class="rz">다만 증상이 진행할 수 있으므로 교육에서 반드시 알려준다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">A  추간판탈출증</span><span class="g">MUST</span></div>
+  <div class="say">다리 힘이 약해지거나 감각이 둔하지는 않나요?</div><p class="why">신경 침범의 진행 신호예요. 저림은 초기, 근력 저하는 진행이에요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>발끝으로 서기가 안 된다</td><td class="dx">S1 뿌리 병변</td><td class="rz">해당 뿌리가 담당하는 근육의 힘이 빠진다</td></tr><tr><td>발목을 못 젖힌다</td><td class="dx">L4~L5 뿌리 병변</td><td class="rz">전경골근을 담당하는 뿌리가 눌린다</td></tr><tr><td>특정 발가락만 둔하다</td><td class="dx">해당 뿌리 병변</td><td class="rz">피부분절이 병소의 높이를 지목한다</td></tr><tr><td>없다</td><td class="dx">신경 침범 근거 약함</td><td class="rz">다만 방사통만 있어도 신경학적 이상 칸에 남긴다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">A  척추관협착증</span><span class="g">MUST</span></div>
+  <div class="say">걷다가 다리가 아파서 쉬어야 하나요? 쉬면 다시 걸을 수 있나요?</div><p class="why">파행을 확인해요. 자세 의존성까지 같이 물으면 혈관성 파행과 갈려요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>걷다 쉬고 다시 걷는다</td><td class="dx">파행 · 척추관협착증</td><td class="rz">보행 자세에서 통로가 좁아져 증상이 나온다</td></tr><tr><td>앉아서 쉬어야 편하다</td><td class="dx">신경성 파행</td><td class="rz">굽힌 자세가 통로를 넓혀 준다</td></tr><tr><td>서서 쉬어도 좋아진다</td><td class="dx">혈관성 파행</td><td class="rz">자세와 무관하고 혈류 회복만으로 좋아진다</td></tr><tr><td>카트를 밀면 오래 걷는다</td><td class="dx">척추관협착증</td><td class="rz">굽힌 자세를 유지하면 통로가 열려 있다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">A  강직척추염</span><span class="g">MUST</span></div>
+  <div class="say">아침에 허리가 뻣뻣한가요? 얼마나 지속되나요? 눈이 빨개지고 아픈 적은요? 설사나 복통은 어떠신가요?</div><p class="why">염증성 요통과 관절 밖 침범을 함께 훑어요. 포도막염이 나오면 안과 검진을 추가해요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>아침에 한 시간 넘게 뻣뻣</td><td class="dx">강직척추염</td><td class="rz">밤새 고인 염증성 삼출액이 아침에 흩어지는 데 시간이 걸린다</td></tr><tr><td>눈이 빨개지고 아팠다</td><td class="dx">포도막염 동반</td><td class="rz">같은 면역 축을 공유해 관절 밖 침범이 흔하다</td></tr><tr><td>설사 · 복통이 있다</td><td class="dx">염증성 장질환 동반</td><td class="rz">척추관절병증군은 장 염증과 함께 오기도 한다</td></tr><tr><td>없다</td><td class="dx">강직척추염 가능성 낮음</td><td class="rz">염증성 요통의 핵심 소견이 빠진다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">A  정신</span><span class="g">SHOULD</span></div>
+  <div class="say">요즘 기분은 어떠신가요? 우울하거나 의욕이 없지는 않으신가요?</div><p class="why">만성 요통과 기분 증상은 서로를 악화시켜요. 치료 계획에도 영향을 줍니다.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>우울하다</td><td class="dx">만성 통증 · 기분 증상 동반</td><td class="rz">통증과 우울은 양방향으로 서로를 악화시킨다</td></tr><tr><td>일상에 지장이 크다</td><td class="dx">기능 저하</td><td class="rz">치료 목표를 통증 감소가 아니라 기능 회복으로 잡는다</td></tr><tr><td>괜찮다</td><td class="dx">특이 소견 없음</td><td class="rz">신체 원인에 집중한다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">A  척추 염좌</span><span class="g">SHOULD</span></div>
+  <div class="say">허리를 굽히기 어려운가요?</div><p class="why">굽힘 제한은 근육과 인대의 손상을 시사해요. 압박골절에서도 나올 수 있어요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>굽히기 어렵다</td><td class="dx">요추염좌 · 압박골절</td><td class="rz">손상된 조직에 장력이 걸려 아프다</td></tr><tr><td>젖히기가 더 어렵다</td><td class="dx">척추관협착증</td><td class="rz">젖히면 통로가 좁아져 증상이 나온다</td></tr><tr><td>양쪽 다 어렵다</td><td class="dx">강직척추염 · 진행된 구조 변화</td><td class="rz">척추 마디가 굳으면 모든 방향이 제한된다</td></tr></tbody></table></div>
+
+  <h2>6-6. F · E · 외 · 과 · 약 · 사 · 가 · 여</h2>
+  <div class="si"><div><span class="code">F  자세 · 운동</span><span class="g">MUST</span></div>
+  <div class="say">통증을 악화시키거나 완화시키는 요인이 있나요? 특별히 악화되거나 완화되는 자세가 있나요? 휴식 시 완화되나요, 아니면 움직이면 완화되나요?</div><p class="why">허리에서 가장 무거운 항목이에요. 질문 두 개가 네 질환을 정리해요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>젖히면 악화 · 앉으면 완화</td><td class="dx">척추관협착증</td><td class="rz">젖히면 통로가 좁아지고 굽히면 넓어진다</td></tr><tr><td>굽히면 악화 · 기침하면 악화</td><td class="dx">요추간판탈출증</td><td class="rz">굽힘과 복압 상승이 추간판과 신경뿌리를 더 누른다</td></tr><tr><td>움직이면 악화 · 쉬면 완화</td><td class="dx">요추염좌 · 압박골절</td><td class="rz">손상 조직에 장력이 걸려야 아프다</td></tr><tr><td>쉬면 악화 · 움직이면 완화</td><td class="dx">강직척추염</td><td class="rz">고인 염증성 삼출액이 움직임으로 흩어진다</td></tr><tr><td>자세와 무관</td><td class="dx">종양 · 감염 · 연관통</td><td class="rz">기계적 자극과 무관하면 다른 원인을 봐야 한다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">E  건강검진</span><span class="g">DROP</span></div>
+  <div class="say">이전 건강 검진에서 이상 소견은 없었나요? 골밀도 검사를 받아보신 적 있나요?</div><p class="why">골다공증 검사 여부는 압박골절의 배경이 돼요. 그 점에서만 의미가 있어요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>골밀도가 낮다고 들었다</td><td class="dx">골다공증 · 압박골절</td><td class="rz">골강도가 낮으면 가벼운 힘에도 척추체가 무너진다</td></tr><tr><td>검사한 적 없다</td><td class="dx">정보 없음</td><td class="rz">고령이나 폐경이면 검사를 권할 수 있다</td></tr><tr><td>특별한 건 없었다</td><td class="dx">정보 없음</td><td class="rz">예상되는 가장 흔한 답이다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">외  수술 · 외상</span><span class="g">MUST</span></div>
+  <div class="say">허리 수술을 받으신 적 있으세요? 허리를 다친 적이 있나요? 다른 부위가 골절된 적이 있으신가요?</div><p class="why">외상 사건은 골절을 세우고, 다른 부위 골절력은 골다공증을 시사해요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>넘어진 뒤부터</td><td class="dx">요추압박골절</td><td class="rz">낮은 에너지 손상에서 골절되면 골강도가 낮다</td></tr><tr><td>허리 수술 이력</td><td class="dx">수술 후 변화 · 인접부 문제</td><td class="rz">수술 부위 위아래에 부하가 옮겨 간다</td></tr><tr><td>손목이나 고관절 골절 이력</td><td class="dx">골다공증</td><td class="rz">이전 골절 자체가 다음 골절의 강한 위험인자다</td></tr><tr><td>없다</td><td class="dx">외상성 배제</td><td class="rz">구조물 손상 가설이 약해진다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">과  과거력</span><span class="g">MUST</span></div>
+  <div class="say">이전에 진단 받은 병이 있나요? 고혈압, 당뇨, 결핵, 류마티스 질환, 골다공증, 암은 어떠신가요?</div><p class="why">암은 척추 전이를, 결핵은 척추 감염을, 골다공증은 압박골절을, 당뇨는 감염 위험을 지목해요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>암 진단을 받은 적 있다</td><td class="dx">척추 전이</td><td class="rz">폐 · 유방 · 전립선암이 척추로 잘 전이된다</td></tr><tr><td>결핵을 앓은 적 있다</td><td class="dx">척추 결핵</td><td class="rz">감염이 척추체를 침범하면 만성 통증으로 온다</td></tr><tr><td>골다공증</td><td class="dx">요추압박골절</td><td class="rz">골강도가 낮으면 가벼운 힘에도 무너진다</td></tr><tr><td>당뇨 · 면역저하</td><td class="dx">척추 감염 · 농양</td><td class="rz">면역이 떨어지면 균이 자리 잡기 쉽다</td></tr><tr><td>궤양성 대장염</td><td class="dx">강직척추염 동반</td><td class="rz">같은 면역 축을 공유하는 질환군이다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">약  약물</span><span class="g">SHOULD</span></div>
+  <div class="say">현재 복용 중인 약물이 있나요? 진통제를 복용해 보셨나요? 복용 시 통증이 호전되나요?</div><p class="why">스테로이드 장기 복용은 골강도를 떨어뜨리고, 치료 반응은 진단 정보가 돼요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>스테로이드 장기 복용</td><td class="dx">골다공증 · 압박골절</td><td class="rz">골형성이 억제되어 골강도가 떨어진다</td></tr><tr><td>소염진통제에 반응</td><td class="dx">염증성 · 근골격</td><td class="rz">약물 반응성이 간접 근거가 된다</td></tr><tr><td>진통제로 조절 안 됨</td><td class="dx">종양 · 감염 · 신경병증</td><td class="rz">기전이 달라 일반 진통제가 듣지 않는다</td></tr><tr><td>복용 약 없음</td><td class="dx">특이 배경 없음</td><td class="rz">약물 관련 요인을 배제한다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">사  생활 · 근무 자세 · 운동</span><span class="g">SHOULD</span></div>
+  <div class="say">술, 담배, 커피는 얼마나 하시나요? 직업이 어떻게 되시나요? 근무 시 주로 어떤 자세인가요? 운동은 하시나요? 최근에 격한 운동을 하셨나요?</div><p class="why">요추 부하의 배경이자 교육에서 교정할 대상이에요. 흡연은 추간판 영양에도 좋지 않아요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>무거운 것을 자주 든다</td><td class="dx">요추염좌 · 추간판탈출증</td><td class="rz">반복 부하가 근육과 추간판에 손상을 누적시킨다</td></tr><tr><td>오래 앉아 일한다</td><td class="dx">추간판 부하</td><td class="rz">앉은 자세가 서 있을 때보다 추간판 압력을 높인다</td></tr><tr><td>운동을 전혀 안 한다</td><td class="dx">근력 약화 · 진행 인자</td><td class="rz">허리 주위 근육이 약하면 척추가 부하를 그대로 받는다</td></tr><tr><td>최근 격한 운동</td><td class="dx">염좌 · 골절</td><td class="rz">갑작스러운 부하가 손상을 만든다</td></tr><tr><td>흡연</td><td class="dx">추간판 퇴행 · 골밀도 저하</td><td class="rz">혈류와 영양 공급에 불리하게 작용한다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">가  가족력</span><span class="g">SHOULD</span></div>
+  <div class="say">가족 중에 유사한 증상을 가진 분이 계신가요? 류마티스 질환이나 척추, 신경계 질환이 있는 분은요?</div><p class="why">강직척추염은 HLA-B27 연관이라 가족 집적성이 뚜렷해요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>젊은 남자 형제가 허리가 아프다</td><td class="dx">강직척추염</td><td class="rz">HLA-B27 연관 질환이라 가족 안에서 반복된다</td></tr><tr><td>류마티스 질환 가족력</td><td class="dx">자가면역 질환군</td><td class="rz">감수성 배경을 공유한다</td></tr><tr><td>없다</td><td class="dx">사전 확률 낮음</td><td class="rz">배제는 못 하지만 순위가 내려간다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">여  폐경</span><span class="g">DROP</span></div>
+  <div class="say">폐경은 언제 하셨나요?</div><p class="why">골다공증 배경으로만 의미가 있어요. 압박골절 케이스에서는 SHOULD로 올라가요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>폐경 후</td><td class="dx">골다공증 · 압박골절 위험</td><td class="rz">에스트로겐 감소가 골소실을 가속한다</td></tr><tr><td>해당 없음</td><td class="dx">정보 없음</td><td class="rz">감별에 추가 정보를 주지 않는다</td></tr></tbody></table></div>
+
+  <div class="recall"><div class="lb">스스로 답해보기</div>
+    <p>A 일곱 줄 중 응급을 담당하는 줄과 그 세 질문은?</p>
+    <p>F의 두 질문이 어떻게 네 질환을 정리하는가?</p>
+  </div>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 7</div>
+    <h1>Physical examination</h1>
+    <p class="dek">허리 진찰은 세 자세를 다 써요. 서서, 앉아서, 누워서.
+    자세를 어떻게 배치하느냐가 시간을 결정합니다.</p></div>
+
+  <p>그리고 <b>SLR과 Patrick은 반드시 양측 모두</b> 시행해야 해요. 각각 추간판탈출증과
+  강직척추염을 겨냥하는데, 한쪽만 하면 비교 기준이 없어서 판정이 안 됩니다.
+  강직척추염이 의심되면 Schober test가 추가로 필요하고요.</p>
+
+  <h2>7-1. 동선</h2>
+  <figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 158"><rect width="440" height="158" fill="#FFFFFF"/><rect x="14" y="8" width="76" height="20" rx="2.5" fill="#FAF3F5"/><text x="52.0" y="22" font-family="Pretendard" font-size="8.6" fill="#74263A" font-weight="700" text-anchor="middle">시작</text><text x="52.0" y="44" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">손 씻기</text><text x="52.0" y="57" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">동의</text><text x="52.0" y="70" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">V/S</text><rect x="100" y="8" width="108" height="20" rx="2.5" fill="#FAF3F5"/><text x="154.0" y="22" font-family="Pretendard" font-size="8.6" fill="#74263A" font-weight="700" text-anchor="middle">서서</text><text x="154.0" y="44" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">시진 · 촉진</text><text x="154.0" y="57" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">허리 ROM</text><text x="154.0" y="70" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">걸음걸이</text><text x="154.0" y="83" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">Schober</text><rect x="220" y="8" width="84" height="20" rx="2.5" fill="#FAF3F5"/><text x="262.0" y="22" font-family="Pretendard" font-size="8.6" fill="#74263A" font-weight="700" text-anchor="middle">앉아서</text><text x="262.0" y="44" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">하지 감각</text><text x="262.0" y="57" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">근력 · DTR</text><rect x="316" y="8" width="110" height="20" rx="2.5" fill="#FAF3F5"/><text x="371.0" y="22" font-family="Pretendard" font-size="8.6" fill="#74263A" font-weight="700" text-anchor="middle">누워서</text><text x="371.0" y="44" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">SLR</text><text x="371.0" y="57" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">Patrick</text><text x="371.0" y="70" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">말초동맥 촉진</text><defs><marker id="a22" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#74263A"/></marker></defs><path d="M90 18 L98 18" stroke="#74263A" stroke-width="0.9" marker-end="url(#a22)" fill="none"/><defs><marker id="a23" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#74263A"/></marker></defs><path d="M208 18 L218 18" stroke="#74263A" stroke-width="0.9" marker-end="url(#a23)" fill="none"/><defs><marker id="a24" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#74263A"/></marker></defs><path d="M304 18 L314 18" stroke="#74263A" stroke-width="0.9" marker-end="url(#a24)" fill="none"/><path d="M14 118 H426" stroke="#DED7DA" stroke-width="0.8" fill="none"/><text x="14" y="133" font-family="Pretendard" font-size="8.5" fill="#74263A" font-weight="700" text-anchor="start">이 동선의 함정</text><text x="14" y="148" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="start">베드에 바로 눕히는 진찰과 엎드려서 하는 진찰이 다르므로 미리 정해 둔다</text><text x="14" y="159" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="start">SLR 과 Patrick 은 반드시 양측 모두. 각각 추간판탈출과 강직척추염을 겨냥한다</text><text x="14" y="170" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="start">척추관협착증이 의심되면 말초동맥 맥박을 만져 혈관성 파행을 배제한다</text></svg>
+    <figcaption>서서 넷, 앉아서 하나, 누워서 셋. 자세를 한 번씩만 바꾼다</figcaption>
+  </figure>
+  <ol class="flow">
+    <li><span class="pos">시작</span>손 씻기 &rarr; 진찰 동의 &rarr; 오늘 측정한 활력 징후는 정상입니다.</li>
+    <li><span class="pos">서서</span>허리를 보기 위해 상의를 올려주세요.
+        통증 부위 시진 &middot; 촉진. <b>압통 여부와 척추의 만곡 정도</b>를 함께 봐요.</li>
+    <li><span class="pos">서서</span>허리 ROM 평가. 굴곡 &middot; 신전 &middot; 측방굴곡 &middot; 회전.
+        <b>extension 제한</b>은 척추관협착증을 시사해요.</li>
+    <li><span class="pos">서서</span>걸음걸이 시진. 저기까지 걸어갔다 오세요.
+        파행과 보행 이상을 눈으로 봐요.</li>
+    <li><span class="pos">서서</span>Schober test. 강직척추염이 의심되면
+        chest expansion test를 추가해요.</li>
+    <li><span class="pos">앉아서</span>하지 감각 &middot; 근력 &middot; DTR(무릎, 발목) 평가.
+        양측 비교로요.</li>
+    <li><span class="pos">누워서</span>SLR test &rarr; Patrick test. <b>반드시 양측 모두.</b></li>
+    <li><span class="pos">누워서</span>말초동맥 맥박 촉진. 척추관협착증이 의심되면
+        혈관성 파행을 배제할 목적으로 해요.</li>
+    <li><span class="pos">마무리</span>협조해 주셔서 감사합니다. 불편한 점은 없으신가요?</li>
+  </ol>
+  <p>왜 이 순서일까요? <b>자세 전환을 세 번으로 끝내기 위해서예요.</b>
+  서서 할 수 있는 넷을 다 하고, 침대에 앉혀 신경학적 검사를 하고, 마지막에 눕혀 특이검사를
+  몰아서 해요. 베드에 바로 눕히는 진찰과 엎드려서 하는 진찰이 다르므로 미리 정해 두어야
+  허둥대지 않아요.</p>
+
+  <h2>7-2. 진찰마다 무엇을 잡나</h2>
+  <table>
+    <thead><tr><th>진찰</th><th>무엇을 보는가</th><th>지목하는 질환</th></tr></thead>
+    <tbody>
+      <tr><td class="k">시진</td><td>척추 만곡 · 측만 · 피부 병변</td><td class="s">구조 변형 · 강직척추염의 후만</td></tr>
+      <tr><td class="k">촉진</td><td>압통점, 극돌기 압통</td><td class="s">요추염좌 · 압박골절 · 감염</td></tr>
+      <tr><td class="k">허리 ROM</td><td>굴곡 · 신전 · 측방굴곡 · 회전</td><td class="s">extension 제한은 협착증, 전방향 제한은 강직척추염</td></tr>
+      <tr><td class="k">걸음걸이</td><td>파행 · 발끝 · 발뒤꿈치 보행</td><td class="s">협착증 · 뿌리별 근력 저하</td></tr>
+      <tr><td class="k">하지 감각</td><td>L4 · L5 · S1 피부분절</td><td class="s">저린 부위가 병소의 높이를 지목</td></tr>
+      <tr><td class="k">하지 근력</td><td>발목 젖히기 · 엄지 젖히기 · 발끝 서기</td><td class="s">근력 저하는 신경 침범의 진행 신호</td></tr>
+      <tr><td class="k">DTR</td><td>무릎 · 발목 반사</td><td class="s">저하는 뿌리 병변, 양측 저하는 마미증후군</td></tr>
+      <tr><td class="k">SLR</td><td>좌골신경 견인</td><td class="s">요추간판탈출증</td></tr>
+      <tr><td class="k">Patrick</td><td>고관절 · 천장관절</td><td class="s">반대측 통증이면 강직척추염</td></tr>
+      <tr><td class="k">Schober</td><td>요추 굴곡 범위</td><td class="s">강직척추염</td></tr>
+      <tr><td class="k">말초동맥 맥박</td><td>하지 혈류</td><td class="s">혈관성 파행 배제</td></tr>
+    </tbody>
+  </table>
+
+  <h2>7-3. 특이검사 카드</h2>
+
+  <div class="card"><div class="nm">하지직거상 검사<span class="en">Straight leg raise, SLR</span></div>
+  <dl><dt>환자 자세</dt><dd>누워서. 무릎을 편 채로. 반드시 양측.</dd>
+  <dt>내 손동작</dt><dd><ol><li>한 손으로 발뒤꿈치를 받치고 다른 손을 무릎 위에 얹어 무릎이 굽지 않게 눌러요.</li><li>다리를 천천히 들어 올려요.</li><li>환자가 아프다고 하는 각도에서 멈추고 그 각도를 기억해요.</li><li>반대쪽 다리도 같은 방식으로 해서 비교해요.</li></ol></dd>
+  <dt>양성 판정</dt><dd class="hit">들어 올리는 도중 <b>허리에서 다리로 뻗치는 통증이 재현</b>되면 양성이에요. 허벅지 뒤가 당기기만 하는 건 양성이 아니에요.</dd>
+  <dt>무엇을 잡나</dt><dd>다리를 들면 좌골신경이 위로 당겨지고, 눌려 있던 신경뿌리가 더 팽팽해져 원래의 방사통이 재현돼요.</dd>
+  <dt>흔한 실수</dt><dd>무릎이 굽으면 신경이 안 당겨져 음성으로 나와요. 그리고 당김과 방사통을 구분 못 하면 과잉 양성이 됩니다.</dd></dl></div>
+
+  <div class="card"><div class="nm">패트릭 검사<span class="en">Patrick test, FABER</span></div>
+  <dl><dt>환자 자세</dt><dd>누워서. 반드시 양측 모두.</dd>
+  <dt>내 손동작</dt><dd><ol><li>한쪽 다리를 굽혀 발목을 반대쪽 무릎 위에 올려 숫자 4 모양을 만들어요.</li><li>한 손으로 반대쪽 골반을 눌러 침대에 고정해요.</li><li>다른 손으로 굽힌 쪽 무릎을 바깥 아래로 천천히 눌러요.</li><li>반대쪽도 같은 방식으로 시행해 비교해요.</li></ol></dd>
+  <dt>양성 판정</dt><dd class="hit">누른 쪽 사타구니가 아프면 고관절 문제, <b>반대쪽 엉치가 아프면 천장관절 문제</b>예요. 강직척추염에서는 반대쪽이 아파요.</dd>
+  <dt>무엇을 잡나</dt><dd>고관절을 굽히고 벌리고 바깥으로 돌리면서 천장관절에 비틀림을 줘요. 어느 쪽이 아픈지가 병소를 지목합니다.</dd>
+  <dt>흔한 실수</dt><dd>반대쪽 골반을 안 누르면 골반 전체가 같이 돌아가 천장관절에 힘이 안 걸려요. 그리고 아픈 쪽만 물어보면 어느 관절인지 못 가려요.</dd></dl></div>
+
+  <div class="card"><div class="nm">쇼버 검사<span class="en">Schober test</span></div>
+  <dl><dt>환자 자세</dt><dd>서서. 환자 등을 볼 수 있게 뒤에 서요.</dd>
+  <dt>내 손동작</dt><dd><ol><li>양쪽 골반 위쪽 뼈를 잇는 선이 척추와 만나는 지점을 찾아 표시해요.</li><li>거기서 위로 10cm, 아래로 5cm 되는 지점에 각각 표시해요.</li><li>환자에게 무릎을 편 채로 허리를 최대한 숙이라고 해요.</li><li>숙인 상태에서 위아래 표시 사이의 거리를 다시 재요.</li></ol></dd>
+  <dt>양성 판정</dt><dd class="hit">늘어난 거리가 <code>5cm 미만</code>이면 양성이에요. 정상이면 5cm보다 더 늘어나요.</dd>
+  <dt>무엇을 잡나</dt><dd>요추가 굽으면 척추뼈 사이가 벌어지면서 피부도 같이 늘어나요. 강직척추염으로 척추가 굳으면 이 늘어남이 사라집니다.</dd>
+  <dt>흔한 실수</dt><dd>무릎을 굽히면 허리를 안 굽혀도 손이 내려가 결과가 왜곡돼요. 그리고 표시를 안 하고 눈대중으로 하면 못 재요.</dd></dl></div>
+
+  <div class="card"><div class="nm">흉곽 확장 검사<span class="en">Chest expansion test</span></div>
+  <dl><dt>환자 자세</dt><dd>서서. 강직척추염이 의심될 때 추가로.</dd>
+  <dt>내 손동작</dt><dd><ol><li>줄자를 네 번째 갈비뼈 높이에서 가슴 둘레에 감아요.</li><li>숨을 최대한 내쉰 상태에서 둘레를 재요.</li><li>숨을 최대한 들이쉰 상태에서 다시 재요.</li><li>두 값의 차이를 계산해요.</li></ol></dd>
+  <dt>양성 판정</dt><dd class="hit">들숨과 날숨의 차이가 <b>줄어 있으면</b> 양성이에요. 흉곽 확장이 제한된 겁니다.</dd>
+  <dt>무엇을 잡나</dt><dd>강직척추염은 갈비뼈와 척추가 만나는 관절에도 염증을 일으켜요. 그 관절이 굳으면 숨 쉴 때 흉곽이 벌어지지 못합니다.</dd>
+  <dt>흔한 실수</dt><dd>갈비뼈 높이를 잘못 잡거나, 환자가 어깨를 들썩이며 숨을 쉬면 값이 부정확해져요.</dd></dl></div>
+
+  <div class="card"><div class="nm">하지 신경학적 검사<span class="en">Lower limb neuro exam</span></div>
+  <dl><dt>환자 자세</dt><dd>침대에 앉아서. 반드시 양측 비교.</dd>
+  <dt>내 손동작</dt><dd><ol><li>감각 — L4 정강이 안쪽, L5 엄지발가락과 발등, S1 새끼발가락과 발바닥을 좌우 비교해요.</li><li>근력 — 발목 젖히기(L4~L5), 엄지 젖히기(L5), 발끝으로 서기(S1).</li><li>DTR — 무릎 반사와 발목 반사를 해머로 제대로 쳐요.</li><li>마미증후군이 의심되면 회음부와 항문 주위 감각을 확인해요.</li></ol></dd>
+  <dt>양성 판정</dt><dd class="hit">특정 뿌리 구역만 나쁘면 그 높이의 신경뿌리 병변, <b>양쪽 근력과 반사가 함께 떨어지면 마미증후군</b>을 의심해요.</dd>
+  <dt>무엇을 잡나</dt><dd>각 신경뿌리가 담당하는 피부 구역과 근육이 정해져 있어요. 어느 구역이 나쁜지가 병소의 높이를 알려줍니다.</dd>
+  <dt>흔한 실수</dt><dd>근력을 숫자로만 재려다 시간을 태우는 것. 발끝 서기와 발뒤꿈치 걷기가 훨씬 빠르고 정확해요. 그리고 양측 비교를 빼면 기준이 없어요.</dd></dl></div>
+
+  <div class="card"><div class="nm">말초동맥 맥박 촉진<span class="en">Peripheral pulse palpation</span></div>
+  <dl><dt>환자 자세</dt><dd>누워서. 척추관협착증이 의심될 때.</dd>
+  <dt>내 손동작</dt><dd><ol><li>대퇴동맥을 사타구니 중앙에서 만져요.</li><li>오금동맥을 무릎 뒤에서 만져요.</li><li>발등동맥과 뒤정강동맥을 발에서 만져요.</li><li>양쪽을 비교해요.</li></ol></dd>
+  <dt>양성 판정</dt><dd class="hit">맥박이 약하거나 만져지지 않으면 <b>혈관성 파행</b>을 의심해요. 정상이면 신경성 파행 쪽입니다.</dd>
+  <dt>무엇을 잡나</dt><dd>걷다가 쉬는 증상은 신경이 눌려서일 수도, 혈류가 부족해서일 수도 있어요. 맥박이 그 둘을 갈라 줍니다.</dd>
+  <dt>흔한 실수</dt><dd>척추관협착증을 진단해 놓고 이 촉진을 건너뛰는 것. 혈관성 파행을 놓치면 치료 방향이 통째로 틀려요.</dd></dl></div>
+
+  <h2>7-4. 감점 포인트</h2>
+  <ul class="deduct">
+    <li>SLR이나 Patrick을 한쪽만 시행함. 양측이어야 비교가 됩니다</li>
+    <li>SLR에서 허벅지 뒤 당김을 양성으로 읽음</li>
+    <li>Schober test에서 무릎을 굽히게 함</li>
+    <li>척추관협착증을 의심하면서 말초동맥 맥박을 안 만짐</li>
+    <li>마미증후군이 의심되는데 회음부 · 항문 주위 감각을 확인하지 않음</li>
+    <li>하지 감각 · 근력 · 반사를 양측 비교하지 않음</li>
+    <li>걸음걸이 시진을 건너뜀. 파행은 눈으로 보는 게 가장 빨라요</li>
+    <li>자세를 여러 번 바꾸며 시간을 태움</li>
+    <li>상의를 올려 달라고 하지 않고 옷 위로 만짐</li>
+    <li>손 씻기 · 진찰 동의 · V/S 언급 누락</li>
+  </ul>
+
+  <div class="recall"><div class="lb">스스로 답해보기</div>
+    <p>SLR에서 허벅지 뒤 당김을 왜 양성으로 읽으면 안 되는가?</p>
+    <p>Patrick에서 아픈 쪽과 반대쪽이 각각 무엇을 의미하는가?</p>
+    <p>척추관협착증에서 말초동맥 맥박을 만지는 이유는?</p>
+  </div>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 8</div>
+    <h1>검사 계획</h1>
+    <p class="dek">기본은 두 줄. 영상과 근전도예요.</p></div>
+  <table>
+    <thead><tr><th>검사</th><th>왜 · 언제</th><th>근거</th></tr></thead>
+    <tbody>
+      <tr><td class="k">L-spine X-ray (AP, lateral)</td><td>거의 모든 케이스의 기본. 정렬 · 골절 · 전방전위 · 퇴행 변화</td><td class="s">[관행]</td></tr>
+      <tr><td class="k">L-spine CT / Lumbosacral MRI</td><td>신경학적 이상이 있거나 red flag가 있을 때. 마미증후군이면 즉시</td><td class="s">[GL]</td></tr>
+      <tr><td class="k">근전도 EMG</td><td>신경뿌리 병변의 높이와 정도를 확인할 때</td><td class="s">[GL]</td></tr>
+      <tr><td class="k">HLA-B27 · ESR · CRP</td><td>젊은 남성의 염증성 요통. 강직척추염이 의심될 때</td><td class="s">[GL]</td></tr>
+      <tr><td class="k">골반 X-ray</td><td>천장관절염 확인</td><td class="s">[상황부]</td></tr>
+      <tr><td class="k">안과 검진</td><td>강직척추염에서 포도막염이 동반될 수 있어 예약해 드려요</td><td class="s">[상황부]</td></tr>
+      <tr><td class="k">골밀도 검사</td><td>압박골절이 의심되거나 고령 · 폐경 여성일 때</td><td class="s">[상황부]</td></tr>
+      <tr><td class="k">소변검사 · 복부 영상</td><td>연관통이 의심될 때. 신우신염 · 결석 · 복부 질환</td><td class="s">[상황부]</td></tr>
+      <tr><td class="k">마미증후군인데 영상을 나중으로</td><td>배뇨 기능은 늦으면 돌아오지 않아요</td><td class="s">[금기]</td></tr>
+    </tbody>
+  </table>
+
+  <h2>8-1. 치료 계획</h2>
+  <p class="sub">공통 축 &mdash; 안정, 견인, 소염진통제, 국소주사요법, 수술</p>
+  <table>
+    <thead><tr><th>진단</th><th>치료</th></tr></thead>
+    <tbody>
+      <tr><td class="k">요추염좌</td><td>안정, 물리 치료</td></tr>
+      <tr><td class="k">추간판탈출증</td><td>침상 안정, 물리 치료, 약물 치료, 필요 시 수술</td></tr>
+      <tr><td class="k">척추협착증</td><td>침상 안정, 물리 치료, 약물 치료, 필요 시 수술</td></tr>
+      <tr><td class="k">암의 척추 전이</td><td>전이암에 대한 고식적 치료(수술, 방사선 치료), 원발암 조절(항암 치료)</td></tr>
+      <tr><td class="k">마미증후군</td><td><b>응급 수술로 완전히 감압</b></td></tr>
+      <tr><td class="k">강직척추염</td><td>NSAID, infliximab, sulfasalazine / 검사는 ESR, CRP, HLA-B27</td></tr>
+      <tr><td class="k">요추 압박 골절</td><td>수술, 골다공증 치료</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 9</div>
+    <h1>Education</h1>
+    <p class="dek">가장 흔한 요추염좌는 안심시키는 것 자체가 치료의 일부예요.</p></div>
+
+  <h2>9-1. 교육 대사의 뼈대</h2>
+  <table>
+    <thead><tr><th>단계</th><th>말할 문장</th></tr></thead>
+    <tbody>
+      <tr><td class="k">공감</td><td>허리 통증 때문에 많이 힘드셨을 것 같습니다.</td></tr>
+      <tr><td class="k">추정 진단</td><td>지금까지의 문진과 신체 검진 소견을 종합해 보았을 때 현재 요추간판탈출증이 가장 의심됩니다.</td></tr>
+      <tr><td class="k">감별 진단</td><td>하지만 허리 통증은 매우 다양한 원인에 의해 발생할 수 있기 때문에 그 외에 요추염좌나 척추관협착증 등도 완전히 배제할 수 없습니다.</td></tr>
+      <tr><td class="k">검사</td><td>따라서 정확한 진단을 위해 허리 X-ray, 허리 CT와 MRI가 필요할 것 같습니다. 괜찮으신가요?</td></tr>
+      <tr><td class="k">검사 (강직척추염)</td><td>허리 X-ray와 혈액 염증 수치를 확인하겠습니다. 그리고 눈에 염증이 같이 동반되는 경우가 많기 때문에 안과 검진도 같이 예약해 드리겠습니다.</td></tr>
+      <tr><td class="k">치료</td><td>만약 검사로 요추간판탈출증이 확진되면 우선 통증을 조절하기 위해 보조기 착용과 소염진통제 치료가 필요할 것 같습니다. 하지만 이런 치료로도 충분히 통증이 조절되지 않을 땐 수술이 필요할 수 있습니다.</td></tr>
+      <tr><td class="k">예후</td><td>지금부터 잘 치료를 받으시면 호전될 수 있습니다. 증상이 있을 때 병원에 잘 오셨습니다.</td></tr>
+      <tr><td class="k">질문</td><td>마지막으로 혹시 궁금한 점이 있으신가요?</td></tr>
+    </tbody>
+  </table>
+
+  <h2>9-2. 진단별 한 마디</h2>
+  <table>
+    <thead><tr><th>진단</th><th>환자에게 할 설명</th></tr></thead>
+    <tbody>
+      <tr><td class="k">요추염좌</td><td>허리 근육과 인대가 늘어난 상태입니다. 대개 2주 정도면 좋아지니 너무 걱정하지 않으셔도 됩니다. 다만 무리한 활동은 잠시 줄이시고, 진통제와 온찜질로 통증을 줄여 드리겠습니다.</td></tr>
+      <tr><td class="k">요추간판탈출증</td><td>척추뼈 사이의 물렁뼈가 밀려 나와 신경을 누르는 상태입니다. 대부분은 시간이 지나며 줄어들기 때문에 우선 약과 물리 치료로 좋아지기를 기다립니다.</td></tr>
+      <tr><td class="k">척추관협착증</td><td>신경이 지나가는 통로가 좁아진 상태입니다. 허리를 젖히면 더 좁아지고 굽히면 넓어져서, 앉으면 편해지는 겁니다. 자세를 아는 것만으로도 생활이 훨씬 편해집니다.</td></tr>
+      <tr><td class="k">마미증후군</td><td>여러 신경이 한꺼번에 눌려 소변 기능까지 영향을 받는 상태로 의심됩니다. 늦어지면 회복이 어려울 수 있어 바로 검사하고 응급으로 치료해야 합니다.</td></tr>
+      <tr><td class="k">강직척추염</td><td>척추와 골반을 잇는 관절에 염증이 생기는 병입니다. 쉬면 더 아프고 움직이면 나아지는 게 특징입니다. 운동과 재활이 약만큼 중요합니다.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>9-3. 이런 증상이면 즉시 오세요</h2>
+  <ul class="plain">
+    <li><b>갑자기 배변이나 배뇨에 장애</b>가 생길 때<span class="g">최우선</span></li>
+    <li><b>다리 힘이 빠지거나</b> 감각이 저하될 때</li>
+    <li>걷기가 힘들어질 때</li>
+    <li>열이 나면서 허리가 심하게 아플 때</li>
+  </ul>
+
+  <h2>9-4. 생활교육</h2>
+  <table>
+    <thead><tr><th>교육</th><th>왜 이렇게 말하나</th></tr></thead>
+    <tbody>
+      <tr><td class="k">안정과 적당한 운동을 함께</td><td>완전한 안정은 근력을 떨어뜨려요. 스트레칭을 포함한 적당한 운동이 필요합니다</td></tr>
+      <tr><td class="k">항상 바른 자세로</td><td>서 있거나 앉았을 때의 자세가 허리에 걸리는 부하를 결정해요. 좋지 않은 자세는 통증을 더 심화시킵니다</td></tr>
+      <tr><td class="k">안내 책자와 규칙적 운동</td><td>바른 자세와 허리 통증을 줄이는 운동법이 적힌 자료를 드리고, 집에서 규칙적으로 따라 하도록 합니다</td></tr>
+      <tr><td class="k">근무 환경의 자세 교정</td><td>하루 대부분을 보내는 자세가 질환을 악화시켜요</td></tr>
+      <tr><td class="k">요추염좌라면 안심시키기</td><td>2주 정도면 괜찮아진다고 알려 주면서 동시에 무리한 활동은 제한해요</td></tr>
+      <tr><td class="k">강직척추염이면 안과 검진</td><td>포도막염이 동반될 수 있어 안과 검사가 추가로 필요할 수 있어요</td></tr>
+      <tr><td class="k">암 전이 등 신경학적 이상</td><td>심한 신경학적 이상이 발생하면 방사선 치료나 수술 같은 응급 조치가 필요함을 알려요</td></tr>
+    </tbody>
+  </table>
+
+  <h2>9-5. PPI 대사 뱅크</h2>
+  <table>
+    <thead><tr><th>상황</th><th>준비 문장</th></tr></thead>
+    <tbody>
+      <tr><td class="k">오프닝</td><td>허리가 아프시면 앉고 서는 것도 힘드셨을 것 같습니다. 천천히 말씀해 주세요.</td></tr>
+      <tr><td class="k">방사 경로 확인</td><td>통증이 어디서 시작해서 어디까지 가는지 손으로 한번 그려 주시겠어요?</td></tr>
+      <tr><td class="k">민감한 질문 전</td><td>혹시 불편하시겠지만 진단에 꼭 필요해서 여쭙겠습니다. 소변이나 대변이 새지는 않으셨나요?</td></tr>
+      <tr><td class="k">진찰 전 안내</td><td>허리를 보기 위해 상의를 올려주시겠어요? 조심해서 살펴보겠습니다.</td></tr>
+      <tr><td class="k">걸음걸이 요청</td><td>저기까지 한번 걸어갔다 와 주시겠어요? 걸으실 때 어떤지 보려고 합니다.</td></tr>
+      <tr><td class="k">SLR 전</td><td>다리를 천천히 들어 올릴 텐데, 허리에서 다리로 뻗치는 느낌이 있으면 바로 말씀해 주세요.</td></tr>
+      <tr><td class="k">안심시키기</td><td>대부분의 허리 통증은 2주 정도면 좋아집니다. 너무 걱정하지 않으셔도 됩니다.</td></tr>
+      <tr><td class="k">수술 걱정</td><td>바로 수술하는 경우는 많지 않습니다. 우선 약과 물리 치료로 좋아지기를 기다려 봅니다.</td></tr>
+      <tr><td class="k">클로징</td><td>제가 말씀드린 것 중에 더 궁금하신 점 있으실까요?</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 10</div>
+    <h1>케이스 통합 연습</h1>
+    <p class="dek">가장 흔한 것과 유일한 응급으로 대비되는 둘.</p></div>
+
+  <h2>10-1. 케이스 A &mdash; 가장 흔한 것</h2>
+  <blockquote><div class="who">환자</div>
+    <p>서른네 살 남자입니다. 어제 이사하면서 무거운 짐을 들다가 허리를 삐끗했어요.</p>
+    <p>허리 근육이 뻐근하고 구부리기가 힘듭니다.</p>
+    <p>다리로 내려가거나 저리진 않아요. 소변도 정상이고요.</p>
+    <p>열은 없고 체중도 그대로입니다.</p></blockquote>
+  <h3>① 관문 두 층 통과</h3>
+  <p>배뇨 &middot; 배변 정상, 양쪽 다리 정상 &rarr; <b>마미증후군 배제.</b>
+  발열 없음, 체중 변화 없음, 야간통 없음, 복부 &middot; 옆구리 증상 없음 &rarr;
+  <b>종양 &middot; 감염 &middot; 연관통 배제.</b></p>
+  <h3>② 대축</h3>
+  <p>다리로 안 내려가고 저림도 없어요. <b>신경 외 근골격 칸.</b>
+  사건이 무거운 짐이고 움직이면 악화되니 요추염좌예요.</p>
+  <h3>③ 결정적 추가 문진</h3>
+  <table>
+    <thead><tr><th>항목</th><th>질문</th><th>의미</th></tr></thead>
+    <tbody>
+      <tr><td class="k">A 척추 염좌</td><td>굽히기 어려운지</td><td class="s">근육 · 인대 손상을 확인</td></tr>
+      <tr><td class="k">F 운동</td><td>움직이면 악화 · 쉬면 완화</td><td class="s">기계적 요통 확정. 강직척추염과 반대</td></tr>
+      <tr><td class="k">외</td><td>다른 부위 골절력</td><td class="s">골다공증 배경 확인</td></tr>
+      <tr><td class="k">사</td><td>직업 · 근무 자세</td><td class="s">재발 방지 교육의 재료</td></tr>
+      <tr><td class="k">Ex</td><td>이전 삽화</td><td class="s">만성 재발성인지</td></tr>
+    </tbody>
+  </table>
+  <h3>④ 진찰과 계획</h3>
+  <p>서서 시진 &middot; 촉진(압통점) &rarr; 허리 ROM &rarr; 걸음걸이 &rarr;
+  앉아서 하지 감각 &middot; 근력 &middot; DTR(정상일 것) &rarr; 누워서 <b>SLR 음성 확인</b>과
+  Patrick. 검사는 L-spine X-ray. 교육은 <b>2주면 좋아진다고 안심시키기</b> +
+  무리한 활동 제한 + 진통제와 온찜질 + 바른 자세.</p>
+  <p><em>점수를 만든 지점 &mdash; 마미증후군을 명시적으로 물어 배제한 것,
+  방사통 없음을 확인해 대축을 넘긴 것, SLR 음성을 확인해 추간판탈출증을 지운 것,
+  그리고 안심시키는 교육을 한 것.</em></p>
+
+  <h2>10-2. 케이스 B &mdash; 유일한 응급</h2>
+  <blockquote><div class="who">환자</div>
+    <p>쉰두 살 남자입니다. 일주일 전부터 허리가 아프더니 어제부터 심해졌어요.</p>
+    <p>양쪽 다리에 힘이 없고 걷기가 힘듭니다.</p>
+    <p>오늘 아침에 소변이 저도 모르게 샜어요.</p>
+    <p>엉덩이 쪽하고 사타구니 감각이 둔합니다.</p></blockquote>
+  <h3>① 관문 1에서 바로 걸려요</h3>
+  <p>요실금 + 양쪽 다리 근력 저하 + 안장 부위 감각 마비.
+  <b>대축을 돌리기 전에 마미증후군으로 방향이 정해집니다.</b>
+  요추간판탈출증으로 접근해 보존적 치료를 말하면 케이스 전체가 틀려요.</p>
+  <h3>② 결정적 추가 문진</h3>
+  <table>
+    <thead><tr><th>항목</th><th>질문</th><th>의미</th></tr></thead>
+    <tbody>
+      <tr><td class="k">A 마미증후군</td><td>요실금 · 변실금 · 항문 주위 감각</td><td class="s">세 가지가 모이면 응급 확정</td></tr>
+      <tr><td class="k">L</td><td>양쪽인지</td><td class="s">양측이면 다발이 눌린 것</td></tr>
+      <tr><td class="k">O</td><td>언제부터 소변 증상이</td><td class="s">시간이 곧 기능이라 발생 시점이 중요</td></tr>
+      <tr><td class="k">A 전신</td><td>발열 · 체중 변화</td><td class="s">종양이나 감염이 원인인지</td></tr>
+      <tr><td class="k">과</td><td>암 병력</td><td class="s">전이성 병변 가능성</td></tr>
+    </tbody>
+  </table>
+  <h3>③ 진찰과 계획</h3>
+  <p>허리 진찰에 시간을 오래 쓰지 않아요. <b>양하지 근력 · 심부건 반사 저하</b>와
+  <b>회음부 · 항문 주위 감각</b>을 확인하고 바로 방향을 틉니다.
+  검사는 <b>L-spine MRI를 즉시</b>. 교육은 응급 수술로 완전히 감압해야 하는 이유,
+  그리고 늦으면 배뇨 기능이 돌아오지 않을 수 있다는 것.</p>
+  <p><em>점수를 만든 지점 &mdash; 소변 증상을 명시적으로 물은 것, 양쪽임을 확인한 것,
+  회음부 감각을 진찰에 넣은 것, 보존적 치료가 아니라 응급 수술로 계획을 튼 것.</em></p>
+
+  <p>두 케이스의 대비가 말해 주는 게 있어요. A는 <b>없는 것을 확인</b>해서 진단이 됐고,
+  B는 <b>있는 것 하나</b>가 모든 걸 뒤집었어요. 그래서 마미증후군 줄은 케이스가 아무리
+  전형적인 염좌로 보여도 반드시 던져야 해요.</p>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 11</div>
+    <h1>3속도 복습</h1></div>
+
+  <h2>11-1. 시험 직전 1분 압축표</h2>
+  <table>
+    <thead><tr><th>질환</th><th>덩어리</th><th>결정 단서</th><th>진단</th><th>치료</th></tr></thead>
+    <tbody>
+      <tr><td class="k">요추염좌</td><td class="s">근골격</td><td>무거운 짐 · 삐끗, 신경학적 검사 정상, 압통점</td><td class="s">L-spine X-ray</td><td class="s">안정, 물리 치료, 요추 보조기</td></tr>
+      <tr><td class="k">요추간판탈출증</td><td class="s">신경학적</td><td>요통 + 편측 하지 통증 · 저림, SLRT(+)</td><td class="s">L-spine X-ray, CT/MRI</td><td class="s">침상 안정, 물리 치료, NSAID, 필요 시 수술</td></tr>
+      <tr><td class="k">척추관협착증</td><td class="s">신경학적</td><td>파행, 젖히면 악화 · 앉으면 경감, extension 제한</td><td class="s">L-spine X-ray, CT/MRI</td><td class="s">침상 안정, 물리 치료, NSAID, 필요 시 수술</td></tr>
+      <tr><td class="k">척추 종양</td><td class="s">종양</td><td>암 병력, 체중 감소, 야간 통증, 하지 감각 · 근력 이상</td><td class="s">L-spine X-ray, CT/MRI</td><td class="s">방사선, 항암, 수술</td></tr>
+      <tr><td class="k">마미증후군</td><td class="s">응급</td><td>요실금 · 변실금, 양하지 근력 · 반사 저하, 안장 감각 마비</td><td class="s">L-spine MRI</td><td class="s"><b>응급 수술로 완전히 감압</b></td></tr>
+      <tr><td class="k">강직척추염</td><td class="s">류마티스</td><td>20~30대 남자, 조조강직, 운동 완화 · 휴식 악화, 포도막염</td><td class="s">Lumbar X-ray, HLA-B27, ESR, CRP</td><td class="s">NSAID, 재활 · 운동, Infliximab</td></tr>
+      <tr><td class="k">요추압박골절</td><td class="s">근골격 · 뼈</td><td>골다공증, 넘어짐, 요통, 요추부 운동 제한</td><td class="s">L-spine X-ray, CT/MRI</td><td class="s">요추보조기, NSAID, Opioid, 골다공증 치료, 수술</td></tr>
+      <tr><td class="k">골관절염</td><td class="s">류마티스 · 기타</td><td>Crepitus, 조조강직 30분 미만, 50세 이상, ROM 감소</td><td class="s">&mdash;</td><td class="s">NSAID, 재활 · 운동, 생활 습관 개선</td></tr>
+    </tbody>
+  </table>
+
+  <h2>11-2. 미니케이스</h2>
+  <table>
+    <thead><tr><th>상황</th><th>답</th></tr></thead>
+    <tbody>
+      <tr><td>무거운 짐 들다 삐끗, 다리로 안 내려가요<br><span class="s">의심 · 교육 한 줄</span></td>
+          <td class="s"><b>요추염좌</b> · 2주 정도면 괜찮아진다고 안심시키고 무리한 활동 제한</td></tr>
+      <tr><td>한쪽 다리로 내려가고 기침하면 심해져요<br><span class="s">의심 · 진찰 1</span></td>
+          <td class="s"><b>요추간판탈출증</b> · SLR test 양측</td></tr>
+      <tr><td>백 미터 걸으면 쉬어야 하고 앉으면 편해요<br><span class="s">의심 · 반드시 추가할 진찰</span></td>
+          <td class="s"><b>척추관협착증</b> · 말초동맥 맥박 촉진으로 혈관성 파행 배제</td></tr>
+      <tr><td>소변이 새고 양쪽 다리에 힘이 없어요<br><span class="s">다음 행동</span></td>
+          <td class="s"><b>마미증후군</b> · 회음부 감각 확인 후 L-spine MRI 즉시, 응급 수술 감압</td></tr>
+      <tr><td>28세 남자, 아침에 뻣뻣하고 움직이면 나아져요<br><span class="s">의심 · 진찰 2 · 추가 검진</span></td>
+          <td class="s"><b>강직척추염</b> · Schober, Patrick 반대측 통증 · 안과 검진 예약</td></tr>
+      <tr><td>골다공증 있는 70대가 살짝 넘어진 뒤 허리가 아파요<br><span class="s">의심 · 검사</span></td>
+          <td class="s"><b>요추압박골절</b> · L-spine X-ray, 필요 시 CT/MRI, 골밀도</td></tr>
+      <tr><td>암 병력이 있고 밤에 더 아프고 체중이 빠져요<br><span class="s">의심 · 왜 야간통이 중요한가</span></td>
+          <td class="s"><b>척추 종양</b> · 자극과 무관하게 아프면 조직 자체의 병변이에요</td></tr>
+      <tr><td>옆구리가 아프고 열이 나며 소변에 피가 섞여요<br><span class="s">의심 · 어느 층인가</span></td>
+          <td class="s"><b>신우신염 · 요로결석</b> · 허리가 아니라 <b>연관통</b> 층이에요</td></tr>
+    </tbody>
+  </table>
+
+  <h2>11-3. Active recall</h2>
+  <div class="recall"><div class="lb">왜만 모았어요</div>
+    <p>왜 허리에는 목에 없는 연관통 층이 있는가?</p>
+    <p>왜 마미증후군은 양쪽에 오는가?</p>
+    <p>왜 마미증후군에서 소변 증상이 먼저 티가 나는가?</p>
+    <p>왜 요추간판탈출증은 한쪽에만 오는가?</p>
+    <p>왜 기침할 때 추간판탈출증이 심해지는가?</p>
+    <p>왜 척추관협착증은 앉으면 편해지는가?</p>
+    <p>왜 척추관협착증에서 증상은 심한데 진찰이 정상인가?</p>
+    <p>신경성 파행과 혈관성 파행을 가르는 질문 두 개는?</p>
+    <p>왜 강직척추염은 쉬면 더 아픈가?</p>
+    <p>왜 강직척추염에서 눈과 장을 함께 묻는가?</p>
+    <p>왜 SLR에서 무릎을 편 채로 들어야 하는가?</p>
+    <p>왜 Patrick에서 반대쪽 골반을 눌러 고정하는가?</p>
+    <p>왜 요추염좌에서 안심시키는 것이 치료의 일부인가?</p>
+  </div>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 12</div>
+    <h1>대본 전문</h1></div>
+  <table>
+    <thead><tr><th>항목</th><th>말할 문장</th><th>등급</th></tr></thead>
+    <tbody><tr><td class="k">O</td><td>언제부터 허리가 아팠나요? 갑자기 or 서서히?</td><td class="s">MUST</td></tr><tr><td class="k">O</td><td>특별히 어떤 상황에서 통증이 시작되었나요? (기침, 넘어짐, 허리 삐끗, 걷다가)</td><td class="s">MUST</td></tr><tr><td class="k">L</td><td>통증이 있는 부위가 어디인가요? 짚어보시겠어요?</td><td class="s">MUST</td></tr><tr><td class="k">L</td><td>허리 외에 아픈 곳은 없나요?</td><td class="s">MUST</td></tr><tr><td class="k">L</td><td>통증이 어디로 뻗치나요?</td><td class="s">MUST</td></tr><tr><td class="k">D</td><td>통증이 얼마나 지속되나요?</td><td class="s">SHOULD</td></tr><tr><td class="k">D</td><td>하루에 몇 번이나 통증을 느끼시나요?</td><td class="s">SHOULD</td></tr><tr><td class="k">Co</td><td>통증이 점점 더 심해지나요?</td><td class="s">DROP</td></tr><tr><td class="k">Ex</td><td>이전에도 통증이 있었나요? 그때 병원에서 진단을 받으셨나요?</td><td class="s">SHOULD</td></tr><tr><td class="k">Ex</td><td>진통제나 파스를 쓰셨나요? 효과가 있던가요?</td><td class="s">SHOULD</td></tr><tr><td class="k">C</td><td>통증이 어떤 양상인가요? (칼로 찌르듯이 / 전기가 통하듯이 / 둔하고 뻐근)</td><td class="s">MUST</td></tr><tr><td class="k">C</td><td>압통(T)/발적(R)/종창(S)/열감(H)/움직일 때 소리(C)/움직임 제한(L)이 있나요?</td><td class="s">DROP</td></tr><tr><td class="k">C</td><td>안 아픈 것을 0점, 가장 아픈 것을 10점으로 했을 때 몇 점인가요? (NRS)</td><td class="s">MUST</td></tr><tr><td class="k">A 전신</td><td>발열 / 오한 / 피로 / 체중 변화(암 전이)</td><td class="s">MUST</td></tr><tr><td class="k">A 추간판탈출증</td><td>다리 근력 저하 / 감각 저하</td><td class="s">MUST</td></tr><tr><td class="k">A 척추관협착증</td><td>파행 — 걷다가 다리가 아파서 쉬어야 하나요?</td><td class="s">MUST</td></tr><tr><td class="k">A 마미증후군</td><td>요실금 / 변실금 / 항문 주위 감각 이상</td><td class="s">MUST</td></tr><tr><td class="k">A 강직척추염</td><td>조조강직 / 포도막염 / 설사 / 복통</td><td class="s">MUST</td></tr><tr><td class="k">A 정신</td><td>우울</td><td class="s">SHOULD</td></tr><tr><td class="k">A 척추 염좌</td><td>허리를 굽히기 어려운가요?</td><td class="s">SHOULD</td></tr><tr><td class="k">F 자세</td><td>특별히 통증이 악화되거나 완화되는 자세가 있나요? (굽힘 / 젖힘)</td><td class="s">MUST</td></tr><tr><td class="k">F 운동</td><td>휴식 시 통증이 완화되나요? 아니면 움직이면 완화되나요? (류마티스 질환)</td><td class="s">MUST</td></tr><tr><td class="k">E</td><td>이전 건강 검진에서 이상 소견은 없었나요?</td><td class="s">DROP</td></tr><tr><td class="k">외 수술</td><td>허리 수술 받으신 적 있으세요?</td><td class="s">MUST</td></tr><tr><td class="k">외 외상</td><td>허리를 다친 적이 있나요? 다른 부위가 골절된 적이 있으신가요?</td><td class="s">MUST</td></tr><tr><td class="k">과</td><td>이전에 진단 받은 병이 있나요? (고혈압/당뇨/결핵/류마티스 질환/골다공증/암)</td><td class="s">MUST</td></tr><tr><td class="k">약</td><td>현재 복용 중인 약물이 있나요? 진통제를 복용해 보셨나요? 복용 시 호전되나요?</td><td class="s">SHOULD</td></tr><tr><td class="k">사</td><td>술, 담배, 커피는 얼마나 하시나요?</td><td class="s">SHOULD</td></tr><tr><td class="k">사</td><td>운동을 많이 하시는 편인가요? 최근에 격한 운동을 한 적이 있나요?</td><td class="s">SHOULD</td></tr><tr><td class="k">사</td><td>직업이 어떻게 되시나요? 근무 시 주로 어떤 자세인가요?</td><td class="s">SHOULD</td></tr><tr><td class="k">사</td><td>스트레스를 많이 받으시나요?</td><td class="s">SHOULD</td></tr><tr><td class="k">가</td><td>가족 중에 유사한 증상을 가진 분이 계신가요?</td><td class="s">SHOULD</td></tr><tr><td class="k">가</td><td>가족 중에 류마티스 질환 / 척추 / 신경계 질환이 있는 분이 있나요?</td><td class="s">SHOULD</td></tr><tr><td class="k">여</td><td>폐경</td><td class="s">DROP</td></tr></tbody>
+  </table>
+
+  <h2>12-1. P/E 전문</h2>
+  <table>
+    <thead><tr><th>구분</th><th>항목</th></tr></thead>
+    <tbody>
+      <tr><td class="k">도입</td><td>이제 신체 진찰을 하도록 할텐데요, 괜찮으신가요? 오늘 측정한 활력 징후는 정상입니다.</td></tr>
+      <tr><td class="k">서서 1</td><td>허리를 보기 위해 상의를 올려주세요. 통증 부위 시진 / 촉진 (압통 여부, 척추의 만곡 정도 확인)</td></tr>
+      <tr><td class="k">서서 2</td><td>허리 ROM 평가 (flexion, extension, lateral bending, rotation)</td></tr>
+      <tr><td class="k">서서 3</td><td>걸음걸이 시진 &mdash; 저기까지 걸어갔다 오세요.</td></tr>
+      <tr><td class="k">서서 4</td><td>Schober test &mdash; 허리를 폈을 때와 굽혔을 때 늘어나는 거리 측정 (정상 5cm 초과). AS 의심 시 chest expansion test 추가</td></tr>
+      <tr><td class="k">앉아서 5</td><td>하지 감각 / 근력 / DTR(무릎, 발목) 평가</td></tr>
+      <tr><td class="k">누워서 6</td><td>SLR test, Patrick test &mdash; 반드시 양측 모두 시행하여 각각 HIVD, AS 감별</td></tr>
+      <tr><td class="k">누워서 7</td><td>말초동맥 맥박 촉진 &mdash; 척추관협착증 의심 시 혈관성 파행 배제 목적</td></tr>
+      <tr><td class="k">마무리</td><td>협조해 주셔서 감사합니다. 불편한 점은 없으신가요?</td></tr>
+    </tbody>
+  </table>
+
+  <h2>12-2. keyword</h2>
+  <ul class="plain">
+    <li>허리 통증도 신경학적 이상과 근골격 원인, 기타(감염 · 종양 · 류마티스 질환)로 나누어 감별하기</li>
+    <li>병력 청취 &mdash; 통증의 양상 / 강도 / 다른 부위 통증 + 동반 증상(요실금, 포도막염 등), 과거 치료 여부 및 반응, 수술 / 약물 / 직업 / 운동 / 골다공증 과거력</li>
+    <li>악화 요인 &mdash; 휴식 · 아침에 악화(강직척추염) &harr; 걸을 때(요추염좌), 자세 변화(요추간판탈출증, 척추관협착증)</li>
+    <li>신체 진찰 &mdash; 상지 · 하지 감각 · 근력 · DTR(Biceps, Triceps, 무릎, 발목), Schober, 허리 ROM 평가, 시진 · 촉진, (누워서) SLR, Patrick</li>
+    <li>교육 &mdash; 보존적 치료(물리 치료 · 보조기 · 진통제 · 온찜질) &rarr; 통증 호전 안 될 시 수술, 근무 환경 자세 교정, 스트레칭 · 마사지</li>
+    <li>응급 상황 교육 &mdash; 배변 · 배뇨 이상, 감각 · 근력 저하 등 신경학적 이상 발생 시 내원</li>
+  </ul>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">부록</div>
+    <h1>원본과 어긋난 지점 · 출처</h1></div>
+  <table>
+    <thead><tr><th>지점</th><th>원본</th><th>이 가이드</th></tr></thead>
+    <tbody>
+      <tr><td class="k">문서 분리</td>
+          <td>목 통증과 허리 통증이 26번 한 항목</td>
+          <td class="s">26-1 목과 26-2 허리로 분리했다. 감별 목록 · red flag · 신체진찰이 공유되지 않기 때문</td></tr>
+      <tr><td class="k">허리 질환표의 무릎 질환</td>
+          <td>허리 통증 질환표 끝에 <b>반달연골 파열</b>과 <b>내측 측부인대 손상</b>이 들어 있다</td>
+          <td class="s"><b>[확인 필요]</b> 둘 다 무릎 질환이라 25장(관절 통증)의 표가 넘어온 편집 오류로 보인다. 이 가이드의 허리 질환 목록에서는 제외했고, 두 질환은 25번 가이드에서 다룬다</td></tr>
+      <tr><td class="k">신체진찰 자세</td>
+          <td>P/E 항목표는 서서 &rarr; 침대에 앉아서 &rarr; 누워서 순이지만, keyword 상자는 (앉아서) 감각 · 근력 · DTR과 Schober, (엎드려서) 허리 ROM · 시진 · 촉진으로 적혀 있다</td>
+          <td class="s"><b>[확인 필요]</b> P/E 항목표를 정본으로 삼았다. Schober는 서서 재는 검사이고, 시진 · 촉진과 ROM도 서서 하는 편이 자세 전환을 줄인다</td></tr>
+      <tr><td class="k">연관통의 위치</td>
+          <td>증례별 알고리즘에는 연관통이 기타 원인의 한 갈래로 그려져 있다</td>
+          <td class="s">대축 뒤가 아니라 <b>관문 2</b>로 올렸다. 허리를 아무리 진찰해도 답이 안 나오고 그 사이 원인 질환이 진행하기 때문</td></tr>
+      <tr><td class="k">C 염증 소견</td>
+          <td>문진표에 압통 · 발적 · 종창 · 열감 항목이 그대로 들어 있다</td>
+          <td class="s">관절 CC에서 넘어온 항목으로 보아 DROP으로 내렸다. 다만 항목표에 있으므로 PART 12 대본 전문에는 남겼다</td></tr>
+      <tr><td class="k">특이검사 술기</td>
+          <td>검사 이름과 양성 소견만 제시</td>
+          <td class="s">PART 7의 손동작 · 판정 · 기전 · 흔한 실수는 표준 술기를 풀어 쓴 것으로 원본에 명시된 내용이 아니다. 실습에서 확인할 것</td></tr>
+      <tr><td class="k">Quick Sheet 대조</td><td>&mdash;</td>
+          <td class="s">한끝 단일 소스로 제작했다. Quick Sheet에만 있는 항목이 있다면 반영되지 않았다</td></tr>
+    </tbody>
+  </table>
+  <p class="sub">출처: 『한 권으로 끝내는 CPX 총론』 26. 목 통증(Neck pain) / 허리 통증(Low back pain), p.271~282.</p>
+</section>
+</html>

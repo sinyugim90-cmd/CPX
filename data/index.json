@@ -1,0 +1,44 @@
+{
+ "version": 1,
+ "updated": "2026-09-09",
+ "parts": [
+  {
+   "tag": "PART",
+   "name": "관절 · 근골격 · 피부",
+   "ccs": [
+    {
+     "id": "j",
+     "num": "25",
+     "title": "관절 통증 · 부기",
+     "en": "Joint pain / Swelling",
+     "guide": "CPX25_JointPain_Guide",
+     "status": "ready"
+    },
+    {
+     "id": "n",
+     "num": "26-1",
+     "title": "목 통증",
+     "en": "Neck pain",
+     "guide": "CPX26-1_NeckPain_Guide",
+     "status": "ready"
+    },
+    {
+     "id": "b",
+     "num": "26-2",
+     "title": "허리 통증",
+     "en": "Low back pain",
+     "guide": "CPX26-2_LowBackPain_Guide",
+     "status": "ready"
+    },
+    {
+     "id": "s",
+     "num": "27",
+     "title": "피부 발진",
+     "en": "Skin rash",
+     "guide": "CPX27_SkinRash_Guide",
+     "status": "ready"
+    }
+   ]
+  }
+ ]
+}

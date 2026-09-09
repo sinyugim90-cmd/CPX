@@ -1,0 +1,1215 @@
+<!doctype html><html lang='ko'><meta charset='utf-8'><title>CPX 27 피부 발진</title><style>
+@page {
+  size: A4; margin: 23mm 22mm 17mm 22mm;
+  @top-left  { content: "CPX 27"; font-family: Pretendard; font-size: 6.6pt;
+    font-weight: 700; letter-spacing: .26em; color: #74263A; }
+  @top-right { content: "피부 발진"; font-family: Pretendard; font-size: 6.6pt;
+    color: #9C96A0; letter-spacing: .14em; }
+  @bottom-right { content: counter(page); font-family: "Noto Serif CJK KR";
+    font-size: 9pt; color: #6A656F; }
+}
+@page :first { @top-left { content: "" } @top-right { content: "" }
+  @bottom-right { content: "" } }
+
+* { box-sizing: border-box; }
+body { font-family: Pretendard, sans-serif; font-size: 10.4pt; line-height: 1.6;
+  color: #1A1B20; margin: 0; word-break: keep-all; }
+p { margin: 0 0 .6em; }
+b { font-weight: 700; }
+em { font-style: normal; color: #74263A; font-weight: 600; }
+code { font-family: Pretendard; font-size: .95em; font-weight: 700; color: #74263A; }
+section { page-break-before: always; }
+section.cover, section.first { page-break-before: auto; }
+
+/* == 표지 == */
+.cover { padding-top: 6mm; }
+.cover .top { border-top: 3pt solid #74263A; padding-top: 9px; }
+.cover .kicker { font-size: 6.8pt; font-weight: 700; letter-spacing: .3em; color: #74263A; }
+.cover .cat { font-size: 8.4pt; color: #6A656F; letter-spacing: .1em; margin-top: 5px; }
+.cover .num { font-family: "Noto Serif CJK KR", serif; font-size: 68pt;
+  color: #4E1A28; line-height: 1; margin: 30mm 0 2mm; letter-spacing: -.02em; }
+.cover h1 { font-family: "Noto Serif CJK KR", serif; font-size: 30pt;
+  margin: 0 0 6px; line-height: 1.2; letter-spacing: -.01em; }
+.cover .en { font-size: 12pt; color: #6A656F; margin: 0 0 22px; }
+.cover .arc { font-size: 8.6pt; color: #74263A; font-weight: 700; letter-spacing: .14em;
+  padding-top: 11px; border-top: .5pt solid #E2DDE0; margin-bottom: 26px; }
+.cover dl { margin: 0 0 26px; }
+.cover dt { font-size: 7pt; font-weight: 700; letter-spacing: .18em;
+  color: #74263A; margin-top: 11px; }
+.cover dd { margin: 2px 0 0; font-size: 10.2pt; line-height: 1.5; }
+.cover .note { font-size: 8.6pt; color: #6A656F; line-height: 1.6;
+  padding-top: 12px; border-top: .5pt solid #E2DDE0; }
+
+/* == 파트 오프너 == */
+.opener { margin: 0 0 26px; }
+.opener .tag { display: inline-block; background: #4E1A28; color: #fff;
+  font-size: 6.4pt; font-weight: 700; letter-spacing: .26em;
+  padding: 4px 10px 4px 11px; margin: 0 0 13px; }
+.opener h1 { font-family: "Noto Serif CJK KR", serif; font-size: 20pt;
+  margin: 0 0 9px; line-height: 1.26; }
+.opener .dek { font-size: 9.4pt; color: #6A656F; line-height: 1.62; margin: 0; max-width: 124mm; }
+
+h2 { font-family: "Noto Serif CJK KR", serif; font-size: 13pt;
+  margin: 28px 0 3px; line-height: 1.38; page-break-after: avoid; }
+h2::before { content: ""; display: block; width: 24px; height: 2.4pt;
+  background: #74263A; margin-bottom: 8px; }
+h2.plain::before { display: none; }
+.sub { font-size: 8.9pt; color: #6A656F; margin: 0 0 12px; }
+h3 { font-size: 9.5pt; font-weight: 700; color: #4E1A28; margin: 18px 0 4px;
+  page-break-after: avoid; }
+
+/* == 인용 == */
+blockquote { margin: 12px 0 16px; padding: 1px 0 1px 15px; border-left: 2pt solid #74263A; }
+blockquote p { margin: 0 0 .16em; font-size: 10.2pt; line-height: 1.56; }
+blockquote .who { font-size: 6.8pt; font-weight: 700; letter-spacing: .2em;
+  color: #74263A; margin-bottom: 5px; }
+
+/* == 괘선 목록 == */
+ul.plain { list-style: none; margin: 7px 0 16px; padding: 0; }
+ul.plain li { padding: 6px 0; border-bottom: .5pt solid #F0ECEE; }
+ul.plain li:first-child { border-top: 1.4pt solid #74263A; }
+ul.plain li:last-child { border-bottom: 1pt solid #E2DDE0; }
+ul.plain .g { font-size: 6.6pt; font-weight: 700; letter-spacing: .16em;
+  color: #74263A; margin-left: 6px; }
+
+/* == 표 == */
+table { border-collapse: collapse; width: 100%; margin: 11px 0 18px; }
+thead th { font-size: 7.1pt; font-weight: 700; letter-spacing: .16em;
+  color: #74263A; text-align: left; padding: 0 12px 6px 0;
+  border-bottom: 1.4pt solid #74263A; }
+thead th:last-child { padding-right: 0; }
+tbody td { font-size: 9.6pt; padding: 7px 12px 7px 0; vertical-align: top;
+  border-bottom: .5pt solid #F0ECEE; line-height: 1.5; }
+tbody td:last-child { padding-right: 0; }
+tbody tr:last-child td { border-bottom: 1pt solid #E2DDE0; }
+td.k { font-weight: 700; white-space: nowrap; }
+td.s { color: #6A656F; }
+
+/* == 대본 항목 == */
+.si { margin: 22px 0; padding-top: 13px; border-top: 1.4pt solid #1A1B20;
+  page-break-inside: avoid; }
+.si .code { font-family: "Noto Serif CJK KR", serif; font-size: 12pt;
+  font-weight: 700; color: #4E1A28; }
+.si .g { font-size: 6.6pt; font-weight: 700; letter-spacing: .2em;
+  color: #74263A; margin-left: 9px; }
+.si .say { font-size: 11.1pt; line-height: 1.5; margin: 9px 0;
+  padding-left: 14px; border-left: 2pt solid #74263A; font-weight: 500; }
+.si .why { font-size: 9.3pt; color: #6A656F; margin: 0 0 2px; }
+.si td.dx { font-weight: 700; }
+.si td.rz { color: #6A656F; font-size: 9pt; }
+
+/* == 신체진찰 : 동선 == */
+ol.flow { list-style: none; counter-reset: fl; margin: 12px 0 18px; padding: 0; }
+ol.flow li { counter-increment: fl; position: relative; padding: 7px 0 7px 30px;
+  border-bottom: .5pt solid #F0ECEE; font-size: 9.9pt; line-height: 1.5; }
+ol.flow li:first-child { border-top: 1.4pt solid #74263A; }
+ol.flow li::before { content: counter(fl); position: absolute; left: 0; top: 7px;
+  font-family: "Noto Serif CJK KR", serif; font-size: 9.5pt; font-weight: 700;
+  color: #74263A; }
+ol.flow .pos { font-size: 6.6pt; font-weight: 700; letter-spacing: .16em;
+  color: #74263A; display: block; margin-bottom: 2px; }
+
+/* == 신체진찰 : 특이검사 카드 == */
+.card { margin: 18px 0; padding-top: 11px; border-top: 1.4pt solid #74263A;
+  page-break-inside: avoid; }
+.card .nm { font-family: "Noto Serif CJK KR", serif; font-size: 11.5pt;
+  font-weight: 700; color: #4E1A28; }
+.card .nm .en { font-family: Pretendard; font-size: 8.6pt; font-weight: 400;
+  color: #6A656F; margin-left: 7px; }
+.card dl { margin: 8px 0 0; }
+.card dt { font-size: 6.6pt; font-weight: 700; letter-spacing: .16em;
+  color: #74263A; margin-top: 8px; }
+.card dd { margin: 2px 0 0; font-size: 9.6pt; line-height: 1.55; }
+.card dd.hit { font-weight: 600; }
+.card ol { margin: 2px 0 0; padding-left: 1.15em; }
+.card ol li { font-size: 9.6pt; line-height: 1.55; margin-bottom: 1px; }
+
+/* == 감점 포인트 == */
+ul.deduct { list-style: none; margin: 12px 0 16px; padding: 8px 0;
+  border-top: 1.4pt solid #74263A; border-bottom: 1pt solid #E2DDE0; }
+ul.deduct li { padding: 5px 0 5px 16px; text-indent: -16px;
+  font-size: 9.7pt; line-height: 1.5; }
+ul.deduct li::before { content: "\2013\00a0\00a0"; color: #74263A; font-weight: 700; }
+
+/* == 다이어그램 == */
+figure { margin: 16px 0 20px; text-align: center; page-break-inside: avoid; }
+figure svg { width: 100%; height: auto; }
+figcaption { font-size: 8.3pt; color: #6A656F; margin-top: 7px; }
+
+/* == 인출 질문 == */
+.recall { margin: 18px 0; padding: 11px 0; border-top: .5pt solid #E2DDE0;
+  border-bottom: .5pt solid #E2DDE0; page-break-inside: avoid; }
+.recall .lb { font-size: 6.6pt; font-weight: 700; letter-spacing: .2em;
+  color: #74263A; margin-bottom: 6px; }
+.recall p { font-size: 9.5pt; margin: 0 0 .3em; padding-left: 15px; text-indent: -15px; }
+.recall p::before { content: "Q\00a0\00a0"; font-weight: 700; color: #74263A; }
+</style>
+<section class="cover">
+  <div class="top"><div class="kicker">CPX STUDY GUIDE</div>
+    <div class="cat">관절 · 근골격 · 피부</div></div>
+  <div class="num">27</div>
+  <h1>피부 발진</h1>
+  <p class="en">Skin rash</p>
+  <div class="arc">질환 이해 &rarr; 채점 역산 &rarr; 실전 실행 &rarr; 인출</div>
+  <dl>
+    <dt>감별 대축</dt><dd>전신 질환이 피부로 나타난 것인가, 피부 자체의 질환인가</dd>
+    <dt>보조축</dt><dd>원발진 형태 &mdash; 반점 · 구진 · 수포 · 농포 · 자반 · 팽진</dd>
+    <dt>관문</dt><dd>점막 침범 + 수포 + 니콜스키 &rarr; SJS/TEN / 입술 부종 · 호흡곤란 &rarr; 아나필락시스</dd>
+    <dt>가장 흔한 정답</dt><dd>아토피 피부염 &middot; 접촉피부염 &middot; 약물 발진</dd>
+    <dt>시간 예산</dt><dd>Hx 5분 / PEx 4분 / Edu 3분. 교육이 다른 CC보다 무거워요</dd>
+    <dt>이 CC의 함정</dt><dd>환자가 인지하지 못한 곳에 발진이 있는지 살피는 것. 옷과 장신구로 가려진 부위까지 봐야 해요</dd>
+  </dl>
+  <p class="note">피부 발진은 보는 CC예요. 문진으로 좁히고 눈으로 확인하죠. 그래서
+  <b>어디에서 처음 생겼고, 어디로 퍼졌고, 지금 어디에 있는지</b>를 시간 순서로 받아내는 게
+  다른 어떤 CC보다 중요해요. 그리고 발진은 SP에게 분장으로 재현되어 있으니,
+  실제로 자세히 보고 만져야 합니다.</p>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 0</div>
+    <h1>이 CC에서 만나는 질환 지도</h1>
+    <p class="dek">발진의 목록은 길어 보이지만, 첫 갈림길 하나가 절반을 잘라요.
+    피부만의 문제인가, 몸 전체 문제의 겉모습인가.</p></div>
+
+  <p>피부는 몸에서 가장 넓은 장기이면서 <b>다른 장기의 상태가 겉으로 드러나는 창</b>이에요.
+  그래서 발진을 만나면 늘 두 갈래를 동시에 봐야 해요. 피부에서 시작한 병인지,
+  아니면 전신 질환이 피부로 얼굴을 내민 건지.</p>
+
+  <p>이 구분이 왜 중요할까요? <b>치료의 대상이 완전히 달라지기 때문</b>이에요.
+  접촉피부염이면 원인 물질을 피하고 국소 치료로 끝나지만, 루푸스나 피부근염이면
+  피부만 치료해서는 아무 소용이 없거든요.</p>
+
+  <figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 320"><rect width="440" height="320" fill="#FFFFFF"/><rect x="130" y="6" width="180" height="30" rx="2.5" fill="#FAF3F5"/><text x="220" y="20" font-family="Pretendard" font-size="10.5" fill="#74263A" font-weight="700" text-anchor="middle">피부에 발진이 났어요</text><text x="220" y="31" font-family="Pretendard" font-size="7.5" fill="#6A656F" font-weight="400" text-anchor="middle">색소 침착은 먼저 지운다</text><path d="M220 36 V50" stroke="#74263A" stroke-width="0.8" fill="none"/><rect x="14" y="50" width="412" height="26" rx="2.5" fill="#F7EAEE"/><text x="24" y="67" font-family="Pretendard" font-size="9.5" fill="#4E1A28" font-weight="700" text-anchor="start">관문 · 응급을 먼저 배제</text><text x="30" y="88" font-family="Pretendard" font-size="8.2" fill="#6A656F" font-weight="400" text-anchor="start">점막 침범 + 수포 + 니콜스키(+)</text><text x="256" y="88" font-family="Pretendard" font-size="8.2" fill="#74263A" font-weight="700" text-anchor="start">›</text><text x="270" y="88" font-family="Pretendard" font-size="8.4" fill="#1A1B20" font-weight="700" text-anchor="start">SJS / TEN</text><text x="30" y="101" font-family="Pretendard" font-size="8.2" fill="#6A656F" font-weight="400" text-anchor="start">입술 부종 · 호흡곤란 · 어지럼</text><text x="256" y="101" font-family="Pretendard" font-size="8.2" fill="#74263A" font-weight="700" text-anchor="start">›</text><text x="270" y="101" font-family="Pretendard" font-size="8.4" fill="#1A1B20" font-weight="700" text-anchor="start">아나필락시스</text><text x="30" y="114" font-family="Pretendard" font-size="8.2" fill="#6A656F" font-weight="400" text-anchor="start">고열 + 전신 발진 + 아파 보임</text><text x="256" y="114" font-family="Pretendard" font-size="8.2" fill="#74263A" font-weight="700" text-anchor="start">›</text><text x="270" y="114" font-family="Pretendard" font-size="8.4" fill="#1A1B20" font-weight="700" text-anchor="start">중증 감염 · 패혈증</text><text x="30" y="127" font-family="Pretendard" font-size="8.2" fill="#6A656F" font-weight="400" text-anchor="start">눌러도 안 하얘지는 자반</text><text x="256" y="127" font-family="Pretendard" font-size="8.2" fill="#74263A" font-weight="700" text-anchor="start">›</text><text x="270" y="127" font-family="Pretendard" font-size="8.4" fill="#1A1B20" font-weight="700" text-anchor="start">혈관염 · 혈소판 이상</text><path d="M14 144 H426" stroke="#DED7DA" stroke-width="0.8" fill="none"/><rect x="14" y="152" width="412" height="28" rx="2.5" fill="#FAF3F5"/><text x="24" y="170" font-family="Pretendard" font-size="9.8" fill="#4E1A28" font-weight="700" text-anchor="start">대축 · 전신 질환인가 피부 질환인가</text><text x="416" y="170" font-family="Pretendard" font-size="7.8" fill="#6A656F" font-weight="400" text-anchor="end">발열 · 전신증상 · 점막</text><path d="M220 180 V192" stroke="#74263A" stroke-width="0.8" fill="none"/><path d="M220 192 V199.0 H112 V206" stroke="#74263A" stroke-width="0.8" fill="none"/><path d="M220 192 V199.0 H328 V206" stroke="#74263A" stroke-width="0.8" fill="none"/><rect x="14" y="206" width="196" height="24" rx="2.5" fill="#FFFFFF" stroke="#74263A" stroke-width="0.8"/><text x="112" y="222" font-family="Pretendard" font-size="9.3" fill="#4E1A28" font-weight="700" text-anchor="middle">전신 질환의 피부 발현</text><rect x="230" y="206" width="196" height="24" rx="2.5" fill="#FFFFFF" stroke="#DED7DA" stroke-width="0.8"/><text x="328" y="222" font-family="Pretendard" font-size="9.3" fill="#4E1A28" font-weight="700" text-anchor="middle">피부 자체 질환</text><text x="14" y="246" font-family="Pretendard" font-size="7.4" fill="#6A656F" font-weight="400" text-anchor="start">발열 · 감기 · 전신 발진</text><text x="14" y="255" font-family="Pretendard" font-size="8.4" fill="#4E1A28" font-weight="700" text-anchor="start">바이러스 발진 · 성홍열</text><text x="230" y="246" font-family="Pretendard" font-size="7.4" fill="#6A656F" font-weight="400" text-anchor="start">가려움 · 건조 · 굽힘쪽</text><text x="230" y="255" font-family="Pretendard" font-size="8.4" fill="#4E1A28" font-weight="700" text-anchor="start">아토피 피부염</text><text x="14" y="268" font-family="Pretendard" font-size="7.4" fill="#6A656F" font-weight="400" text-anchor="start">광과민 · 구강궤양 · 관절통</text><text x="14" y="277" font-family="Pretendard" font-size="8.4" fill="#4E1A28" font-weight="700" text-anchor="start">SLE · 베체트</text><text x="230" y="268" font-family="Pretendard" font-size="7.4" fill="#6A656F" font-weight="400" text-anchor="start">닿은 자리에만</text><text x="230" y="277" font-family="Pretendard" font-size="8.4" fill="#4E1A28" font-weight="700" text-anchor="start">접촉피부염</text><text x="14" y="290" font-family="Pretendard" font-size="7.4" fill="#6A656F" font-weight="400" text-anchor="start">근위부 근력 약화</text><text x="14" y="299" font-family="Pretendard" font-size="8.4" fill="#4E1A28" font-weight="700" text-anchor="start">피부근염</text><text x="230" y="290" font-family="Pretendard" font-size="7.4" fill="#6A656F" font-weight="400" text-anchor="start">dermatome 따라 일측성</text><text x="230" y="299" font-family="Pretendard" font-size="8.4" fill="#4E1A28" font-weight="700" text-anchor="start">대상포진</text><path d="M14 306 H426" stroke="#DED7DA" stroke-width="0.8" fill="none"/><text x="14" y="318" font-family="Pretendard" font-size="8.2" fill="#6A656F" font-weight="400" text-anchor="start">보조축은 원발진 형태 — blanching / 자반 / 수포 / 농포</text></svg>
+    <figcaption>응급을 먼저 지우고, 전신인지 피부인지 가른 다음, 원발진 형태로 좁힌다</figcaption>
+  </figure>
+
+  <h2>0-1. 질환들의 첫인상</h2>
+  <table>
+    <thead><tr><th>덩어리</th><th>질환</th><th>환자가 보이는 모습</th></tr></thead>
+    <tbody>
+      <tr><td class="s">전신 · 감염</td><td class="k">바이러스 발진</td>
+          <td>열이 나고 감기 증상이 있다가 발진이 났어요. 얼굴에서 시작해 몸통으로 퍼져요</td></tr>
+      <tr><td class="s">전신 · 감염</td><td class="k">성홍열</td>
+          <td>세 살 넘은 아이가 고열과 인후통, 구토가 있고 온몸에 발진이 났어요</td></tr>
+      <tr><td class="s">전신 · 감염</td><td class="k">2기 매독</td>
+          <td>열과 감기 증상이 있고 손바닥 발바닥까지 발진이 났어요. 최근 위험한 성관계가 있었고요</td></tr>
+      <tr><td class="s">전신 · 자가면역</td><td class="k">전신홍반루푸스</td>
+          <td>뺨에 나비 모양 발진이 있고 햇빛을 보면 심해져요. 구강 궤양과 관절통, 거품뇨도 있어요</td></tr>
+      <tr><td class="s">전신 · 자가면역</td><td class="k">베체트병</td>
+          <td>입안과 성기에 궤양이 반복되고 눈이 아파요. 관절도 아프고요</td></tr>
+      <tr><td class="s">전신 · 자가면역</td><td class="k">피부근염</td>
+          <td>눈꺼풀이 보랏빛으로 붓고 손가락 마디에 발진이 있어요. 머리 빗기와 계단 오르기가 힘들어요</td></tr>
+      <tr><td class="s">피부 · 감염</td><td class="k">대상포진</td>
+          <td>한쪽에만 띠처럼 물집이 났어요. 발진 전부터 그 자리가 아팠고요. 나이가 많거나 면역이 떨어져 있어요</td></tr>
+      <tr><td class="s">피부 · 감염</td><td class="k">옴</td>
+          <td>밤에 유난히 가려워요. 사타구니와 겨드랑이가 심하고 가족도 같이 가려워해요</td></tr>
+      <tr><td class="s">피부 · 감염</td><td class="k">어루러기</td>
+          <td>땀이 많이 나는 가슴과 등에 얼룩덜룩한 반점이 있어요. 별로 안 가렵고요</td></tr>
+      <tr><td class="s">피부 · 염증</td><td class="k">건선</td>
+          <td>팔꿈치와 무릎에 은백색 비늘이 겹겹이 덮인 판이 있어요. 손발톱도 변했고요</td></tr>
+      <tr><td class="s">피부 · 알레르기</td><td class="k">접촉피부염</td>
+          <td>새 화장품을 쓴 자리에만, 벨트가 닿는 자리에만 발진이 났어요</td></tr>
+      <tr><td class="s">피부 · 알레르기</td><td class="k">아토피 피부염</td>
+          <td>어릴 때부터 가렵고 건조해요. 팔오금 · 무릎 뒤가 심하고 알레르기 비염도 있어요</td></tr>
+      <tr><td class="s">피부 · 의인성</td><td class="k">약물 발진</td>
+          <td>약을 먹고 며칠 뒤 온몸에 발진이 났어요. 예전에도 같은 자리에 났던 적이 있고요</td></tr>
+    </tbody>
+  </table>
+
+  <div class="recall"><div class="lb">스스로 답해보기</div>
+    <p>피부 발진의 첫 갈림길은 무엇이고, 그 구분이 왜 치료를 바꾸는가?</p>
+    <p>관문에 들어가는 응급 네 가지는?</p>
+  </div>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 1</div>
+    <h1>대축과 관문</h1>
+    <p class="dek">대축은 전신인가 피부인가, 보조축은 원발진 형태예요.
+    그 앞에 응급을 거르는 관문이 놓여요.</p></div>
+
+  <h2>1-1. 왜 전신인가 피부인가가 대축일까요?</h2>
+  <p>이유는 셋이에요. 첫째, <b>질문 몇 개로 판정</b>돼요. 발열이 있나, 점막이 침범됐나,
+  관절통이나 근력 저하가 있나. 둘째, <b>치료 대상이 통째로 갈려요.</b> 셋째,
+  <b>놓쳤을 때의 대가가 달라요.</b> 피부 질환을 전신으로 오인하면 검사가 늘 뿐이지만,
+  전신 질환을 피부로 오인하면 원인 질환이 계속 진행해요.</p>
+
+  <p>반대로 원발진 형태를 대축으로 삼으면 안 되는 이유도 분명해요. 같은 수포가
+  대상포진에서도 나오고 SJS/TEN에서도 나오고 천포창에서도 나오거든요.
+  형태는 후보를 좁히는 <b>보조축</b>이지 첫 갈림길이 아니에요.</p>
+
+  <p><em>문서 전체에서 계속 돌아올 질문 &mdash; 이 발진이 피부에서 시작한 것인가,
+  아니면 몸 전체 문제의 겉모습인가.</em></p>
+
+  <h2>1-2. 관문 &mdash; 응급 넷을 먼저 지워요</h2>
+  <ul class="plain">
+    <li><b>점막 침범 + 수포 + 니콜스키 양성</b> SJS/TEN. 피부가 벗겨지는 상태라 화상처럼 다뤄요.<span class="g">관문</span></li>
+    <li><b>입술 부종 · 호흡곤란 · 어지럼 · 두근거림</b> 아나필락시스. 에피네프린이 필요해요.<span class="g">관문</span></li>
+    <li><b>고열 + 전신 발진 + 아파 보임</b> 중증 감염. 수막알균 감염 같은 경우예요.<span class="g">관문</span></li>
+    <li><b>눌러도 안 하얘지는 자반</b> 혈관염이나 혈소판 이상. 혈관 밖으로 피가 나온 상태예요.<span class="g">관문</span></li>
+  </ul>
+  <p>이 넷은 발진의 모양을 열심히 묘사하기 전에 먼저 확인해요. 특히 <b>점막</b>이 중요해요.
+  입 안, 눈, 성기에 병변이 있으면 그것만으로 심각도가 한 단계 올라가거든요.
+  그래서 진찰에서 눈 &middot; 구강을 먼저 보게 되어 있어요.</p>
+
+  <h2>1-3. 보조축 &mdash; 원발진 형태</h2>
+  <p>대축을 통과하면 형태로 좁혀요. <b>만져지는가, 눌러서 하얘지는가, 액체가 찼는가.</b>
+  이 세 질문이 형태를 결정해요.</p>
+  <figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 214"><rect width="440" height="214" fill="#FFFFFF"/><path d="M14 22 H426" stroke="#74263A" stroke-width="1.2" fill="none"/><text x="14" y="17" font-family="Pretendard" font-size="7.4" fill="#74263A" font-weight="700" text-anchor="start">원발진</text><text x="96" y="17" font-family="Pretendard" font-size="7.4" fill="#74263A" font-weight="700" text-anchor="start">무엇인가</text><text x="250" y="17" font-family="Pretendard" font-size="7.4" fill="#74263A" font-weight="700" text-anchor="start">대표 질환</text><text x="14" y="40" font-family="Pretendard" font-size="8.6" fill="#4E1A28" font-weight="700" text-anchor="start">반점 macule</text><text x="96" y="40" font-family="Pretendard" font-size="8.4" fill="#1A1B20" font-weight="400" text-anchor="start">만져지지 않는 색 변화</text><text x="250" y="40" font-family="Pretendard" font-size="8.4" fill="#6A656F" font-weight="400" text-anchor="start">어루러기 · 약물 발진 초기</text><path d="M14 48 H426" stroke="#DED7DA" stroke-width="0.6" fill="none"/><text x="14" y="62" font-family="Pretendard" font-size="8.6" fill="#4E1A28" font-weight="700" text-anchor="start">구진 papule</text><text x="96" y="62" font-family="Pretendard" font-size="8.4" fill="#1A1B20" font-weight="400" text-anchor="start">만져지는 작은 융기</text><text x="250" y="62" font-family="Pretendard" font-size="8.4" fill="#6A656F" font-weight="400" text-anchor="start">건선 초기 · 벌레 물림</text><path d="M14 70 H426" stroke="#DED7DA" stroke-width="0.6" fill="none"/><text x="14" y="84" font-family="Pretendard" font-size="8.6" fill="#4E1A28" font-weight="700" text-anchor="start">판 plaque</text><text x="96" y="84" font-family="Pretendard" font-size="8.4" fill="#1A1B20" font-weight="400" text-anchor="start">구진이 뭉쳐 넓어진 것</text><text x="250" y="84" font-family="Pretendard" font-size="8.4" fill="#6A656F" font-weight="400" text-anchor="start">건선 · 만성 아토피</text><path d="M14 92 H426" stroke="#DED7DA" stroke-width="0.6" fill="none"/><text x="14" y="106" font-family="Pretendard" font-size="8.6" fill="#4E1A28" font-weight="700" text-anchor="start">수포 vesicle</text><text x="96" y="106" font-family="Pretendard" font-size="8.4" fill="#1A1B20" font-weight="400" text-anchor="start">맑은 액이 찬 물집</text><text x="250" y="106" font-family="Pretendard" font-size="8.4" fill="#6A656F" font-weight="400" text-anchor="start">수두 · 대상포진 · 한포진</text><path d="M14 114 H426" stroke="#DED7DA" stroke-width="0.6" fill="none"/><text x="14" y="128" font-family="Pretendard" font-size="8.6" fill="#4E1A28" font-weight="700" text-anchor="start">농포 pustule</text><text x="96" y="128" font-family="Pretendard" font-size="8.4" fill="#1A1B20" font-weight="400" text-anchor="start">고름이 찬 물집</text><text x="250" y="128" font-family="Pretendard" font-size="8.4" fill="#6A656F" font-weight="400" text-anchor="start">여드름 · 농포성 건선</text><path d="M14 136 H426" stroke="#DED7DA" stroke-width="0.6" fill="none"/><text x="14" y="150" font-family="Pretendard" font-size="8.6" fill="#4E1A28" font-weight="700" text-anchor="start">자반 purpura</text><text x="96" y="150" font-family="Pretendard" font-size="8.4" fill="#1A1B20" font-weight="400" text-anchor="start">눌러도 안 하얘지는 출혈</text><text x="250" y="150" font-family="Pretendard" font-size="8.4" fill="#6A656F" font-weight="400" text-anchor="start">혈관염 · 혈소판 이상</text><path d="M14 158 H426" stroke="#DED7DA" stroke-width="0.6" fill="none"/><text x="14" y="172" font-family="Pretendard" font-size="8.6" fill="#4E1A28" font-weight="700" text-anchor="start">팽진 wheal</text><text x="96" y="172" font-family="Pretendard" font-size="8.4" fill="#1A1B20" font-weight="400" text-anchor="start">부풀었다 몇 시간 내 사라짐</text><text x="250" y="172" font-family="Pretendard" font-size="8.4" fill="#6A656F" font-weight="400" text-anchor="start">두드러기</text><path d="M14 180 H426" stroke="#DED7DA" stroke-width="0.6" fill="none"/><text x="14" y="204" font-family="Pretendard" font-size="8.2" fill="#6A656F" font-weight="400" text-anchor="start">이차 병변 — 딱지 · 비늘 · 태선화 · 미란은 원발진이 시간을 지나며 변한 결과다.</text></svg>
+    <figcaption>원발진 여섯 가지. 이차 병변은 원발진이 시간을 지나며 변한 결과다</figcaption>
+  </figure>
+
+  <h2>1-4. 실제로 헷갈리는 두 쌍</h2>
+  <h3>홍반 vs 자반</h3>
+  <p>둘 다 붉어요. 그런데 <b>눌러 보면 갈려요.</b> 홍반(erythema)은 혈관이 확장된 것이라
+  누르면 피가 밀려나가 하얘졌다가 떼면 다시 붉어져요. 자반(purpura)은 혈관 밖으로
+  피가 새어 나온 것이라 <b>눌러도 그대로</b>예요.</p>
+  <p>그래서 이 구분이 진찰 항목에 들어 있어요. 누르는 것만으로 혈관염이나 혈소판 이상 같은
+  전신 질환 쪽으로 방향을 틀 수 있거든요. 쉽게 말하면 <b>물감이 물에 풀린 것인지
+  종이에 스며든 것인지</b>를 보는 셈이에요.</p>
+
+  <h3>접촉피부염 vs 아토피 피부염</h3>
+  <p>둘 다 가렵고 붉고 진물이 날 수 있어요. 갈라주는 건 <b>분포</b>예요.
+  접촉피부염은 <b>닿은 자리에만</b> 경계가 뚜렷하게 생겨요. 벨트 자리, 목걸이 자리,
+  화장품 바른 자리처럼요. 아토피는 <b>정해진 호발 부위</b>에 생겨요.
+  2세 미만은 얼굴 &middot; 몸통 &middot; 사지 폄쪽, 2세 이상은 얼굴 &middot; 목 &middot;
+  사지 굽힘쪽이에요.</p>
+
+  <div class="recall"><div class="lb">스스로 답해보기</div>
+    <p>홍반과 자반을 가르는 진찰 동작 하나는? 그게 왜 전신 질환을 지목하는가?</p>
+    <p>접촉피부염과 아토피 피부염을 가르는 축은?</p>
+  </div>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 2</div>
+    <h1>최소 기초 세 덩어리</h1></div>
+
+  <h2>2-1. 피부는 벽이고, 그 벽이 새면 가려워져요</h2>
+  <p>피부 맨 바깥층은 벽돌과 시멘트 같은 구조예요. 각질세포가 벽돌이고 지질이 시멘트죠.
+  이 벽이 물은 안 나가게 막고 밖의 자극물과 알레르겐은 못 들어오게 막아요.</p>
+  <p>아토피 피부염에서는 이 <b>벽이 태생적으로 새요.</b> 그러니 수분이 빠져나가 건조해지고,
+  알레르겐이 쉽게 들어와 면역 반응이 일어나요. 가려워서 긁으면 벽이 더 망가지고,
+  더 새고, 더 가려워지죠. <b>가려움과 긁기가 서로를 키우는 고리</b>가 생기는 거예요.</p>
+  <p>그래서 치료의 축이 두 개예요. <b>보습으로 벽을 메우고, 긁지 않게 해서 고리를 끊는 것.</b>
+  스테로이드는 이미 붙은 불을 끄는 역할이고, 벽을 고치는 건 보습제예요.</p>
+  <p><em>&rarr; 이 개념은 3-1 아토피 피부염, PART 6의 F 항목,
+  PART 9의 생활교육에서 회수돼요.</em></p>
+
+  <h2>2-2. 눌러서 하얘지는가 &mdash; 피가 어디 있느냐의 문제</h2>
+  <p>피부가 붉게 보이는 이유는 두 가지뿐이에요. <b>혈관 안에 피가 많거나, 혈관 밖으로
+  피가 나왔거나.</b> 혈관이 확장되어 붉으면 누를 때 피가 옆으로 밀려나 하얘져요.
+  혈관 밖으로 새어 나온 피는 밀 곳이 없으니 그대로 남고요.</p>
+  <p>이 단순한 물리가 진단을 크게 갈라요. 눌러도 안 하얘진다는 건 <b>혈관벽이 새고 있다</b>는
+  뜻이고, 그러면 혈관염이나 혈소판 문제 같은 전신 질환을 봐야 하거든요.</p>
+  <p>쉽게 말하면 <b>물에 푼 물감은 밀리고, 종이에 스민 물감은 안 밀리는</b> 셈이에요.</p>
+  <p><em>&rarr; 이 개념은 1-4의 혼동쌍, PART 7의 압통 촉진과 diascopy,
+  PART 1의 관문 자반 항목에서 회수돼요.</em></p>
+
+  <h2>2-3. 신경 하나를 따라 띠처럼 &mdash; dermatome</h2>
+  <p>척수에서 나온 감각신경 하나가 담당하는 피부 구역을 <b>dermatome</b>이라고 해요.
+  띠처럼 몸을 두르고 있고, 몸 한쪽만 담당해요. 반대쪽은 반대쪽 신경이 담당하거든요.</p>
+  <p>수두 바이러스는 처음 감염 뒤 신경절에 숨어 있다가, 면역이 떨어지면 다시 깨어나
+  그 신경을 타고 피부로 나와요. 그래서 대상포진은 <b>한쪽에만, 띠처럼</b> 생겨요.
+  그리고 신경을 타고 나오는 병이니 <b>발진보다 통증이 먼저</b> 옵니다.</p>
+  <p>이 두 특징 &mdash; 일측성과 선행 통증 &mdash; 이 대상포진을 다른 수포성 질환과
+  갈라줘요. 접촉피부염이나 한포진은 양쪽에 생기고 통증이 먼저 오지 않거든요.</p>
+  <p><em>&rarr; 이 개념은 3-4 대상포진, PART 6의 L 항목,
+  PART 7의 분포 시진에서 회수돼요.</em></p>
+
+  <div class="recall"><div class="lb">스스로 답해보기</div>
+    <p>아토피에서 보습제가 스테로이드만큼 중요한 이유는?</p>
+    <p>눌러도 안 하얘지는 발진이 왜 전신 질환을 지목하는가?</p>
+    <p>대상포진이 한쪽에만 띠처럼 생기는 이유는?</p>
+  </div>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 3</div>
+    <h1>핵심 질환 한 바퀴</h1>
+    <p class="dek">여섯만 돌려요. 가장 흔한 셋, 특징이 뚜렷한 감염 둘, 그리고 소아 하나.</p></div>
+
+  <h2>3-1. 아토피 피부염</h2>
+  <p class="sub">왜 건조하고, 왜 가렵고, 왜 굽힘쪽일까요?</p>
+  <blockquote><div class="who">환자</div>
+    <p>어릴 때부터 피부가 건조하고 가려웠어요.</p>
+    <p>요즘은 팔오금이랑 무릎 뒤가 특히 심해요. 긁으면 진물이 나고요.</p>
+    <p>밤에 더 가려워서 잠을 설칩니다.</p>
+    <p>알레르기 비염도 있고, 어머니도 천식이 있으세요.</p></blockquote>
+  <p>결정적인 건 <b>만성 · 가려움 · 건조 · 굽힘쪽 · 알레르기 가족력</b>이에요.
+  다섯이 모이면 거의 확정이고, 특히 <b>어릴 때부터</b>라는 시간 축이 급성 질환들을 지워요.</p>
+
+  <h3>왜 건조할까요?</h3>
+  <p>PART 2-1의 벽 이야기예요. 각질층의 지질과 단백질 구조가 약해서 <b>수분이 계속 빠져나가요.</b>
+  그래서 아무리 물을 발라도 금방 마르고, 지질을 채워 주는 보습제가 필요해요.</p>
+
+  <h3>왜 가려움과 긁기가 악순환일까요?</h3>
+  <p>벽이 새면 알레르겐이 쉽게 들어와 면역 반응이 일어나고, 그 결과 가려워져요.
+  긁으면 벽이 더 망가지고, 더 새고, 더 가려워지죠. 게다가 긁힌 자리로 세균이 들어와
+  이차 감염이 생기기도 하고요. <b>고리를 끊는 게 치료의 절반</b>이라 긁지 말라는 교육이
+  약 처방만큼 중요해요.</p>
+
+  <h3>왜 나이에 따라 부위가 바뀔까요?</h3>
+  <p>2세 미만은 <b>얼굴 · 몸통 · 사지 폄쪽</b>, 2세 이상은 <b>얼굴 · 목 · 사지 굽힘쪽</b>이에요.
+  아기는 기어 다니며 폄쪽이 바닥에 닿고 침이 얼굴에 묻어요. 크면서는 땀이 고이고
+  마찰이 반복되는 굽힘쪽이 주 무대가 되고요. <b>나이를 물어야 부위 해석이 됩니다.</b></p>
+
+  <h3>왜 밤에 더 가려울까요?</h3>
+  <p>밤에는 체온이 오르고 피부 혈류가 늘어 가려움 역치가 낮아져요. 그리고 낮처럼 주의를
+  분산시킬 자극이 없으니 가려움이 더 크게 느껴지고요. 그래서 수면 방해가 심하고,
+  항히스타민제가 밤에 특히 도움이 돼요.</p>
+
+  <h3>왜 알레르기 가족력을 물을까요?</h3>
+  <p>아토피 피부염 &middot; 알레르기 비염 &middot; 천식은 같은 소인을 공유해요.
+  본인에게 비염이나 천식이 있거나 가족에게 있으면 사전 확률이 크게 올라가요.
+  그래서 과거력과 가족력이 이 질환에서 유난히 무거워요.</p>
+
+  <p><b>쌍둥이 감별 &mdash; 접촉피부염.</b> 둘 다 가렵고 진물이 나요. 갈라주는 건
+  <em>닿은 자리에만 생기나요, 아니면 늘 같은 부위에 생기나요</em>예요.</p>
+
+  <p><b>CPX 연결.</b> O에서 어릴 때부터라는 만성 경과를 잡고 &rarr; L에서 굽힘쪽 분포를
+  확인하고 &rarr; C에서 가려움과 건조를 받아내고 &rarr; 과에서 비염 · 천식을,
+  가에서 알레르기 가족력을 묻고 &rarr; PEx에서 전신 시진과 <b>피부묘기증</b> 확인 &rarr;
+  검사는 skin prick test와 혈청 IgE &rarr; Edu에서 보습 · 중성비누 · 긁지 않기를 설명해요.</p>
+
+  <p class="sub"><b>SP 언어 사인</b> &nbsp; 어릴 때부터 그랬어요 &middot; 팔오금이 심해요
+  &middot; 밤에 더 가려워요 &middot; 긁으면 진물이 나요 &middot; 비염도 있어요</p>
+
+  <h2>3-2. 접촉피부염</h2>
+  <p class="sub">왜 닿은 자리에만 생길까요?</p>
+  <blockquote><div class="who">환자</div>
+    <p>새로 산 목걸이를 하고부터 목에 발진이 났어요.</p>
+    <p>목걸이가 닿는 자리만 딱 붉어지고 가려워요.</p>
+    <p>안 하면 좀 가라앉는데 다시 하면 또 생겨요.</p></blockquote>
+  <p>결정적인 건 <b>경계가 뚜렷한 국소 분포 + 노출과의 시간 관계</b>예요.
+  <b>닿은 자리에만</b>이라는 말이 나오면 이 진단이 거의 확정돼요.</p>
+
+  <h3>왜 경계가 뚜렷할까요?</h3>
+  <p>원인 물질이 닿은 곳에서만 면역 반응이 일어나기 때문이에요. 물질이 퍼지지 않으니
+  병변도 퍼지지 않고, 접촉면의 모양을 그대로 따라가요. 벨트 자국, 시곗줄 자국,
+  화장품 바른 범위처럼요. 쉽게 말하면 <b>도장이 찍힌 모양</b>인 셈이에요.</p>
+
+  <h3>왜 처음 쓸 때는 괜찮았을까요?</h3>
+  <p>알레르기성 접촉피부염은 <b>감작</b>이 필요해요. 처음 노출에서는 면역계가 그 물질을
+  기억만 하고, 다시 만났을 때 반응해요. 그래서 오래 쓰던 화장품에도 어느 날 갑자기
+  발진이 날 수 있어요. <b>새로 바꾼 것만 묻고 끝내면 놓쳐요.</b></p>
+
+  <h3>왜 첩포검사를 할까요?</h3>
+  <p>의심 물질을 등에 붙여 놓고 며칠 뒤 반응을 보는 검사예요. 무엇이 원인인지 알아야
+  피할 수 있고, <b>회피가 곧 치료</b>이기 때문에 원인 규명이 중요해요.
+  판독은 부착 후 2일째와 4일째에 해요.</p>
+
+  <p><b>쌍둥이 감별 &mdash; 아토피 피부염.</b> 갈라주는 건 분포예요.
+  <em>닿은 자리에만인가, 정해진 호발 부위인가.</em></p>
+
+  <p><b>CPX 연결.</b> L에서 병변 경계와 모양을 확인하고 &rarr; F 접촉피부염에서 새로운 비누
+  · 화장품 · 로션 · 옷을 묻고 &rarr; Ex에서 이전에도 같은 상황이 있었는지 확인하고 &rarr;
+  PEx에서 분포와 경계를 시진 &rarr; 검사는 첩포검사와 유발검사 &rarr;
+  Edu에서 원인 회피와 냉습포, 국소 스테로이드를 설명해요.</p>
+
+  <p class="sub"><b>SP 언어 사인</b> &nbsp; 닿는 자리만 그래요 &middot; 새로 산 걸 쓰고부터요
+  &middot; 안 하면 가라앉아요 &middot; 경계가 뚜렷해요</p>
+
+  <h2>3-3. 약물 발진</h2>
+  <p class="sub">왜 며칠 뒤에 나고, 왜 같은 자리에 또 날까요?</p>
+  <blockquote><div class="who">환자</div>
+    <p>감기약을 먹고 사나흘 뒤에 온몸에 발진이 났어요.</p>
+    <p>가렵고 붉은 반점이 여기저기 있습니다.</p>
+    <p>예전에도 약 먹고 이 자리에 똑같이 난 적이 있어요.</p></blockquote>
+  <p>결정적인 건 <b>약물 노출 + 시간 지연 + 전신 분포</b>예요. 그리고 <b>같은 자리에
+  반복</b>된다는 말이 나오면 고정 약진을 떠올려요.</p>
+
+  <h3>왜 바로가 아니라 며칠 뒤일까요?</h3>
+  <p>대부분의 약물 발진은 지연형 면역 반응이라 <b>T세포가 활성화되는 데 며칠이 걸려요.</b>
+  그래서 약을 먹은 지 며칠 뒤에 나타나고, 환자는 약과 연결 짓지 못하는 경우가 많아요.
+  묻지 않으면 안 나오는 정보라는 뜻이에요.</p>
+
+  <h3>왜 고정 약진은 같은 자리에 날까요?</h3>
+  <p>그 부위 피부에 기억 T세포가 남아 있기 때문이에요. 같은 약이 들어오면 그 자리에서만
+  다시 반응하고, 가라앉은 뒤에는 <b>과색소 침착</b>이 남아요. 그래서 예전 흔적이 같은 자리에
+  보이는 게 단서가 됩니다.</p>
+
+  <h3>왜 약을 끊는 게 첫 치료일까요?</h3>
+  <p>원인이 계속 들어오는 한 반응이 멈추지 않기 때문이에요. 의심되는 약을 중단하고
+  반응을 보는 것이 진단이자 치료예요. 그 다음이 스테로이드와 항히스타민제고요.
+  <b>전신 증상이 있으면 전신 스테로이드</b>로 올라가요.</p>
+
+  <h3>언제 응급으로 넘어갈까요?</h3>
+  <p>점막이 침범되거나 수포가 생기고 니콜스키 징후가 양성이면 SJS/TEN이에요.
+  <b>이건 단순 약진이 아니라 피부가 벗겨지는 상태</b>라 화상처럼 다뤄야 해요.
+  그래서 약물 발진 케이스에서는 입 안과 눈을 반드시 봅니다.</p>
+
+  <p><b>쌍둥이 감별 &mdash; 바이러스 발진.</b> 둘 다 전신에 붉은 반점이 나요. 갈라주는 건
+  <em>약을 새로 드셨나요</em>와 <em>발열과 감기 증상이 먼저 왔나요</em>예요.</p>
+
+  <p><b>CPX 연결.</b> 약에서 최근 새로 먹은 약과 건강보조식품을 묻고 &rarr; O에서
+  복용과 발진의 시간 간격을 잡고 &rarr; Ex에서 같은 자리 반복을 확인하고 &rarr;
+  PEx에서 구강 · 눈 점막과 니콜스키 징후 &rarr; 검사는 의심 약 중단, 고정 약진이면 첩포검사
+  &rarr; Edu에서 약물 중단 후 반응 확인과 아나필락시스 교육을 해요.</p>
+
+  <p class="sub"><b>SP 언어 사인</b> &nbsp; 약 먹고 며칠 뒤에요 &middot; 온몸에 났어요
+  &middot; 예전에도 같은 자리에 났어요</p>
+
+  <h2>3-4. 대상포진</h2>
+  <p class="sub">왜 한쪽에만 띠처럼 나고, 왜 발진보다 통증이 먼저일까요?</p>
+  <blockquote><div class="who">환자</div>
+    <p>일흔두 살입니다. 사흘 전부터 오른쪽 옆구리가 따끔따끔 아팠어요.</p>
+    <p>어제부터 그 자리에 물집이 띠처럼 줄지어 났습니다.</p>
+    <p>반대쪽은 아무렇지도 않아요.</p></blockquote>
+  <p>결정적인 건 <b>일측성 + dermatome 분포 + 선행 통증</b>이에요. 셋이 모이면
+  다른 수포성 질환과 거의 겹치지 않아요.</p>
+
+  <h3>왜 한쪽에만 날까요?</h3>
+  <p>PART 2-3의 dermatome 이야기예요. 바이러스가 <b>신경절 하나에서 깨어나</b> 그 신경을
+  타고 나오니까, 그 신경이 담당하는 한쪽 띠에만 병변이 생겨요.
+  반대쪽은 다른 신경이 담당하니 멀쩡하고요.</p>
+
+  <h3>왜 통증이 먼저 올까요?</h3>
+  <p>바이러스가 신경 안에서 증식하면서 신경 자체를 자극하기 때문이에요. 그래서
+  <b>피부에 나오기 2~3일 전부터 그 구역이 아프거나 따끔거려요.</b>
+  발진이 없는 이 시기에 오면 진단이 어려운데, 일측성이라는 것과 나이가 단서가 돼요.</p>
+
+  <h3>왜 노인과 면역저하자에게 올까요?</h3>
+  <p>바이러스는 계속 신경절에 숨어 있고, 세포성 면역이 그걸 눌러 두고 있어요.
+  나이가 들거나 면역이 떨어지면 <b>누르는 힘이 약해져</b> 바이러스가 다시 활동해요.
+  그래서 젊은 사람에게 오면 면역저하 상태를 한 번 의심해 봐야 해요.</p>
+
+  <h3>왜 통증 조절을 따로 챙길까요?</h3>
+  <p>신경이 손상되는 병이라 <b>발진이 나은 뒤에도 통증이 남을 수 있어요.</b>
+  그래서 항바이러스제와 별도로 진통 계획을 세워요. NSAID로 시작해 필요하면 opioid,
+  신경병증성 통증에는 항우울제와 항경련제를 씁니다.</p>
+
+  <p><b>쌍둥이 감별 &mdash; 접촉피부염 · 한포진.</b> 갈라주는 건 <em>한쪽인가 양쪽인가</em>와
+  <em>발진 전에 아팠나요</em>예요.</p>
+
+  <p><b>CPX 연결.</b> L에서 일측성과 띠 모양 분포를 확인하고 &rarr; O에서 통증이 발진보다
+  먼저였는지 잡고 &rarr; 과에서 면역저하 상태를 묻고 &rarr; PEx에서 dermatome 분포와
+  수포 · 딱지 확인 &rarr; 검사는 대개 불필요, 간혹 PCR &rarr;
+  Edu에서 항바이러스제와 통증 조절, 신경통이 남을 수 있음을 설명해요.</p>
+
+  <p class="sub"><b>SP 언어 사인</b> &nbsp; 한쪽만 그래요 &middot; 띠처럼 줄지어 났어요
+  &middot; 발진 나기 전부터 아팠어요 &middot; 따끔따끔해요</p>
+
+  <h2>3-5. 옴</h2>
+  <p class="sub">왜 밤에 가렵고, 왜 가족이 같이 가려울까요?</p>
+  <blockquote><div class="who">환자</div>
+    <p>두 주 전부터 온몸이 가려운데 밤에 유난히 심해요.</p>
+    <p>사타구니랑 겨드랑이, 손가락 사이가 제일 가렵습니다.</p>
+    <p>같이 사는 아들도 요즘 가렵다고 해요.</p></blockquote>
+  <p>결정적인 건 <b>야간 가려움 + 특정 부위 + 가족 동시 발생</b>이에요.
+  세 번째가 특히 강력해요. 다른 피부 질환은 가족이 동시에 가렵지 않거든요.</p>
+
+  <h3>왜 밤에 심할까요?</h3>
+  <p>진드기가 밤에 활동적이 되고, 몸이 따뜻해지면 움직임이 더 활발해져요.
+  그리고 낮과 달리 주의를 분산시킬 게 없으니 가려움이 더 크게 느껴지고요.
+  <b>밤에 유난히</b>라는 말이 나오면 옴을 목록에 올려요.</p>
+
+  <h3>왜 사타구니 · 겨드랑이 · 손가락 사이일까요?</h3>
+  <p>진드기는 각질층이 얇고 따뜻하며 습한 곳을 좋아해요. 손가락 사이, 손목 안쪽,
+  겨드랑이, 사타구니, 성기 주변이 그런 자리죠. 그 자리에 <b>굴</b>을 파고 들어가는데,
+  이 굴을 찾는 게 진찰의 핵심이에요.</p>
+
+  <h3>왜 가족을 같이 치료할까요?</h3>
+  <p>사람 사이 밀접 접촉으로 옮기기 때문이에요. 한 사람만 치료하면 <b>서로 다시 옮겨
+  끝나지 않아요.</b> 그래서 증상이 없어도 같이 사는 사람 전부를 동시에 치료해요.
+  이게 이 질환 교육의 핵심이에요.</p>
+
+  <h3>왜 얼굴은 빼고 바를까요?</h3>
+  <p>퍼메트린 연고는 얼굴을 제외하고 목 아래 전신에 바르고 8시간 뒤에 씻어내요.
+  성인에서는 얼굴에 잘 생기지 않고, 눈과 점막 자극을 피하기 위해서예요.</p>
+
+  <p><b>쌍둥이 감별 &mdash; 아토피 피부염.</b> 둘 다 가려워요. 갈라주는 건
+  <em>가족도 같이 가려운가요</em>와 <em>밤에 유난히 심한가요</em>예요.</p>
+
+  <p><b>CPX 연결.</b> C에서 가려움의 정도와 밤낮 변화를 받아내고 &rarr; L에서 사타구니 ·
+  겨드랑이 분포를 확인하고 &rarr; 가에서 가족 중 같은 증상을 묻고 &rarr;
+  PEx에서 손가락 사이 · 손목 안쪽 · 성기의 굴 확인 &rarr; 검사는 병변을 긁어 현미경 &rarr;
+  Edu에서 가족 동시 치료와 도포 방법을 설명해요.</p>
+
+  <p class="sub"><b>SP 언어 사인</b> &nbsp; 밤에 유난히 가려워요 &middot; 사타구니가 심해요
+  &middot; 아들도 가렵대요 &middot; 손가락 사이가 가려워요</p>
+
+  <h2>3-6. 성홍열</h2>
+  <p class="sub">왜 인후통이 먼저이고, 왜 소아일까요?</p>
+  <blockquote><div class="who">보호자</div>
+    <p>다섯 살 아이인데 이틀 전부터 열이 많이 나고 목이 아프다고 해요.</p>
+    <p>먹지를 못하고 토했어요.</p>
+    <p>어제부터 몸에 붉은 발진이 오돌토돌하게 돋았습니다.</p></blockquote>
+  <p>결정적인 건 <b>3세 이상 소아 + 고열 · 인후통 · 구토 + 전신 발진</b>이에요.
+  발진보다 <b>인후통이 먼저</b>라는 시간 순서가 특징이에요.</p>
+
+  <h3>왜 목에서 시작할까요?</h3>
+  <p>원인균이 인두에 자리 잡아 인두염을 일으키고, 균이 만든 독소가 혈류를 타고 돌면서
+  피부에 발진을 만들기 때문이에요. <b>감염은 목에, 발진은 독소 때문에 전신에</b> 생기는
+  구조예요. 그래서 인후통과 발열이 먼저고 발진이 나중이에요.</p>
+
+  <h3>왜 3세 이상일까요?</h3>
+  <p>독소에 대한 면역이 없어야 발진이 나는데, 아주 어린 영아는 모체 항체가 남아 있고
+  성인은 대개 면역이 생겨 있어요. 그래서 <b>3세 이상 소아가 호발 연령</b>이에요.</p>
+
+  <h3>왜 중심에서 주변으로 퍼질까요?</h3>
+  <p>혈류를 타고 온 독소가 몸통의 굵은 혈관 주변에서 먼저 반응을 만들기 때문이에요.
+  그래서 몸통에서 시작해 팔다리로 퍼지고, 접히는 부위에서 더 진해져요.
+  바이러스 발진도 같은 이유로 중심부에서 주변부로 퍼져요.</p>
+
+  <h3>왜 항생제를 쓸까요?</h3>
+  <p>세균 감염이라 항생제가 듣기도 하고, 치료하지 않으면 이후 합병증이 남을 수 있기
+  때문이에요. 진단은 임상 증상과 병력으로 하고, 확인이 필요하면
+  <b>편도와 인두에서 검체를 채취해 균 배양</b>을 해요.</p>
+
+  <p><b>쌍둥이 감별 &mdash; 바이러스 발진.</b> 둘 다 열과 전신 발진이에요. 갈라주는 건
+  <em>인후통과 구토가 두드러지나요</em>와 발진의 질감이에요.</p>
+
+  <p><b>CPX 연결.</b> A 전신에서 발열을, A 감염에서 인후통 · 구토를 받아내고 &rarr;
+  O에서 인후통이 발진보다 먼저였음을 확인하고 &rarr; L에서 중심에서 주변으로 퍼진 순서를 잡고
+  &rarr; PEx에서 인두 · 편도와 경부 림프절 &rarr; 검사는 임상 진단 + 균 배양 &rarr;
+  Edu에서 항생제 복용과 전파 방지를 설명해요.</p>
+
+  <p class="sub"><b>SP 언어 사인</b> &nbsp; 열이 많이 나요 &middot; 목이 아파서 못 먹어요
+  &middot; 토했어요 &middot; 어제부터 몸에 발진이 났어요</p>
+
+  <h2>3-7. 나머지는 결정 단서만</h2>
+  <table>
+    <thead><tr><th>질환</th><th>덩어리</th><th>결정 단서</th><th>검사 · 치료</th></tr></thead>
+    <tbody>
+      <tr><td class="k">바이러스 발진</td><td class="s">전신 · 감염</td>
+          <td>발열, 감기 증상, 홍역 3C, 중심부에서 주변부로 퍼짐. 수두는 다양한 형태가 섞임</td>
+          <td class="s">CBC · 혈청검사 / 대증 치료, 성인 수두는 항바이러스제</td></tr>
+      <tr><td class="k">2기 매독</td><td class="s">전신 · 감염</td>
+          <td>발열, 감기 증상, 전신 발진, <b>위험한 성관계</b>. 외음부 궤양 병력은 없을 수 있음</td>
+          <td class="s">VDRL · TPHA · FTA-ABS / Benzathine penicillin</td></tr>
+      <tr><td class="k">어루러기</td><td class="s">피부 · 감염</td>
+          <td>땀이 많이 나는 가슴 · 등 · 겨드랑이에 얼룩덜룩한 흰색 · 갈색 반점, 대개 무증상</td>
+          <td class="s">우드등검사 · KOH 도말 · 진균배양 / 건조하고 시원한 환경, 국소항진균제</td></tr>
+      <tr><td class="k">건선</td><td class="s">피부 · 염증</td>
+          <td>구진이 뭉쳐 판이 되고 <b>은백색 비늘이 겹겹이</b>. 팔꿈치 · 엉덩이 · 두피, 손발톱 변화</td>
+          <td class="s">피부조직검사 · 임상 진단 / 보습, 국소 스테로이드, 광선 치료, Retinoid</td></tr>
+      <tr><td class="k">전신홍반루푸스</td><td class="s">전신 · 자가면역</td>
+          <td>malar rash, discoid rash, 광과민성, 구강 궤양, 관절염, 거품뇨</td>
+          <td class="s">CBC · 항핵항체 · anti-dsDNA / 국소 스테로이드, HCQ, Glucocorticoid</td></tr>
+      <tr><td class="k">베체트병</td><td class="s">전신 · 자가면역</td>
+          <td>구강 궤양 + 생식기 궤양 + 포도막염 + 관절염</td>
+          <td class="s">Pathergy test, 결절성 홍반 / Colchicine(피부), Glucocorticoid</td></tr>
+      <tr><td class="k">피부근염</td><td class="s">전신 · 자가면역</td>
+          <td>gottron papule, heliotrope rash. <b>머리 빗기와 계단 오르기가 힘들다</b></td>
+          <td class="s">EMG · CK · 근육조직검사 / 국소 · 전신 스테로이드, 면역억제제</td></tr>
+    </tbody>
+  </table>
+
+  <h2>3-8. 발진의 시간 순서로 다시 정리</h2>
+  <p>발진 CC에서 자주 승부가 나는 건 <b>무엇이 먼저 왔는가</b>예요.
+  같은 전신 발진이라도 앞에 뭐가 왔느냐로 갈려요.</p>
+  <table>
+    <thead><tr><th>먼저 온 것</th><th>그 다음</th><th>가리키는 것</th></tr></thead>
+    <tbody>
+      <tr><td class="k">발열 · 감기 증상</td><td>전신 발진</td><td>바이러스 발진 · 2기 매독</td></tr>
+      <tr><td class="k">고열 · 인후통 · 구토</td><td>전신 발진</td><td>성홍열</td></tr>
+      <tr><td class="k">약물 복용</td><td>며칠 뒤 전신 발진</td><td>약물 발진</td></tr>
+      <tr><td class="k">한쪽 부위 통증</td><td>2~3일 뒤 그 자리에 수포</td><td>대상포진</td></tr>
+      <tr><td class="k">새 물질 접촉</td><td>닿은 자리에만 발진</td><td>접촉피부염</td></tr>
+      <tr><td class="k">아무것도 없음</td><td>어릴 때부터 만성 가려움</td><td>아토피 피부염</td></tr>
+    </tbody>
+  </table>
+
+  <div class="recall"><div class="lb">스스로 답해보기</div>
+    <p>아토피에서 나이에 따라 부위가 바뀌는 이유는?</p>
+    <p>접촉피부염에서 오래 쓰던 물건도 원인이 될 수 있는 이유는?</p>
+    <p>대상포진에서 통증이 발진보다 먼저인 기전은?</p>
+    <p>옴에서 가족을 동시에 치료하는 이유는?</p>
+  </div>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 4</div>
+    <h1>채점 역산표</h1>
+    <p class="dek">발진은 위치와 시간 순서가 배점의 중심이에요.</p></div>
+
+  <h2>4-1. MUST</h2>
+  <ul class="plain">
+    <li><b>L 세 단계</b> 어디에서 처음 &rarr; 어디로 퍼졌고 &rarr; 지금 어디에. 이 CC의 핵심이에요.<span class="g">MUST</span></li>
+    <li><b>C 양상</b> 모양 · 수 · 크기 · 색깔 · 딱지 · 물집 · 흰비늘.<span class="g">MUST</span></li>
+    <li><b>C 동반</b> 열감 · 가려움증 · 따가움 · 압통(HIT).<span class="g">MUST</span></li>
+    <li><b>A 전신</b> 발열 · 오한 · 감기 기운 · 근육통 · 관절통.<span class="g">MUST</span></li>
+    <li><b>A 류마티스</b> 광과민 · 거품뇨 · 구강 · 성기 궤양 · 근력 약화.<span class="g">MUST</span></li>
+    <li><b>A 알레르기</b> 입술 부종. 아나필락시스를 거르는 항목이에요.<span class="g">MUST</span></li>
+    <li><b>약</b> 최근 새로 먹은 약과 건강보조식품, 중단 시 호전 여부.<span class="g">MUST</span></li>
+    <li><b>F 접촉</b> 새로운 비누 · 화장품 · 로션 · 옷이 닿았는지.<span class="g">MUST</span></li>
+    <li><b>과 · 가 알레르기</b> 천식 · 비염 · 아토피와 그 가족력.<span class="g">MUST</span></li>
+  </ul>
+
+  <h2>4-2. SHOULD와 DROP</h2>
+  <table>
+    <thead><tr><th>등급</th><th>항목</th><th>왜 그 등급인가</th></tr></thead>
+    <tbody>
+      <tr><td class="k">SHOULD</td><td>F 음식 · 콜린성 · 위험한 성관계</td><td class="s">해당 방향으로 기울 때 결정적이에요</td></tr>
+      <tr><td class="k">SHOULD</td><td>D 지속 · 빈도 · 밤낮 변화</td><td class="s">밤에 심하면 옴, 몇 시간 내 사라지면 두드러기</td></tr>
+      <tr><td class="k">SHOULD</td><td>Co 크기 · 개수 · 증상 진행</td><td class="s">진행 속도가 급성 감염과 만성 질환을 갈라요</td></tr>
+      <tr><td class="k">SHOULD</td><td>Ex 이전 삽화 · 피부과 치료</td><td class="s">만성 반복인지, 치료 반응이 어땠는지</td></tr>
+      <tr><td class="k">SHOULD</td><td>사 여행 · 벌레 물림 · 직업</td><td class="s">감염과 노출 경로를 잡아요</td></tr>
+      <tr><td class="k">SHOULD</td><td>A 감염 계통</td><td class="s">오심 · 구토 · 설사 · 호흡기 증상</td></tr>
+      <tr><td class="k">DROP</td><td>E 건강검진</td><td class="s">감별을 못 좁혀요</td></tr>
+      <tr><td class="k">DROP</td><td>외 수술력</td><td class="s">이 CC에서 기여가 얕아요</td></tr>
+      <tr><td class="k">DROP</td><td>여 월경력 세부</td><td class="s">질분비물과 성관계 시 통증은 매독 · 성병 방향에서만 의미</td></tr>
+    </tbody>
+  </table>
+  <p><b>버리는 순서</b>는 E &rarr; 외 &rarr; 여 월경 세부 &rarr; Co예요.</p>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 5</div>
+    <h1>문진 개관</h1>
+    <p class="dek">발진 문진의 중심은 L이에요. 위치를 시간 순서로 받아내는 것.</p></div>
+
+  <p>다른 CC에서 L은 아픈 곳을 확인하는 항목이에요. 발진에서는 다릅니다.
+  <b>어디에서 처음 생겼고, 어디로 퍼졌고, 지금 어디에 있는가</b> &mdash; 세 단계를
+  시간 순서로 받아야 해요. 이게 곧 <b>발진의 진행 경로</b>이고, 경로가 진단을 만들어요.</p>
+
+  <p>중심부에서 주변부로 퍼졌으면 혈류를 타고 온 것이니 전신 감염이고,
+  한 자리에서 안 움직이면 접촉이나 국소 병변이고, 띠처럼 한쪽으로만 가면 신경을 탄 거예요.
+  <b>경로가 기전을 말해 줍니다.</b></p>
+
+  <p>C도 다른 CC와 달라요. 통증의 양상이 아니라 <b>병변의 생김새</b>를 받아요.
+  모양 · 수 · 크기 · 색깔이 기본이고, 여기에 딱지 · 물집 · 흰비늘 같은 이차 변화를 더해요.
+  그리고 동반 증상 셋 &mdash; 열감 · 가려움 · 압통 &mdash; 을 붙이고요.</p>
+
+  <p>A는 대축을 판정해요. <b>전신 증상이 있으면 전신 질환</b>이거든요.
+  발열 · 근육통 · 관절통이 있으면 감염이나 자가면역 쪽으로, 없으면 피부 자체 질환 쪽으로.</p>
+
+  <p><em>문진의 뼈대 한 줄 &mdash; L로 경로를 그리고, C로 생김새를 받고,
+  A로 전신인지 피부인지 가른다.</em></p>
+
+  <h2>5-1. 암기법 두 개</h2>
+  <table>
+    <thead><tr><th>항목</th><th>암기법</th><th>풀이</th></tr></thead>
+    <tbody>
+      <tr><td class="k">C 양상</td><td><b>복숭아</b></td>
+          <td><b>딱</b>지 &rarr; 딱딱 복숭아 &middot; <b>물</b>집 &rarr; 물렁 복숭아 &middot;
+              흰<b>비늘</b> &rarr; 복숭아 껍질. 여기에 기본 넷을 더해요 &mdash;
+              수(count) · 크기(size) · 색깔(color) · 모양(shape), c/s/c/s</td></tr>
+      <tr><td class="k">C 동반</td><td><b>HIT</b></td>
+          <td><b>H</b>ot 열감 · <b>I</b>tch 가려움 · <b>T</b>enderness 압통.
+              따가움은 가려움과 같이 물어봐요</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 6</div>
+    <h1>History taking</h1></div>
+
+  <h2>6-1. O &mdash; 언제, 어떤 상황에서</h2>
+  <div class="si"><div><span class="code">O  발생</span><span class="g">MUST</span></div>
+  <div class="say">언제부터 피부에 발진이 났나요? 어떤 특별한 상황에서 발생했나요?</div><p class="why">시작 시점과 계기를 동시에 받아요. 약 복용 · 새 물질 접촉 · 감염 · 음식 중 무엇이 앞에 있었는지가 갈려요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>약 먹고 며칠 뒤</td><td class="dx">약물 발진</td><td class="rz">지연형 면역 반응이라 T세포 활성화에 며칠이 걸린다</td></tr><tr><td>새 물건을 쓴 뒤</td><td class="dx">접촉피부염</td><td class="rz">감작된 물질에 다시 노출되면 그 자리에서 반응한다</td></tr><tr><td>열과 감기 증상 뒤</td><td class="dx">바이러스 발진 · 성홍열 · 2기 매독</td><td class="rz">감염이 먼저 오고 발진이 뒤따른다</td></tr><tr><td>한쪽이 아프고 나서</td><td class="dx">대상포진</td><td class="rz">바이러스가 신경 안에서 증식하며 신경을 먼저 자극한다</td></tr><tr><td>어릴 때부터 계속</td><td class="dx">아토피 피부염</td><td class="rz">피부 장벽의 구조적 문제라 만성으로 간다</td></tr></tbody></table></div>
+
+  <h2>6-2. L &mdash; 세 단계로 경로를 그려요</h2>
+  <p>이 CC에서 가장 무거운 항목이에요. 한 번에 묻지 말고 <b>세 번에 나눠서</b> 물어요.</p>
+  <div class="si"><div><span class="code">L  위치 · 경로</span><span class="g">MUST</span></div>
+  <div class="say">어디에서 처음 생겼나요? 어디로 퍼졌나요? 그럼 지금 현재 어디어디에 발진이 있나요?</div><p class="why">발진의 진행 경로가 곧 기전이에요. 세 단계를 시간 순서로 받아야 경로가 그려져요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>몸통 중심에서 팔다리로</td><td class="dx">바이러스 발진 · 성홍열</td><td class="rz">혈류를 타고 온 것이라 굵은 혈관 주변에서 먼저 반응한다</td></tr><tr><td>한쪽에 띠처럼</td><td class="dx">대상포진</td><td class="rz">신경절 하나에서 깨어나 그 신경이 담당하는 구역에만 나온다</td></tr><tr><td>닿은 자리에만</td><td class="dx">접촉피부염</td><td class="rz">원인 물질이 퍼지지 않으니 병변도 접촉면을 따라간다</td></tr><tr><td>팔오금 · 무릎 뒤</td><td class="dx">아토피 피부염</td><td class="rz">땀이 고이고 마찰이 반복되는 굽힘쪽이 주 무대다</td></tr><tr><td>손바닥 · 발바닥까지</td><td class="dx">2기 매독</td><td class="rz">전신 혈행성 파종의 특징적 분포다</td></tr><tr><td>사타구니 · 겨드랑이 · 손가락 사이</td><td class="dx">옴</td><td class="rz">각질층이 얇고 따뜻하며 습한 곳을 진드기가 좋아한다</td></tr><tr><td>땀 많이 나는 가슴 · 등</td><td class="dx">어루러기</td><td class="rz">피지와 땀이 많은 부위에 진균이 자란다</td></tr><tr><td>팔꿈치 · 무릎 · 두피</td><td class="dx">건선</td><td class="rz">마찰과 자극을 받는 폄쪽이 호발 부위다</td></tr></tbody></table></div>
+
+  <h2>6-3. D · Co · Ex</h2>
+  <div class="si"><div><span class="code">D  지속 · 빈도 · 밤낮</span><span class="g">SHOULD</span></div>
+  <div class="say">발진이 생기면 얼마나 오래 가나요? 얼마나 자주 생기나요? 하루 중 밤낮에 변화가 있나요?</div><p class="why">지속시간이 두드러기를 가르고, 밤낮 변화가 옴을 지목해요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>몇 시간 내 사라졌다 다시</td><td class="dx">두드러기</td><td class="rz">팽진은 혈관 투과성 변화라 빠르게 생겼다 사라진다</td></tr><tr><td>밤에 유난히 가렵다</td><td class="dx">옴 · 아토피</td><td class="rz">진드기가 밤에 활동적이고, 체온이 오르면 가려움 역치가 낮아진다</td></tr><tr><td>계속 남아 있다</td><td class="dx">만성 피부 질환</td><td class="rz">구조적 변화가 있으면 지속된다</td></tr><tr><td>주기적으로 반복</td><td class="dx">접촉 · 음식 알레르기</td><td class="rz">노출이 반복될 때마다 반응이 재현된다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">Co  진행</span><span class="g">SHOULD</span></div>
+  <div class="say">점점 더 크기나 부위가 커지나요? 개수가 늘어나나요? 가려움이나 통증이 더 심해지나요?</div><p class="why">진행 속도가 급성 감염과 만성 질환을 갈라요. 빠르게 번지면 감염이나 약물 반응을 위로 올려요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>빠르게 번진다</td><td class="dx">감염 · 약물 발진</td><td class="rz">원인이 계속 공급되거나 증식하고 있다</td></tr><tr><td>천천히 넓어진다</td><td class="dx">건선 · 어루러기</td><td class="rz">만성 경과를 따르는 질환이다</td></tr><tr><td>가려움이 심해진다</td><td class="dx">알레르기 · 옴</td><td class="rz">면역 반응이 강해지거나 진드기가 늘고 있다</td></tr><tr><td>변화 없다</td><td class="dx">만성 안정기</td><td class="rz">급성 원인보다 만성 질환을 본다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">Ex  이전 삽화 · 치료</span><span class="g">SHOULD</span></div>
+  <div class="say">이전에도 이런 적이 있나요? 이전에 피부과 치료를 받은 적이 있나요?</div><p class="why">반복 여부가 만성 질환과 알레르기를 시사하고, 치료 반응이 진단 정보가 돼요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>전에도 같은 자리에</td><td class="dx">고정 약진</td><td class="rz">그 부위에 기억 T세포가 남아 같은 자리에서만 반응한다</td></tr><tr><td>어릴 때부터 반복</td><td class="dx">아토피 피부염</td><td class="rz">피부 장벽의 구조적 문제라 평생 반복된다</td></tr><tr><td>스테로이드 연고에 좋아졌다</td><td class="dx">염증성 · 알레르기성</td><td class="rz">약물 반응성이 간접 근거가 된다</td></tr><tr><td>처음이다</td><td class="dx">급성 원인</td><td class="rz">새로 생긴 노출이나 감염을 찾는다</td></tr></tbody></table></div>
+
+  <h2>6-4. C &mdash; 병변의 생김새를 받아요</h2>
+  <div class="si"><div><span class="code">C  양상 — 복숭아</span><span class="g">MUST</span></div>
+  <div class="say">발진 모양이 어떤가요? 과녁 모양은 아닌가요? 몇 개나 되고 크기와 색깔은 어떤가요? 딱지가 앉거나 물집이 잡히거나 흰 비늘 같은 것이 덮이지는 않나요? 발진 여러 개가 하나로 합쳐지기도 하나요?</div><p class="why">원발진과 이차 변화를 한 번에 받아요. 수 · 크기 · 색깔 · 모양이 기본이고 딱지 · 물집 · 비늘이 추가예요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>과녁 모양</td><td class="dx">다형홍반 · SJS/TEN 초기</td><td class="rz">중심과 주변의 반응 정도가 달라 동심원 모양이 된다</td></tr><tr><td>물집이 잡힌다</td><td class="dx">대상포진 · 수두 · 천포창 · SJS/TEN</td><td class="rz">표피 안이나 아래에 액체가 고인 상태다</td></tr><tr><td>은백색 비늘이 겹겹이</td><td class="dx">건선</td><td class="rz">각질 형성이 비정상적으로 빨라 층층이 쌓인다</td></tr><tr><td>딱지가 앉는다</td><td class="dx">이차 변화 · 감염 · 긁은 자국</td><td class="rz">수포나 미란이 마르면서 생긴다</td></tr><tr><td>얼룩덜룩한 흰색 · 갈색 반점</td><td class="dx">어루러기</td><td class="rz">진균이 색소 생성에 영향을 준다</td></tr><tr><td>여러 개가 합쳐진다</td><td class="dx">판 형성 · 건선 · 만성 습진</td><td class="rz">구진이 융합해 넓은 판이 된다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">C  동반 — HIT</span><span class="g">MUST</span></div>
+  <div class="say">만지면 뜨거운가요? 가렵거나 따갑지는 않나요? 눌렀을 때 아픈가요? 일상 생활에 많이 불편하신가요?</div><p class="why">열감 · 가려움 · 압통 셋을 한 번에 받아요. 따가움은 가려움과 같이 물어요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>가렵다</td><td class="dx">알레르기 · 옴 · 아토피</td><td class="rz">히스타민을 비롯한 매개물질이 가려움 신경을 자극한다</td></tr><tr><td>아프다 · 따갑다</td><td class="dx">대상포진 · 감염 · SJS/TEN</td><td class="rz">신경 침범이나 조직 손상이 있으면 통증이 앞선다</td></tr><tr><td>만지면 뜨겁다</td><td class="dx">감염 · 급성 염증</td><td class="rz">혈류 증가가 열감으로 느껴진다</td></tr><tr><td>아무 증상 없다</td><td class="dx">어루러기 · 색소 변화</td><td class="rz">염증 반응이 약하면 증상이 거의 없다</td></tr></tbody></table></div>
+
+  <h2>6-5. A &mdash; 대축을 판정하는 네 줄</h2>
+  <div class="si"><div><span class="code">A  전신</span><span class="g">MUST</span></div>
+  <div class="say">열이나 오한, 감기 기운은 없으신가요? 식은땀이나 근육통, 관절통은요?</div><p class="why">전신 증상의 유무가 대축을 갈라요. 있으면 전신 질환, 없으면 피부 자체 질환 쪽이에요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>발열 · 감기 증상</td><td class="dx">바이러스 발진 · 성홍열 · 2기 매독</td><td class="rz">감염이 전신 반응을 만든다</td></tr><tr><td>근육통 · 관절통</td><td class="dx">자가면역 · 감염</td><td class="rz">전신 염증이 근육과 관절에도 영향을 준다</td></tr><tr><td>전신 증상 없음</td><td class="dx">피부 자체 질환</td><td class="rz">국소 원인이면 전신 반응이 생길 이유가 없다</td></tr><tr><td>고열 + 아파 보임</td><td class="dx">중증 감염</td><td class="rz">관문에서 즉시 걸러야 하는 상황이다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">A  감염 계통</span><span class="g">SHOULD</span></div>
+  <div class="say">오심이나 구토, 설사는 없으신가요? 숨이 차거나 기침, 가래, 인후통은요?</div><p class="why">감염의 진입 경로와 침범 장기를 훑어요. 인후통과 구토는 성홍열을 지목해요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>인후통 · 구토</td><td class="dx">성홍열</td><td class="rz">인두에 자리 잡은 균이 독소를 내보낸다</td></tr><tr><td>기침 · 가래</td><td class="dx">호흡기 감염 동반</td><td class="rz">바이러스 발진의 선행 증상일 수 있다</td></tr><tr><td>설사</td><td class="dx">장관 감염 · 반응성</td><td class="rz">감염원의 경로를 시사한다</td></tr><tr><td>호흡곤란</td><td class="dx">아나필락시스 · 중증</td><td class="rz">관문으로 즉시 올린다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">A  류마티스</span><span class="g">MUST</span></div>
+  <div class="say">관절이 아프지는 않나요? 햇빛에 노출된 부위에 발진이 잘 생기나요? 소변에 거품이 많거나 입 안, 성기가 헐지는 않나요? 팔다리 힘이 약해지지는 않았나요?</div><p class="why">전신 자가면역을 걸러내는 줄이에요. 광과민 · 거품뇨 · 궤양 · 근력 약화 넷을 한 번에 물어요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>햇빛 보면 심해진다</td><td class="dx">전신홍반루푸스</td><td class="rz">자외선이 각질세포를 죽여 핵 항원을 노출시킨다</td></tr><tr><td>소변에 거품</td><td class="dx">루푸스 신염</td><td class="rz">사구체 침착으로 단백뇨가 생긴다</td></tr><tr><td>구강 · 성기 궤양</td><td class="dx">베체트 · 루푸스</td><td class="rz">점막 침범이 있는 전신 질환이다</td></tr><tr><td>머리 빗기 · 계단 오르기가 힘들다</td><td class="dx">피부근염</td><td class="rz">근위부 근력이 먼저 약해진다</td></tr><tr><td>관절통</td><td class="dx">자가면역 질환군</td><td class="rz">피부와 관절을 함께 침범하는 질환이 많다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">A  알레르기</span><span class="g">MUST</span></div>
+  <div class="say">입술이 붓거나 숨쉬기가 힘들지는 않으셨나요?</div><p class="why">아나필락시스를 거르는 줄이에요. 짧지만 관문 항목이라 반드시 던져요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>입술이 부었다</td><td class="dx">혈관부종 · 아나필락시스 위험</td><td class="rz">점막 부종은 기도 폐쇄로 갈 수 있다</td></tr><tr><td>숨이 차고 어지러웠다</td><td class="dx">아나필락시스</td><td class="rz">전신 혈관 확장과 기관지 수축이 동시에 온다</td></tr><tr><td>없다</td><td class="dx">즉시형 반응 근거 약함</td><td class="rz">다만 교육에서 응급 증상을 반드시 알려준다</td></tr></tbody></table></div>
+
+  <h2>6-6. F &mdash; 유발 인자를 네 방향으로</h2>
+  <div class="si"><div><span class="code">F  악화 · 완화</span><span class="g">MUST</span></div>
+  <div class="say">언제 발진이 더 심해지나요? 어떻게 하면 좀 사라지나요? 발진이 나기 전에 그 부분에 새로운 비누나 화장품, 로션이나 새로운 옷이 닿지는 않았나요?</div><p class="why">접촉피부염을 직격하는 질문이에요. 원인 회피가 곧 치료라 유발 인자를 찾는 게 핵심이에요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>새 화장품 · 비누 · 옷</td><td class="dx">접촉피부염</td><td class="rz">감작된 물질에 다시 노출되면 그 자리에서 반응한다</td></tr><tr><td>금속 장신구</td><td class="dx">접촉피부염</td><td class="rz">니켈 같은 금속이 흔한 원인이다</td></tr><tr><td>땀 흘리면 심해진다</td><td class="dx">콜린성 두드러기 · 아토피</td><td class="rz">체온 상승이 매개물질 분비를 유발한다</td></tr><tr><td>찬물에 닿으면</td><td class="dx">한랭 두드러기</td><td class="rz">온도 변화가 비만세포를 자극한다</td></tr><tr><td>보습하면 좋아진다</td><td class="dx">아토피 · 건조 습진</td><td class="rz">장벽 회복이 증상을 줄인다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">F  음식 · 성관계</span><span class="g">SHOULD</span></div>
+  <div class="say">발진이 나기 전에 어떤 음식을 드셨나요? 최근에 처음 만난 사람과 성관계를 한 적이 있나요?</div><p class="why">음식 알레르기와 2기 매독을 각각 겨냥해요. 성관계 질문은 양해를 구하고 물어요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>특정 음식 후 반복</td><td class="dx">음식 유발 두드러기</td><td class="rz">같은 음식에 반복 노출될 때마다 재현된다</td></tr><tr><td>위험한 성관계</td><td class="dx">2기 매독</td><td class="rz">외음부 궤양 병력이 없어도 2기로 올 수 있다</td></tr><tr><td>해당 없음</td><td class="dx">해당 원인 배제</td><td class="rz">다른 유발 인자로 초점을 옮긴다</td></tr></tbody></table></div>
+
+  <h2>6-7. E · 외 · 과 · 약 · 사 · 가 · 여</h2>
+  <div class="si"><div><span class="code">과  알레르기 과거력</span><span class="g">MUST</span></div>
+  <div class="say">알레르기 천식이나 비염, 아토피 피부염이 있나요? 특정 음식이나 꽃가루, 동물 알레르기가 있나요? 최근에 감기에 걸린 적이 있나요?</div><p class="why">아토피 소인을 확인해요. 비염 · 천식 · 아토피는 같은 소인을 공유하므로 사전 확률이 크게 올라가요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>비염이나 천식이 있다</td><td class="dx">아토피 피부염</td><td class="rz">같은 알레르기 소인을 공유한다</td></tr><tr><td>특정 알레르기가 있다</td><td class="dx">알레르기성 발진</td><td class="rz">노출 경로를 특정할 수 있다</td></tr><tr><td>최근 감기</td><td class="dx">바이러스 발진</td><td class="rz">선행 감염이 발진의 원인일 수 있다</td></tr><tr><td>없다</td><td class="dx">아토피 소인 약함</td><td class="rz">다른 방향으로 초점을 옮긴다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">약  약물</span><span class="g">MUST</span></div>
+  <div class="say">현재 복용하시는 약물이 있나요? 최근 새롭게 먹는 약이나 건강보조식품은 있나요? 약물을 중단하면 좋아지나요?</div><p class="why">약물 발진을 직격해요. 건강보조식품까지 물어야 하고, 중단 후 반응이 진단이자 치료예요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>최근 새 약을 먹었다</td><td class="dx">약물 발진</td><td class="rz">지연형 반응이라 며칠 뒤 발진이 나온다</td></tr><tr><td>건강보조식품을 시작했다</td><td class="dx">약물 발진</td><td class="rz">환자가 약으로 인식하지 않아 묻지 않으면 안 나온다</td></tr><tr><td>중단하니 좋아졌다</td><td class="dx">약물 발진 확진에 가까움</td><td class="rz">원인 제거로 반응이 멈춘 것이다</td></tr><tr><td>복용 약 없음</td><td class="dx">약물 원인 배제</td><td class="rz">다른 유발 인자를 찾는다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">사  생활 · 노출</span><span class="g">SHOULD</span></div>
+  <div class="say">음주나 흡연은 하세요? 직업이 어떻게 되세요? 최근에 여행 다녀오신 곳 있으신가요? 벌레 물린 곳이 있나요?</div><p class="why">감염과 노출 경로를 잡아요. 여행력과 벌레 물림은 묻지 않으면 안 나오는 정보예요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>최근 여행</td><td class="dx">감염성 발진</td><td class="rz">지역 특이 감염에 노출되었을 수 있다</td></tr><tr><td>벌레에 물렸다</td><td class="dx">벌레 물림 반응 · 감염 매개</td><td class="rz">물린 자리를 중심으로 병변이 생긴다</td></tr><tr><td>화학물질을 다루는 직업</td><td class="dx">접촉피부염</td><td class="rz">직업성 노출이 반복된다</td></tr><tr><td>특이사항 없음</td><td class="dx">노출 경로 불명</td><td class="rz">다른 항목으로 좁힌다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">가  가족력</span><span class="g">MUST</span></div>
+  <div class="say">가족 중에도 지금 비슷한 증상을 호소하는 분이 있나요? 가족 중에 천식이나 비염, 아토피 피부염, 알레르기 질환을 앓고 계신 분이 있나요?</div><p class="why">두 가지를 동시에 물어요. 동시 발생은 옴이나 전염성 질환을, 알레르기 가족력은 아토피를 지목해요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>가족도 같이 가렵다</td><td class="dx">옴 · 전염성 질환</td><td class="rz">밀접 접촉으로 옮기기 때문에 동시에 발생한다</td></tr><tr><td>알레르기 가족력</td><td class="dx">아토피 피부염</td><td class="rz">알레르기 소인은 가족 집적성이 뚜렷하다</td></tr><tr><td>없다</td><td class="dx">전염성 · 유전 소인 약함</td><td class="rz">개인 노출이나 다른 원인을 본다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">여  월경 · 성 관련</span><span class="g">DROP</span></div>
+  <div class="say">월경은 규칙적으로 하세요? 생리량에 변화가 없나요? 질분비물이 많아졌나요? 성관계 시 통증이 있나요?</div><p class="why">항목표에 있으니 시간이 되면 물어요. 매독이나 성병 방향에서만 의미가 커져요.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>질분비물이 늘었다</td><td class="dx">성매개감염 동반</td><td class="rz">2기 매독이나 다른 성병을 함께 본다</td></tr><tr><td>성관계 시 통증</td><td class="dx">성기 병변</td><td class="rz">베체트나 성병의 국소 병변을 시사한다</td></tr><tr><td>특이사항 없음</td><td class="dx">정보 없음</td><td class="rz">감별에 추가 정보를 주지 않는다</td></tr></tbody></table></div>
+  <div class="si"><div><span class="code">E  건강검진 · 외 수술</span><span class="g">DROP</span></div>
+  <div class="say">이전 건강 검진에서 이상 소견은 없었나요? 수술 받은 적 있으세요?</div><p class="why">이 CC에서 감별을 좁히지 못해요. 가장 먼저 자릅니다.</p>
+  <table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+  <tbody><tr><td>특별한 건 없었다</td><td class="dx">정보 없음</td><td class="rz">예상되는 가장 흔한 답이다</td></tr><tr><td>면역억제 상태</td><td class="dx">대상포진 · 중증 감염</td><td class="rz">드물지만 나오면 방향을 크게 바꾼다</td></tr></tbody></table></div>
+
+  <div class="recall"><div class="lb">스스로 답해보기</div>
+    <p>L을 왜 세 단계로 나눠 묻는가? 각 단계가 무엇을 말해 주는가?</p>
+    <p>약 항목에서 건강보조식품까지 묻는 이유는?</p>
+    <p>가족력을 두 방향으로 묻는 이유는?</p>
+  </div>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 7</div>
+    <h1>Physical examination</h1>
+    <p class="dek">발진은 보는 CC예요. 그런데 <b>환자가 인지하지 못한 곳</b>을 찾는 게
+    채점의 핵심이에요.</p></div>
+
+  <p>발진은 SP에게 분장으로 재현되어 있어요. 그러니 대충 보고 넘어가면 그 자리에서
+  점수가 빠져요. 그리고 <b>옷과 장신구로 가려진 부위까지 완전 노출을 요청</b>해야 해요.
+  두피, 손발톱, 겨드랑이, 사타구니처럼 환자가 미처 못 본 자리에 답이 있는 경우가 많거든요.</p>
+
+  <p>누르기 전에는 반드시 양해를 구해요. <b>제가 한번 눌러보겠습니다. 아프면 말씀하세요.</b>
+  이 한 문장이 채점 항목이에요.</p>
+
+  <h2>7-1. 동선</h2>
+  <figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 156"><rect width="440" height="156" fill="#FFFFFF"/><rect x="14" y="8" width="74" height="20" rx="2.5" fill="#FAF3F5"/><text x="51.0" y="22" font-family="Pretendard" font-size="8.4" fill="#74263A" font-weight="700" text-anchor="middle">시작</text><text x="51.0" y="44" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">손 씻기</text><text x="51.0" y="57" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">동의</text><text x="51.0" y="70" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">V/S</text><rect x="98" y="8" width="110" height="20" rx="2.5" fill="#FAF3F5"/><text x="153.0" y="22" font-family="Pretendard" font-size="8.4" fill="#74263A" font-weight="700" text-anchor="middle">앉아서 · 점막</text><text x="153.0" y="44" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">눈 결막 · 공막</text><text x="153.0" y="57" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">구강 궤양</text><text x="153.0" y="70" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">경부 림프절</text><rect x="220" y="8" width="100" height="20" rx="2.5" fill="#FAF3F5"/><text x="270.0" y="22" font-family="Pretendard" font-size="8.4" fill="#74263A" font-weight="700" text-anchor="middle">피부 시진</text><text x="270.0" y="44" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">병변 부위</text><text x="270.0" y="57" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">숨은 부위</text><text x="270.0" y="70" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">손발톱 · 두피</text><rect x="330" y="8" width="96" height="20" rx="2.5" fill="#FAF3F5"/><text x="378.0" y="22" font-family="Pretendard" font-size="8.4" fill="#74263A" font-weight="700" text-anchor="middle">촉진 · 특수</text><text x="378.0" y="44" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">압통 · diascopy</text><text x="378.0" y="57" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">피부묘기증</text><text x="378.0" y="70" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="middle">니콜스키</text><defs><marker id="a22" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#74263A"/></marker></defs><path d="M88 18 L96 18" stroke="#74263A" stroke-width="0.9" marker-end="url(#a22)" fill="none"/><defs><marker id="a23" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#74263A"/></marker></defs><path d="M208 18 L218 18" stroke="#74263A" stroke-width="0.9" marker-end="url(#a23)" fill="none"/><defs><marker id="a24" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#74263A"/></marker></defs><path d="M320 18 L328 18" stroke="#74263A" stroke-width="0.9" marker-end="url(#a24)" fill="none"/><path d="M14 106 H426" stroke="#DED7DA" stroke-width="0.8" fill="none"/><text x="14" y="121" font-family="Pretendard" font-size="8.5" fill="#74263A" font-weight="700" text-anchor="start">이 동선의 함정</text><text x="14" y="136" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="start">상의를 벗기고 옷 · 장신구로 가려진 부위까지 완전 노출을 요청한다</text><text x="14" y="147" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="start">환자가 인지하지 못한 곳에 발진이 있는지가 채점 항목이다</text><text x="14" y="158" font-family="Pretendard" font-size="8" fill="#1A1B20" font-weight="400" text-anchor="start">누르기 전에는 반드시 양해를 구한다 — 제가 한번 눌러보겠습니다</text></svg>
+    <figcaption>점막 먼저, 그 다음 피부 전신 시진, 마지막에 촉진과 특수검사</figcaption>
+  </figure>
+  <ol class="flow">
+    <li><span class="pos">시작</span>손 씻기 &rarr; 진찰 동의 &rarr; 활력 징후 언급.</li>
+    <li><span class="pos">앉아서 · 눈</span>결막과 공막을 봐요. 점막 침범은 심각도를 한 단계 올려요.</li>
+    <li><span class="pos">앉아서 · 구강</span>궤양을 확인해요. 베체트 · 루푸스 · SJS/TEN이 걸려요.</li>
+    <li><span class="pos">앉아서 · 목</span>경부 림프절을 촉진해요. 감염을 시사해요.</li>
+    <li><span class="pos">앉아서 · 피부 시진</span>발진 부위와 <b>전신</b>을 봐요.
+        눈 · 코 · 구강 · 머리카락 사이 · 팔다리 · 손톱 · 발톱, 그리고
+        <b>상의를 벗겨 몸통 전체</b>를 시진해요.</li>
+    <li><span class="pos">앉아서 · 발진 성상</span>고름이나 딱지가 있는지,
+        이차 병변(삼출물 · 농 · 비늘 · 태선화)이 있는지 확인해요.</li>
+    <li><span class="pos">촉진</span>양해를 구하고 눌러 <b>홍반과 자반을 구별</b>해요.</li>
+    <li><span class="pos">특수검사</span>아토피가 의심되면 설압자로 긁어 <b>피부묘기증</b>,
+        수포성 병변이 있으면 <b>니콜스키 징후</b>를 확인해요.</li>
+    <li><span class="pos">상황부</span>류마티스 질환이 의심되면 흉부 심음 · 호흡음 청진과
+        관절 시진 · 촉진 · ROM 검사를 추가해요.</li>
+    <li><span class="pos">마무리</span>협조해 주셔서 감사합니다. 불편한 것은 없으신가요?</li>
+  </ol>
+
+  <h2>7-2. 진찰마다 무엇을 잡나</h2>
+  <table>
+    <thead><tr><th>진찰</th><th>무엇을 보는가</th><th>지목하는 질환</th></tr></thead>
+    <tbody>
+      <tr><td class="k">눈 결막 · 공막</td><td>충혈 · 병변</td><td class="s">SJS/TEN · 베체트 포도막염</td></tr>
+      <tr><td class="k">구강</td><td>궤양</td><td class="s">베체트 · 루푸스 · SJS/TEN</td></tr>
+      <tr><td class="k">경부 림프절</td><td>비대 · 압통</td><td class="s">감염 · 바이러스 발진</td></tr>
+      <tr><td class="k">발진 위치 시진</td><td>분포와 대칭성</td><td class="s">일측 띠 = 대상포진 / 굽힘쪽 = 아토피 / 접촉면 = 접촉피부염</td></tr>
+      <tr><td class="k">발진 모양 시진</td><td>원발진과 이차 변화</td><td class="s">비늘 = 건선 / 수포 = 대상포진 · 천포창 / 자반 = 혈관염</td></tr>
+      <tr><td class="k">손발톱 · 두피</td><td>함몰 · 변형 · 비늘</td><td class="s">건선</td></tr>
+      <tr><td class="k">촉진 · diascopy</td><td>눌러서 하얘지는가</td><td class="s">안 하얘지면 자반 &rarr; 혈관염 · 혈소판 이상</td></tr>
+      <tr><td class="k">피부묘기증</td><td>긁은 자리가 부풀어 오르는가</td><td class="s">아토피 · 두드러기 성향</td></tr>
+      <tr><td class="k">니콜스키 징후</td><td>표피가 밀려 벗겨지는가</td><td class="s">SJS/TEN · 천포창</td></tr>
+    </tbody>
+  </table>
+
+  <h2>7-3. 특이검사 카드</h2>
+
+  <div class="card"><div class="nm">전신 피부 시진<span class="en">Full skin survey</span></div>
+  <dl><dt>환자 자세 · 준비</dt><dd>앉아서. 상의를 벗고 가려진 부위까지 노출을 요청해요.</dd>
+  <dt>내 손동작</dt><dd><ol><li>윗옷을 벗어 주시겠어요 하고 양해를 구해요.</li><li>머리카락 사이 두피부터 시작해 눈 · 코 · 구강 주변을 봐요.</li><li>몸통 앞뒤, 겨드랑이, 사타구니처럼 접히는 부위를 봐요.</li><li>팔다리와 손톱 · 발톱을 확인해요.</li><li>장신구가 가린 자리는 잠시 빼 주시겠냐고 요청해요.</li></ol></dd>
+  <dt>양성 판정</dt><dd class="hit">환자가 말하지 않은 부위에 발진이 있으면 진단이 크게 바뀔 수 있어요. 손바닥과 발바닥까지 봤다면 2기 매독을 잡을 수 있고요.</dd>
+  <dt>무엇을 잡나</dt><dd>발진은 병변 하나가 아니라 <b>분포</b>가 진단을 만들어요. 전신을 봐야 분포가 보입니다.</dd>
+  <dt>흔한 실수</dt><dd>환자가 가리킨 자리만 보고 끝내는 것. 그리고 상의 탈의를 요청하지 않아 몸통을 못 보는 것.</dd></dl></div>
+
+  <div class="card"><div class="nm">압통 촉진 · 홍반 자반 구별<span class="en">Palpation / Diascopy</span></div>
+  <dl><dt>환자 자세 · 준비</dt><dd>앉아서. 누르기 전에 반드시 양해를 구해요.</dd>
+  <dt>내 손동작</dt><dd><ol><li>제가 한번 눌러보겠습니다, 아프면 말씀하세요 하고 양해를 구해요.</li><li>손가락이나 투명한 유리로 병변을 지그시 눌러요.</li><li>누른 상태에서 색이 하얘지는지 봐요.</li><li>떼었을 때 다시 붉어지는지 확인해요.</li><li>동시에 압통이 있는지 물어요.</li></ol></dd>
+  <dt>양성 판정</dt><dd class="hit">눌러서 하얘졌다가 떼면 붉어지면 <b>홍반</b>이에요. 눌러도 그대로면 <b>자반</b>이고, 혈관 밖으로 피가 나온 상태예요.</dd>
+  <dt>무엇을 잡나</dt><dd>혈관 안의 피는 눌리면 밀려나고, 혈관 밖으로 새어 나온 피는 밀 곳이 없어요. 이 단순한 물리가 전신 질환을 지목합니다.</dd>
+  <dt>흔한 실수</dt><dd>양해를 안 구하고 누르는 것. 그리고 세게 눌러 환자를 아프게 하는 것. 지그시 누르면 충분해요.</dd></dl></div>
+
+  <div class="card"><div class="nm">피부묘기증<span class="en">Dermographism</span></div>
+  <dl><dt>환자 자세 · 준비</dt><dd>앉아서. 아토피나 두드러기가 의심될 때.</dd>
+  <dt>내 손동작</dt><dd><ol><li>설압자나 펜 뚜껑 같은 뭉툭한 것을 준비해요.</li><li>팔 안쪽 피부를 적당한 힘으로 한 줄 그어요.</li><li>1~3분 정도 기다려요.</li><li>그은 자리가 어떻게 변하는지 봐요.</li></ol></dd>
+  <dt>양성 판정</dt><dd class="hit">그은 자리를 따라 <b>붉게 부풀어 올라 자국이 남으면</b> 양성이에요.</dd>
+  <dt>무엇을 잡나</dt><dd>긁는 자극에 비만세포가 반응해 히스타민이 나오고, 그 자리에 국소 팽진이 생겨요. 피부가 과민한 상태라는 뜻입니다.</dd>
+  <dt>흔한 실수</dt><dd>너무 약하게 그어 반응이 안 나오거나, 너무 세게 그어 상처를 내는 것. 그리고 기다리지 않고 바로 판정하는 것.</dd></dl></div>
+
+  <div class="card"><div class="nm">니콜스키 징후<span class="en">Nikolsky sign</span></div>
+  <dl><dt>환자 자세 · 준비</dt><dd>앉아서. 수포성 병변이 있을 때만.</dd>
+  <dt>내 손동작</dt><dd><ol><li>병변 주변의 겉보기 정상 피부를 고릅니다.</li><li>면봉이나 손가락으로 표피를 옆으로 지그시 밀어 봐요.</li><li>표피가 밀려나며 벗겨지는지 확인해요.</li></ol></dd>
+  <dt>양성 판정</dt><dd class="hit">표피가 밀려 <b>박리되면 양성</b>이에요. SJS/TEN이나 천포창을 강하게 시사해요.</dd>
+  <dt>무엇을 잡나</dt><dd>표피와 진피 사이 또는 표피 안의 결합이 파괴되어 있으면 옆으로 미는 힘에 층이 분리돼요.</dd>
+  <dt>흔한 실수</dt><dd>수포가 없는데 시행하는 것. 그리고 세게 밀어 멀쩡한 피부를 벗기는 것. 지그시 미는 정도면 충분해요.</dd></dl></div>
+
+  <h2>7-4. 감점 포인트</h2>
+  <ul class="deduct">
+    <li>상의 탈의를 요청하지 않아 몸통 전체를 못 봄</li>
+    <li>환자가 가리킨 자리만 보고 숨은 부위를 안 살핌</li>
+    <li>누르기 전에 양해를 구하지 않음</li>
+    <li>홍반과 자반을 구별하지 않음. 눌러 보는 것만으로 방향이 바뀌어요</li>
+    <li>점막(눈 · 구강)을 확인하지 않음. 심각도 판정의 첫 단계예요</li>
+    <li>수포가 있는데 니콜스키 징후를 확인하지 않음</li>
+    <li>아토피가 의심되는데 피부묘기증을 확인하지 않음</li>
+    <li>손발톱과 두피를 건너뜀. 건선의 단서가 거기 있어요</li>
+    <li>류마티스가 의심되는데 관절과 심폐 진찰을 추가하지 않음</li>
+    <li>손 씻기 · 진찰 동의 · V/S 언급 누락</li>
+  </ul>
+
+  <div class="recall"><div class="lb">스스로 답해보기</div>
+    <p>눌러서 하얘지는지 보는 것만으로 왜 방향이 바뀌는가?</p>
+    <p>니콜스키 징후는 언제 시행하고, 양성이면 무엇을 의심하는가?</p>
+  </div>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 8</div>
+    <h1>검사 계획</h1>
+    <p class="dek">원인을 찾아 피하는 게 치료라, 검사도 원인 규명에 맞춰져 있어요.</p></div>
+  <table>
+    <thead><tr><th>검사</th><th>왜 · 언제</th><th>근거</th></tr></thead>
+    <tbody>
+      <tr><td class="k">첩포검사 Patch test</td><td>접촉피부염. 의심 물질 부착 후 <b>2일째와 4일째 판독</b>해요</td><td class="s">[GL]</td></tr>
+      <tr><td class="k">의심 약물 사용 금지</td><td>약물 발진. 중단 후 반응을 보는 것이 진단이자 치료예요</td><td class="s">[GL]</td></tr>
+      <tr><td class="k">혈액검사</td><td>CBC, serum IgE level, ESR, CRP, ANA</td><td class="s">[GL]</td></tr>
+      <tr><td class="k">미생물검사</td><td>우드등검사, KOH test, Tzanck smear, Gram stain, culture</td><td class="s">[GL]</td></tr>
+      <tr><td class="k">skin prick test</td><td>아토피 피부염에서 원인 알레르겐을 찾을 때</td><td class="s">[상황부]</td></tr>
+      <tr><td class="k">VDRL · TPHA · FTA-ABS</td><td>위험한 성관계 병력이 있고 전신 발진일 때</td><td class="s">[상황부]</td></tr>
+      <tr><td class="k">항핵항체 · anti-dsDNA</td><td>광과민 · 구강 궤양 · 관절통 · 거품뇨가 있을 때</td><td class="s">[상황부]</td></tr>
+      <tr><td class="k">EMG · CK · 근육조직검사</td><td>근위부 근력 약화가 있을 때(피부근염)</td><td class="s">[상황부]</td></tr>
+      <tr><td class="k">피부조직검사</td><td>임상으로 진단이 안 될 때. 건선 · 수포성 질환</td><td class="s">[상황부]</td></tr>
+      <tr><td class="k">편도 · 인두 검체 균 배양</td><td>성홍열이 의심될 때</td><td class="s">[상황부]</td></tr>
+      <tr><td class="k">점막 침범이 있는데 단순 약진으로 처리</td><td>SJS/TEN을 놓치는 경로예요</td><td class="s">[금기]</td></tr>
+    </tbody>
+  </table>
+
+  <h2>8-1. 치료의 세 축</h2>
+  <ul class="plain">
+    <li><b>복용 중인 약물 중단</b> 약이 원인이면 이게 첫 치료예요.<span class="g">1</span></li>
+    <li><b>원인 물질 회피</b> 접촉이든 음식이든 노출을 끊는 게 근본 치료예요.<span class="g">2</span></li>
+    <li><b>항히스타민 · 스테로이드제 · 보습제</b> 증상을 끄고 장벽을 회복시켜요.<span class="g">3</span></li>
+  </ul>
+  <table>
+    <thead><tr><th>진단</th><th>치료</th></tr></thead>
+    <tbody>
+      <tr><td class="k">홍역 · 수두</td><td>대증 치료, 성인 수두는 항바이러스제</td></tr>
+      <tr><td class="k">2기 매독</td><td>Benzathine penicillin</td></tr>
+      <tr><td class="k">대상포진</td><td>항바이러스제, 대증요법(NSAID, Opioid, 항우울제, 항경련제)</td></tr>
+      <tr><td class="k">옴</td><td>가족 동시 치료, 퍼메트린 연고(얼굴 제외, 8시간 후 씻어냄)</td></tr>
+      <tr><td class="k">어루러기</td><td>건조하고 시원한 환경 유지, 국소항진균제</td></tr>
+      <tr><td class="k">성홍열</td><td>항생제</td></tr>
+      <tr><td class="k">건선</td><td>국소 스테로이드, 광선 치료, Retinoid</td></tr>
+      <tr><td class="k">접촉피부염</td><td>냉습포, 국소 스테로이드, 국소면역조절제, 항히스타민제</td></tr>
+      <tr><td class="k">약진</td><td>약 중단 후 국소 스테로이드. 전신 증상이 있으면 전신 스테로이드</td></tr>
+      <tr><td class="k">SLE</td><td>NSAIDs, Prednisolone, Hydroxychloroquine</td></tr>
+      <tr><td class="k">베체트</td><td>Colchicine, Glucocorticoid, Infliximab</td></tr>
+      <tr><td class="k">아토피</td><td>항히스타민제, 피부 보습, 국소 스테로이드</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 9</div>
+    <h1>Education</h1>
+    <p class="dek">이 CC는 교육이 무거워요. 일상 관리가 치료의 큰 부분이거든요.</p></div>
+
+  <h2>9-1. 교육 대사의 뼈대</h2>
+  <table>
+    <thead><tr><th>단계</th><th>말할 문장</th></tr></thead>
+    <tbody>
+      <tr><td class="k">공감</td><td>갑자기 피부에 발진이 나 많이 놀라셨을 것 같습니다.</td></tr>
+      <tr><td class="k">추정 진단</td><td>지금까지 문진과 신체 검진을 해본 결과 가려움을 동반한 발진이 보이는데, 원래 알레르기 비염이 있으셨고 가족력도 있으셔서 아토피 피부염의 가능성이 가장 높습니다.</td></tr>
+      <tr><td class="k">감별 진단</td><td>그러나 최근에 감기약을 드셨기 때문에 약물에 의한 발진일 수도 있고, 최근에 모르는 분과 성관계를 하셨다는 점에서 매독에 의한 피부 반응일 수도 있습니다.</td></tr>
+      <tr><td class="k">검사</td><td>아토피 피부염은 원인 물질을 피하는 것이 가장 좋은 치료이기 때문에 원인을 찾기 위해 피부바늘따끔검사와 혈액검사를 해보겠습니다. 또한 매독검사도 진행해 보도록 하겠습니다. 괜찮으신가요?</td></tr>
+      <tr><td class="k">치료</td><td>아토피 피부염은 검사 후에도 원인 물질을 알기가 힘든 경우가 많아 치료가 오래 지속될 수 있습니다. 치료에서 가장 중요한 것은 피부 청결과 보습입니다. 건조해지지 않도록 보습제를 충분히 발라 주시고, 평소에 꽉 조이는 옷은 피해주세요. 어려우시겠지만 가려워도 최대한 긁지 말아주세요.</td></tr>
+      <tr><td class="k">예후</td><td>잘 치료를 받으시면 증상이 많이 좋아지실 것입니다.</td></tr>
+      <tr><td class="k">응급</td><td>갑자기 숨을 잘 못 쉬겠거나 어지럽고 가슴이 두근거리는 등의 증상이 발생하면 빨리 병원에 오셔서 응급 조치를 받으셔야 합니다.</td></tr>
+      <tr><td class="k">질문</td><td>마지막으로 혹시 궁금한 점이 있으신가요?</td></tr>
+    </tbody>
+  </table>
+
+  <h2>9-2. 아토피 피부염 생활 관리</h2>
+  <table>
+    <thead><tr><th>교육</th><th>왜 이렇게 말하나</th></tr></thead>
+    <tbody>
+      <tr><td class="k">외부 온도와 습도의 급격한 변화를 피한다</td><td>장벽이 약해 환경 변화에 바로 반응해요</td></tr>
+      <tr><td class="k">심한 운동과 더운 목욕은 피한다</td><td>땀이 나면 가려워지고 긁기 고리가 시작돼요</td></tr>
+      <tr><td class="k">중성 비누로 씻고, 물기를 말린 뒤 보습제를 충분히</td><td>씻는 것이 자극이 되지 않게 하고, 빠진 지질을 채워 벽을 메워요</td></tr>
+      <tr><td class="k">피부 자극이 없고 땀을 잘 흡수하는 면제품 의류</td><td>마찰과 땀 정체가 둘 다 악화 요인이에요</td></tr>
+      <tr><td class="k">피부염을 악화시키는 음식과 환경을 피한다</td><td>회피가 곧 치료라 유발 인자를 아는 게 중요해요</td></tr>
+      <tr><td class="k">정신적 스트레스를 피한다</td><td>스트레스가 가려움 역치를 낮춰요</td></tr>
+      <tr><td class="k">긁지 않아야 한다</td><td>2차 세균 감염과 흉터가 남고, 긁기 고리가 계속 돌아요</td></tr>
+      <tr><td class="k">생후 6개월 이내 모유수유</td><td>아토피 피부염 예방에 도움이 돼요</td></tr>
+      <tr><td class="k">경과 설명</td><td>성장하면서 대부분 호전되지만 성인 이후까지 지속될 수도 있고, 성인기에는 증상이 더 심해지기도 해요</td></tr>
+    </tbody>
+  </table>
+
+  <h2>9-3. 공통 생활교육 네 줄</h2>
+  <ul class="plain">
+    <li><b>병변을 자극하지 않기</b> 긁지 말고, 로션 등 보습제를 발라 촉촉하게 유지해요.<span class="g">1</span></li>
+    <li><b>원인 물질 회피</b> 약이 원인이면 중단 후 반응을 확인해야 함을 설명해요.<span class="g">2</span></li>
+    <li><b>아나필락시스 교육</b> 증상 발생 시 에피네프린 등 응급 조치가 필요함을 강조해요.<span class="g">3</span></li>
+    <li><b>류마티스 질환일 경우</b> 추가적인 검사가 필요함을 설명해요.<span class="g">4</span></li>
+  </ul>
+
+  <h2>9-4. 이런 증상이면 즉시 오세요</h2>
+  <ul class="plain">
+    <li><b>숨을 잘 못 쉬겠거나 어지럽고 가슴이 두근거릴 때</b><span class="g">최우선</span></li>
+    <li>입술이나 혀가 붓고 목이 조이는 느낌이 들 때</li>
+    <li>입 안, 눈, 성기에 물집이나 헐음이 생길 때</li>
+    <li>피부가 넓게 벗겨지거나 고열이 함께 날 때</li>
+  </ul>
+
+  <h2>9-5. PPI 대사 뱅크</h2>
+  <table>
+    <thead><tr><th>상황</th><th>준비 문장</th></tr></thead>
+    <tbody>
+      <tr><td class="k">오프닝</td><td>갑자기 발진이 나서 많이 놀라셨겠어요. 천천히 말씀해 주세요.</td></tr>
+      <tr><td class="k">경로 확인</td><td>처음에 어디에 났고, 그 다음 어디로 번졌는지 순서대로 말씀해 주시겠어요?</td></tr>
+      <tr><td class="k">탈의 요청</td><td>발진을 자세히 보려면 윗옷을 벗어 주셔야 합니다. 괜찮으실까요?</td></tr>
+      <tr><td class="k">가려진 부위</td><td>목걸이나 시계를 잠시 빼 주시겠어요? 가려진 부위도 확인해야 해서요.</td></tr>
+      <tr><td class="k">촉진 전</td><td>제가 한번 눌러보겠습니다. 아프면 말씀하세요.</td></tr>
+      <tr><td class="k">민감한 질문 전</td><td>혹시 불편하시겠지만 진단에 꼭 필요해서 여쭙겠습니다.</td></tr>
+      <tr><td class="k">긁지 말라고 할 때</td><td>어려우시겠지만 가려워도 최대한 긁지 말아주세요. 긁으면 더 가려워지는 악순환이 생깁니다.</td></tr>
+      <tr><td class="k">오래 간다고 할 때</td><td>치료가 오래 걸릴 수 있지만 관리만 잘 하시면 증상은 충분히 조절됩니다.</td></tr>
+      <tr><td class="k">클로징</td><td>제가 말씀드린 것 중에 더 궁금하신 점 있으실까요?</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 10</div>
+    <h1>케이스 통합 연습</h1></div>
+
+  <h2>10-1. 케이스 A &mdash; 피부 자체 질환</h2>
+  <blockquote><div class="who">환자</div>
+    <p>스물네 살 여자입니다. 사흘 전 새 목걸이를 하고부터 목에 발진이 났어요.</p>
+    <p>목걸이가 닿는 자리만 딱 붉어지고 가렵습니다.</p>
+    <p>열은 없고 몸 다른 곳은 괜찮아요.</p>
+    <p>어릴 때부터 비염은 있었어요.</p></blockquote>
+  <h3>① 관문</h3>
+  <p>점막 침범 없음, 입술 부종 없음, 발열 없음, 자반 아님. <b>응급 넷이 전부 지워져요.</b></p>
+  <h3>② 대축</h3>
+  <p>전신 증상이 없고 병변이 국소예요. <b>피부 자체 질환 칸.</b>
+  경계가 뚜렷하고 접촉면을 따라간다는 게 접촉피부염을 지목해요.</p>
+  <h3>③ 결정적 추가 문진</h3>
+  <table>
+    <thead><tr><th>항목</th><th>질문</th><th>의미</th></tr></thead>
+    <tbody>
+      <tr><td class="k">L</td><td>처음 위치 · 퍼짐 · 현재</td><td class="s">닿은 자리에 국한됨을 확정</td></tr>
+      <tr><td class="k">F 접촉</td><td>새 물건 · 화장품 · 옷</td><td class="s">원인 물질을 특정</td></tr>
+      <tr><td class="k">Ex</td><td>이전에도 같은 상황</td><td class="s">감작 여부와 반복성</td></tr>
+      <tr><td class="k">과 · 가</td><td>비염 · 천식 · 알레르기 가족력</td><td class="s">아토피 소인. 감별에 필요</td></tr>
+      <tr><td class="k">A 전신</td><td>발열 · 관절통</td><td class="s">전신 질환 배제</td></tr>
+    </tbody>
+  </table>
+  <h3>④ 진찰과 계획</h3>
+  <p>눈 &middot; 구강 점막 확인 &rarr; 상의 노출하고 전신 시진(다른 곳에도 있는지) &rarr;
+  병변 경계와 모양 &rarr; 양해 구하고 촉진(홍반 확인) &rarr; 아토피가 의심되면 피부묘기증.
+  검사는 <b>첩포검사</b>. 교육은 원인 회피, 냉습포, 국소 스테로이드, 보습.</p>
+  <p><em>점수를 만든 지점 &mdash; L을 세 단계로 물어 국소 분포를 확정한 것,
+  F에서 새 물건을 특정한 것, 전신 시진으로 다른 부위를 확인한 것.</em></p>
+
+  <h2>10-2. 케이스 B &mdash; 전신 질환의 피부 발현</h2>
+  <blockquote><div class="who">환자</div>
+    <p>서른한 살 여자입니다. 두 달 전부터 얼굴 광대 쪽에 발진이 있어요.</p>
+    <p>햇빛을 보면 더 심해집니다.</p>
+    <p>입 안이 자주 헐고 손목 관절이 아파요.</p>
+    <p>요즘 소변에 거품이 많이 납니다.</p></blockquote>
+  <h3>① 관문</h3>
+  <p>수포 없음, 입술 부종 없음, 고열 없음. 응급은 아니지만 <b>점막 궤양이 있어요.</b>
+  이것만으로 전신 질환 쪽 무게가 커집니다.</p>
+  <h3>② 대축</h3>
+  <p>광과민 + 구강 궤양 + 관절통 + 거품뇨. <b>전신 질환의 피부 발현 칸.</b>
+  피부만 치료해서는 아무 소용이 없는 케이스예요.</p>
+  <h3>③ 결정적 추가 문진</h3>
+  <table>
+    <thead><tr><th>항목</th><th>질문</th><th>의미</th></tr></thead>
+    <tbody>
+      <tr><td class="k">A 류마티스</td><td>광과민 · 거품뇨 · 궤양 · 근력</td><td class="s">네 가지가 대축을 확정</td></tr>
+      <tr><td class="k">A 전신</td><td>발열 · 근육통 · 관절통</td><td class="s">전신 염증 확인</td></tr>
+      <tr><td class="k">L</td><td>발진 분포</td><td class="s">malar rash인지 discoid인지</td></tr>
+      <tr><td class="k">여</td><td>유산력 · 월경</td><td class="s">항인지질항체와 연결</td></tr>
+      <tr><td class="k">약</td><td>복용 약물</td><td class="s">약물 유발 루푸스 배제</td></tr>
+    </tbody>
+  </table>
+  <h3>④ 진찰과 계획</h3>
+  <p>눈 &middot; 구강 점막 &rarr; 경부 림프절 &rarr; 얼굴과 전신 피부 시진(광노출 부위 중심)
+  &rarr; 촉진 &rarr; <b>류마티스 의심이므로 심음 · 호흡음 청진과 관절 시진 · 촉진 · ROM 추가.</b>
+  검사는 CBC &middot; 항핵항체 &middot; anti-dsDNA &middot; 소변검사.
+  교육은 자외선 차단과 추가 검사의 필요성.</p>
+  <p><em>점수를 만든 지점 &mdash; A 류마티스 줄을 던져 전신 질환으로 방향을 튼 것,
+  거품뇨를 물어 신장 침범을 잡은 것, 관절과 심폐 진찰을 추가한 것.</em></p>
+
+  <p>두 케이스의 대비가 말해 주는 게 있어요. A는 <b>분포</b>가, B는 <b>관절 밖 증상들</b>이
+  진단을 만들었어요. 그리고 A는 피부 치료로 끝나지만 B는 피부만 치료하면 안 돼요.
+  <b>대축을 먼저 정하는 이유가 이겁니다.</b></p>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 11</div>
+    <h1>3속도 복습</h1></div>
+
+  <h2>11-1. 시험 직전 1분 압축표</h2>
+  <table>
+    <thead><tr><th>질환</th><th>덩어리</th><th>결정 단서</th><th>진단</th><th>치료</th></tr></thead>
+    <tbody>
+      <tr><td class="k">바이러스 발진</td><td class="s">전신·감염</td><td>발열, 감기 증상, 중심부 › 주변부</td><td class="s">CBC, 혈청검사</td><td class="s">대증 치료, 성인 수두는 항바이러스제</td></tr>
+      <tr><td class="k">성홍열</td><td class="s">전신·감염</td><td>3세 이상 소아, 고열, 인후통, 구토</td><td class="s">임상 + 인두 배양</td><td class="s">항생제</td></tr>
+      <tr><td class="k">2기 매독</td><td class="s">전신·감염</td><td>위험한 성관계, 전신 발진, 손발바닥</td><td class="s">VDRL, TPHA, FTA-ABS</td><td class="s">Benzathine penicillin</td></tr>
+      <tr><td class="k">대상포진</td><td class="s">피부·감염</td><td>일측성, dermatome, 통증이 2~3일 먼저</td><td class="s">검사 불필요, 간혹 PCR</td><td class="s">항바이러스제, 통증 조절</td></tr>
+      <tr><td class="k">옴</td><td class="s">피부·감염</td><td>밤에 심한 가려움, 사타구니 · 겨드랑이, 가족 동시</td><td class="s">긁어서 현미경, 굴 확인</td><td class="s">가족 동시 치료, 퍼메트린</td></tr>
+      <tr><td class="k">어루러기</td><td class="s">피부·감염</td><td>땀 많은 부위, 얼룩덜룩한 흰 · 갈색 반점</td><td class="s">우드등, KOH, 진균배양</td><td class="s">건조 · 시원한 환경, 국소항진균제</td></tr>
+      <tr><td class="k">건선</td><td class="s">피부·염증</td><td>은백색 비늘 겹겹이, 팔꿈치 · 두피, 손발톱</td><td class="s">피부조직검사, 임상</td><td class="s">보습, 국소 스테로이드, 광선, Retinoid</td></tr>
+      <tr><td class="k">접촉피부염</td><td class="s">피부·알레르기</td><td>닿은 자리에만, 경계가 뚜렷</td><td class="s">첩포검사, 유발검사</td><td class="s">냉습포, 국소 스테로이드, 항히스타민제</td></tr>
+      <tr><td class="k">약물 발진</td><td class="s">의인성</td><td>약 복용 며칠 뒤 전신, 고정 약진은 같은 자리</td><td class="s">의심 약 중단, 첩포검사</td><td class="s">약 끊고 스테로이드, 항히스타민제</td></tr>
+      <tr><td class="k">아토피 피부염</td><td class="s">피부·알레르기</td><td>가려움, 건조, 나이별 호발 부위, 알레르기 가족력</td><td class="s">skin prick test, 혈청 IgE</td><td class="s">보습, 국소 스테로이드, 항히스타민제</td></tr>
+      <tr><td class="k">전신홍반루푸스</td><td class="s">전신·자가면역</td><td>malar · discoid rash, 광과민, 구강 궤양, 거품뇨</td><td class="s">CBC, ANA, anti-dsDNA</td><td class="s">국소 스테로이드, HCQ, Glucocorticoid</td></tr>
+      <tr><td class="k">베체트병</td><td class="s">전신·자가면역</td><td>구강 + 생식기 궤양, 포도막염, 관절염</td><td class="s">Pathergy test</td><td class="s">Colchicine, Glucocorticoid</td></tr>
+      <tr><td class="k">피부근염</td><td class="s">전신·자가면역</td><td>gottron papule, heliotrope rash, 근위부 근력 약화</td><td class="s">EMG, CK, 근육조직검사</td><td class="s">스테로이드, 면역억제제</td></tr>
+    </tbody>
+  </table>
+
+  <h2>11-2. 미니케이스</h2>
+  <table>
+    <thead><tr><th>상황</th><th>답</th></tr></thead>
+    <tbody>
+      <tr><td>새 화장품 쓴 자리에만 경계가 뚜렷하게 발진<br><span class="s">의심 · 검사</span></td>
+          <td class="s"><b>접촉피부염</b> · 첩포검사(2일째 · 4일째 판독)</td></tr>
+      <tr><td>한쪽 옆구리에 띠처럼 물집, 발진 전부터 아팠어요<br><span class="s">의심 · 기전</span></td>
+          <td class="s"><b>대상포진</b> · 신경절에서 깨어나 그 신경을 타고 나와요</td></tr>
+      <tr><td>밤에 유난히 가렵고 가족도 가려워해요<br><span class="s">의심 · 교육 핵심</span></td>
+          <td class="s"><b>옴</b> · 가족 동시 치료. 한 사람만 치료하면 서로 다시 옮아요</td></tr>
+      <tr><td>약 먹고 나흘 뒤 온몸에 발진, 입 안도 헐었어요<br><span class="s">다음 행동</span></td>
+          <td class="s">점막 침범 → <b>SJS/TEN 의심</b>. 니콜스키 확인하고 약 중단, 응급 대응</td></tr>
+      <tr><td>눌러도 안 하얘지는 붉은 반점이 다리에 있어요<br><span class="s">무엇을 의미하나</span></td>
+          <td class="s"><b>자반</b> · 혈관 밖으로 피가 나온 상태. 혈관염 · 혈소판 이상을 봐요</td></tr>
+      <tr><td>다섯 살 아이, 고열 · 인후통 · 구토 후 전신 발진<br><span class="s">의심 · 치료</span></td>
+          <td class="s"><b>성홍열</b> · 항생제. 인두 검체 균 배양으로 확인</td></tr>
+      <tr><td>땀 많이 나는 등에 얼룩덜룩한 반점, 안 가려워요<br><span class="s">의심 · 검사</span></td>
+          <td class="s"><b>어루러기</b> · 우드등검사, KOH 도말</td></tr>
+      <tr><td>광대 발진 + 광과민 + 구강 궤양 + 거품뇨<br><span class="s">의심 · 어느 칸</span></td>
+          <td class="s"><b>전신홍반루푸스</b> · 전신 질환의 피부 발현. 피부만 치료하면 안 돼요</td></tr>
+    </tbody>
+  </table>
+
+  <h2>11-3. Active recall</h2>
+  <div class="recall"><div class="lb">왜만 모았어요</div>
+    <p>왜 전신인가 피부인가가 대축이고, 원발진 형태는 보조축인가?</p>
+    <p>왜 L을 세 단계로 나눠 묻는가?</p>
+    <p>왜 아토피에서 보습제가 스테로이드만큼 중요한가?</p>
+    <p>왜 아토피는 나이에 따라 호발 부위가 바뀌는가?</p>
+    <p>왜 접촉피부염은 경계가 뚜렷한가? 오래 쓰던 물건도 원인이 될 수 있는 이유는?</p>
+    <p>왜 약물 발진은 며칠 뒤에 나타나는가?</p>
+    <p>왜 고정 약진은 같은 자리에 반복되는가?</p>
+    <p>왜 대상포진은 한쪽에만 띠처럼 생기고 통증이 먼저 오는가?</p>
+    <p>왜 옴은 밤에 심하고 가족을 동시에 치료해야 하는가?</p>
+    <p>왜 성홍열은 인후통이 먼저이고 3세 이상 소아에게 오는가?</p>
+    <p>왜 눌러서 하얘지는지 보는 것만으로 전신 질환을 지목할 수 있는가?</p>
+    <p>니콜스키 징후가 양성이면 무엇을 의심하고, 왜 위급한가?</p>
+    <p>왜 환자가 인지하지 못한 부위까지 시진해야 하는가?</p>
+  </div>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">PART 12</div>
+    <h1>대본 전문</h1></div>
+  <table>
+    <thead><tr><th>항목</th><th>말할 문장</th><th>등급</th></tr></thead>
+    <tbody><tr><td class="k">O</td><td>언제부터 피부에 발진이 났나요?</td><td class="s">MUST</td></tr><tr><td class="k">O</td><td>어떤 특별한 상황에서 발생했나요?</td><td class="s">MUST</td></tr><tr><td class="k">L</td><td>어디에서 처음 생겼나요?</td><td class="s">MUST</td></tr><tr><td class="k">L</td><td>어디로 퍼졌나요?</td><td class="s">MUST</td></tr><tr><td class="k">L</td><td>그럼 지금 현재 어디어디에 발진이 있나요?</td><td class="s">MUST</td></tr><tr><td class="k">D</td><td>발진이 생기면 얼마나 오래 가나요? 얼마나 자주 생기나요?</td><td class="s">SHOULD</td></tr><tr><td class="k">D</td><td>하루 중 밤낮에 변화가 있나요?</td><td class="s">SHOULD</td></tr><tr><td class="k">Co</td><td>점점 더 크기나 부위가 커지나요? 개수가 늘어나나요?</td><td class="s">SHOULD</td></tr><tr><td class="k">Co</td><td>증상(가려움 or 통증)이 더 심해지나요?</td><td class="s">SHOULD</td></tr><tr><td class="k">Ex</td><td>이전에도 이런 적이 있나요? 이전에 피부과 치료를 받은 적이 있나요?</td><td class="s">SHOULD</td></tr><tr><td class="k">C 양상</td><td>모양(과녁 모양은 아닌가요?) / 수 / 크기 / 색깔</td><td class="s">MUST</td></tr><tr><td class="k">C 양상</td><td>딱지 / 물집 / 흰비늘 같은 것이 덮지는 않는지</td><td class="s">MUST</td></tr><tr><td class="k">C 양상</td><td>발진 여러 개가 하나로 합쳐지기도 하나요?</td><td class="s">SHOULD</td></tr><tr><td class="k">C 동반</td><td>열감(H) / 가려움증(I) / 따가움 / 압통(T)</td><td class="s">MUST</td></tr><tr><td class="k">C 정도</td><td>일상 생활에 많이 불편하신가요?</td><td class="s">SHOULD</td></tr><tr><td class="k">A 전신</td><td>발열 / 오한 / 감기 기운 / 식은땀 / 근육통 / 관절통</td><td class="s">MUST</td></tr><tr><td class="k">A 감염</td><td>오심 / 구토 / 설사 / 호흡곤란 / 기침 / 가래 / 인후통</td><td class="s">SHOULD</td></tr><tr><td class="k">A 류마티스</td><td>관절통 / 햇빛 노출 부위에 피부 발진이 잘 생기나요?</td><td class="s">MUST</td></tr><tr><td class="k">A 류마티스</td><td>거품뇨 / 구강 궤양 / 성기 궤양 / 팔다리 근력 약화</td><td class="s">MUST</td></tr><tr><td class="k">A 알레르기</td><td>입술 부종</td><td class="s">MUST</td></tr><tr><td class="k">F</td><td>언제 발진이 더 심해지나요? 어떻게 하면 좀 사라지나요?</td><td class="s">MUST</td></tr><tr><td class="k">F 접촉피부염</td><td>발진이 나기 전에 그 부분에 새로운 비누나 화장품, 로션이나 새로운 옷이 닿지는 않았나요?</td><td class="s">MUST</td></tr><tr><td class="k">F 음식 알레르기</td><td>발진이 나기 전에 어떤 음식을 드셨나요?</td><td class="s">SHOULD</td></tr><tr><td class="k">F 콜린성 두드러기</td><td>찬물에 닿거나 땀을 흘리면 악화되나요?</td><td class="s">SHOULD</td></tr><tr><td class="k">F 2기 매독</td><td>최근에 처음 만난 사람과 성관계를 한 적이 있나요? (위험한 성관계)</td><td class="s">SHOULD</td></tr><tr><td class="k">E</td><td>이전 건강 검진에서 이상 소견은 없었나요?</td><td class="s">DROP</td></tr><tr><td class="k">외</td><td>수술 받은 적 있으세요?</td><td class="s">DROP</td></tr><tr><td class="k">과</td><td>알레르기 천식이나 비염, 아토피 피부염이 있나요?</td><td class="s">MUST</td></tr><tr><td class="k">과</td><td>특정 음식이나 꽃가루, 동물 알레르기가 있나요?</td><td class="s">MUST</td></tr><tr><td class="k">과</td><td>최근에 감기에 걸린 적이 있나요?</td><td class="s">SHOULD</td></tr><tr><td class="k">약</td><td>현재 복용하시는 약물이 있나요?</td><td class="s">MUST</td></tr><tr><td class="k">약</td><td>최근 새롭게 먹는 약이나 건강보조식품은 있나요?</td><td class="s">MUST</td></tr><tr><td class="k">약</td><td>(지금은 안 먹는다면) 약물을 중단하면 좋아지나요?</td><td class="s">MUST</td></tr><tr><td class="k">사</td><td>음주는 하세요? 흡연은 하세요?</td><td class="s">SHOULD</td></tr><tr><td class="k">사</td><td>직업이 어떻게 되세요?</td><td class="s">SHOULD</td></tr><tr><td class="k">사</td><td>최근에 여행 다녀오신 곳 있으신가요?</td><td class="s">SHOULD</td></tr><tr><td class="k">사</td><td>벌레 물린 곳이 있나요?</td><td class="s">SHOULD</td></tr><tr><td class="k">가</td><td>가족 중에도 지금 비슷한 증상을 호소하는 분이 있나요?</td><td class="s">MUST</td></tr><tr><td class="k">가</td><td>가족 중에 천식 / 비염 / 아토피 피부염 / 알레르기 질환을 앓고 계신 분이 있나요?</td><td class="s">MUST</td></tr><tr><td class="k">여 월경력</td><td>월경은 규칙적으로 하세요? 생리량에는 변화가 없나요?</td><td class="s">DROP</td></tr><tr><td class="k">여 월경력</td><td>질분비물이 많아졌나요? 성관계 시 통증이 있나요?</td><td class="s">DROP</td></tr></tbody>
+  </table>
+
+  <h2>12-1. P/E 전문</h2>
+  <table>
+    <thead><tr><th>구분</th><th>항목</th></tr></thead>
+    <tbody>
+      <tr><td class="k">도입</td><td>이제 신체 진찰을 하도록 할텐데요, 괜찮으신가요? 오늘 측정한 활력 징후는 정상입니다.</td></tr>
+      <tr><td class="k">앉아서 1</td><td>눈 : 결막, 공막</td></tr>
+      <tr><td class="k">앉아서 2</td><td>구강 : 궤양</td></tr>
+      <tr><td class="k">앉아서 3</td><td>목 : 경부 림프절 촉진(감염)</td></tr>
+      <tr><td class="k">상황부</td><td>류마티스 질환 의심 시 흉부 심음 / 호흡음 청진 및 관절 시진, 촉진(압통), ROM 검사</td></tr>
+      <tr><td class="k">앉아서 4</td><td>피부 발진 : 발진 부위 및 전신 진찰</td></tr>
+      <tr><td class="k">시진(위치/모양)</td><td>발진 부위 / 눈, 코, 구강, 머리카락 사이, 팔다리, 손톱, 발톱, 상의 탈의하여 몸통 모두 시진</td></tr>
+      <tr><td class="k">발진(모양/분포)</td><td>고름이나 가피 여부, 2차적 병변 여부(삼출물, 농, 비늘, 태선화) 확인</td></tr>
+      <tr><td class="k">촉진</td><td>erythema / petechia 구별 &mdash; 제가 한번 눌러보겠습니다. 아프면 말씀하세요.</td></tr>
+      <tr><td class="k">특수검사</td><td>아토피 의심 시 설압자로 긁어서 피부묘기증 확인 / 수포성 병변 있는 경우 니콜스키 징후 확인(병변 표피 부위를 면봉으로 밀어 보아 표피 박리 여부 확인)</td></tr>
+      <tr><td class="k">마무리</td><td>협조해 주셔서 감사합니다. 불편한 것은 없으신가요?</td></tr>
+    </tbody>
+  </table>
+
+  <h2>12-2. keyword</h2>
+  <ul class="plain">
+    <li>문진 시 위치(처음 발생 위치 / 이후 퍼진 부위 / 현재 병소 위치) 확인하기</li>
+    <li>발진의 모양, 수, 크기, 색깔, 가려움증, 따가움, 압통 확인하기</li>
+    <li>피부의 일차적인 질환인지, 혹은 전신 질환에 의한 이차적인 병소인지 확인하기</li>
+    <li>신체 진찰 시 환자가 인지하지 못한 곳에도 발진이 있지는 않은지 확인하기</li>
+    <li>병변의 자극을 피하기 위해 중성 비누 사용하고, 보습을 충분히 하고 긁지 않도록 교육하기</li>
+    <li>유발 원인 찾아 없애도록 교육하기</li>
+  </ul>
+</section>
+
+<section>
+  <div class="opener"><div class="tag">부록</div>
+    <h1>원본과 어긋난 지점 · 출처</h1></div>
+  <table>
+    <thead><tr><th>지점</th><th>원본</th><th>이 가이드</th></tr></thead>
+    <tbody>
+      <tr><td class="k">감별 대축</td>
+          <td>피부의 일차적인 질환인지, 전신 질환에 의한 이차적인 병소인지 확인하라고 서술</td>
+          <td class="s">이 문장을 그대로 단일 대축으로 삼았다. 원발진 형태(알고리즘의 blanching · purpura · serous · purulent)는 보조축으로 내렸다</td></tr>
+      <tr><td class="k">응급의 위치</td>
+          <td>SJS/TEN은 알고리즘의 수포성 칸 안에 다른 질환들과 나란히 놓여 있다</td>
+          <td class="s">아나필락시스 · 중증 감염 · 자반과 함께 <b>대축 앞의 관문</b>으로 올렸다. 형태를 묘사하기 전에 먼저 지워야 하는 것들이기 때문</td></tr>
+      <tr><td class="k">아나필락시스</td>
+          <td>문진의 A 알레르기 항목에 &lsquo;입술 부종&rsquo; 한 줄, 교육에 응급 조치 서술</td>
+          <td class="s">관문 항목으로 승격시켰다. 입술 부종은 기도 폐쇄로 갈 수 있어 다른 항목보다 우선한다</td></tr>
+      <tr><td class="k">특이검사 술기</td>
+          <td>피부묘기증과 니콜스키 징후의 이름과 판정만 제시</td>
+          <td class="s">PART 7의 손동작 · 판정 · 기전 · 흔한 실수는 표준 술기를 풀어 쓴 것으로 원본에 명시된 내용이 아니다. 실습에서 확인할 것</td></tr>
+      <tr><td class="k">소아 케이스</td>
+          <td>소아에서는 아토피 호발 부위 정도만 달라지고, 3세 이상 소아에서 호발하는 성홍열이 추가된다고 명시</td>
+          <td class="s">그대로 따랐다. 성홍열을 루프로 돌리고, 아토피의 나이별 호발 부위를 3-1에서 설명했다</td></tr>
+      <tr><td class="k">시간 예산</td>
+          <td>제시되지 않음</td>
+          <td class="s">Hx 5분 / PEx 4분 / Edu 3분으로 제시했다 [관행]. 이 CC는 생활 관리 교육이 길어 Edu에 예산을 더 뒀다</td></tr>
+      <tr><td class="k">Quick Sheet 대조</td><td>&mdash;</td>
+          <td class="s">한끝 단일 소스로 제작했다. Quick Sheet에만 있는 항목이 있다면 반영되지 않았다</td></tr>
+    </tbody>
+  </table>
+  <p class="sub">출처: 『한 권으로 끝내는 CPX 총론』 27. 피부 발진(Skin rash), p.283~290.</p>
+</section>
+</html>

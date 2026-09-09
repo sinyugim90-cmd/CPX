@@ -1,0 +1,30 @@
+{
+ "name": "CPX Study",
+ "short_name": "CPX",
+ "description": "CPX 실기 스터디 — CC별 가이드와 인출 카드",
+ "start_url": "./index.html",
+ "scope": "./",
+ "display": "standalone",
+ "orientation": "portrait",
+ "background_color": "#F7F4F4",
+ "theme_color": "#F7F4F4",
+ "lang": "ko",
+ "icons": [
+  {
+   "src": "icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "icons/maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
