@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#F7F4F4">
+<title>CPX Study — 학습모드</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="bar"><div class="in">
+  <button class="bk" id="bk">&#8249;</button>
+  <div><div class="ti" id="ti">학습모드</div><div class="sb" id="sb"></div></div>
+  <span class="rt" id="rt"></span>
+</div><div class="pbar"><i id="pbar"></i></div></div>
+
+<div class="scroll" id="scroll"><div class="w">
+  <div id="toc"></div>
+  <div id="body" class="hide"></div>
+</div></div>
+
+<div class="bot hide" id="nav">
+  <div class="row">
+    <button class="b ar" id="prevP">&#8249;</button>
+    <button class="b" id="toToc">목차</button>
+    <button class="b mn" id="doneP">이 파트 다 읽음</button>
+    <button class="b ar" id="nextP">&#8250;</button>
+  </div>
+</div>
+
+<script type="module">
+import { $, $$, loadIndex, loadRead, isRead, setRead, partStat, guideStat, qs, registerSW }
+  from './assets/store.js';
+registerSW();
+
+const cc = qs('cc');
+let meta = null, DOC = null, pi = null;
+
+(async () => {
+  const idx = await loadIndex();
+  idx.parts.forEach(p => p.ccs.forEach(c => { if (c.id === cc) meta = c; }));
+  if (!meta) { location.href = 'index.html'; return; }
+  DOC = await loadRead(cc);
+  document.title = `학습모드 — CPX ${meta.num}`;
+  const p = qs('p');
+  if (p !== null) openPart(+p); else showToc();
+})();
+
+const counts = () => DOC.parts.map(p => p.secs.length);
+
+/* ── 목차 ─────────────────────────────── */
+function showToc() {
+  pi = null;
+  $('#nav').classList.add('hide');
+  $('#body').classList.add('hide');
+  $('#toc').classList.remove('hide');
+  $('#ti').textContent = meta.title;
+  $('#sb').textContent = `CPX ${meta.num} · 학습모드`;
+  $('#bk').onclick = () => location.href = 'decks.html?cc=' + cc;
+  const g = guideStat(cc, counts());
+  $('#rt').textContent = `${g.done} / ${g.total}`;
+  $('#pbar').style.width = g.pct + '%';
+  $('#toc').innerHTML =
+    `<p class="sub" style="margin-bottom:16px">파트를 눌러 들어가면, 질문을 하나씩 탭해 답을 열면서 읽어요.
+     ${DOC.parts.length}개 파트 · ${g.total}개 절</p>` +
+    DOC.parts.map((p, n) => {
+      const s = partStat(cc, n, p.secs.length);
+      return `<button class="tile" data-p="${n}">
+        <div class="n">${p.tag}</div><h3>${p.title}</h3>
+        <p>${p.dek || p.secs.map(x => x.title).slice(0, 3).join(' · ')}</p>
+        <div class="pb"><i style="width:${s.pct}%"></i></div>
+        <div class="mt"><span>${p.secs.length}절</span><span>${s.done} 읽음 · ${s.pct}%</span></div>
+      </button>`;
+    }).join('');
+  $$('#toc .tile').forEach(b => b.onclick = () => openPart(+b.dataset.p));
+  $('#scroll').scrollTop = 0;
+}
+
+/* ── 블록 렌더 ─────────────────────────── */
+function block(b) {
+  switch (b.k) {
+    case 'p': return `<p class="rp">${b.html}</p>`;
+    case 'quote': return `<blockquote class="rq"><div class="who">${b.who}</div>` +
+      b.lines.map(l => `<p>${l}</p>`).join('') + `</blockquote>`;
+    case 'ask': return `<div class="ask"><button class="q"><span class="mk">?</span>${b.q}</button>
+      <div class="a">${b.blocks.map(block).join('')}</div></div>`;
+    case 'tbl': return `<div class="tw">${b.html}</div>`;
+    case 'fig': return `<figure>${b.svg}<figcaption>${b.cap}</figcaption></figure>`;
+    case 'list':
+      return b.kind === 'flow'
+        ? `<ol class="flow">${b.html}</ol>`
+        : `<ul class="${b.kind}">${b.html}</ul>`;
+    case 'dl': return `<dl class="rdl">` +
+      b.rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('') + `</dl>`;
+    case 'recall': return `<div class="recall"><div class="lb">${b.lb}</div>` +
+      b.qs.map(q => `<p>${q}</p>`).join('') + `</div>`;
+    case 'si': return `<div class="ask si2"><button class="q">
+        <span class="mk">말</span><b>${b.code}</b>
+        <em class="gd ${b.grade}">${b.grade}</em></button>
+      <div class="a">
+        <p class="why">${b.why}</p>
+        <div class="say">&ldquo;${b.say}&rdquo;</div>
+        <div class="tw"><table><thead><tr><th>환자의 답</th><th>가리키는 것</th><th>그렇게 갈리는 이유</th></tr></thead>
+        <tbody>${b.rows.map(r => `<tr><td>${r[0]}</td><td class="dx">${r[1]}</td><td class="rz">${r[2]}</td></tr>`).join('')}</tbody></table></div>
+      </div></div>`;
+    case 'card': return `<div class="ask si2"><button class="q">
+        <span class="mk">손</span><b>${b.nm}</b><em class="en">${b.en}</em></button>
+      <div class="a">` + b.dl.map(([k, v]) => `<div class="kv"><b>${k}</b><span>${v}</span></div>`).join('') +
+      `</div></div>`;
+    default: return '';
+  }
+}
+
+/* ── 파트 본문 ─────────────────────────── */
+function openPart(n) {
+  pi = n;
+  const p = DOC.parts[n];
+  $('#toc').classList.add('hide');
+  $('#body').classList.remove('hide');
+  $('#nav').classList.remove('hide');
+  $('#ti').textContent = p.title;
+  $('#sb').textContent = `CPX ${meta.num} · ${p.tag}`;
+  $('#bk').onclick = showToc;
+  history.replaceState(null, '', `read.html?cc=${cc}&p=${n}`);
+
+  $('#body').innerHTML =
+    (p.dek ? `<p class="dek">${p.dek}</p>` : '') +
+    `<div class="tools"><button class="tbtn" id="allOpen">전부 펼치기</button>
+     <button class="tbtn" id="allShut">전부 접기</button></div>` +
+    p.secs.map((s, si) => `<section class="acc${isRead(cc, n, si) ? ' read' : ''}" data-s="${si}">
+      <button class="ah"><span class="cv">&#9656;</span>
+        <span class="at">${s.title}</span><span class="ck">&#10003;</span></button>
+      <div class="ab">${s.sub ? `<p class="rsub">${s.sub}</p>` : ''}
+        ${s.blocks.map(block).join('')}
+        <button class="mark">${isRead(cc, n, si) ? '읽음 취소' : '이 절 읽음'}</button>
+      </div></section>`).join('');
+
+  bind(n);
+  refresh();
+  $('#prevP').disabled = (n === 0);
+  $('#nextP').disabled = (n === DOC.parts.length - 1);
+  $('#scroll').scrollTop = 0;
+  // 첫 안 읽은 절을 펼쳐 둔다
+  const first = p.secs.findIndex((_, si) => !isRead(cc, n, si));
+  const target = $$('#body .acc')[first < 0 ? 0 : first];
+  if (target) target.classList.add('open');
+}
+
+function bind(n) {
+  $$('#body .acc').forEach(sec => {
+    sec.querySelector('.ah').onclick = () => sec.classList.toggle('open');
+    sec.querySelector('.mark').onclick = e => {
+      e.stopPropagation();
+      const si = +sec.dataset.s, now = !isRead(cc, n, si);
+      setRead(cc, n, si, now);
+      sec.classList.toggle('read', now);
+      sec.querySelector('.mark').textContent = now ? '읽음 취소' : '이 절 읽음';
+      if (now) sec.classList.remove('open');
+      refresh();
+    };
+  });
+  $$('#body .ask .q').forEach(q => q.onclick = () => q.parentElement.classList.toggle('open'));
+  $('#allOpen').onclick = () => $$('#body .acc, #body .ask').forEach(x => x.classList.add('open'));
+  $('#allShut').onclick = () => $$('#body .acc, #body .ask').forEach(x => x.classList.remove('open'));
+}
+
+function refresh() {
+  const g = guideStat(cc, counts());
+  const s = partStat(cc, pi, DOC.parts[pi].secs.length);
+  $('#rt').textContent = `${s.done} / ${s.total}`;
+  $('#pbar').style.width = g.pct + '%';
+}
+
+$('#toToc').onclick = showToc;
+$('#prevP').onclick = () => { if (pi > 0) openPart(pi - 1); };
+$('#nextP').onclick = () => { if (pi < DOC.parts.length - 1) openPart(pi + 1); };
+$('#doneP').onclick = () => {
+  const n = DOC.parts[pi].secs.length;
+  const all = [...Array(n).keys()].every(si => isRead(cc, pi, si));
+  [...Array(n).keys()].forEach(si => setRead(cc, pi, si, !all));
+  openPart(pi);
+};
+document.addEventListener('keydown', e => {
+  if (pi === null) return;
+  if (e.key === 'ArrowRight') $('#nextP').click();
+  if (e.key === 'ArrowLeft') $('#prevP').click();
+  if (e.key === 'Escape') showToc();
+});
+</script>
+</body>
+</html>

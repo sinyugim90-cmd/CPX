@@ -20,7 +20,9 @@
 <div class="scroll"><div class="w">
   <div id="list"></div>
   <div class="foot">
-    <a href="guide.html" id="gl" style="color:var(--burg);font-weight:700">가이드 전문 읽기 &rsaquo;</a>
+    <a href="#" id="rl" style="color:var(--burg);font-weight:700">학습모드로 읽기 &rsaquo;</a><br>
+    <a href="#" id="gl" style="color:var(--soft)">가이드 전문(스크롤) &rsaquo;</a> ·
+    <a href="#" id="pl" style="color:var(--soft)" target="_blank">PDF 내려받기 &rsaquo;</a>
   </div>
 </div></div>
 
@@ -37,7 +39,9 @@ const id = qs('cc');
   document.title = `CPX ${meta.num} ${meta.title}`;
   $('#ti').textContent = meta.title;
   $('#sb').textContent = `CPX ${meta.num} · ${meta.en}`;
+  $('#rl').href = 'read.html?cc=' + id;
   $('#gl').href = 'guide.html?cc=' + id;
+  $('#pl').href = 'guides/' + meta.guide + '.pdf';
   const counts = data.decks.map(d => d.cards.length);
   const s = ccStat(id, counts);
   $('#rt').textContent = `${s.ok} / ${s.total}`;

@@ -90,6 +90,37 @@ export async function loadCC(id) {
   return cache[id];
 }
 
+
+/* ── 학습모드 진도 ─────────────────────────── */
+const RKEY = 'cpx.read.v1';
+let _r = null;
+function rload(){ if(_r) return _r; try{_r=JSON.parse(localStorage.getItem(RKEY))||{}}catch{_r={}} return _r; }
+function rsave(){ try{ localStorage.setItem(RKEY, JSON.stringify(_r)); }catch{} }
+export function isRead(cc, pi, si){
+  const r = rload(); return !!(r[cc] && r[cc][pi] && r[cc][pi][si]);
+}
+export function setRead(cc, pi, si, v){
+  const r = rload(); r[cc] = r[cc] || {}; r[cc][pi] = r[cc][pi] || {};
+  if(v) r[cc][pi][si] = 1; else delete r[cc][pi][si];
+  rsave();
+}
+export function partStat(cc, pi, n){
+  const r = rload(); const d = (r[cc] && r[cc][pi]) || {};
+  const done = Object.keys(d).length;
+  return { done, total: n, pct: n ? Math.round(done / n * 100) : 0 };
+}
+export function guideStat(cc, counts){
+  let done = 0, total = 0;
+  counts.forEach((n, pi) => { const s = partStat(cc, pi, n); done += s.done; total += n; });
+  return { done, total, pct: total ? Math.round(done / total * 100) : 0 };
+}
+export async function loadRead(id){
+  if (cache['r' + id]) return cache['r' + id];
+  const r = await fetch('data/' + id + '.read.json');
+  cache['r' + id] = await r.json();
+  return cache['r' + id];
+}
+
 /* ── 서비스 워커 ──────────────────────────── */
 export function registerSW() {
   if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {

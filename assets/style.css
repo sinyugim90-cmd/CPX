@@ -191,3 +191,100 @@ h1.big{font-family:var(--sf);font-size:29px;font-weight:700;margin:12px 0 5px;
 .install button{flex:1;font-size:12.5px;font-weight:700;padding:9px;border-radius:10px;
   border:1px solid var(--rule);background:#fff;color:var(--soft)}
 .install button.p{background:var(--burgD);color:#fff;border-color:var(--burgD)}
+
+/* ══════════ 학습모드 ══════════ */
+.pbar{height:3px;background:var(--hair);margin:10px -20px -10px;position:relative}
+.pbar i{display:block;height:100%;background:var(--burg);width:0;transition:width .3s}
+.dek{font-size:14px;color:var(--soft);line-height:1.66;margin:4px 0 16px}
+.tools{display:flex;gap:7px;margin:0 0 14px}
+.tbtn{font-size:11.5px;font-weight:700;color:var(--burg);background:#fff;
+  border:1px solid var(--rule);border-radius:99px;padding:6px 13px}
+.tbtn:active{background:var(--tint)}
+
+/* 절 아코디언 */
+.acc{background:#fff;border:1px solid var(--rule);border-radius:14px;margin-bottom:9px;overflow:hidden}
+.acc.read{border-color:#CBE0D4;background:#FCFEFD}
+.ah{display:flex;align-items:center;gap:9px;width:100%;text-align:left;padding:14px 15px}
+.ah .cv{font-size:10px;color:var(--burgL);transition:transform .2s;flex:0 0 10px}
+.acc.open .ah .cv{transform:rotate(90deg)}
+.ah .at{flex:1;font-family:var(--sf);font-size:15.5px;font-weight:700;
+  letter-spacing:-.015em;line-height:1.4}
+.ah .ck{font-size:13px;color:var(--rule)}
+.acc.read .ah .ck{color:var(--ok)}
+.ab{display:none;padding:0 16px 16px}
+.acc.open .ab{display:block}
+.rsub{font-size:12.5px;color:var(--soft);margin:0 0 12px}
+.rp{font-size:14.5px;line-height:1.72;margin:0 0 .8em}
+.rp b{color:var(--burg)}
+.rp .rsub{display:block;color:var(--soft);font-size:12.5px}
+.rp .rnote{display:block;background:var(--tint);border-radius:10px;padding:11px 13px;
+  font-size:13px;line-height:1.6;color:var(--burgD)}
+.rq{margin:12px 0 16px;padding:2px 0 2px 15px;border-left:2px solid var(--burg)}
+.rq .who{font-size:6.8pt;font-size:9px;font-weight:800;letter-spacing:.2em;
+  color:var(--burg);margin-bottom:5px}
+.rq p{font-size:14px;line-height:1.62;margin:0 0 .2em;font-style:italic}
+
+/* 질문 · 대본 · 카드 토글 */
+.ask{border-top:1px solid var(--hair);margin:0 0 2px}
+.ask:first-child{border-top:0}
+.ask .q{display:flex;align-items:flex-start;gap:9px;width:100%;text-align:left;
+  padding:13px 0;font-size:14.5px;font-weight:700;line-height:1.5;color:var(--burgD)}
+.ask .q .mk{flex:0 0 20px;height:20px;border-radius:6px;background:var(--tint);
+  color:var(--burg);font-size:10.5px;font-weight:800;display:grid;place-items:center;margin-top:1px}
+.ask.open .q .mk{background:var(--burg);color:#fff}
+.ask .q b{font-family:var(--sf);font-weight:700}
+.ask .q em{font-style:normal}
+.ask .q .en{font-size:11px;color:var(--faint);font-weight:500;margin-left:2px}
+.ask .q .gd{font-size:8.5px;font-weight:800;letter-spacing:.14em;padding:2px 6px;
+  border-radius:4px;margin-left:auto;flex:0 0 auto}
+.ask .a{display:none;padding:0 0 10px 29px}
+.ask.open .a{display:block}
+.ask .a .rp:last-child{margin-bottom:0}
+.si2 .a .why{font-size:13px;color:var(--soft);line-height:1.6;margin:0 0 9px}
+.si2 .a .say{font-family:var(--sf);font-size:15.5px;font-weight:500;line-height:1.55;
+  color:var(--burgD);padding-left:13px;border-left:2px solid var(--burg);margin:0 0 11px}
+.si2 .a .kv{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--hair);font-size:13px}
+.si2 .a .kv:last-child{border-bottom:0}
+.si2 .a .kv b{flex:0 0 82px;color:var(--burg);font-weight:700;font-size:11.5px;padding-top:1px}
+.si2 .a .kv ol{margin:2px 0 0;padding-left:17px}
+.si2 .a .kv li{font-size:13px;line-height:1.55}
+
+/* 본문 안의 표 · 목록 · 그림 */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:10px 0 14px}
+.tw table{border-collapse:collapse;width:100%;font-size:12.5px;min-width:min(100%,420px)}
+.tw th{font-size:9.5px;font-weight:800;letter-spacing:.12em;color:var(--burg);text-align:left;
+  padding:0 10px 5px 0;border-bottom:1.4px solid var(--burg);white-space:nowrap}
+.tw td{padding:8px 10px 8px 0;border-bottom:1px solid var(--hair);vertical-align:top;line-height:1.5}
+.tw td.k{font-weight:700;white-space:nowrap}
+.tw td.s,.tw td.rz{color:var(--soft)}
+.tw td.dx{font-weight:700}
+#body figure{margin:12px 0 14px;text-align:center}
+#body figure svg{width:100%;height:auto}
+#body figcaption{font-size:11px;color:var(--soft);margin-top:6px}
+#body ul.plain{list-style:none;margin:8px 0 14px;padding:0}
+#body ul.plain li{padding:9px 0;border-bottom:1px solid var(--hair);font-size:13.5px;line-height:1.6}
+#body ul.plain li:first-child{border-top:1.4px solid var(--burg)}
+#body ul.plain .g{font-size:8.5px;font-weight:800;letter-spacing:.14em;color:var(--burg);margin-left:5px}
+#body ul.deduct{list-style:none;margin:10px 0 14px;padding:8px 0;
+  border-top:1.4px solid var(--burg);border-bottom:1px solid var(--rule)}
+#body ul.deduct li{padding:6px 0 6px 15px;text-indent:-15px;font-size:13.5px;line-height:1.55}
+#body ul.deduct li::before{content:"\2013\00a0\00a0";color:var(--burg);font-weight:700}
+#body ol.flow{list-style:none;counter-reset:fl;margin:10px 0 14px;padding:0}
+#body ol.flow li{counter-increment:fl;position:relative;padding:9px 0 9px 26px;
+  border-bottom:1px solid var(--hair);font-size:13.5px;line-height:1.55}
+#body ol.flow li:first-child{border-top:1.4px solid var(--burg)}
+#body ol.flow li::before{content:counter(fl);position:absolute;left:0;top:9px;
+  font-family:var(--sf);font-size:13px;font-weight:700;color:var(--burg)}
+#body ol.flow .pos{font-size:9px;font-weight:800;letter-spacing:.14em;color:var(--burg);
+  display:block;margin-bottom:2px}
+#body .recall{margin:14px 0;padding:12px 0;border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule)}
+#body .recall .lb{font-size:9px;font-weight:800;letter-spacing:.18em;color:var(--burg);margin-bottom:7px}
+#body .recall p{font-size:13.5px;margin:0 0 .35em;padding-left:16px;text-indent:-16px;line-height:1.6}
+#body .recall p::before{content:"Q\00a0\00a0";font-weight:700;color:var(--burg)}
+.rdl{margin:6px 0 12px}
+.rdl dt{font-size:9.5px;font-weight:800;letter-spacing:.16em;color:var(--burg);margin-top:12px}
+.rdl dd{margin:3px 0 0;font-size:14px;line-height:1.6}
+.mark{display:block;width:100%;margin-top:14px;padding:10px;border-radius:11px;
+  border:1px solid var(--rule);background:#fff;color:var(--soft);font-size:12.5px;font-weight:700}
+.acc.read .mark{color:var(--ok);border-color:#CBE0D4;background:var(--okB)}

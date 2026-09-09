@@ -1,6 +1,6 @@
 /* CPX Study — 오프라인 캐시
    파일을 바꾸면 CACHE 값을 올려야 새 버전이 적용됩니다. */
-const CACHE = 'cpx-v1';
+const CACHE = 'cpx-v3';
 const ASSETS = [
  "./",
  "./README.md",
@@ -14,10 +14,14 @@ const ASSETS = [
  "./assets/style.css",
  "./cards.html",
  "./data/b.json",
+ "./data/b.read.json",
  "./data/index.json",
  "./data/j.json",
+ "./data/j.read.json",
  "./data/n.json",
+ "./data/n.read.json",
  "./data/s.json",
+ "./data/s.read.json",
  "./decks.html",
  "./guide.html",
  "./guides/CPX25_JointPain_Guide.html",
@@ -34,6 +38,7 @@ const ASSETS = [
  "./icons/maskable-512.png",
  "./index.html",
  "./manifest.webmanifest",
+ "./read.html",
  "./sw.js"
 ];
 

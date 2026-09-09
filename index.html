@@ -82,7 +82,7 @@ async function draw() {
         <div class="pb"><i style="width:${s.pct}%"></i></div>
         <div class="mt"><span>${data.decks.length}덱 · ${s.total}장</span>
           <span>${s.ok} 외움 · ${s.pct}%</span></div>
-        <div class="acts"><span data-go="cards">카드</span><span data-go="guide">가이드</span></div>
+        <div class="acts"><span data-go="read">학습</span><span data-go="cards">카드</span><span data-go="pdf">PDF</span></div>
       </div>`);
     }
     parts.push(`<div class="parth"><em>${part.tag}</em><h2>${part.name}</h2>
@@ -99,7 +99,11 @@ async function draw() {
     t.addEventListener('click', e => {
       const go = e.target.dataset.go;
       const id = t.dataset.cc;
-      location.href = (go === 'guide' ? 'guide.html?cc=' : 'decks.html?cc=') + id;
+      let cc = null;
+      INDEX.parts.forEach(p => p.ccs.forEach(c => { if (c.id === id) cc = c; }));
+      if (go === 'read') location.href = 'read.html?cc=' + id;
+      else if (go === 'pdf') window.open('guides/' + cc.guide + '.pdf', '_blank');
+      else location.href = 'decks.html?cc=' + id;
     });
   });
 }
