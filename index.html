@@ -3,145 +3,105 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#F7F5F1">
-<meta name="description" content="CPX 실기 스터디 — CC별 가이드와 인출 카드">
+<meta name="theme-color" content="#F4F4F6">
 <title>CPX Study</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="CPX">
-<link rel="stylesheet" href="assets/style.css?v=7">
+<link rel="stylesheet" href="assets/style.css?v=8">
 </head>
 <body>
-
 <div class="scroll"><div class="w">
-  <header class="mast">
-    <div class="lab">CPX Study</div>
+  <header class="hero">
+    <div class="hi" id="hi">오늘도 한 바퀴</div>
     <h1>실기 스터디</h1>
-    <div class="meta"><span><b id="ovCC">0</b> CC</span><i></i>
-      <span><b id="ovN">0</b>장</span><i></i>
-      <span><b id="ovP">0%</b> 외움</span></div>
+    <div class="stats">
+      <div class="stat hl"><b id="ovP">0%</b><span>외웠어요</span></div>
+      <div class="stat"><b id="ovN">0</b><span>카드</span></div>
+      <div class="stat"><b id="ovR">0</b><span>다시 볼 것</span></div>
+    </div>
   </header>
-
-  <div class="search" id="sbox">
-    <span id="sic"></span>
-    <input id="q" type="search" placeholder="질환 · 문진 · 검사 이름으로 찾기" autocomplete="off" enterkeyhint="search">
-    <button class="x" id="sx" aria-label="지우기"></button>
-  </div>
-
+  <div class="search"><span id="sic"></span>
+    <input id="q" type="search" placeholder="질환 · 문진 · 검사 이름으로 찾기" autocomplete="off"></div>
   <div id="results" class="hide"></div>
   <div id="list"></div>
-
-  <div class="foot">
-    진행률은 이 기기에 저장돼요. 방문 기록을 지우면 사라집니다.<br>
-    <button id="exp">내보내기</button> &nbsp;·&nbsp; <button id="imp">불러오기</button> &nbsp;·&nbsp;
-    <button id="rst">전부 초기화</button>
-    <input id="impFile" type="file" accept="application/json" class="hide">
-  </div>
+  <div class="foot">진행률은 이 기기에 저장돼요.<br>
+    <button id="exp">내보내기</button> &nbsp;·&nbsp; <button id="imp">불러오기</button> &nbsp;·&nbsp; <button id="rst">전부 초기화</button>
+    <input id="impFile" type="file" accept="application/json" class="hide"></div>
 </div></div>
-
 <div class="install" id="install">
-  <p id="instMsg">홈 화면에 추가하면 앱처럼 전체화면으로 열리고, 오프라인에서도 볼 수 있어요.</p>
+  <p id="instMsg">홈 화면에 추가하면 앱처럼 전체화면으로 열리고, 오프라인에서도 돼요.</p>
   <div class="r"><button id="instNo">나중에</button><button class="p" id="instGo">추가</button></div>
 </div>
-
 <script type="module">
-import { $, $$, loadIndex, loadCC, ccStat, exportProgress, importProgress,
-         resetAll, registerSW, installPrompt, strip } from './assets/store.js?v=7';
-import { ICON, ring, animateRings, toast } from './assets/ui.js?v=7';
-import { applyPrefOnly } from './assets/enhance.js?v=7';
-
+import { $, $$, loadIndex, loadCC, ccStat, getCard, exportProgress, importProgress, resetAll, registerSW, installPrompt, strip } from './assets/store.js?v=8';
+import { ICON, toast } from './assets/ui.js?v=8';
+import { applyPrefOnly } from './assets/enhance.js?v=8';
 applyPrefOnly(); registerSW(); installPrompt();
-$('#sic').innerHTML = ICON.search; $('#sx').innerHTML = ICON.close;
+$('#sic').innerHTML = ICON.search;
+const h = new Date().getHours();
+$('#hi').textContent = h < 5 ? '늦은 밤이에요. 한 덱만' : h < 12 ? '좋은 아침. 한 바퀴 돌까요' : h < 18 ? '오늘도 한 바퀴' : '자기 전 한 덱';
 
 let INDEX = null, SEARCH = null;
-
 async function draw() {
   INDEX = await loadIndex();
-  let totCards = 0, totOk = 0, nReady = 0;
-  const out = [];
+  let tot = 0, ok = 0, bad = 0; const out = [];
   for (const part of INDEX.parts) {
     const rows = [];
     for (const cc of part.ccs) {
-      if (cc.status !== 'ready') {
-        rows.push(`<div class="row soon"><span class="no">${cc.num}</span>
-          <div class="mid"><b>${cc.title}</b><span>준비 중</span></div></div>`);
-        continue;
-      }
-      nReady++;
+      if (cc.status !== 'ready') { rows.push(`<div class="pass soon"><div class="lab">CPX ${cc.num}</div><h3>${cc.title}</h3><div class="en">준비 중</div></div>`); continue; }
       const data = await loadCC(cc.id);
       const s = ccStat(cc.id, data.decks.map(d => d.cards.length));
-      totCards += s.total; totOk += s.ok;
-      rows.push(`<a class="row" href="decks.html?cc=${cc.id}">
-        <span class="no">${cc.num}</span>
-        <div class="mid"><b>${cc.title}</b><span>${cc.en}</span></div>
-        <div class="end">${ring(s.pct, 36)}</div></a>`);
+      let b = 0; data.decks.forEach((d, di) => d.cards.forEach((_, ci) => { if (getCard(cc.id, di, ci).ok === false) b++; }));
+      tot += s.total; ok += s.ok; bad += b;
+      const [g1, g2] = cc.grad || ['#1B2A6B', '#6D3BE0'];
+      rows.push(`<a class="pass" href="decks.html?cc=${cc.id}" style="--g1:${g1};--g2:${g2}">
+        <div class="no">${cc.num}</div>
+        <div class="lab">CPX ${cc.num}</div><h3>${cc.title}</h3><div class="en">${cc.en}</div>
+        <div class="pr"><div class="bar"><i data-w="${s.pct}"></i></div><div class="pct">${s.pct}%</div></div>
+        <div class="sub">${s.ok} / ${s.total}장 외움${b ? ` · 다시 ${b}` : ''}</div></a>`);
     }
-    out.push(`<div class="sec"><span class="lab">${part.tag}</span><h2>${part.name}</h2>
-      <span class="cnt">${part.ccs.filter(c => c.status === 'ready').length} / ${part.ccs.length}</span></div>
-      <div class="idx">${rows.join('')}</div>`);
+    out.push(`<div class="sech"><h2>${part.name}</h2><span>${part.ccs.filter(c => c.status === 'ready').length} / ${part.ccs.length}</span></div>${rows.join('')}`);
   }
   $('#list').innerHTML = out.join('');
-  $('#ovCC').textContent = nReady;
-  $('#ovN').textContent = totCards;
-  $('#ovP').textContent = (totCards ? Math.round(totOk / totCards * 100) : 0) + '%';
-  animateRings();
+  $('#ovP').textContent = (tot ? Math.round(ok / tot * 100) : 0) + '%';
+  $('#ovN').textContent = tot; $('#ovR').textContent = bad;
+  requestAnimationFrame(() => requestAnimationFrame(() => $$('.pass .bar i').forEach(i => i.style.width = i.dataset.w + '%')));
 }
 draw();
 
-/* 검색 */
 async function buildSearch() {
-  if (SEARCH) return SEARCH;
-  SEARCH = [];
+  if (SEARCH) return SEARCH; SEARCH = [];
   for (const part of INDEX.parts) for (const cc of part.ccs) {
     if (cc.status !== 'ready') continue;
     const data = await loadCC(cc.id);
-    data.decks.forEach((d, di) => d.cards.forEach((c, ci) => SEARCH.push({
-      cc: cc.id, num: cc.num, deck: d.t, di, ci, title: c.t,
-      text: strip(c.f.big + ' ' + (c.f.nm || '') + ' ' + (c.f.chips || []).join(' ') + ' ' + c.b)
-    })));
+    data.decks.forEach((d, di) => d.cards.forEach((c, ci) => SEARCH.push({ cc: cc.id, num: cc.num, deck: d.t, di, ci, title: c.t,
+      text: strip(c.f.big + ' ' + (c.f.nm || '') + ' ' + (c.f.chips || []).join(' ') + ' ' + c.b) })));
   }
   return SEARCH;
 }
 const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 let timer = null;
-$('#q').addEventListener('input', e => {
-  $('#sbox').classList.toggle('has', !!e.target.value);
-  clearTimeout(timer); timer = setTimeout(() => run(e.target.value.trim()), 160);
-});
-$('#sx').onclick = () => { $('#q').value = ''; $('#sbox').classList.remove('has'); run(''); };
+$('#q').addEventListener('input', e => { clearTimeout(timer); timer = setTimeout(() => run(e.target.value.trim()), 160); });
 async function run(q) {
   const R = $('#results'), L = $('#list');
   if (q.length < 2) { R.classList.add('hide'); L.classList.remove('hide'); return; }
-  const idx = await buildSearch();
-  const rx = new RegExp(esc(q), 'i');
+  const idx = await buildSearch(); const rx = new RegExp(esc(q), 'i');
   const hits = idx.filter(h => rx.test(h.title) || rx.test(h.text)).slice(0, 40);
   L.classList.add('hide'); R.classList.remove('hide');
   if (!hits.length) { R.innerHTML = '<p class="empty">찾은 게 없어요.</p>'; return; }
-  R.innerHTML = `<div class="sec"><h2>검색 결과</h2><span class="cnt">${hits.length}</span></div>` +
-    hits.map(h => {
-      const m = h.text.match(new RegExp('.{0,40}' + esc(q) + '.{0,60}', 'i'));
-      const snip = (m ? m[0] : h.text.slice(0, 90)).replace(rx, s => '<mark>' + s + '</mark>');
-      return `<a class="hit" href="cards.html?cc=${h.cc}&d=${h.di}&i=${h.ci}">
-        <div class="loc">CPX ${h.num} · ${h.deck}</div>
-        <div class="t">${h.title}</div><div class="x">${snip}</div></a>`;
-    }).join('');
+  R.innerHTML = hits.map(h => {
+    const m = h.text.match(new RegExp('.{0,40}' + esc(q) + '.{0,60}', 'i'));
+    const snip = (m ? m[0] : h.text.slice(0, 90)).replace(rx, s => '<mark>' + s + '</mark>');
+    return `<a class="hit" href="cards.html?cc=${h.cc}&d=${h.di}&i=${h.ci}"><div class="loc">CPX ${h.num} · ${h.deck}</div><div class="t">${h.title}</div><div class="x">${snip}</div></a>`;
+  }).join('');
 }
-
-/* 진행률 도구 */
 $('#exp').onclick = exportProgress;
 $('#imp').onclick = () => $('#impFile').click();
-$('#impFile').onchange = e => {
-  if (!e.target.files[0]) return;
-  importProgress(e.target.files[0], ok => {
-    if (ok) { toast('불러왔어요'); setTimeout(() => location.reload(), 600); }
-    else toast('파일을 읽지 못했어요');
-  });
-};
-$('#rst').onclick = () => {
-  if (confirm('진행률을 전부 지울까요? 되돌릴 수 없어요.')) { resetAll(); location.reload(); }
-};
+$('#impFile').onchange = e => { if (!e.target.files[0]) return; importProgress(e.target.files[0], ok => { toast(ok ? '불러왔어요' : '파일을 읽지 못했어요'); if (ok) setTimeout(() => location.reload(), 600); }); };
+$('#rst').onclick = () => { if (confirm('진행률을 전부 지울까요?')) { resetAll(); location.reload(); } };
 </script>
 </body>
 </html>

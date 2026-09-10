@@ -3,193 +3,185 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#F7F5F1">
+<meta name="theme-color" content="#1B2A6B">
 <title>CPX Study</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="stylesheet" href="assets/style.css?v=7">
+<link rel="stylesheet" href="assets/style.css?v=8">
 </head>
-<body>
-
-<div class="bar">
-  <div class="in">
-    <a class="bk" id="bk"></a>
-    <div><div class="ti" id="dTitle"></div><div class="sb" id="dCC"></div></div>
-    <span class="rt"><b id="cur">1</b> / <span id="tot">1</span></span>
-    <button class="ib" id="more" aria-label="메뉴"></button>
-  </div>
-  <div class="pips" id="pips"></div>
+<body class="study">
+<div class="top">
+  <a class="rb ghost" id="bk"></a>
+  <div class="tt w"><b id="dTitle"></b><span id="dCC"></span></div>
+  <span class="cnt w"><b id="cur">1</b> / <span id="tot">1</span></span>
+  <button class="rb ghost" id="more" aria-label="메뉴"></button>
 </div>
-
-<div class="stage"><div class="card" id="card">
-  <div class="f face" id="face"></div>
-  <div class="f back">
-    <div class="bh"><span class="g" id="bg"></span><span class="n" id="bn"></span><span class="c" id="bc"></span></div>
-    <div class="bd" id="bd"></div>
-  </div>
-</div></div>
-
+<div class="pips" id="pips"></div>
+<div class="stage" id="stage"></div>
 <div class="bot">
-  <div class="brow">
-    <button class="btn ic" id="prev"></button>
-    <button class="btn pri" id="flip"><span id="iflip"></span>뒤집기</button>
-    <button class="btn ic" id="next"></button>
+  <div class="acts">
+    <button class="act sm" id="prev"></button>
+    <button class="act no" id="mNo"></button>
+    <button class="act mid" id="flip"></button>
+    <button class="act ok" id="mYes"></button>
+    <button class="act sm" id="next"></button>
   </div>
-  <div class="brow">
-    <button class="btn no" id="mNo">다시</button>
-    <button class="btn ok" id="mYes"><span id="ick"></span>외웠다</button>
-  </div>
+  <div class="hintl" id="hintl">카드를 탭하면 뒤집고, 옆으로 던지면 넘어가요</div>
 </div>
-
 <div class="fin" id="fin"><div class="in">
-  <div class="n" id="finN"></div><h3 id="finT"></h3><p id="finP"></p>
-  <div class="ls" id="finL"></div>
-  <button class="btn pri" id="finB"></button>
-  <button class="btn" id="finH">덱 목록으로</button>
+  <div class="n" id="finN"></div><h3 id="finT"></h3><p id="finP"></p><div class="ls" id="finL"></div>
+  <button class="fbtn" id="finB"></button><button class="fbtn ghost" id="finH">덱 목록으로</button>
 </div></div>
 
 <script type="module">
-import { $, $$, loadIndex, loadCC, getCard, setCard, resetDeck, qs, registerSW } from './assets/store.js?v=7';
-import { ICON, sheet, toast } from './assets/ui.js?v=7';
-import { applyPrefOnly, highlight, zoomable } from './assets/enhance.js?v=7';
+import { $, $$, loadIndex, loadCC, getCard, setCard, resetDeck, qs, registerSW } from './assets/store.js?v=8';
+import { ICON, sheet, toast } from './assets/ui.js?v=8';
+import { applyPrefOnly, highlight, zoomable } from './assets/enhance.js?v=8';
 applyPrefOnly(); registerSW();
 $('#bk').innerHTML = ICON.back; $('#more').innerHTML = ICON.more;
 $('#prev').innerHTML = ICON.prev; $('#next').innerHTML = ICON.next;
-$('#iflip').innerHTML = ICON.flip; $('#ick').innerHTML = ICON.check;
+$('#flip').innerHTML = ICON.flip; $('#mNo').innerHTML = ICON.close; $('#mYes').innerHTML = ICON.check;
 
-const ccId = qs('cc'), dIdx = +(qs('d') || 0);
-const startAt = qs('i') !== null ? +qs('i') : 0;
+const ccId = qs('cc'), dIdx = +(qs('d') || 0), startAt = qs('i') !== null ? +qs('i') : 0;
 let meta = null, deckDef = null, base = [], deck = [], i = 0, only = false;
-const card = $('#card');
+const stage = $('#stage');
 
 (async () => {
   const idx = await loadIndex();
   idx.parts.forEach(p => p.ccs.forEach(c => { if (c.id === ccId) meta = c; }));
   if (!meta) { location.href = 'index.html'; return; }
-  const data = await loadCC(ccId);
-  deckDef = data.decks[dIdx];
+  const [g1, g2] = meta.grad || ['#1B2A6B', '#6D3BE0'];
+  document.documentElement.style.setProperty('--g1', g1); document.documentElement.style.setProperty('--g2', g2);
+  document.querySelector('meta[name=theme-color]').content = g1;
+  const data = await loadCC(ccId); deckDef = data.decks[dIdx];
   if (!deckDef) { location.href = 'decks.html?cc=' + ccId; return; }
   document.title = `${deckDef.t} — CPX ${meta.num}`;
-  $('#dTitle').textContent = deckDef.t;
-  $('#dCC').textContent = `CPX ${meta.num} · ${meta.title}`;
+  $('#dTitle').textContent = deckDef.t; $('#dCC').textContent = `CPX ${meta.num} · ${meta.title}`;
   $('#bk').href = 'decks.html?cc=' + ccId;
-  base = deckDef.cards.map((c, n) => ({ c, n }));
-  deck = base.slice();
+  base = deckDef.cards.map((c, n) => ({ c, n })); deck = base.slice();
   i = Math.max(0, Math.min(startAt, deck.length - 1));
-  draw();
+  render();
 })();
 
-function pips() {
-  $('#pips').innerHTML = deck.map((e, n) => {
-    const s = getCard(ccId, dIdx, e.n);
-    let k = s.ok === true ? 'ok' : s.ok === false ? 'no' : s.seen ? 'seen' : '';
-    return `<i class="${k}${n === i ? ' cur' : ''}" data-n="${n}"></i>`;
-  }).join('');
-  $$('#pips i').forEach(p => p.onclick = () => { i = +p.dataset.n; draw(); });
-}
-
+/* ── 렌더: 스택 3장 ── */
 function stats(mt) {
   const cells = [];
-  (mt || '').split('·').forEach(x => {
-    const m = x.match(/<b>(.*?)<\/b>/);
-    if (m) cells.push([m[1].replace(/개$/, ''), x.replace(/<[^>]*>/g, '').replace(/[0-9]+개?/g, '').trim()]);
-  });
-  return cells.length >= 2
-    ? `<div class="foot3">${cells.slice(0, 3).map(c => `<div><b>${c[0]}</b><span>${c[1]}</span></div>`).join('')}</div>`
-    : '';
+  (mt || '').split('·').forEach(x => { const m = x.match(/<b>(.*?)<\/b>/);
+    if (m) cells.push([m[1].replace(/개$/, ''), x.replace(/<[^>]*>/g, '').replace(/[0-9]+개?/g, '').trim()]); });
+  return cells.length >= 2 ? `<div class="fs">${cells.slice(0, 3).map(c => `<div><b>${c[0]}</b><span>${c[1]}</span></div>`).join('')}</div>` : '';
 }
-
-function draw() {
-  const e = deck[i], c = e.c, s = getCard(ccId, dIdx, e.n), f = c.f;
-  card.classList.remove('flip', 'ok', 'no');
-  if (s.ok === true) card.classList.add('ok');
-  if (s.ok === false) card.classList.add('no');
+function cardHTML(e, pos) {
+  const c = e.c, f = c.f, s = getCard(ccId, dIdx, e.n);
   const foot = stats(f.mt);
-  $('#face').innerHTML =
-    `<div class="top"><span class="lab">${f.kk}</span><span class="seq">${i + 1} / ${deck.length}</span></div>
-     <div class="mid">
-       <div class="big ${f.cls}">${f.big}</div>
-       ${f.nm ? `<div class="dash"></div><div class="nm">${f.nm}</div>` : ''}
-       ${(!foot && f.mt) ? `<div class="mt">${f.mt}</div>` : ''}
-       <div class="hint">${ICON.flip} 탭하면 답이 나와요</div>
-     </div>${foot}`;
-  $('#bg').textContent = c.t; $('#bn').textContent = c.n || ''; $('#bc').textContent = c.c || '';
-  $('#bd').innerHTML = (f.chips && f.chips.length
-    ? `<div class="sum"><span class="lab">이 카드의 뼈대 ${f.chips.length}</span>
-       <div class="chips">${f.chips.map(x => `<span>${x}</span>`).join('')}</div></div>` : '') + c.b;
-  highlight($('#bd')); zoomable($('#bd'));
-  $('#bd').scrollTop = 0;
+  return `<div class="sc c${pos}" data-n="${e.n}">
+    <div class="stamp y">외웠다</div><div class="stamp n">다시</div>
+    <div class="fc">
+      <div class="f fr">
+        <div class="ft"><span class="lab">${f.kk}</span><span class="seq">${i + pos + 1} / ${deck.length}</span></div>
+        <div class="fm"><div class="big ${f.cls}">${f.big}</div>${f.nm ? `<div class="nm">${f.nm}</div>` : ''}${(!foot && f.mt) ? `<div class="mt">${f.mt}</div>` : ''}</div>
+        ${foot}
+      </div>
+      <div class="f bk">
+        <div class="bh"><span class="g">${c.t}</span><span class="n">${c.n || ''}</span><span class="c">${c.c || ''}</span></div>
+        <div class="bd">${(f.chips && f.chips.length ? `<div class="sum"><span class="lab">이 카드의 뼈대 ${f.chips.length}</span><div class="chips">${f.chips.map(x => `<span>${x}</span>`).join('')}</div></div>` : '')}${c.b}</div>
+      </div>
+    </div></div>`;
+}
+function render() {
+  stage.innerHTML = [0, 1, 2].filter(k => i + k < deck.length).reverse().map(k => cardHTML(deck[i + k], k)).join('');
+  const topc = stage.querySelector('.c0');
+  if (topc) { highlight(topc.querySelector('.bd')); zoomable(topc.querySelector('.bd')); bindDrag(topc); }
   $('#cur').textContent = i + 1; $('#tot').textContent = deck.length;
-  $('#prev').disabled = (i === 0); $('#next').disabled = (i === deck.length - 1);
+  $('#prev').disabled = i === 0;
   pips();
 }
-function flip() {
-  card.classList.toggle('flip');
-  if (card.classList.contains('flip')) {
-    const e = deck[i], s = getCard(ccId, dIdx, e.n);
-    setCard(ccId, dIdx, e.n, { seen: 1, ok: s.ok }); pips();
-  }
+function pips() {
+  $('#pips').innerHTML = deck.map((e, n) => { const s = getCard(ccId, dIdx, e.n);
+    const k = s.ok === true ? 'ok' : s.ok === false ? 'no' : s.seen ? 'seen' : '';
+    return `<i class="${k}${n === i ? ' cur' : ''}"></i>`; }).join('');
 }
-$('#face').onclick = flip; $('#flip').onclick = flip;
-function go(d) {
-  if (i + d < 0 || i + d >= deck.length) { if (d > 0) finish(); return; }
-  card.classList.add(d > 0 ? 'sL' : 'sR');
-  setTimeout(() => { i += d; draw(); card.classList.remove('sL', 'sR'); }, 170);
-}
-$('#prev').onclick = () => go(-1); $('#next').onclick = () => go(1);
-function mark(v) {
-  setCard(ccId, dIdx, deck[i].n, { seen: 1, ok: v });
-  if (i === deck.length - 1) { pips(); finish(); } else go(1);
-}
-$('#mYes').onclick = () => mark(true); $('#mNo').onclick = () => mark(false);
 
-let x0 = null, y0 = null;
-card.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
-card.addEventListener('touchend', e => {
-  if (x0 === null) return;
-  const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
-  if (Math.abs(dx) > 52 && Math.abs(dx) > Math.abs(dy) * 1.6) go(dx < 0 ? 1 : -1);
-  x0 = null;
-}, { passive: true });
+/* ── 뒤집기 ── */
+function flip() {
+  const t = stage.querySelector('.c0'); if (!t) return;
+  t.classList.toggle('flip');
+  if (t.classList.contains('flip')) { const e = deck[i], s = getCard(ccId, dIdx, e.n); setCard(ccId, dIdx, e.n, { seen: 1, ok: s.ok }); pips(); }
+}
+$('#flip').onclick = flip;
+
+/* ── 드래그 (포인터) ── */
+let drag = null;
+function bindDrag(el) {
+  el.addEventListener('pointerdown', e => {
+    if (e.target.closest('.bd') && el.classList.contains('flip')) { drag = { el, x0: e.clientX, y0: e.clientY, dx: 0, dy: 0, moved: false, scrollable: true }; }
+    else drag = { el, x0: e.clientX, y0: e.clientY, dx: 0, dy: 0, moved: false, scrollable: false };
+    el.setPointerCapture?.(e.pointerId);
+  });
+  el.addEventListener('pointermove', e => {
+    if (!drag || drag.el !== el) return;
+    drag.dx = e.clientX - drag.x0; drag.dy = e.clientY - drag.y0;
+    if (!drag.moved) {
+      if (Math.abs(drag.dx) < 8 && Math.abs(drag.dy) < 8) return;
+      if (drag.scrollable && Math.abs(drag.dy) > Math.abs(drag.dx)) { drag = null; return; } // 뒷면 스크롤 우선
+      drag.moved = true; el.classList.add('drag');
+    }
+    const r = drag.dx * 0.06;
+    el.style.transform = `translate(${drag.dx}px, ${drag.dy * 0.25}px) rotate(${r}deg)`;
+    const k = Math.min(1, Math.abs(drag.dx) / 110);
+    el.querySelector('.stamp.y').style.opacity = drag.dx > 0 ? k : 0;
+    el.querySelector('.stamp.n').style.opacity = drag.dx < 0 ? k : 0;
+  });
+  const up = e => {
+    if (!drag || drag.el !== el) return;
+    const d = drag; drag = null;
+    el.classList.remove('drag');
+    if (!d.moved) { if (!e.target.closest('.bd') || !el.classList.contains('flip')) flip(); return; }
+    if (Math.abs(d.dx) > 110) throwCard(el, d.dx > 0);
+    else { el.style.transform = ''; el.querySelectorAll('.stamp').forEach(s => s.style.opacity = 0); }
+  };
+  el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up);
+}
+function throwCard(el, yes) {
+  el.classList.add('fly');
+  el.style.transform = `translate(${yes ? 700 : -700}px, ${-40}px) rotate(${yes ? 28 : -28}deg)`;
+  el.style.opacity = '0';
+  setCard(ccId, dIdx, deck[i].n, { seen: 1, ok: yes });
+  setTimeout(() => { if (i === deck.length - 1) { pips(); finish(); } else { i++; render(); } }, 260);
+}
+$('#mYes').onclick = () => { const t = stage.querySelector('.c0'); if (t) throwCard(t, true); };
+$('#mNo').onclick = () => { const t = stage.querySelector('.c0'); if (t) throwCard(t, false); };
+$('#prev').onclick = () => { if (i > 0) { i--; render(); } };
+$('#next').onclick = () => { if (i < deck.length - 1) { i++; render(); } else finish(); };
 document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowRight') go(1); if (e.key === 'ArrowLeft') go(-1);
-  if (e.key === ' ') { e.preventDefault(); flip(); }
-  if (e.key === 'Escape') location.href = 'decks.html?cc=' + ccId;
+  if (e.key === 'ArrowRight') $('#mYes').click(); if (e.key === 'ArrowLeft') $('#mNo').click();
+  if (e.key === ' ') { e.preventDefault(); flip(); } if (e.key === 'Escape') location.href = 'decks.html?cc=' + ccId;
 });
 
-/* 메뉴 시트 */
-function shuffle() { deck = deck.map(v => [Math.random(), v]).sort((a, b) => a[0] - b[0]).map(v => v[1]); i = 0; draw(); toast('섞었어요'); }
-function onlyBad() {
-  const f = base.filter(e => getCard(ccId, dIdx, e.n).ok === false);
+/* ── 메뉴 ── */
+function shuffle() { deck = deck.map(v => [Math.random(), v]).sort((a, b) => a[0] - b[0]).map(v => v[1]); i = 0; render(); toast('섞었어요'); }
+function onlyBad() { const f = base.filter(e => getCard(ccId, dIdx, e.n).ok === false);
   if (!only && !f.length) { toast('다시 볼 카드가 없어요'); return; }
-  only = !only; deck = only ? f : base.slice(); i = 0; draw();
-  toast(only ? `다시 볼 것 ${f.length}장` : '전체로 돌아왔어요');
-}
-function reset() { resetDeck(ccId, dIdx); deck = base.slice(); i = 0; only = false; $('#fin').classList.remove('show'); draw(); toast('초기화했어요'); }
+  only = !only; deck = only ? f : base.slice(); i = 0; render(); toast(only ? `다시 볼 것 ${f.length}장` : '전체'); }
+function reset() { resetDeck(ccId, dIdx); deck = base.slice(); i = 0; only = false; $('#fin').classList.remove('show'); render(); toast('초기화'); }
 $('#more').onclick = () => sheet(deckDef.t, [
   { icon: ICON.shuffle, label: '섞기', on: shuffle },
   { icon: ICON.filter, label: only ? '전체 보기' : '다시 볼 것만', on: onlyBad },
-  { icon: ICON.reset, label: '이 덱 초기화', on: reset, danger: true },
-]);
+  { icon: ICON.reset, label: '이 덱 초기화', on: reset, danger: true }]);
 
 function finish() {
   const bad = base.filter(e => getCard(ccId, dIdx, e.n).ok === false);
   const done = base.filter(e => getCard(ccId, dIdx, e.n).ok === true).length;
   $('#finN').textContent = Math.round(done / base.length * 100) + '%';
-  $('#finT').textContent = bad.length ? '아직 안 붙은 카드가 있어요' : deckDef.t + ' 완주';
-  $('#finP').textContent = bad.length
-    ? '아래 카드만 다시 돌면 돼요. 앞면만 보고 전부 말할 수 있으면 넘어가세요.'
-    : '섞기로 한 번 더 돌면 순서 의존이 빠져요.';
+  $('#finT').textContent = bad.length ? '아직 안 붙은 카드' : deckDef.t + ' 완주';
+  $('#finP').textContent = bad.length ? '아래 카드만 다시 돌면 돼요.' : '섞어서 한 번 더 돌면 순서 의존이 빠져요.';
   $('#finL').innerHTML = bad.map(e => e.c.t).join(' · ');
-  $('#finB').textContent = bad.length ? '다시 볼 것만 돌기' : '섞어서 한 번 더';
+  $('#finB').textContent = bad.length ? `다시 볼 것 ${bad.length}장 돌기` : '섞어서 한 번 더';
   $('#fin').classList.add('show');
 }
-$('#finB').onclick = () => {
-  $('#fin').classList.remove('show');
+$('#finB').onclick = () => { $('#fin').classList.remove('show');
   const bad = base.filter(e => getCard(ccId, dIdx, e.n).ok === false);
-  if (bad.length) { only = true; deck = bad; i = 0; draw(); } else shuffle();
-};
+  if (bad.length) { only = true; deck = bad; i = 0; render(); } else shuffle(); };
 $('#finH').onclick = () => location.href = 'decks.html?cc=' + ccId;
 </script>
 </body>

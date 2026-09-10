@@ -3,22 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#F7F5F1">
+<meta name="theme-color" content="#F4F4F6">
 <title>CPX Study — 학습모드</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="stylesheet" href="assets/style.css?v=7">
+<link rel="stylesheet" href="assets/style.css?v=8">
 </head>
 <body>
 
-<div class="bar">
-  <div class="in">
-    <button class="bk" id="bk"></button>
-    <div><div class="ti" id="ti">학습모드</div><div class="sb" id="sb"></div></div>
-    <span class="rt" id="rt"></span>
-  </div>
-  <div class="pline"><i id="pline"></i></div>
+<div class="top">
+  <button class="rb" id="bk"></button>
+  <div class="tt"><b id="ti">학습모드</b><span id="sb"></span></div>
+  <span class="cnt" id="rt"></span>
 </div>
 
 <div class="scroll" id="scroll"><div class="w">
@@ -27,9 +24,9 @@
 </div></div>
 
 <script type="module">
-import { $, $$, loadIndex, loadRead, isRead, setRead, partStat, guideStat, qs, registerSW } from './assets/store.js?v=7';
-import { ICON, animateRings, toast } from './assets/ui.js?v=7';
-import { applyPrefOnly, highlight, zoomable, viewSettings } from './assets/enhance.js?v=7';
+import { $, $$, loadIndex, loadRead, isRead, setRead, partStat, guideStat, qs, registerSW } from './assets/store.js?v=8';
+import { ICON, animateRings, toast } from './assets/ui.js?v=8';
+import { applyPrefOnly, highlight, zoomable, viewSettings } from './assets/enhance.js?v=8';
 applyPrefOnly(); registerSW();
 $('#bk').innerHTML = ICON.back;
 
@@ -40,13 +37,15 @@ let meta = null, DOC = null, pi = null;
   const idx = await loadIndex();
   idx.parts.forEach(p => p.ccs.forEach(c => { if (c.id === cc) meta = c; }));
   if (!meta) { location.href = 'index.html'; return; }
+  const [g1, g2] = meta.grad || ['#1B2A6B', '#6D3BE0'];
+  document.documentElement.style.setProperty('--g1', g1); document.documentElement.style.setProperty('--g2', g2);
   DOC = await loadRead(cc);
   document.title = `학습모드 — CPX ${meta.num}`;
   const p = qs('p');
   if (p !== null) openPart(+p); else showToc();
 })();
 const counts = () => DOC.parts.map(p => p.secs.length);
-const tagNo = t => t.startsWith('PART') ? t.replace('PART ', '') : `<span class="tx">${t}</span>`;
+const tagNo = t => t.startsWith('PART') ? t.replace('PART ', '') : (t === '표지' ? '☆' : '+');
 
 /* 목차 */
 function showToc() {
@@ -57,20 +56,18 @@ function showToc() {
   $('#bk').onclick = () => location.href = 'decks.html?cc=' + cc;
   const g = guideStat(cc, counts());
   $('#rt').innerHTML = `<b>${g.done}</b> / ${g.total}`;
-  $('#pline').style.width = g.pct + '%';
+  
   history.replaceState(null, '', `read.html?cc=${cc}`);
   $('#toc').innerHTML =
-    `<div class="sec"><h2>파트</h2><span class="cnt">${DOC.parts.length}개 · ${g.total}절</span></div>
-     <div class="idx">` +
+    `<div class="sech" style="padding-top:8px"><h2>파트</h2><span>${DOC.parts.length}개 · ${g.total}절</span></div>` +
     DOC.parts.map((p, n) => {
       const s = partStat(cc, n, p.secs.length);
-      return `<button class="row${s.pct === 100 ? ' done' : ''}" data-p="${n}">
-        <span class="no sm">${tagNo(p.tag)}</span>
-        <div class="mid"><b>${p.title}</b><span>${p.secs.map(x => x.title).join(' · ')}</span></div>
-        <div class="end"><span class="n">${s.done}/${p.secs.length}</span>
-          <span class="mini"><i style="width:${s.pct}%"></i></span>${ICON.next}</div></button>`;
-    }).join('') + '</div>';
-  $$('#toc .row').forEach(b => b.onclick = () => openPart(+b.dataset.p));
+      return `<button class="deck${s.pct === 100 ? ' done' : ''}" data-p="${n}" style="width:100%;text-align:left">
+        <div class="n">${s.pct === 100 ? ICON.check : tagNo(p.tag)}</div>
+        <div class="t"><b>${p.title}</b><span>${p.secs.map(x => x.title).join(' · ')}</span></div>
+        <div class="e"><b>${s.done}/${p.secs.length}</b><span>절</span></div></button>`;
+    }).join('');
+  $$('#toc .deck').forEach(b => b.onclick = () => openPart(+b.dataset.p));
   $('#scroll').scrollTop = 0;
 }
 
@@ -111,7 +108,7 @@ function openPart(n) {
   history.replaceState(null, '', `read.html?cc=${cc}&p=${n}`);
 
   $('#body').innerHTML =
-    `<div class="phead"><div class="pn">${tagNo(p.tag)}</div><h2>${p.title}</h2>${p.dek ? `<p>${p.dek}</p>` : ''}</div>
+    `<div class="rhead"><div class="pn">${p.tag}</div><h2>${p.title}</h2>${p.dek ? `<p>${p.dek}</p>` : ''}</div>
      <div class="tools">
        <button class="tbtn" id="allOpen">전부 펼치기</button>
        <button class="tbtn" id="allShut">전부 접기</button>
@@ -128,10 +125,10 @@ function openPart(n) {
         </div></div></div></section>`;
     }).join('') +
     `<div class="pnav">
-       <button class="btn ic" id="prevP">${ICON.prev}</button>
-       <button class="btn" id="toToc">목차</button>
-       <button class="btn pri" id="doneP">이 파트 다 읽음</button>
-       <button class="btn ic" id="nextP">${ICON.next}</button></div>`;
+       <button class="pbtn ic" id="prevP">${ICON.prev}</button>
+       <button class="pbtn" id="toToc">목차</button>
+       <button class="pbtn pri" id="doneP">다 읽음</button>
+       <button class="pbtn ic" id="nextP">${ICON.next}</button></div>`;
 
   highlight($('#body')); zoomable($('#body')); viewSettings('#body .vwrap');
   bind(n); refresh();
@@ -174,7 +171,7 @@ function refresh() {
   const g = guideStat(cc, counts());
   const s = partStat(cc, pi, DOC.parts[pi].secs.length);
   $('#rt').innerHTML = `<b>${s.done}</b> / ${s.total}`;
-  $('#pline').style.width = g.pct + '%';
+  
 }
 document.addEventListener('keydown', e => {
   if (pi === null) return;

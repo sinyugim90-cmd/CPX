@@ -2,7 +2,7 @@
    온라인이면 항상 서버의 새 파일을 먼저 쓰고, 오프라인일 때만 저장본을 쓴다.
    (폰트·아이콘·PDF처럼 크고 안 바뀌는 것만 저장본 우선)
    파일을 바꾸면 CACHE 값을 올려야 옛 저장본이 정리된다. */
-const CACHE = 'cpx-v7';
+const CACHE = 'cpx-v8';
 const ASSETS = [
  "./",
  "./README.md",
