@@ -95,7 +95,7 @@ json.dump(manifest, open(f"{SITE}/manifest.webmanifest", "w", encoding="utf-8"),
 
 # ── 5b. cache-bust: 자산 주소에 버전 붙이기 ─────────────
 import re as _re
-VER = "9"
+VER = "11"
 def bust(html):
     html = _re.sub(r'(href|src)="(assets/[^"?]+)"', lambda m: f'{m.group(1)}="{m.group(2)}?v={VER}"', html)
     html = _re.sub(r"from '\./(assets/[^'?]+)'", lambda m: f"from './{m.group(1)}?v={VER}'", html)

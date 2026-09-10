@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0A0A0A">
+<meta name="theme-color" content="#ECEEF5">
 <title>CPX Study</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="stylesheet" href="assets/style.css?v=9">
+<link rel="stylesheet" href="assets/style.css?v=11">
 </head>
 <body class="study">
 <div class="top"><div class="in">
@@ -22,12 +22,12 @@
 <div class="bot">
   <div class="acts">
     <button class="act sm" id="prev"></button>
-    <button class="act no" id="mNo">다시</button>
-    <button class="act mid" id="flip">뒤집기</button>
-    <button class="act ok" id="mYes">외웠다</button>
+    <button class="act no" id="mNo">Again</button>
+    <button class="act mid" id="flip">Flip</button>
+    <button class="act ok" id="mYes">Got it</button>
     <button class="act sm" id="next"></button>
   </div>
-  <div class="hintl" id="hintl">tap to flip · swipe to grade</div>
+  <div class="hintl" id="hintl">Tap to flip — swipe to grade</div>
 </div>
 <div class="fin" id="fin"><div class="in">
   <div class="n" id="finN"></div><h3 id="finT"></h3><p id="finP"></p><div class="ls" id="finL"></div>
@@ -35,9 +35,9 @@
 </div></div>
 
 <script type="module">
-import { $, $$, loadIndex, loadCC, getCard, setCard, resetDeck, qs, registerSW } from './assets/store.js?v=9';
-import { ICON, sheet, toast } from './assets/ui.js?v=9';
-import { applyPrefOnly, highlight, zoomable } from './assets/enhance.js?v=9';
+import { $, $$, loadIndex, loadCC, getCard, setCard, resetDeck, qs, registerSW } from './assets/store.js?v=11';
+import { ICON, sheet, toast } from './assets/ui.js?v=11';
+import { applyPrefOnly, highlight, zoomable } from './assets/enhance.js?v=11';
 applyPrefOnly(); registerSW();
 $('#bk').innerHTML = ICON.back; $('#more').innerHTML = ICON.more;
 $('#prev').innerHTML = ICON.prev; $('#next').innerHTML = ICON.next;
@@ -72,7 +72,7 @@ function cardHTML(e, pos) {
   const c = e.c, f = c.f, s = getCard(ccId, dIdx, e.n);
   const foot = stats(f.mt);
   return `<div class="sc c${pos}" data-n="${e.n}">
-    <div class="stamp y">GOT IT</div><div class="stamp n">AGAIN</div>
+    <div class="stamp y">Got it</div><div class="stamp n">Again</div>
     <div class="fc">
       <div class="f fr">
         <div class="ft"><span>${f.kk}</span><span class="seq">${String(i + pos + 1).padStart(2, '0')} / ${String(deck.length).padStart(2, '0')}</span></div>

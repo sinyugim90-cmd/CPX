@@ -73,3 +73,22 @@ export function toast(msg, ms = 1600) {
   t.textContent = msg; t.classList.add('show');
   clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), ms);
 }
+
+
+/** 계기판 다이얼 — 눈금 + 얇은 호 */
+export function dial(pct, size = 44) {
+  const c = size / 2, r = c - 3, L = 2 * Math.PI * r;
+  const off = L * (1 - Math.max(0, Math.min(100, pct)) / 100);
+  const ticks = [...Array(24)].map((_, i) => { const a = i / 24 * 2 * Math.PI - Math.PI / 2;
+    const r1 = r - 2.5, r2 = i % 6 === 0 ? r - 6 : r - 4;
+    return `<line class="k" x1="${(c + r1 * Math.cos(a)).toFixed(2)}" y1="${(c + r1 * Math.sin(a)).toFixed(2)}" x2="${(c + r2 * Math.cos(a)).toFixed(2)}" y2="${(c + r2 * Math.sin(a)).toFixed(2)}"/>`; }).join('');
+  return `<span class="dial"><svg viewBox="0 0 ${size} ${size}"><defs><linearGradient id="holoStroke" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF9FBF"/><stop offset=".5" stop-color="#9FE8FF"/><stop offset="1" stop-color="#B9A6FF"/></linearGradient></defs>${ticks}
+    <circle class="t" cx="${c}" cy="${c}" r="${r}"/>
+    <circle class="v" cx="${c}" cy="${c}" r="${r}" stroke-dasharray="${L.toFixed(2)}" stroke-dashoffset="${L.toFixed(2)}" data-off="${off.toFixed(2)}" transform="rotate(-90 ${c} ${c})"/>
+  </svg></span>`;
+}
+export function animateDials(root = document) {
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    root.querySelectorAll('.dial .v[data-off]').forEach(el => el.setAttribute('stroke-dashoffset', el.dataset.off));
+  }));
+}

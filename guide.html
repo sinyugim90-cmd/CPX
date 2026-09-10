@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0A0A0A">
+<meta name="theme-color" content="#ECEEF5">
 <title>CPX Study — 가이드</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="stylesheet" href="assets/style.css?v=9">
+<link rel="stylesheet" href="assets/style.css?v=11">
 </head>
 <body>
 <div class="top"><div class="in">
@@ -18,9 +18,9 @@
 </div></div>
 <iframe class="frame" id="fr" title="가이드"></iframe>
 <script type="module">
-import { $, loadIndex, qs, registerSW } from './assets/store.js?v=9';
-import { ICON } from './assets/ui.js?v=9';
-import { applyPrefOnly } from './assets/enhance.js?v=9';
+import { $, loadIndex, qs, registerSW } from './assets/store.js?v=11';
+import { ICON } from './assets/ui.js?v=11';
+import { applyPrefOnly } from './assets/enhance.js?v=11';
 applyPrefOnly(); registerSW();
 $('#bk').innerHTML = ICON.back; $('#pdf').innerHTML = ICON.pdf;
 const id = qs('cc');

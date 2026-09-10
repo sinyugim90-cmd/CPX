@@ -79,13 +79,13 @@ export function importProgress(file, done) {
 const cache = {};
 export async function loadIndex() {
   if (cache.index) return cache.index;
-  const r = await fetch('data/index.json?v=9');
+  const r = await fetch('data/index.json?v=11');
   cache.index = await r.json();
   return cache.index;
 }
 export async function loadCC(id) {
   if (cache[id]) return cache[id];
-  const r = await fetch('data/' + id + '.json?v=9');
+  const r = await fetch('data/' + id + '.json?v=11');
   cache[id] = await r.json();
   return cache[id];
 }
@@ -116,7 +116,7 @@ export function guideStat(cc, counts){
 }
 export async function loadRead(id){
   if (cache['r' + id]) return cache['r' + id];
-  const r = await fetch('data/' + id + '.read.json?v=9');
+  const r = await fetch('data/' + id + '.read.json?v=11');
   cache['r' + id] = await r.json();
   return cache['r' + id];
 }

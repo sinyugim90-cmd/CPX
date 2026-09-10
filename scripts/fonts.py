@@ -34,6 +34,7 @@ open(unifile, "w").write(uni)
 
 # ── 2. 서브셋 ────────────────────────────────────────
 JOBS = [
+    ("Pretendard", 300, os.path.expanduser("~/.fonts/Pretendard-Light.otf"), None),
     ("Pretendard", 400, os.path.expanduser("~/.fonts/Pretendard-Regular.otf"), None),
     ("Pretendard", 500, os.path.expanduser("~/.fonts/Pretendard-Medium.otf"), None),
     ("Pretendard", 700, os.path.expanduser("~/.fonts/Pretendard-Bold.otf"), None),

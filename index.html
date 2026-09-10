@@ -3,22 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0A0A0A">
+<meta name="theme-color" content="#ECEEF5">
 <title>CPX Study</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="CPX">
-<link rel="stylesheet" href="assets/style.css?v=9">
+<link rel="stylesheet" href="assets/style.css?v=11">
 </head>
 <body>
 <div class="ticker"><div class="tk" id="tk"></div></div>
 <div class="scroll"><div class="w">
   <header class="mast">
-    <h1>실기<br><em>스터디</em></h1>
+    <h1>실기<em class="chrome">스터디</em></h1>
     <div class="strip">
-      <div><b id="ovP">0%</b><span>done</span></div>
+      <div><b id="ovP">0%</b><span>learned</span></div>
       <div><b id="ovN">0</b><span>cards</span></div>
       <div><b id="ovR">0</b><span>retry</span></div>
     </div>
@@ -36,13 +36,13 @@
   <div class="r"><button id="instNo">나중에</button><button class="p" id="instGo">추가</button></div>
 </div>
 <script type="module">
-import { $, $$, loadIndex, loadCC, ccStat, getCard, exportProgress, importProgress, resetAll, registerSW, installPrompt, strip } from './assets/store.js?v=9';
-import { ICON, toast } from './assets/ui.js?v=9';
-import { applyPrefOnly } from './assets/enhance.js?v=9';
+import { $, $$, loadIndex, loadCC, ccStat, getCard, exportProgress, importProgress, resetAll, registerSW, installPrompt, strip } from './assets/store.js?v=11';
+import { ICON, toast, dial, animateDials } from './assets/ui.js?v=11';
+import { applyPrefOnly } from './assets/enhance.js?v=11';
 applyPrefOnly(); registerSW(); installPrompt();
 $('#sic').innerHTML = ICON.search;
-const tkItems = ['CPX STUDY', '관절 통증', '목 통증', '허리 통증', '피부 발진', new Date().toISOString().slice(0,10), 'ANKI STYLE'];
-$('#tk').innerHTML = [...tkItems, ...tkItems].map(x => `<span>${x}</span>`).join('');
+const d = new Date();
+$('#tk').innerHTML = `<span>CPX Study</span><span>${d.toLocaleDateString('en-GB',{day:'2-digit',month:'short'})}</span><span>Vol. 25–27</span>`;
 
 let INDEX = null, SEARCH = null;
 async function draw() {
@@ -56,11 +56,10 @@ async function draw() {
       const s = ccStat(cc.id, data.decks.map(d => d.cards.length));
       let b = 0; data.decks.forEach((d, di) => d.cards.forEach((_, ci) => { if (getCard(cc.id, di, ci).ok === false) b++; }));
       tot += s.total; ok += s.ok; bad += b;
-      const seg = [...Array(10)].map((_, k) => `<i class="${k < Math.round(s.pct / 10) ? 'on' : ''}"></i>`).join('');
       rows.push(`<a class="blk" href="decks.html?cc=${cc.id}">
-        ${b ? `<span class="tag">RETRY ${b}</span>` : (s.pct === 100 ? `<span class="tag">DONE</span>` : '')}
-        <div class="no">${cc.num}</div>
-        <div class="pr"><b>${s.pct}%</b><div class="seg">${seg}</div></div>
+        ${b ? `<span class="tag">Retry ${b}</span>` : (s.pct === 100 ? `<span class="tag">Complete</span>` : '')}
+        <div class="no chrome">${cc.num}</div>
+        <div class="pr"><b>${s.pct}%</b>${dial(s.pct)}</div>
         <h3>${cc.title}</h3><div class="en">${cc.en} · ${s.total} cards</div></a>`);
     }
     out.push(`<div class="sech"><h2>${part.name}</h2><span>${part.ccs.filter(c => c.status === 'ready').length} / ${part.ccs.length}</span></div>${rows.join('')}`);
@@ -68,6 +67,7 @@ async function draw() {
   $('#list').innerHTML = out.join('');
   $('#ovP').textContent = (tot ? Math.round(ok / tot * 100) : 0) + '%';
   $('#ovN').textContent = tot; $('#ovR').textContent = bad;
+  animateDials();
 
 }
 draw();
