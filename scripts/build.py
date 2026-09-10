@@ -105,9 +105,12 @@ for root, dirs, fs in os.walk(SITE):
 files = sorted(set(files + ["./"]))
 
 sw = """/* CPX Study — 오프라인 캐시
-   파일을 바꾸면 CACHE 값을 올려야 새 버전이 적용됩니다. */
-const CACHE = 'cpx-v1';
+   온라인이면 항상 서버의 새 파일을 먼저 쓰고, 오프라인일 때만 저장본을 쓴다.
+   (폰트·아이콘·PDF처럼 크고 안 바뀌는 것만 저장본 우선)
+   파일을 바꾸면 CACHE 값을 올려야 옛 저장본이 정리된다. */
+const CACHE = 'cpx-v7';
 const ASSETS = %s;
+const STATIC = /\\/(assets\\/fonts\\/|icons\\/|guides\\/.*\\.pdf$)/;
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE)
@@ -121,22 +124,21 @@ self.addEventListener('activate', e => {
 });
 self.addEventListener('fetch', e => {
   const req = e.request;
-  if (req.method !== 'GET') return;
+  if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
+  const url = req.url;
+  if (STATIC.test(url)) {
+    // 저장본 우선
+    e.respondWith(caches.match(req, { ignoreSearch: true }).then(hit => hit ||
+      fetch(req).then(r => { if (r && r.ok) caches.open(CACHE).then(c => c.put(req, r.clone())); return r; })));
+    return;
+  }
+  // 네트워크 우선, 실패하면 저장본
   e.respondWith(
-    caches.match(req, { ignoreSearch: true }).then(hit => {
-      if (hit) {
-        fetch(req).then(r => { if (r && r.ok) caches.open(CACHE).then(c => c.put(req, r.clone())); })
-                  .catch(() => {});
-        return hit;
-      }
-      return fetch(req).then(r => {
-        if (r && r.ok && new URL(req.url).origin === location.origin) {
-          const cp = r.clone();
-          caches.open(CACHE).then(c => c.put(req, cp));
-        }
-        return r;
-      }).catch(() => caches.match('./index.html'));
-    })
+    fetch(req).then(r => {
+      if (r && r.ok) { const cp = r.clone(); caches.open(CACHE).then(c => c.put(req, cp)); }
+      return r;
+    }).catch(() => caches.match(req, { ignoreSearch: true })
+      .then(hit => hit || (req.mode === 'navigate' ? caches.match('./index.html') : undefined)))
   );
 });
 """ % json.dumps(files, ensure_ascii=False, indent=1)
