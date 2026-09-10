@@ -87,8 +87,10 @@ def parse_blocks(nodes):
                 dds = el.dl.find_all("dd")
                 for dt, dd in zip(dts, dds):
                     dl.append([dt.get_text(), inner(dd)])
+            fg = el.find("figure")
             out.append({"k": "card", "nm": title,
-                        "en": en.get_text() if en else "", "dl": dl})
+                        "en": en.get_text() if en else "", "dl": dl,
+                        "svg": str(fg.find("svg")) if (fg and fg.find("svg")) else ""})
         elif n == "div" and "recall" in cls:
             lb = el.find(class_="lb")
             out.append({"k": "recall", "lb": lb.get_text() if lb else "스스로 답해보기",

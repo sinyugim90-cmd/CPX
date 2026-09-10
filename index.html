@@ -15,33 +15,31 @@
 </head>
 <body>
 
-<div class="scroll"><div class="w">
-  <div class="kick">CPX STUDY</div>
-  <h1 class="big">실기 스터디</h1>
-  <p class="sub">CC별 가이드와 인출 카드. 앞면만 보고 말할 수 있으면 넘어가세요.</p>
+<div class="scroll">
+  <div class="hero"><div class="w">
+    <div class="kick">CPX STUDY</div>
+    <h1>실기 스터디</h1>
+    <p class="subt">CC별 가이드와 인출 카드</p>
+    <div class="stats">
+      <div><b id="ovCC">0</b><span>CC</span></div>
+      <div><b id="ovN">0</b><span>카드</span></div>
+      <div><b id="ovP">0%</b><span>외운 비율</span></div>
+    </div>
+  </div></div>
 
-  <div class="ov">
-    <div><b id="ovCC">0</b><span>CC</span></div>
-    <div><b id="ovN">0</b><span>카드</span></div>
-    <div><b id="ovP">0%</b><span>외운 비율</span></div>
+  <div class="w">
+    <div class="search"><span class="ic">&#9906;</span>
+      <input id="q" type="search" placeholder="질환 · 문진 · 검사 이름으로 찾기" autocomplete="off"></div>
+    <div id="results" class="hide"></div>
+    <div id="list"></div>
+    <div class="foot">
+      진행률은 이 기기에 저장돼요. 방문 기록을 지우면 사라집니다.<br>
+      <button id="exp">내보내기</button> · <button id="imp">불러오기</button> ·
+      <button id="rst">전부 초기화</button>
+      <input id="impFile" type="file" accept="application/json" class="hide">
+    </div>
   </div>
-
-  <div class="search">
-    <span class="ic">&#9906;</span>
-    <input id="q" type="search" placeholder="질환 · 문진 · 검사 이름으로 찾기" autocomplete="off">
-  </div>
-
-  <div id="results" class="hide"></div>
-  <div id="list"></div>
-
-  <div class="foot">
-    진행률은 이 기기에 저장돼요. 방문 기록을 지우면 사라집니다.<br>
-    <button id="exp">진행률 내보내기</button> ·
-    <button id="imp">불러오기</button> ·
-    <button id="rst">전부 초기화</button>
-    <input id="impFile" type="file" accept="application/json" class="hide">
-  </div>
-</div></div>
+</div>
 
 <div class="install" id="install">
   <p id="instMsg">홈 화면에 추가하면 앱처럼 전체화면으로 열리고, 오프라인에서도 볼 수 있어요.</p>
@@ -51,6 +49,8 @@
 <script type="module">
 import { $, $$, loadIndex, loadCC, ccStat, exportProgress, importProgress,
          resetAll, registerSW, installPrompt, strip } from './assets/store.js';
+import { applyPrefOnly, highlight } from './assets/enhance.js';
+applyPrefOnly();
 
 registerSW();
 installPrompt();
@@ -67,8 +67,8 @@ async function draw() {
     const tiles = [];
     for (const cc of part.ccs) {
       if (cc.status !== 'ready') {
-        tiles.push(`<div class="tile soon"><div class="n">CPX ${cc.num}</div>
-          <h3>${cc.title}</h3><p>준비 중</p></div>`);
+        tiles.push(`<div class="ccrow soon"><span class="no">${cc.num}</span>
+          <div class="mid"><b>${cc.title}</b><span>준비 중</span></div></div>`);
         continue;
       }
       nReady++;
@@ -76,18 +76,16 @@ async function draw() {
       const counts = data.decks.map(d => d.cards.length);
       const s = ccStat(cc.id, counts);
       totCards += s.total; totOk += s.ok;
-      tiles.push(`<div class="tile" data-cc="${cc.id}">
-        <div class="n">CPX ${cc.num}</div>
-        <h3>${cc.title}</h3><p>${cc.en}</p>
-        <div class="pb"><i style="width:${s.pct}%"></i></div>
-        <div class="mt"><span>${data.decks.length}덱 · ${s.total}장</span>
-          <span>${s.ok} 외움 · ${s.pct}%</span></div>
-        <div class="acts"><span data-go="read">학습</span><span data-go="cards">카드</span><span data-go="pdf">PDF</span></div>
-      </div>`);
+      tiles.push(`<button class="ccrow" data-cc="${cc.id}">
+        <span class="no">${cc.num}</span>
+        <div class="mid"><b>${cc.title}</b><span>${cc.en}</span></div>
+        <div class="ring" style="background:conic-gradient(var(--burg) ${s.pct*3.6}deg,var(--hair) 0deg)">
+          <b>${s.pct}</b></div>
+      </button>`);
     }
     parts.push(`<div class="parth"><em>${part.tag}</em><h2>${part.name}</h2>
       <span class="cnt">${part.ccs.filter(c => c.status === 'ready').length} / ${part.ccs.length}</span></div>
-      ${tiles.join('')}`);
+      <div class="ccbox">${tiles.join('')}</div>`);
   }
 
   $('#list').innerHTML = parts.join('');
@@ -95,17 +93,8 @@ async function draw() {
   $('#ovN').textContent = totCards;
   $('#ovP').textContent = (totCards ? Math.round(totOk / totCards * 100) : 0) + '%';
 
-  $$('#list .tile[data-cc]').forEach(t => {
-    t.addEventListener('click', e => {
-      const go = e.target.dataset.go;
-      const id = t.dataset.cc;
-      let cc = null;
-      INDEX.parts.forEach(p => p.ccs.forEach(c => { if (c.id === id) cc = c; }));
-      if (go === 'read') location.href = 'read.html?cc=' + id;
-      else if (go === 'pdf') window.open('guides/' + cc.guide + '.pdf', '_blank');
-      else location.href = 'decks.html?cc=' + id;
-    });
-  });
+  $$('#list .ccrow[data-cc]').forEach(t =>
+    t.addEventListener('click', () => location.href = 'decks.html?cc=' + t.dataset.cc));
 }
 draw();
 

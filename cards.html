@@ -54,6 +54,8 @@
 <script type="module">
 import { $, $$, loadIndex, loadCC, getCard, setCard, resetDeck, qs, registerSW }
   from './assets/store.js';
+import { applyPrefOnly, highlight, zoomable } from './assets/enhance.js';
+applyPrefOnly();
 registerSW();
 
 const ccId = qs('cc');
@@ -93,15 +95,36 @@ function draw() {
   card.classList.remove('flip', 'ok', 'no');
   if (s.ok === true) card.classList.add('ok');
   if (s.ok === false) card.classList.add('no');
+  // 앞면 하단 지표 — mt 문자열의 "라벨 <b>값</b>" 을 칸으로 쪼갠다
+  let cells = [];
+  if (f.mt) {
+    const parts = f.mt.split('·');
+    parts.forEach(x => {
+      const m = x.match(/<b>(.*?)<\/b>/);
+      const lb = x.replace(/<[^>]*>/g, '').replace(/[0-9]+개?/g, '').trim();
+      if (m) cells.push([m[1], lb || '']);
+    });
+  }
+  const foot = cells.length >= 2
+    ? `<div class="foot3">${cells.slice(0, 3).map(c =>
+        `<div><b>${c[0]}</b><span>${c[1]}</span></div>`).join('')}</div>`
+    : '';
+  const wm = `<div class="wm">${deck[i].n + 1}</div>`;
   $('#face').innerHTML =
-    `<div class="kk">${f.kk}</div><div class="big ${f.cls}">${f.big}</div>` +
+    `<div class="ftop"><span class="kk">${f.kk}</span>
+       <span class="seq">${i + 1} / ${deck.length}</span></div>
+     <div class="fmid">` +
+    (f.cls === 'xl' ? `<div class="halo"><div class="big xl">${f.big}</div></div>`
+                    : `<div class="big ${f.cls}">${f.big}</div>`) +
     (f.nm ? `<div class="nm">${f.nm}</div>` : '') +
-    (f.mt ? `<div class="mt">${f.mt}</div>` : '') +
-    `<div class="go">탭하면 답이 나와요</div>`;
+    (!foot && f.mt ? `<div class="mt" style="margin-top:14px;font-size:12.5px;color:var(--soft)">${f.mt}</div>` : '') +
+    `<div class="go">탭하면 답이 나와요</div></div>` + foot + wm;
   $('#bg').textContent = c.t; $('#bn').textContent = c.n || ''; $('#bc').textContent = c.c || '';
   $('#bd').innerHTML = (f.chips && f.chips.length
     ? `<div class="sum"><div class="sl">이 카드의 뼈대 ${f.chips.length}개</div>
        <div class="chips">${f.chips.map(x => `<span>${x}</span>`).join('')}</div></div>` : '') + c.b;
+  highlight($('#bd'));
+  zoomable($('#bd'));
   $('#bd').scrollTop = 0;
   $('#cur').textContent = i + 1; $('#tot').textContent = deck.length;
   $('#prev').disabled = (i === 0); $('#next').disabled = (i === deck.length - 1);

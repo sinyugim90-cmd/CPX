@@ -18,10 +18,10 @@
   <span class="rt" id="rt"></span>
 </div><div class="pbar"><i id="pbar"></i></div></div>
 
-<div class="scroll" id="scroll"><div class="w">
-  <div id="toc"></div>
+<div class="scroll" id="scroll">
+  <div class="w" id="toc"></div>
   <div id="body" class="hide"></div>
-</div></div>
+</div>
 
 <div class="bot hide" id="nav">
   <div class="row">
@@ -35,6 +35,7 @@
 <script type="module">
 import { $, $$, loadIndex, loadRead, isRead, setRead, partStat, guideStat, qs, registerSW }
   from './assets/store.js';
+import { highlight, zoomable, viewSettings } from './assets/enhance.js';
 registerSW();
 
 const cc = qs('cc');
@@ -65,18 +66,18 @@ function showToc() {
   $('#rt').textContent = `${g.done} / ${g.total}`;
   $('#pbar').style.width = g.pct + '%';
   $('#toc').innerHTML =
-    `<p class="sub" style="margin-bottom:16px">파트를 눌러 들어가면, 질문을 하나씩 탭해 답을 열면서 읽어요.
-     ${DOC.parts.length}개 파트 · ${g.total}개 절</p>` +
+    `<div class="seclabel">${DOC.parts.length}개 파트 · ${g.total}개 절</div>
+     <div class="lbox">` +
     DOC.parts.map((p, n) => {
       const s = partStat(cc, n, p.secs.length);
-      return `<button class="tile" data-p="${n}">
-        <div class="n">${p.tag}</div><h3>${p.title}</h3>
-        <p>${p.dek || p.secs.map(x => x.title).slice(0, 3).join(' · ')}</p>
-        <div class="pb"><i style="width:${s.pct}%"></i></div>
-        <div class="mt"><span>${p.secs.length}절</span><span>${s.done} 읽음 · ${s.pct}%</span></div>
+      return `<button class="lrow${s.pct === 100 ? ' done' : ''}" data-p="${n}">
+        <span class="idx">${p.tag.replace('PART ', '')}</span>
+        <div class="mid"><b>${p.title}</b><span>${p.secs.map(x => x.title).join(' · ')}</span></div>
+        <div class="end"><div class="n">${p.secs.length}절</div>
+          <div class="mini"><i style="width:${s.pct}%"></i></div></div>
       </button>`;
-    }).join('');
-  $$('#toc .tile').forEach(b => b.onclick = () => openPart(+b.dataset.p));
+    }).join('') + '</div>';
+  $$('#toc .lrow').forEach(b => b.onclick = () => openPart(+b.dataset.p));
   $('#scroll').scrollTop = 0;
 }
 
@@ -109,7 +110,8 @@ function block(b) {
       </div></div>`;
     case 'card': return `<div class="ask si2"><button class="q">
         <span class="mk">손</span><b>${b.nm}</b><em class="en">${b.en}</em></button>
-      <div class="a">` + b.dl.map(([k, v]) => `<div class="kv"><b>${k}</b><span>${v}</span></div>`).join('') +
+      <div class="a">` + (b.svg ? `<figure>${b.svg}</figure>` : '') +
+      b.dl.map(([k, v]) => `<div class="kv"><b>${k}</b><span>${v}</span></div>`).join('') +
       `</div></div>`;
     default: return '';
   }
@@ -122,23 +124,30 @@ function openPart(n) {
   $('#toc').classList.add('hide');
   $('#body').classList.remove('hide');
   $('#nav').classList.remove('hide');
-  $('#ti').textContent = p.title;
+  $('#ti').textContent = meta.title;
   $('#sb').textContent = `CPX ${meta.num} · ${p.tag}`;
   $('#bk').onclick = showToc;
   history.replaceState(null, '', `read.html?cc=${cc}&p=${n}`);
 
   $('#body').innerHTML =
-    (p.dek ? `<p class="dek">${p.dek}</p>` : '') +
-    `<div class="tools"><button class="tbtn" id="allOpen">전부 펼치기</button>
-     <button class="tbtn" id="allShut">전부 접기</button></div>` +
+    `<div class="partband"><div class="in">
+       <span class="tg">${p.tag}</span><h2>${p.title}</h2>
+       ${p.dek ? `<p>${p.dek}</p>` : ''}</div></div>` +
+    `<div class="w"><div class="tools">
+       <button class="tbtn" id="allOpen">전부 펼치기</button>
+       <button class="tbtn" id="allShut">전부 접기</button>
+       <span class="vwrap"></span></div>` +
     p.secs.map((s, si) => `<section class="acc${isRead(cc, n, si) ? ' read' : ''}" data-s="${si}">
-      <button class="ah"><span class="cv">&#9656;</span>
-        <span class="at">${s.title}</span><span class="ck">&#10003;</span></button>
+      <button class="ah"><span class="sq">${isRead(cc, n, si) ? '&#10003;' : si + 1}</span>
+        <span class="at">${s.title}</span><span class="cv">&#9656;</span></button>
       <div class="ab">${s.sub ? `<p class="rsub">${s.sub}</p>` : ''}
         ${s.blocks.map(block).join('')}
         <button class="mark">${isRead(cc, n, si) ? '읽음 취소' : '이 절 읽음'}</button>
-      </div></section>`).join('');
+      </div></section>`).join('') + '</div>';
 
+  highlight($('#body'));
+  zoomable($('#body'));
+  viewSettings('#body .vwrap');
   bind(n);
   refresh();
   $('#prevP').disabled = (n === 0);
@@ -159,6 +168,7 @@ function bind(n) {
       setRead(cc, n, si, now);
       sec.classList.toggle('read', now);
       sec.querySelector('.mark').textContent = now ? '읽음 취소' : '이 절 읽음';
+      sec.querySelector('.sq').innerHTML = now ? '&#10003;' : (si + 1);
       if (now) sec.classList.remove('open');
       refresh();
     };

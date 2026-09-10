@@ -13,21 +13,40 @@
 <body>
 <div class="bar"><div class="in">
   <a class="bk" href="index.html">&#8249;</a>
-  <div><div class="ti" id="ti"></div><div class="sb" id="sb"></div></div>
-  <span class="rt" id="rt"></span>
+  <div><div class="ti">CPX 스터디</div><div class="sb" id="sb"></div></div>
 </div></div>
 
-<div class="scroll"><div class="w">
-  <div id="list"></div>
-  <div class="foot">
-    <a href="#" id="rl" style="color:var(--burg);font-weight:700">학습모드로 읽기 &rsaquo;</a><br>
-    <a href="#" id="gl" style="color:var(--soft)">가이드 전문(스크롤) &rsaquo;</a> ·
-    <a href="#" id="pl" style="color:var(--soft)" target="_blank">PDF 내려받기 &rsaquo;</a>
+<div class="scroll">
+  <div class="hub"><div class="in">
+    <div class="no" id="hno"></div>
+    <div class="mid"><h1 id="hti"></h1><div class="en" id="hen"></div></div>
+    <div class="ring big" id="hring"><b>0</b></div>
+  </div></div>
+
+  <div class="w">
+    <div class="duo">
+      <a id="dRead"><div class="lb">READ</div><h3>학습모드</h3>
+        <p id="rMeta"></p><div class="pb"><i id="rBar"></i></div>
+        <div class="pc" id="rPc"></div></a>
+      <a id="dCard"><div class="lb">RECALL</div><h3>카드 인출</h3>
+        <p id="cMeta"></p><div class="pb"><i id="cBar"></i></div>
+        <div class="pc" id="cPc"></div></a>
+    </div>
+
+    <div class="seclabel">카드 덱</div>
+    <div class="lbox" id="list"></div>
+
+    <div class="foot">
+      <a id="pl" target="_blank">PDF 내려받기 &rsaquo;</a> ·
+      <a id="gl">가이드 전문(스크롤) &rsaquo;</a>
+    </div>
   </div>
-</div></div>
+</div>
 
 <script type="module">
-import { $, $$, loadIndex, loadCC, deckStat, ccStat, qs, registerSW } from './assets/store.js';
+import { $, $$, loadIndex, loadCC, loadRead, deckStat, ccStat, guideStat, qs, registerSW } from './assets/store.js';
+import { applyPrefOnly, highlight } from './assets/enhance.js';
+applyPrefOnly();
 registerSW();
 const id = qs('cc');
 (async () => {
@@ -37,20 +56,38 @@ const id = qs('cc');
   if (!meta) { location.href = 'index.html'; return; }
   const data = await loadCC(id);
   document.title = `CPX ${meta.num} ${meta.title}`;
-  $('#ti').textContent = meta.title;
-  $('#sb').textContent = `CPX ${meta.num} · ${meta.en}`;
-  $('#rl').href = 'read.html?cc=' + id;
+  $('#sb').textContent = `CPX ${meta.num}`;
+  $('#hno').textContent = meta.num;
+  $('#hti').textContent = meta.title;
+  $('#hen').textContent = meta.en;
+  $('#dRead').href = 'read.html?cc=' + id;
+  $('#dCard').href = 'cards.html?cc=' + id + '&d=0';
   $('#gl').href = 'guide.html?cc=' + id;
   $('#pl').href = 'guides/' + meta.guide + '.pdf';
+
   const counts = data.decks.map(d => d.cards.length);
   const s = ccStat(id, counts);
-  $('#rt').textContent = `${s.ok} / ${s.total}`;
+  $('#hring').style.background =
+    `conic-gradient(#E7C6D0 ${s.pct * 3.6}deg, rgba(255,255,255,.16) 0deg)`;
+  $('#hring').innerHTML = `<b>${s.pct}%</b>`;
+  $('#cMeta').textContent = `${data.decks.length}덱 · ${s.total}장`;
+  $('#cBar').style.width = s.pct + '%';
+  $('#cPc').textContent = `${s.ok} 외움 · ${s.pct}%`;
+
+  const doc = await loadRead(id);
+  const rc = doc.parts.map(p => p.secs.length);
+  const g = guideStat(id, rc);
+  $('#rMeta').textContent = `${doc.parts.length}파트 · ${g.total}절`;
+  $('#rBar').style.width = g.pct + '%';
+  $('#rPc').textContent = `${g.done} 읽음 · ${g.pct}%`;
+
   $('#list').innerHTML = data.decks.map((d, di) => {
     const st = deckStat(id, di, d.cards.length);
-    return `<a class="tile" href="cards.html?cc=${id}&d=${di}">
-      <div class="n">${d.n}</div><h3>${d.t}</h3><p>${d.d}</p>
-      <div class="pb"><i style="width:${st.pct}%"></i></div>
-      <div class="mt"><span>${d.cards.length}장</span><span>${st.ok} 외움 · ${st.pct}%</span></div></a>`;
+    return `<a class="lrow${st.pct === 100 ? ' done' : ''}" href="cards.html?cc=${id}&d=${di}">
+      <span class="idx">${d.n}</span>
+      <div class="mid"><b>${d.t}</b><span>${d.d}</span></div>
+      <div class="end"><div class="n">${d.cards.length}장</div>
+        <div class="mini"><i style="width:${st.pct}%"></i></div></div></a>`;
   }).join('');
 })();
 </script>
