@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#ECEEF5">
+<meta name="theme-color" content="#0A0A0A">
 <title>CPX Study — 학습모드</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="stylesheet" href="assets/style.css?v=11">
+<link rel="stylesheet" href="assets/style.css?v=16">
 </head>
 <body>
 
@@ -24,9 +24,9 @@
 </div></div>
 
 <script type="module">
-import { $, $$, loadIndex, loadRead, isRead, setRead, partStat, guideStat, qs, registerSW } from './assets/store.js?v=11';
-import { ICON, animateRings, toast } from './assets/ui.js?v=11';
-import { applyPrefOnly, highlight, zoomable, viewSettings } from './assets/enhance.js?v=11';
+import { $, $$, loadIndex, loadRead, isRead, setRead, partStat, guideStat, qs, registerSW } from './assets/store.js?v=16';
+import { ICON, animateRings, toast } from './assets/ui.js?v=16';
+import { applyPrefOnly, highlight, zoomable, viewSettings } from './assets/enhance.js?v=16';
 applyPrefOnly(); registerSW();
 $('#bk').innerHTML = ICON.back;
 
@@ -57,7 +57,7 @@ function showToc() {
   
   history.replaceState(null, '', `read.html?cc=${cc}`);
   $('#toc').innerHTML =
-    `<div class="sech" style="padding-top:26px"><h2>Index</h2><span>${DOC.parts.length} parts · ${g.total} sections</span></div>` +
+    `<div class="sech" style="padding-top:18px"><h2>Parts</h2><span>${DOC.parts.length} parts · ${g.total} sections</span></div>` +
     DOC.parts.map((p, n) => {
       const s = partStat(cc, n, p.secs.length);
       return `<button class="deck${s.pct === 100 ? ' done' : ''}" data-p="${n}">
@@ -108,8 +108,8 @@ function openPart(n) {
   $('#body').innerHTML =
     `<div class="rhead"><div class="pn">${p.tag}</div><h2>${p.title}</h2>${p.dek ? `<p>${p.dek}</p>` : ''}</div>
      <div class="tools">
-       <button class="tbtn" id="allOpen">Expand</button>
-       <button class="tbtn" id="allShut">Collapse</button>
+       <button class="tbtn" id="allOpen">전부 펼치기</button>
+       <button class="tbtn" id="allShut">전부 접기</button>
        <span class="vwrap"></span></div>` +
     p.secs.map((s, si) => {
       const r = isRead(cc, n, si);
@@ -119,13 +119,13 @@ function openPart(n) {
         <div class="ab"><div><div class="abi">
           ${s.sub ? `<p class="rsub">${s.sub}</p>` : ''}
           ${s.blocks.map(block).join('')}
-          <button class="mark">${r ? ICON.check + ' Read' : 'Mark read'}</button>
+          <button class="mark">${r ? ICON.check + ' 읽음' : '이 절 읽음'}</button>
         </div></div></div></section>`;
     }).join('') +
     `<div class="pnav">
        <button class="pbtn ic" id="prevP">${ICON.prev}</button>
-       <button class="pbtn" id="toToc">Index</button>
-       <button class="pbtn pri" id="doneP">Mark read</button>
+       <button class="pbtn" id="toToc">목차</button>
+       <button class="pbtn pri" id="doneP">다 읽음</button>
        <button class="pbtn ic" id="nextP">${ICON.next}</button></div>`;
 
   highlight($('#body')); zoomable($('#body')); viewSettings('#body .vwrap');
@@ -146,7 +146,7 @@ function bind(n) {
       const si = +sec.dataset.s, now = !isRead(cc, n, si);
       setRead(cc, n, si, now);
       sec.classList.toggle('read', now);
-      sec.querySelector('.mark').innerHTML = now ? ICON.check + ' Read' : 'Mark read';
+      sec.querySelector('.mark').innerHTML = now ? ICON.check + ' 읽음' : '이 절 읽음';
       sec.querySelector('.sq').innerHTML = now ? ICON.check : (si + 1);
       if (now) { sec.classList.remove('open'); const nx = sec.nextElementSibling; if (nx && nx.classList.contains('acc')) nx.classList.add('open'); }
       refresh();
