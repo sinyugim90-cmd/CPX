@@ -1,6 +1,6 @@
 /* CPX Study — 오프라인 캐시
    파일을 바꾸면 CACHE 값을 올려야 새 버전이 적용됩니다. */
-const CACHE = 'cpx-v5';
+const CACHE = 'cpx-v6';
 const ASSETS = [
  "./",
  "./README.md",
@@ -13,6 +13,7 @@ const ASSETS = [
  "./assets/fonts/Pretendard-800.woff2",
  "./assets/store.js",
  "./assets/style.css",
+ "./assets/ui.js",
  "./cards.html",
  "./data/b.json",
  "./data/b.read.json",

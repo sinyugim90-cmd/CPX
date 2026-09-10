@@ -5,7 +5,7 @@
    4) 다크모드 · 글자 크기 3단계 (기억됨) */
 
 const PREF = 'cpx.view.v1';
-const NUM = /(\d+(?:~\d+)?\s?(?:주|일|시간|분|초|개월|년|cm|mm|도|점|회|번|세|kg|g|mL|%)|\d+세\s?이상|\d+세\s?미만)/g;
+const NUM = /(\d+(?:~\d+)?\s?(?:주|일|시간|분|초|개월|년|cm|mm|도|점|회|번|세|kg|g|mL|%)(?![가-힣])|\d+세\s?이상|\d+세\s?미만)/g;
 
 function pref() { try { return JSON.parse(localStorage.getItem(PREF)) || {}; } catch { return {}; } }
 function savePref(p) { try { localStorage.setItem(PREF, JSON.stringify(p)); } catch {} }
@@ -34,7 +34,7 @@ export function highlight(root) {
     while ((m = NUM.exec(t.nodeValue))) {
       frag.append(t.nodeValue.slice(last, m.index));
       const el = document.createElement('span');
-      el.className = 'num';
+      el.className = 'numc';
       el.textContent = m[0];
       frag.append(el);
       last = m.index + m[0].length;
@@ -99,19 +99,22 @@ export function viewSettings(mountSel) {
   apply();
   const mount = document.querySelector(mountSel);
   if (!mount) return;
+  const SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4"/></svg>';
+  const MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>';
+  const AA = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l4.5-11 4.5 11M4.6 13h5.8M14 17l3-7.5 3 7.5M15.1 14.6h3.8"/></svg>';
   mount.insertAdjacentHTML('afterbegin',
     `<div class="vset">
-       <button data-v="dark">${p.dark ? '밝게' : '어둡게'}</button>
-       <button data-v="size">글자 ${{ s: '작게', m: '보통', l: '크게' }[p.size || 'm']}</button>
+       <button data-v="dark" title="다크 모드">${p.dark ? SUN : MOON}</button>
+       <button data-v="size" title="글자 크기">${AA}</button>
      </div>`);
   mount.querySelector('[data-v="dark"]').onclick = e => {
     p.dark = !p.dark; savePref(p); apply();
-    e.target.textContent = p.dark ? '밝게' : '어둡게';
+    e.currentTarget.innerHTML = p.dark ? SUN : MOON;
   };
-  mount.querySelector('[data-v="size"]').onclick = e => {
+  mount.querySelector('[data-v="size"]').onclick = () => {
     const i = SIZES.indexOf(p.size || 'm');
     p.size = SIZES[(i + 1) % 3]; savePref(p); apply();
-    e.target.textContent = '글자 ' + { s: '작게', m: '보통', l: '크게' }[p.size];
+    document.dispatchEvent(new CustomEvent('cpx:size', { detail: p.size }));
   };
 }
 export function applyPrefOnly() {

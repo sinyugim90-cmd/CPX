@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#F7F4F4">
-<title>CPX Study — 카드</title>
+<meta name="theme-color" content="#F7F5F1">
+<title>CPX Study</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -12,54 +12,53 @@
 </head>
 <body>
 
-<div class="bar"><div class="in">
-  <a class="bk" id="bk" href="index.html">&#8249;</a>
-  <div><div class="ti" id="dTitle"></div><div class="sb" id="dCC"></div></div>
-  <span class="rt"><b id="cur">1</b> / <span id="tot">1</span></span>
-</div><div class="pips" id="pips"></div></div>
+<div class="bar">
+  <div class="in">
+    <a class="bk" id="bk"></a>
+    <div><div class="ti" id="dTitle"></div><div class="sb" id="dCC"></div></div>
+    <span class="rt"><b id="cur">1</b> / <span id="tot">1</span></span>
+    <button class="ib" id="more" aria-label="메뉴"></button>
+  </div>
+  <div class="pips" id="pips"></div>
+</div>
 
 <div class="stage"><div class="card" id="card">
-  <div class="face" id="face"></div>
-  <div class="back">
-    <div class="bh"><span class="g" id="bg"></span><span class="n" id="bn"></span>
-      <span class="c" id="bc"></span></div>
+  <div class="f face" id="face"></div>
+  <div class="f back">
+    <div class="bh"><span class="g" id="bg"></span><span class="n" id="bn"></span><span class="c" id="bc"></span></div>
     <div class="bd" id="bd"></div>
   </div>
 </div></div>
 
 <div class="bot">
-  <div class="row">
-    <button class="b ar" id="prev">&#8249;</button>
-    <button class="b mn" id="flip">뒤집기</button>
-    <button class="b ar" id="next">&#8250;</button>
+  <div class="brow">
+    <button class="btn ic" id="prev"></button>
+    <button class="btn pri" id="flip"><span id="iflip"></span>뒤집기</button>
+    <button class="btn ic" id="next"></button>
   </div>
-  <div class="row">
-    <button class="b n" id="mNo">다시</button>
-    <button class="b y" id="mYes">외웠다</button>
-  </div>
-  <div class="row">
-    <button class="b sm" id="shuf">섞기</button>
-    <button class="b sm" id="only">다시 볼 것만</button>
-    <button class="b sm" id="rst">이 덱 초기화</button>
+  <div class="brow">
+    <button class="btn no" id="mNo">다시</button>
+    <button class="btn ok" id="mYes"><span id="ick"></span>외웠다</button>
   </div>
 </div>
 
 <div class="fin" id="fin"><div class="in">
   <div class="n" id="finN"></div><h3 id="finT"></h3><p id="finP"></p>
   <div class="ls" id="finL"></div>
-  <button class="b mn" id="finB" style="width:100%;margin-bottom:8px"></button>
-  <button class="b" id="finH" style="width:100%">덱 목록으로</button>
+  <button class="btn pri" id="finB"></button>
+  <button class="btn" id="finH">덱 목록으로</button>
 </div></div>
 
 <script type="module">
-import { $, $$, loadIndex, loadCC, getCard, setCard, resetDeck, qs, registerSW }
-  from './assets/store.js';
+import { $, $$, loadIndex, loadCC, getCard, setCard, resetDeck, qs, registerSW } from './assets/store.js';
+import { ICON, sheet, toast } from './assets/ui.js';
 import { applyPrefOnly, highlight, zoomable } from './assets/enhance.js';
-applyPrefOnly();
-registerSW();
+applyPrefOnly(); registerSW();
+$('#bk').innerHTML = ICON.back; $('#more').innerHTML = ICON.more;
+$('#prev').innerHTML = ICON.prev; $('#next').innerHTML = ICON.next;
+$('#iflip').innerHTML = ICON.flip; $('#ick').innerHTML = ICON.check;
 
-const ccId = qs('cc');
-const dIdx = +(qs('d') || 0);
+const ccId = qs('cc'), dIdx = +(qs('d') || 0);
 const startAt = qs('i') !== null ? +qs('i') : 0;
 let meta = null, deckDef = null, base = [], deck = [], i = 0, only = false;
 const card = $('#card');
@@ -73,7 +72,7 @@ const card = $('#card');
   if (!deckDef) { location.href = 'decks.html?cc=' + ccId; return; }
   document.title = `${deckDef.t} — CPX ${meta.num}`;
   $('#dTitle').textContent = deckDef.t;
-  $('#dCC').textContent = `CPX ${meta.num} ${meta.title}`;
+  $('#dCC').textContent = `CPX ${meta.num} · ${meta.title}`;
   $('#bk').href = 'decks.html?cc=' + ccId;
   base = deckDef.cards.map((c, n) => ({ c, n }));
   deck = base.slice();
@@ -84,47 +83,42 @@ const card = $('#card');
 function pips() {
   $('#pips').innerHTML = deck.map((e, n) => {
     const s = getCard(ccId, dIdx, e.n);
-    let k = '';
-    if (s.ok === true) k = 'ok'; else if (s.ok === false) k = 'no'; else if (s.seen) k = 'seen';
+    let k = s.ok === true ? 'ok' : s.ok === false ? 'no' : s.seen ? 'seen' : '';
     return `<i class="${k}${n === i ? ' cur' : ''}" data-n="${n}"></i>`;
   }).join('');
-  $$('#pips i').forEach(p => p.addEventListener('click', () => { i = +p.dataset.n; draw(); }));
+  $$('#pips i').forEach(p => p.onclick = () => { i = +p.dataset.n; draw(); });
 }
+
+function stats(mt) {
+  const cells = [];
+  (mt || '').split('·').forEach(x => {
+    const m = x.match(/<b>(.*?)<\/b>/);
+    if (m) cells.push([m[1].replace(/개$/, ''), x.replace(/<[^>]*>/g, '').replace(/[0-9]+개?/g, '').trim()]);
+  });
+  return cells.length >= 2
+    ? `<div class="foot3">${cells.slice(0, 3).map(c => `<div><b>${c[0]}</b><span>${c[1]}</span></div>`).join('')}</div>`
+    : '';
+}
+
 function draw() {
   const e = deck[i], c = e.c, s = getCard(ccId, dIdx, e.n), f = c.f;
   card.classList.remove('flip', 'ok', 'no');
   if (s.ok === true) card.classList.add('ok');
   if (s.ok === false) card.classList.add('no');
-  // 앞면 하단 지표 — mt 문자열의 "라벨 <b>값</b>" 을 칸으로 쪼갠다
-  let cells = [];
-  if (f.mt) {
-    const parts = f.mt.split('·');
-    parts.forEach(x => {
-      const m = x.match(/<b>(.*?)<\/b>/);
-      const lb = x.replace(/<[^>]*>/g, '').replace(/[0-9]+개?/g, '').trim();
-      if (m) cells.push([m[1], lb || '']);
-    });
-  }
-  const foot = cells.length >= 2
-    ? `<div class="foot3">${cells.slice(0, 3).map(c =>
-        `<div><b>${c[0]}</b><span>${c[1]}</span></div>`).join('')}</div>`
-    : '';
-  const wm = `<div class="wm">${deck[i].n + 1}</div>`;
+  const foot = stats(f.mt);
   $('#face').innerHTML =
-    `<div class="ftop"><span class="kk">${f.kk}</span>
-       <span class="seq">${i + 1} / ${deck.length}</span></div>
-     <div class="fmid">` +
-    (f.cls === 'xl' ? `<div class="halo"><div class="big xl">${f.big}</div></div>`
-                    : `<div class="big ${f.cls}">${f.big}</div>`) +
-    (f.nm ? `<div class="nm">${f.nm}</div>` : '') +
-    (!foot && f.mt ? `<div class="mt" style="margin-top:14px;font-size:12.5px;color:var(--soft)">${f.mt}</div>` : '') +
-    `<div class="go">탭하면 답이 나와요</div></div>` + foot + wm;
+    `<div class="top"><span class="lab">${f.kk}</span><span class="seq">${i + 1} / ${deck.length}</span></div>
+     <div class="mid">
+       <div class="big ${f.cls}">${f.big}</div>
+       ${f.nm ? `<div class="dash"></div><div class="nm">${f.nm}</div>` : ''}
+       ${(!foot && f.mt) ? `<div class="mt">${f.mt}</div>` : ''}
+       <div class="hint">${ICON.flip} 탭하면 답이 나와요</div>
+     </div>${foot}`;
   $('#bg').textContent = c.t; $('#bn').textContent = c.n || ''; $('#bc').textContent = c.c || '';
   $('#bd').innerHTML = (f.chips && f.chips.length
-    ? `<div class="sum"><div class="sl">이 카드의 뼈대 ${f.chips.length}개</div>
+    ? `<div class="sum"><span class="lab">이 카드의 뼈대 ${f.chips.length}</span>
        <div class="chips">${f.chips.map(x => `<span>${x}</span>`).join('')}</div></div>` : '') + c.b;
-  highlight($('#bd'));
-  zoomable($('#bd'));
+  highlight($('#bd')); zoomable($('#bd'));
   $('#bd').scrollTop = 0;
   $('#cur').textContent = i + 1; $('#tot').textContent = deck.length;
   $('#prev').disabled = (i === 0); $('#next').disabled = (i === deck.length - 1);
@@ -134,25 +128,21 @@ function flip() {
   card.classList.toggle('flip');
   if (card.classList.contains('flip')) {
     const e = deck[i], s = getCard(ccId, dIdx, e.n);
-    setCard(ccId, dIdx, e.n, { seen: 1, ok: s.ok });
-    pips();
+    setCard(ccId, dIdx, e.n, { seen: 1, ok: s.ok }); pips();
   }
 }
-$('#face').addEventListener('click', flip);
-$('#flip').addEventListener('click', flip);
+$('#face').onclick = flip; $('#flip').onclick = flip;
 function go(d) {
   if (i + d < 0 || i + d >= deck.length) { if (d > 0) finish(); return; }
   card.classList.add(d > 0 ? 'sL' : 'sR');
   setTimeout(() => { i += d; draw(); card.classList.remove('sL', 'sR'); }, 170);
 }
-$('#prev').addEventListener('click', () => go(-1));
-$('#next').addEventListener('click', () => go(1));
+$('#prev').onclick = () => go(-1); $('#next').onclick = () => go(1);
 function mark(v) {
   setCard(ccId, dIdx, deck[i].n, { seen: 1, ok: v });
   if (i === deck.length - 1) { pips(); finish(); } else go(1);
 }
-$('#mYes').addEventListener('click', () => mark(true));
-$('#mNo').addEventListener('click', () => mark(false));
+$('#mYes').onclick = () => mark(true); $('#mNo').onclick = () => mark(false);
 
 let x0 = null, y0 = null;
 card.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
@@ -163,28 +153,25 @@ card.addEventListener('touchend', e => {
   x0 = null;
 }, { passive: true });
 document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowRight') go(1);
-  if (e.key === 'ArrowLeft') go(-1);
+  if (e.key === 'ArrowRight') go(1); if (e.key === 'ArrowLeft') go(-1);
   if (e.key === ' ') { e.preventDefault(); flip(); }
   if (e.key === 'Escape') location.href = 'decks.html?cc=' + ccId;
 });
 
-$('#shuf').addEventListener('click', () => {
-  deck = deck.map(v => [Math.random(), v]).sort((a, b) => a[0] - b[0]).map(v => v[1]);
-  i = 0; draw();
-});
-$('#only').addEventListener('click', () => {
+/* 메뉴 시트 */
+function shuffle() { deck = deck.map(v => [Math.random(), v]).sort((a, b) => a[0] - b[0]).map(v => v[1]); i = 0; draw(); toast('섞었어요'); }
+function onlyBad() {
   const f = base.filter(e => getCard(ccId, dIdx, e.n).ok === false);
-  if (!only && !f.length) return;
-  only = !only;
-  $('#only').classList.toggle('act', only);
-  deck = only ? f : base.slice(); i = 0; draw();
-});
-$('#rst').addEventListener('click', () => {
-  resetDeck(ccId, dIdx);
-  deck = base.slice(); i = 0; only = false;
-  $('#only').classList.remove('act'); $('#fin').classList.remove('show'); draw();
-});
+  if (!only && !f.length) { toast('다시 볼 카드가 없어요'); return; }
+  only = !only; deck = only ? f : base.slice(); i = 0; draw();
+  toast(only ? `다시 볼 것 ${f.length}장` : '전체로 돌아왔어요');
+}
+function reset() { resetDeck(ccId, dIdx); deck = base.slice(); i = 0; only = false; $('#fin').classList.remove('show'); draw(); toast('초기화했어요'); }
+$('#more').onclick = () => sheet(deckDef.t, [
+  { icon: ICON.shuffle, label: '섞기', on: shuffle },
+  { icon: ICON.filter, label: only ? '전체 보기' : '다시 볼 것만', on: onlyBad },
+  { icon: ICON.reset, label: '이 덱 초기화', on: reset, danger: true },
+]);
 
 function finish() {
   const bad = base.filter(e => getCard(ccId, dIdx, e.n).ok === false);
@@ -198,13 +185,12 @@ function finish() {
   $('#finB').textContent = bad.length ? '다시 볼 것만 돌기' : '섞어서 한 번 더';
   $('#fin').classList.add('show');
 }
-$('#finB').addEventListener('click', () => {
+$('#finB').onclick = () => {
   $('#fin').classList.remove('show');
   const bad = base.filter(e => getCard(ccId, dIdx, e.n).ok === false);
-  if (bad.length) { only = true; $('#only').classList.add('act'); deck = bad; i = 0; draw(); }
-  else $('#shuf').click();
-});
-$('#finH').addEventListener('click', () => location.href = 'decks.html?cc=' + ccId);
+  if (bad.length) { only = true; deck = bad; i = 0; draw(); } else shuffle();
+};
+$('#finH').onclick = () => location.href = 'decks.html?cc=' + ccId;
 </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#F7F4F4">
+<meta name="theme-color" content="#F7F5F1">
 <title>CPX Study — 가이드</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
@@ -12,22 +12,23 @@
 </head>
 <body>
 <div class="bar"><div class="in">
-  <a class="bk" id="bk" href="index.html">&#8249;</a>
-  <div><div class="ti" id="ti">가이드</div><div class="sb" id="sb"></div></div>
-  <a class="rt" id="pdf" style="color:var(--burg);font-weight:700" target="_blank">PDF</a>
+  <a class="bk" id="bk" href="index.html"></a>
+  <div><div class="ti" id="ti">가이드 전문</div><div class="sb" id="sb"></div></div>
+  <a class="ib" id="pdf" target="_blank" aria-label="PDF"></a>
 </div></div>
 <iframe class="frame" id="fr" title="가이드"></iframe>
 <script type="module">
 import { $, loadIndex, qs, registerSW } from './assets/store.js';
-registerSW();
+import { ICON } from './assets/ui.js';
+import { applyPrefOnly } from './assets/enhance.js';
+applyPrefOnly(); registerSW();
+$('#bk').innerHTML = ICON.back; $('#pdf').innerHTML = ICON.pdf;
 const id = qs('cc');
 (async () => {
-  const idx = await loadIndex();
-  let meta = null;
+  const idx = await loadIndex(); let meta = null;
   idx.parts.forEach(p => p.ccs.forEach(c => { if (c.id === id) meta = c; }));
   if (!meta) { location.href = 'index.html'; return; }
-  $('#ti').textContent = meta.title;
-  $('#sb').textContent = `CPX ${meta.num} · 가이드 전문`;
+  $('#ti').textContent = meta.title; $('#sb').textContent = `CPX ${meta.num} · 가이드 전문`;
   $('#bk').href = 'decks.html?cc=' + id;
   $('#fr').src = 'guides/' + meta.guide + '.html';
   $('#pdf').href = 'guides/' + meta.guide + '.pdf';

@@ -3,51 +3,59 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#F7F4F4">
-<title>CPX Study — 덱</title>
+<meta name="theme-color" content="#F7F5F1">
+<title>CPX Study</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+
 <div class="bar"><div class="in">
-  <a class="bk" href="index.html">&#8249;</a>
-  <div><div class="ti">CPX 스터디</div><div class="sb" id="sb"></div></div>
+  <a class="bk" href="index.html" id="bk"></a>
+  <div><div class="ti">CPX Study</div><div class="sb" id="sb"></div></div>
 </div></div>
 
-<div class="scroll">
-  <div class="hub"><div class="in">
+<div class="scroll"><div class="w">
+  <div class="hub">
     <div class="no" id="hno"></div>
     <div class="mid"><h1 id="hti"></h1><div class="en" id="hen"></div></div>
-    <div class="ring big" id="hring"><b>0</b></div>
-  </div></div>
-
-  <div class="w">
-    <div class="duo">
-      <a id="dRead"><div class="lb">READ</div><h3>학습모드</h3>
-        <p id="rMeta"></p><div class="pb"><i id="rBar"></i></div>
-        <div class="pc" id="rPc"></div></a>
-      <a id="dCard"><div class="lb">RECALL</div><h3>카드 인출</h3>
-        <p id="cMeta"></p><div class="pb"><i id="cBar"></i></div>
-        <div class="pc" id="cPc"></div></a>
-    </div>
-
-    <div class="seclabel">카드 덱</div>
-    <div class="lbox" id="list"></div>
-
-    <div class="foot">
-      <a id="pl" target="_blank">PDF 내려받기 &rsaquo;</a> ·
-      <a id="gl">가이드 전문(스크롤) &rsaquo;</a>
-    </div>
+    <div id="hring"></div>
   </div>
-</div>
+  <div class="hubline" id="hline"></div>
+
+  <div class="modes">
+    <a class="mode" id="mRead">
+      <span class="lab" id="lRead">Read</span>
+      <h3>학습모드</h3><p id="rMeta"></p>
+      <div class="pb"><i id="rBar"></i></div><div class="pc" id="rPc"></div></a>
+    <a class="mode" id="mCard">
+      <span class="lab" id="lCard">Recall</span>
+      <h3>카드 인출</h3><p id="cMeta"></p>
+      <div class="pb"><i id="cBar"></i></div><div class="pc" id="cPc"></div></a>
+  </div>
+
+  <div class="sec"><h2>카드 덱</h2><span class="cnt" id="dcnt"></span></div>
+  <div class="idx" id="list"></div>
+
+  <div class="linkline">
+    <a id="pl" target="_blank"><span id="ipdf"></span>PDF 내려받기</a>
+    <a id="gl"><span id="ibook"></span>가이드 전문</a>
+  </div>
+</div></div>
 
 <script type="module">
-import { $, $$, loadIndex, loadCC, loadRead, deckStat, ccStat, guideStat, qs, registerSW } from './assets/store.js';
-import { applyPrefOnly, highlight } from './assets/enhance.js';
-applyPrefOnly();
-registerSW();
+import { $, $$, loadIndex, loadCC, loadRead, deckStat, ccStat, guideStat, qs, registerSW }
+  from './assets/store.js';
+import { ICON, ring, animateRings } from './assets/ui.js';
+import { applyPrefOnly } from './assets/enhance.js';
+applyPrefOnly(); registerSW();
+$('#bk').innerHTML = ICON.back;
+$('#lRead').innerHTML = ICON.book + ' Read';
+$('#lCard').innerHTML = ICON.cards + ' Recall';
+$('#ipdf').innerHTML = ICON.pdf; $('#ibook').innerHTML = ICON.book;
+
 const id = qs('cc');
 (async () => {
   const idx = await loadIndex();
@@ -60,35 +68,35 @@ const id = qs('cc');
   $('#hno').textContent = meta.num;
   $('#hti').textContent = meta.title;
   $('#hen').textContent = meta.en;
-  $('#dRead').href = 'read.html?cc=' + id;
-  $('#dCard').href = 'cards.html?cc=' + id + '&d=0';
+  $('#mRead').href = 'read.html?cc=' + id;
+  $('#mCard').href = 'cards.html?cc=' + id + '&d=0';
   $('#gl').href = 'guide.html?cc=' + id;
   $('#pl').href = 'guides/' + meta.guide + '.pdf';
 
   const counts = data.decks.map(d => d.cards.length);
   const s = ccStat(id, counts);
-  $('#hring').style.background =
-    `conic-gradient(#E7C6D0 ${s.pct * 3.6}deg, rgba(255,255,255,.16) 0deg)`;
-  $('#hring').innerHTML = `<b>${s.pct}%</b>`;
-  $('#cMeta').textContent = `${data.decks.length}덱 · ${s.total}장`;
-  $('#cBar').style.width = s.pct + '%';
-  $('#cPc').textContent = `${s.ok} 외움 · ${s.pct}%`;
-
   const doc = await loadRead(id);
-  const rc = doc.parts.map(p => p.secs.length);
-  const g = guideStat(id, rc);
+  const g = guideStat(id, doc.parts.map(p => p.secs.length));
+  const all = Math.round((s.ok + g.done) / (s.total + g.total) * 100);
+
+  $('#hring').innerHTML = ring(all, 56, 3).replace('class="ring"', 'class="ring big"');
+  $('#hline').innerHTML =
+    `<span><b>${g.done}</b> / ${g.total} 절 읽음</span><span><b>${s.ok}</b> / ${s.total} 장 외움</span>`;
   $('#rMeta').textContent = `${doc.parts.length}파트 · ${g.total}절`;
-  $('#rBar').style.width = g.pct + '%';
-  $('#rPc').textContent = `${g.done} 읽음 · ${g.pct}%`;
+  $('#rBar').style.width = g.pct + '%'; $('#rPc').textContent = `${g.pct}%`;
+  $('#cMeta').textContent = `${data.decks.length}덱 · ${s.total}장`;
+  $('#cBar').style.width = s.pct + '%'; $('#cPc').textContent = `${s.pct}%`;
+  $('#dcnt').textContent = `${data.decks.length}`;
 
   $('#list').innerHTML = data.decks.map((d, di) => {
     const st = deckStat(id, di, d.cards.length);
-    return `<a class="lrow${st.pct === 100 ? ' done' : ''}" href="cards.html?cc=${id}&d=${di}">
-      <span class="idx">${d.n}</span>
+    return `<a class="row${st.pct === 100 ? ' done' : ''}" href="cards.html?cc=${id}&d=${di}">
+      <span class="no sm">${di + 1}</span>
       <div class="mid"><b>${d.t}</b><span>${d.d}</span></div>
-      <div class="end"><div class="n">${d.cards.length}장</div>
-        <div class="mini"><i style="width:${st.pct}%"></i></div></div></a>`;
+      <div class="end"><span class="n">${d.cards.length}장</span>
+        <span class="mini"><i style="width:${st.pct}%"></i></span>${ICON.next}</div></a>`;
   }).join('');
+  animateRings();
 })();
 </script>
 </body>
