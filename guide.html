@@ -8,7 +8,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v=7">
 </head>
 <body>
 <div class="bar"><div class="in">
@@ -18,9 +18,9 @@
 </div></div>
 <iframe class="frame" id="fr" title="가이드"></iframe>
 <script type="module">
-import { $, loadIndex, qs, registerSW } from './assets/store.js';
-import { ICON } from './assets/ui.js';
-import { applyPrefOnly } from './assets/enhance.js';
+import { $, loadIndex, qs, registerSW } from './assets/store.js?v=7';
+import { ICON } from './assets/ui.js?v=7';
+import { applyPrefOnly } from './assets/enhance.js?v=7';
 applyPrefOnly(); registerSW();
 $('#bk').innerHTML = ICON.back; $('#pdf').innerHTML = ICON.pdf;
 const id = qs('cc');

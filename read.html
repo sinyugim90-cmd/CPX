@@ -8,7 +8,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v=7">
 </head>
 <body>
 
@@ -27,9 +27,9 @@
 </div></div>
 
 <script type="module">
-import { $, $$, loadIndex, loadRead, isRead, setRead, partStat, guideStat, qs, registerSW } from './assets/store.js';
-import { ICON, animateRings, toast } from './assets/ui.js';
-import { applyPrefOnly, highlight, zoomable, viewSettings } from './assets/enhance.js';
+import { $, $$, loadIndex, loadRead, isRead, setRead, partStat, guideStat, qs, registerSW } from './assets/store.js?v=7';
+import { ICON, animateRings, toast } from './assets/ui.js?v=7';
+import { applyPrefOnly, highlight, zoomable, viewSettings } from './assets/enhance.js?v=7';
 applyPrefOnly(); registerSW();
 $('#bk').innerHTML = ICON.back;
 

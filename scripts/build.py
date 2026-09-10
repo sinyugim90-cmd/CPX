@@ -93,6 +93,26 @@ manifest = {
 json.dump(manifest, open(f"{SITE}/manifest.webmanifest", "w", encoding="utf-8"),
           ensure_ascii=False, indent=1)
 
+# ── 5b. cache-bust: 자산 주소에 버전 붙이기 ─────────────
+import re as _re
+VER = "7"
+def bust(html):
+    html = _re.sub(r'(href|src)="(assets/[^"?]+)"', lambda m: f'{m.group(1)}="{m.group(2)}?v={VER}"', html)
+    html = _re.sub(r"from '\./(assets/[^'?]+)'", lambda m: f"from './{m.group(1)}?v={VER}'", html)
+    return html
+for f in os.listdir(SITE):
+    if f.endswith(".html"):
+        q = os.path.join(SITE, f); h = open(q, encoding="utf-8").read()
+        h = _re.sub(r'\?v=\d+', '', h)          # 기존 버전 제거
+        open(q, "w", encoding="utf-8").write(bust(h))
+q = f"{SITE}/assets/store.js"; js = open(q, encoding="utf-8").read()
+js = _re.sub(r"\?v=\d+", "", js)
+js = js.replace("fetch('data/index.json')", f"fetch('data/index.json?v={VER}')")
+js = js.replace("fetch('data/' + id + '.json')", f"fetch('data/' + id + '.json?v={VER}')")
+js = js.replace("fetch('data/' + id + '.read.json')", f"fetch('data/' + id + '.read.json?v={VER}')")
+open(q, "w", encoding="utf-8").write(js)
+print("cache-bust v" + VER)
+
 # ── 6. service worker (precache 목록 자동 생성) ────────
 files = []
 for root, dirs, fs in os.walk(SITE):
@@ -108,7 +128,7 @@ sw = """/* CPX Study — 오프라인 캐시
    온라인이면 항상 서버의 새 파일을 먼저 쓰고, 오프라인일 때만 저장본을 쓴다.
    (폰트·아이콘·PDF처럼 크고 안 바뀌는 것만 저장본 우선)
    파일을 바꾸면 CACHE 값을 올려야 옛 저장본이 정리된다. */
-const CACHE = 'cpx-v7';
+const CACHE = 'cpx-vXX';
 const ASSETS = %s;
 const STATIC = /\\/(assets\\/fonts\\/|icons\\/|guides\\/.*\\.pdf$)/;
 
@@ -142,6 +162,7 @@ self.addEventListener('fetch', e => {
   );
 });
 """ % json.dumps(files, ensure_ascii=False, indent=1)
+sw = sw.replace("cpx-vXX", "cpx-v" + VER)
 open(f"{SITE}/sw.js", "w", encoding="utf-8").write(sw)
 
 print("data:", len(os.listdir(f"{SITE}/data")), "files")
