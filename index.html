@@ -3,24 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#F4F4F6">
+<meta name="theme-color" content="#0A0A0A">
 <title>CPX Study</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="CPX">
-<link rel="stylesheet" href="assets/style.css?v=8">
+<link rel="stylesheet" href="assets/style.css?v=9">
 </head>
 <body>
+<div class="ticker"><div class="tk" id="tk"></div></div>
 <div class="scroll"><div class="w">
-  <header class="hero">
-    <div class="hi" id="hi">오늘도 한 바퀴</div>
-    <h1>실기 스터디</h1>
-    <div class="stats">
-      <div class="stat hl"><b id="ovP">0%</b><span>외웠어요</span></div>
-      <div class="stat"><b id="ovN">0</b><span>카드</span></div>
-      <div class="stat"><b id="ovR">0</b><span>다시 볼 것</span></div>
+  <header class="mast">
+    <h1>실기<br><em>스터디</em></h1>
+    <div class="strip">
+      <div><b id="ovP">0%</b><span>done</span></div>
+      <div><b id="ovN">0</b><span>cards</span></div>
+      <div><b id="ovR">0</b><span>retry</span></div>
     </div>
   </header>
   <div class="search"><span id="sic"></span>
@@ -36,13 +36,13 @@
   <div class="r"><button id="instNo">나중에</button><button class="p" id="instGo">추가</button></div>
 </div>
 <script type="module">
-import { $, $$, loadIndex, loadCC, ccStat, getCard, exportProgress, importProgress, resetAll, registerSW, installPrompt, strip } from './assets/store.js?v=8';
-import { ICON, toast } from './assets/ui.js?v=8';
-import { applyPrefOnly } from './assets/enhance.js?v=8';
+import { $, $$, loadIndex, loadCC, ccStat, getCard, exportProgress, importProgress, resetAll, registerSW, installPrompt, strip } from './assets/store.js?v=9';
+import { ICON, toast } from './assets/ui.js?v=9';
+import { applyPrefOnly } from './assets/enhance.js?v=9';
 applyPrefOnly(); registerSW(); installPrompt();
 $('#sic').innerHTML = ICON.search;
-const h = new Date().getHours();
-$('#hi').textContent = h < 5 ? '늦은 밤이에요. 한 덱만' : h < 12 ? '좋은 아침. 한 바퀴 돌까요' : h < 18 ? '오늘도 한 바퀴' : '자기 전 한 덱';
+const tkItems = ['CPX STUDY', '관절 통증', '목 통증', '허리 통증', '피부 발진', new Date().toISOString().slice(0,10), 'ANKI STYLE'];
+$('#tk').innerHTML = [...tkItems, ...tkItems].map(x => `<span>${x}</span>`).join('');
 
 let INDEX = null, SEARCH = null;
 async function draw() {
@@ -51,24 +51,24 @@ async function draw() {
   for (const part of INDEX.parts) {
     const rows = [];
     for (const cc of part.ccs) {
-      if (cc.status !== 'ready') { rows.push(`<div class="pass soon"><div class="lab">CPX ${cc.num}</div><h3>${cc.title}</h3><div class="en">준비 중</div></div>`); continue; }
+      if (cc.status !== 'ready') { rows.push(`<div class="blk soon"><div class="no">${cc.num}</div><h3>${cc.title}</h3><div class="en">coming soon</div></div>`); continue; }
       const data = await loadCC(cc.id);
       const s = ccStat(cc.id, data.decks.map(d => d.cards.length));
       let b = 0; data.decks.forEach((d, di) => d.cards.forEach((_, ci) => { if (getCard(cc.id, di, ci).ok === false) b++; }));
       tot += s.total; ok += s.ok; bad += b;
-      const [g1, g2] = cc.grad || ['#1B2A6B', '#6D3BE0'];
-      rows.push(`<a class="pass" href="decks.html?cc=${cc.id}" style="--g1:${g1};--g2:${g2}">
+      const seg = [...Array(10)].map((_, k) => `<i class="${k < Math.round(s.pct / 10) ? 'on' : ''}"></i>`).join('');
+      rows.push(`<a class="blk" href="decks.html?cc=${cc.id}">
+        ${b ? `<span class="tag">RETRY ${b}</span>` : (s.pct === 100 ? `<span class="tag">DONE</span>` : '')}
         <div class="no">${cc.num}</div>
-        <div class="lab">CPX ${cc.num}</div><h3>${cc.title}</h3><div class="en">${cc.en}</div>
-        <div class="pr"><div class="bar"><i data-w="${s.pct}"></i></div><div class="pct">${s.pct}%</div></div>
-        <div class="sub">${s.ok} / ${s.total}장 외움${b ? ` · 다시 ${b}` : ''}</div></a>`);
+        <div class="pr"><b>${s.pct}%</b><div class="seg">${seg}</div></div>
+        <h3>${cc.title}</h3><div class="en">${cc.en} · ${s.total} cards</div></a>`);
     }
     out.push(`<div class="sech"><h2>${part.name}</h2><span>${part.ccs.filter(c => c.status === 'ready').length} / ${part.ccs.length}</span></div>${rows.join('')}`);
   }
   $('#list').innerHTML = out.join('');
   $('#ovP').textContent = (tot ? Math.round(ok / tot * 100) : 0) + '%';
   $('#ovN').textContent = tot; $('#ovR').textContent = bad;
-  requestAnimationFrame(() => requestAnimationFrame(() => $$('.pass .bar i').forEach(i => i.style.width = i.dataset.w + '%')));
+
 }
 draw();
 

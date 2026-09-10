@@ -3,31 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#1B2A6B">
+<meta name="theme-color" content="#0A0A0A">
 <title>CPX Study</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="stylesheet" href="assets/style.css?v=8">
+<link rel="stylesheet" href="assets/style.css?v=9">
 </head>
 <body class="study">
-<div class="top">
-  <a class="rb ghost" id="bk"></a>
-  <div class="tt w"><b id="dTitle"></b><span id="dCC"></span></div>
-  <span class="cnt w"><b id="cur">1</b> / <span id="tot">1</span></span>
-  <button class="rb ghost" id="more" aria-label="메뉴"></button>
-</div>
+<div class="top"><div class="in">
+  <a class="sq" id="bk"></a>
+  <div class="tt"><b id="dTitle"></b><span id="dCC"></span></div>
+  <span class="cnt"><b id="cur">01</b><small> / </small><span id="tot">01</span></span>
+  <button class="sq" id="more" aria-label="메뉴"></button>
+</div></div>
 <div class="pips" id="pips"></div>
 <div class="stage" id="stage"></div>
 <div class="bot">
   <div class="acts">
     <button class="act sm" id="prev"></button>
-    <button class="act no" id="mNo"></button>
-    <button class="act mid" id="flip"></button>
-    <button class="act ok" id="mYes"></button>
+    <button class="act no" id="mNo">다시</button>
+    <button class="act mid" id="flip">뒤집기</button>
+    <button class="act ok" id="mYes">외웠다</button>
     <button class="act sm" id="next"></button>
   </div>
-  <div class="hintl" id="hintl">카드를 탭하면 뒤집고, 옆으로 던지면 넘어가요</div>
+  <div class="hintl" id="hintl">tap to flip · swipe to grade</div>
 </div>
 <div class="fin" id="fin"><div class="in">
   <div class="n" id="finN"></div><h3 id="finT"></h3><p id="finP"></p><div class="ls" id="finL"></div>
@@ -35,13 +35,13 @@
 </div></div>
 
 <script type="module">
-import { $, $$, loadIndex, loadCC, getCard, setCard, resetDeck, qs, registerSW } from './assets/store.js?v=8';
-import { ICON, sheet, toast } from './assets/ui.js?v=8';
-import { applyPrefOnly, highlight, zoomable } from './assets/enhance.js?v=8';
+import { $, $$, loadIndex, loadCC, getCard, setCard, resetDeck, qs, registerSW } from './assets/store.js?v=9';
+import { ICON, sheet, toast } from './assets/ui.js?v=9';
+import { applyPrefOnly, highlight, zoomable } from './assets/enhance.js?v=9';
 applyPrefOnly(); registerSW();
 $('#bk').innerHTML = ICON.back; $('#more').innerHTML = ICON.more;
 $('#prev').innerHTML = ICON.prev; $('#next').innerHTML = ICON.next;
-$('#flip').innerHTML = ICON.flip; $('#mNo').innerHTML = ICON.close; $('#mYes').innerHTML = ICON.check;
+
 
 const ccId = qs('cc'), dIdx = +(qs('d') || 0), startAt = qs('i') !== null ? +qs('i') : 0;
 let meta = null, deckDef = null, base = [], deck = [], i = 0, only = false;
@@ -51,9 +51,6 @@ const stage = $('#stage');
   const idx = await loadIndex();
   idx.parts.forEach(p => p.ccs.forEach(c => { if (c.id === ccId) meta = c; }));
   if (!meta) { location.href = 'index.html'; return; }
-  const [g1, g2] = meta.grad || ['#1B2A6B', '#6D3BE0'];
-  document.documentElement.style.setProperty('--g1', g1); document.documentElement.style.setProperty('--g2', g2);
-  document.querySelector('meta[name=theme-color]').content = g1;
   const data = await loadCC(ccId); deckDef = data.decks[dIdx];
   if (!deckDef) { location.href = 'decks.html?cc=' + ccId; return; }
   document.title = `${deckDef.t} — CPX ${meta.num}`;
@@ -75,10 +72,10 @@ function cardHTML(e, pos) {
   const c = e.c, f = c.f, s = getCard(ccId, dIdx, e.n);
   const foot = stats(f.mt);
   return `<div class="sc c${pos}" data-n="${e.n}">
-    <div class="stamp y">외웠다</div><div class="stamp n">다시</div>
+    <div class="stamp y">GOT IT</div><div class="stamp n">AGAIN</div>
     <div class="fc">
       <div class="f fr">
-        <div class="ft"><span class="lab">${f.kk}</span><span class="seq">${i + pos + 1} / ${deck.length}</span></div>
+        <div class="ft"><span>${f.kk}</span><span class="seq">${String(i + pos + 1).padStart(2, '0')} / ${String(deck.length).padStart(2, '0')}</span></div>
         <div class="fm"><div class="big ${f.cls}">${f.big}</div>${f.nm ? `<div class="nm">${f.nm}</div>` : ''}${(!foot && f.mt) ? `<div class="mt">${f.mt}</div>` : ''}</div>
         ${foot}
       </div>
@@ -92,7 +89,7 @@ function render() {
   stage.innerHTML = [0, 1, 2].filter(k => i + k < deck.length).reverse().map(k => cardHTML(deck[i + k], k)).join('');
   const topc = stage.querySelector('.c0');
   if (topc) { highlight(topc.querySelector('.bd')); zoomable(topc.querySelector('.bd')); bindDrag(topc); }
-  $('#cur').textContent = i + 1; $('#tot').textContent = deck.length;
+  $('#cur').textContent = String(i + 1).padStart(2, '0'); $('#tot').textContent = String(deck.length).padStart(2, '0');
   $('#prev').disabled = i === 0;
   pips();
 }
